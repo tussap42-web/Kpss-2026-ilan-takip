@@ -11,7 +11,10 @@ from pathlib import Path
 import re
 import sys
 import time
-from datetime import datetime
+from datetime import datetime, date
+from concurrent.futures import ThreadPoolExecutor
+from eligibility import assess
+from details import enrich
 from urllib.error import HTTPError, URLError
 from urllib.parse import urljoin, urlsplit, urlunsplit, parse_qsl, urlencode
 from urllib.request import Request, urlopen
@@ -19,7 +22,7 @@ from zoneinfo import ZoneInfo
 
 BASE = Path(__file__).resolve().parent
 DEFAULT_STATE = BASE / 'state' / 'seen.json'
-AGENT = 'KPSS-Ilan-Takip/1.0 (public announcements monitor; contact: repository owner)'
+AGENT = 'KPSS-Ilan-Takip/2.0 (public announcements monitor; contact: repository owner)'
 CONNECT_TIMEOUT = 12
 MAX_CONTENT = 1_500_000
 MAX_PER_RUN = 8
@@ -31,7 +34,7 @@ JOB_PHRASES = (
     'sozlesmeli personel', 'destek personeli', 'buro personeli',
     'hizmetli alimi', 'hizmetli alim', 'kamu personeli alimi',
     'istihdam edilecek', 'kadro ilan',
-    'merkezi yerleştirme', 'merkezi yerlestirme', 'merkezi atama',
+    'merkezi yerlestirme', 'merkezi atama',
 )
 NOT_JOB = ('iletisim', 'gizlilik', 'cerez', 'privacy', 'contact', 'kvkk', 'hakkimizda', 'anasayfa')
 
@@ -46,6 +49,8 @@ def is_job_link(title: str, url: str) -> bool:
     title = normalize(title)
     path = normalize(urlsplit(url).path.replace('-', ' ').replace('_', ' '))
     if not title or len(title) < 12:
+        return False
+    if any(x in title for x in ('sonuclari', 'sonuc duyurusu', 'iptal', 'basvurulari sona erdi', 'basvuru sona erdi', 'sinav sonucu')):
         return False
     if any(x in title for x in NOT_JOB):
         return False
@@ -186,12 +191,19 @@ def chat_fingerprint(token: str, chat_id: str) -> str:
 
 
 def message_for(item: dict, config: dict) -> str:
-    priority = normalize(config['search_settings']['priority_city'])
-    star = '📍 KONYA ÖNCELİKLİ\n' if priority and priority in normalize(item['title']) else ''
-    return (f'📢 KPSS İLAN ADAYI\n{star}'
-            f'Kaynak: {item["source"]}\nBaşlık: {item["title"]}\n'
-            f'Bağlantı: {item["url"]}\n\n'
-            '⚠️ Ön eleme: aktif başvuru, puan, bölüm ve özel şartlar henüz doğrulanmadı.')[:4050]
+    assessment = item.get('assessment', {})
+    priority = config['search_settings']['priority_city']
+    city = f'📍 {priority} öncelikli\n' if normalize(priority) in normalize(item['title']) else ''
+    heading = '⏰ SON BAŞVURU HATIRLATMASI' if item.get('reminder') else '📢 İNCELENECEK İLAN'
+    lines = [heading, city + 'Kaynak: ' + item['source'], item['title'],
+             f"Aday: {config['candidate']['kpss_score_type']} / {config['candidate']['kpss_score']}"]
+    if assessment.get('deadline'):
+        lines.append('Son başvuru: ' + assessment['deadline'])
+    if item.get('detail_warning'):
+        lines.append(item['detail_warning'])
+    lines.extend('• ' + warning for warning in assessment.get('warnings', []))
+    lines.extend(['Şartların tamamı doğrulanmış değildir; resmî ilanı kontrol et.', item['url']])
+    return '\n'.join(lines)[:4050]
 
 
 def find_chats(token: str) -> int:
@@ -225,7 +237,10 @@ def scan(config: dict, sources: dict, state_path: Path, dry_run: bool) -> int:
     except ValueError as exc:
         print(exc)
         return 1
-    if not dry_run and (not config['notifications'].get('enabled', False) or not token or not chat_ids):
+    if not dry_run and not config['notifications'].get('enabled', False):
+        print('Bildirimler kapalı; işlem atlandı.')
+        return 0
+    if not dry_run and (not token or not chat_ids):
         print('Telegram ayarlanmadı: Bildirim gönderilmedi, kayıt değişmedi. Secrets kontrol et.')
         return 1
     all_items = {}
@@ -245,46 +260,87 @@ def scan(config: dict, sources: dict, state_path: Path, dry_run: bool) -> int:
         print('HATA: Hiçbir kaynak taranamadı. Bu çalıştırma başarılı sayılmadı.')
         return 1
     state = get_state(state_path)
-    def needs_notification(item: dict) -> bool:
-        record = state['sent'].get(canonical(item['url']))
-        if record is None:
-            return True
-        if dry_run:
-            return False
-        return any(chat_fingerprint(token, chat_id) not in record.get('chats', []) for chat_id in chat_ids)
-
-    new_items = [item for item in all_items.values() if needs_notification(item)]
+    notices = state.setdefault('notices', {})
+    settings = config['notifications']
+    # A short cache avoids repeatedly downloading the same attachments every hour.
+    policy = hashlib.sha256(json.dumps(config, sort_keys=True).encode()).hexdigest()[:16]
     p = normalize(config['search_settings']['priority_city'])
-    new_items.sort(key=lambda d: (p not in normalize(d['title']), normalize(d['source']), normalize(d['title'])))
-    print(f'Taranan kaynak: {len(sources["sources"])} | Hatalı: {failures} | Yeni/bekleyen aday: {len(new_items)}')
-    if dry_run:
-        for item in new_items[:MAX_PER_RUN]:
-            print(f'[ÖN İZLEME] {item["source"]}: {item["title"]} -> {item["url"]}')
-        print('Ön izleme: Telegram mesajı ve kayıt değişikliği yapılmadı.')
-        return 0
-    count = 0
-    for item in new_items[:MAX_PER_RUN]:
-        url = canonical(item['url'])
-        # Per-recipient receipts limit duplicates if one recipient fails; GitHub commits state after run.
-        completed = set(state['sent'].get(url, {}).get('chats', []))
-        for chat_id in chat_ids:
-            receipt = chat_fingerprint(token, chat_id)
-            if receipt in completed:
+    candidates = sorted(all_items.values(), key=lambda d: (p not in normalize(d['title']), d['url']))
+    refresh = []
+    for item in candidates:
+        cached = notices.get(item['url'])
+        if not cached or cached.get('checked_on') != now.date().isoformat() or cached.get('policy') != policy:
+            refresh.append(item)
+    limit = max(1, min(int(config.get('processing', {}).get('max_details_per_run', 12)), 30))
+    with ThreadPoolExecutor(max_workers=4) as pool:
+        for item in pool.map(enrich, refresh[:limit]):
+            assessment = assess(item.get('text', ''), config, now.date())
+            if item.get('detail_warning'):
+                # Incomplete attachment sets cannot safely exclude an entire announcement.
+                assessment['status'] = 'review'
+                assessment['reasons'] = []
+                assessment['deadline'] = None
+            item.pop('text', None)
+            item.update(assessment=assessment, checked_on=now.date().isoformat(), policy=policy)
+            notices[item['url']] = item
+    queued = []
+    for item in candidates:
+        cached = notices.get(item['url'])
+        if not cached or cached.get('policy') != policy:
+            continue  # Leave for a later run, never send unassessed backlog as matched.
+        assessment = cached['assessment']
+        if assessment['status'] == 'excluded':
+            print('Elendi: ' + item['title'] + ': ' + '; '.join(assessment['reasons']))
+            continue
+        if assessment.get('deadline') and assessment['deadline'] < now.date().isoformat() and config['search_settings'].get('only_active_applications', True):
+            continue
+        if settings.get('notify_new_jobs', True):
+            queued.append((cached, canonical(item['url'])))
+    # Retain known notices so reminders survive disappearance from the homepage.
+    if settings.get('notify_deadline_approaching', True):
+        for url, item in notices.items():
+            assessment = item['assessment']
+            deadline = assessment.get('deadline')
+            if not deadline or assessment['status'] == 'excluded' or item.get('policy') != policy:
                 continue
+            days = (date.fromisoformat(deadline) - now.date()).days
+            if days in settings.get('deadline_reminder_days', [3, 1, 0]):
+                # Never remind before the recipient has received the original notice.
+                original = state['sent'].get(canonical(url), {})
+                if original:
+                    queued.append((dict(item, reminder=True, original_chats=original.get('chats', [])),
+                                   canonical(url) + '#reminder:' + deadline + ':' + str(days)))
+    count, errors = 0, 0
+    cap = max(1, min(int(settings.get('max_notifications_per_run', 20)), 100))
+    for item, key in queued:
+        completed = set(state['sent'].get(key, {}).get('chats', []))
+        if dry_run:
+            if key not in state['sent']:
+                print('[ÖN İZLEME] ' + message_for(item, config))
+            continue
+        recipients = [chat for chat in chat_ids if chat_fingerprint(token, chat) not in completed
+                      and (not item.get('reminder') or chat_fingerprint(token, chat) in item.get('original_chats', []))]
+        if not recipients:
+            continue
+        if count >= cap:
+            break
+        for chat_id in recipients:
             try:
                 telegram_request(token, 'sendMessage', {'chat_id': chat_id, 'text': message_for(item, config), 'disable_web_page_preview': True})
             except RuntimeError as exc:
                 print(f'Bildirim başarısız: {exc}')
-                save_state(state_path, state)
-                return 1
-            completed.add(receipt)
-            state['sent'][url] = {'title': item['title'], 'chats': sorted(completed), 'at': now.isoformat()}
+                errors += 1
+                continue  # One unavailable recipient must not block other recipients.
+            completed.add(chat_fingerprint(token, chat_id))
+            state['sent'][key] = {'title': item['title'], 'chats': sorted(completed), 'at': now.isoformat()}
             save_state(state_path, state)
         count += 1
-    print(f'Bildirim tamamlanan yeni aday: {count}')
+    if not dry_run:
+        save_state(state_path, state)
+    print(f'Kaynak: {len(sources["sources"])} | Kaynak hatası: {failures} | Bildirim denemesi: {count} | Bekleyen ayrıntı: {max(0, len(refresh)-limit)}')
     if failures:
-        print('UYARI: Bazı resmî kaynaklar erişilemedi; eksiksiz tarama değildir.')
-    return 0
+        print('::warning::Bazı kaynaklar okunamadı; tarama eksik. Actions günlüklerini kontrol et.')
+    return 1 if errors else 0
 
 
 def main() -> int:
@@ -319,3 +375,4 @@ if __name__ == '__main__':
     except (ValueError, json.JSONDecodeError, FileNotFoundError, RuntimeError) as exc:
         print(f'Program hatası: {exc}')
         sys.exit(1)
+
