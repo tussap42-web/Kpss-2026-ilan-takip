@@ -1,6 +1,7 @@
 """Conservative evidence extraction; ambiguous notices always require human review."""
 import re
 from datetime import date
+from dates_tr import deadlines
 
 
 def norm(text):
@@ -16,12 +17,7 @@ def assess(text, config, today=None):
     result = {'status': 'review', 'reasons': reasons, 'warnings': warnings,
               'deadline': None, 'minimum_score': None}
     # Multiple dates are ambiguous: never use the first date of a multi-posting page.
-    dates = set()
-    for match in re.finditer(r'(?:son basvuru(?: tarihi)?|basvuru bitis(?: tarihi)?)\s*[:\-]?\s*(\d{1,2})[./-](\d{1,2})[./-](20\d{2})', text):
-        try:
-            dates.add(date(int(match[3]), int(match[2]), int(match[1])))
-        except ValueError:
-            pass
+    dates = deadlines(text)
     if len(dates) == 1:
         deadline = dates.pop()
         result['deadline'] = deadline.isoformat()
@@ -80,4 +76,93 @@ def assess(text, config, today=None):
         warnings.append('Yaş, belge, deneyim ve diğer özel şartlar ayrıca kontrol edilmeli')
     if reasons:
         result['status'] = 'excluded'
+    return result
+
+
+ROLE = r'(?:buro personeli|destek personeli|temizlik gorevlisi|guvenlik gorevlisi|hizmetli|tekniker|teknisyen|grafiker|memur|sofor|zabita memuru|itfaiye eri)'
+
+
+def table_positions(rows):
+    """Require explicit column headers, not spatial guesses across wrapped PDF cells."""
+    positions = []
+    columns = None
+    for row in rows:
+        values = [norm(str(cell)) for cell in row]
+        if any(re.search(r'kadro|unvan|pozisyon', v) for v in values) and any('puan' in v for v in values):
+            columns = values
+            continue
+        if not columns or len(columns) != len(values):
+            continue
+        def cell(pattern):
+            return next((values[i] for i, h in enumerate(columns) if re.search(pattern, h)), '')
+        role = cell('kadro|unvan|pozisyon')
+        kind = cell(r'puan tur|kpss tur')
+        score = cell(r'taban puan|asgari puan|en az puan|minimum puan')
+        if not role or not re.fullmatch(r'(?:kpss\s*)?p\s*(?:3|93|94)', kind) or not re.fullmatch(r'\d{2,3}(?:[,.]\d+)?', score):
+            continue
+        if not 0 <= float(score.replace(',', '.')) <= 100:
+            continue
+        degree = cell('ogrenim|mezuniyet|bolum|nitelik')
+        positions.append({'title': role, 'text': f'{role}: {kind} en az {score} puan. {degree}',
+                          'qualification_codes': re.findall(r'\b[345]\d{3}\b', degree), 'education': degree,
+                          'evidence': 'explicit_table_columns'})
+    return positions
+
+
+def line_positions(text):
+    positions = []
+    for line in text.splitlines():
+        normalized = norm(line)
+        if re.search(r'p\s*(?:3|93|94)\s+(?:en az|asgari|minimum)\s*\d{2,3}(?:[,.]\d+)?$', normalized):
+            line += ' puan'
+            normalized += ' puan'
+        # Exactly one position and one explicit condition on the SAME line.
+        roles = list(re.finditer(ROLE, normalized))
+        if len(roles) != 1 or not re.search(r'p\s*(?:3|93|94)\b', normalized):
+            continue
+        if not re.search(r'(?:en az|asgari|minimum)\s*\d{2,3}(?:[,.]\d+)?\s*puan', normalized):
+            continue
+        if len(re.findall(r'p\s*(?:3|93|94)\b', normalized)) != 1:
+            continue
+        positions.append({'title': roles[0][0], 'text': line, 'evidence': 'single_line',
+                          'qualification_codes': re.findall(r'\b[345]\d{3}\b', normalized)})
+    return positions
+
+
+def assess_notice(text, config, today=None, rows=None, incomplete=False):
+    result = assess(text, config, today)
+    parsed_table = table_positions(rows or [])
+    table_like = sum(len(row) >= 3 for row in (rows or [])) >= 2
+    if table_like and not parsed_table:
+        incomplete = True
+    positions = parsed_table or line_positions(text)
+    evidence = []
+    for position in positions:
+        assessment = assess(position['text'], config, today)
+        # Never inherit a deadline from a different position.
+        position = dict(position, assessment=assessment)
+        evidence.append(position)
+    result['positions'] = evidence
+    if evidence:
+        # A single failed position may never exclude an entire mixed announcement.
+        result['status'] = 'review'
+        result['reasons'] = []
+        result['minimum_score'] = None
+        result['warnings'] = ['Kadro koşulları ayrı değerlendirildi; genel/özel şartlar ayrıca kontrol edilmeli']
+        dates = deadlines(norm(text))
+        result['deadline'] = next(iter(dates)).isoformat() if len(dates) == 1 else None
+        # A global date is only safe when each row has no local date or all match it.
+        row_dates = [deadlines(norm(p['text'])) for p in evidence]
+        if len(evidence) > 1 and any(row_dates):
+            result['deadline'] = None
+        if result['deadline'] and date.fromisoformat(result['deadline']) < (today or date.today()) and config['search_settings'].get('only_active_applications', True):
+            result['status'] = 'excluded'
+            result['reasons'] = ['Son başvuru tarihi geçmiş']
+    # Flat/partial tables are insufficient for whole-announcement rejection.
+    roles = re.findall(ROLE, norm(text))
+    if (len(set(roles)) > 1 and not evidence) or incomplete:
+        result['status'] = 'review'
+        result['reasons'] = []
+        result['deadline'] = None
+        result['warnings'].append('Belge/kadro kapsamı belirsiz; kesin eleme yapılmadı')
     return result

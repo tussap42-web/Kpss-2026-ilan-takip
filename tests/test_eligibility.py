@@ -101,7 +101,7 @@ class EligibilityTests(unittest.TestCase):
         response.headers=Message()
         response.headers['Content-Type']='application/pdf'
         response.geturl=lambda:'https://example.org/doc.pdf'
-        with patch('details.urlopen',return_value=response):
+        with patch('details.fetch_bytes',return_value=(response.getvalue(), response.headers, response.geturl())):
             with self.assertRaisesRegex(ValueError,'OCR'):
                 read_document('https://example.org/doc.pdf')
 
@@ -113,6 +113,6 @@ class EligibilityTests(unittest.TestCase):
         response.headers=Message()
         response.headers['Content-Type']='text/html; charset=utf-8'
         response.geturl=lambda:'https://www.example.org/job'
-        with patch('details.urlopen',return_value=response):
+        with patch('details.fetch_bytes',return_value=(response.getvalue(), response.headers, response.geturl())):
             text,pdfs=read_document('https://www.example.org/job')
         self.assertEqual(pdfs,['https://www.example.org/job.pdf'])
