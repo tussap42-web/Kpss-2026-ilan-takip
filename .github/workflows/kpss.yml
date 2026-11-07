@@ -13,9 +13,7 @@ on:
           - scan
         default: preview
   schedule:
-    - cron: '7 9-23 * * *'
-      timezone: 'Europe/Istanbul'
-
+      - cron: '7 6-20 * * *'
 permissions:
   contents: write
 
