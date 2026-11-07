@@ -215,3 +215,8 @@ class AuditTests(unittest.TestCase):
         a=assess_notice('Son başvuru: 01.01.2020 P93 en az 99 puan',CFG,TODAY,incomplete=True)
         self.assertIsNone(a['deadline'])
         self.assertEqual(a['status'],'review')
+
+    def test_ambiguous_table_cannot_trigger_whole_notice_rejection(self):
+        rows=[['Kadro','KPSS','Sayı','Puan'],['Mühendis','P93','10','75'],['Başka','P93','20','60']]
+        a=assess_notice('KPSS P93 en az 75 puan',CFG,TODAY,rows=rows)
+        self.assertEqual(a['status'],'review')

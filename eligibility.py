@@ -131,7 +131,11 @@ def line_positions(text):
 
 def assess_notice(text, config, today=None, rows=None, incomplete=False):
     result = assess(text, config, today)
-    positions = table_positions(rows or []) or line_positions(text)
+    parsed_table = table_positions(rows or [])
+    table_like = sum(len(row) >= 3 for row in (rows or [])) >= 2
+    if table_like and not parsed_table:
+        incomplete = True
+    positions = parsed_table or line_positions(text)
     evidence = []
     for position in positions:
         assessment = assess(position['text'], config, today)
