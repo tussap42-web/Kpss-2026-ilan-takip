@@ -1,1 +1,73 @@
-{ }
+{
+  "project": "KPSS 2026 Kamu Personeli Ilan Takip",
+  "candidate": "Emre",
+  "priority_city": "Konya",
+  "coverage": "Turkiye geneli - 81 il",
+  "sources": [
+    {
+      "name": "OSYM",
+      "url": "https://www.osym.gov.tr/",
+      "category": "merkezi_atama"
+    },
+    {
+      "name": "Kariyer Kapisi",
+      "url": "https://kariyerkapisi.gov.tr/",
+      "category": "kamu_personel"
+    },
+    {
+      "name": "ISKUR",
+      "url": "https://www.iskur.gov.tr/",
+      "category": "kamu_iscisi"
+    },
+    {
+      "name": "Resmi Gazete",
+      "url": "https://www.resmigazete.gov.tr/",
+      "category": "resmi_duyuru"
+    },
+    {
+      "name": "Ilan.gov.tr",
+      "url": "https://www.ilan.gov.tr/",
+      "category": "personel_ilanlari"
+    },
+    {
+      "name": "Yerel Yonetimler Genel Mudurlugu",
+      "url": "https://yerelyonetimler.csb.gov.tr/",
+      "category": "belediye_personel"
+    },
+    {
+      "name": "YOK",
+      "url": "https://www.yok.gov.tr/",
+      "category": "universite"
+    },
+    {
+      "name": "Saglik Bakanligi",
+      "url": "https://www.saglik.gov.tr/",
+      "category": "bakanlik"
+    },
+    {
+      "name": "Adalet Bakanligi",
+      "url": "https://www.adalet.gov.tr/",
+      "category": "bakanlik"
+    },
+    {
+      "name": "Tarim ve Orman Bakanligi",
+      "url": "https://www.tarimorman.gov.tr/",
+      "category": "bakanlik"
+    },
+    {
+      "name": "Milli Egitim Bakanligi",
+      "url": "https://www.meb.gov.tr/",
+      "category": "bakanlik"
+    }
+  ],
+  "additional_categories": [
+    "ilce_belediyeleri",
+    "belde_belediyeleri",
+    "belediye_sirketleri",
+    "il_ozel_idareleri",
+    "devlet_universiteleri",
+    "universite_hastaneleri",
+    "kamu_kurumlari",
+    "bakanlik_tasra_teskilatlari"
+  ]
+}
