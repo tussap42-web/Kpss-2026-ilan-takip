@@ -2,62 +2,89 @@
   "project": "KPSS 2026 Kamu Personeli Ilan Takip",
   "candidate": "Emre",
   "priority_city": "Konya",
-  "coverage": "Turkiye geneli - 81 il",
+  "coverage": "Listelenen kaynaklar ve sınırlandırılmış duyuru alt sayfaları; 81 ilin tüm kurumları kapsanmaz",
   "sources": [
     {
       "name": "OSYM",
       "url": "https://www.osym.gov.tr/",
-      "category": "merkezi_atama"
+      "category": "merkezi_atama",
+      "max_pages": 4,
+      "entrypoints": [
+        "https://www.osym.gov.tr/Duyurular/Index",
+        "https://osym.gov.tr/SinavGrubu/Index/3"
+      ]
     },
     {
       "name": "Kariyer Kapisi",
       "url": "https://kariyerkapisi.gov.tr/",
-      "category": "kamu_personel"
+      "category": "kamu_personel",
+      "max_pages": 4
     },
     {
       "name": "ISKUR",
       "url": "https://www.iskur.gov.tr/",
-      "category": "kamu_iscisi"
+      "category": "kamu_iscisi",
+      "max_pages": 4
     },
     {
       "name": "Resmi Gazete",
       "url": "https://www.resmigazete.gov.tr/",
-      "category": "resmi_duyuru"
+      "category": "resmi_duyuru",
+      "max_pages": 4
     },
     {
       "name": "Ilan.gov.tr",
       "url": "https://www.ilan.gov.tr/",
-      "category": "personel_ilanlari"
+      "category": "personel_ilanlari",
+      "max_pages": 4
     },
     {
       "name": "Yerel Yonetimler Genel Mudurlugu",
       "url": "https://yerelyonetimler.csb.gov.tr/",
-      "category": "belediye_personel"
+      "category": "belediye_personel",
+      "max_pages": 4,
+      "entrypoints": [
+        "https://yerelyonetimler.csb.gov.tr/duyurular"
+      ]
     },
     {
       "name": "YOK",
       "url": "https://www.yok.gov.tr/",
-      "category": "universite"
+      "category": "universite",
+      "max_pages": 4
     },
     {
       "name": "Saglik Bakanligi",
       "url": "https://www.saglik.gov.tr/",
-      "category": "bakanlik"
+      "category": "bakanlik",
+      "max_pages": 4
     },
     {
       "name": "Adalet Bakanligi",
       "url": "https://www.adalet.gov.tr/",
-      "category": "bakanlik"
+      "category": "bakanlik",
+      "max_pages": 4
     },
     {
       "name": "Tarim ve Orman Bakanligi",
       "url": "https://www.tarimorman.gov.tr/",
-      "category": "bakanlik"
+      "category": "bakanlik",
+      "max_pages": 4
     },
     {
       "name": "Milli Egitim Bakanligi",
       "url": "https://www.meb.gov.tr/",
-      "category": "bakanlik"
+      "category": "bakanlik",
+      "max_pages": 4
+    },
+    {
+      "name": "Konya Buyuksehir Belediyesi",
+      "url": "https://www.konya.bel.tr/",
+      "entrypoints": [
+        "https://www.konya.bel.tr/birim/insan-kaynaklari-ve-egitim-dairesi-baskanligi/duyurular"
+      ],
+      "category": "belediye_personel",
+      "max_pages": 4
     }
   ],
   "additional_categories": [

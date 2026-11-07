@@ -1,4 +1,4 @@
-"""KPSS ilan takip - official homepages basic link monitor (Python stdlib)."""
+"""Conservative KPSS notice monitoring with bounded discovery and durable receipts."""
 from __future__ import annotations
 
 import argparse
@@ -10,10 +10,11 @@ import os
 from pathlib import Path
 import re
 import sys
-import time
 from datetime import datetime, date
 from concurrent.futures import ThreadPoolExecutor
-from eligibility import assess
+from eligibility import assess_notice
+from discovery import scan_source as discover_source, canonical
+from network import fetch_bytes
 from details import enrich
 from urllib.error import HTTPError, URLError
 from urllib.parse import urljoin, urlsplit, urlunsplit, parse_qsl, urlencode
@@ -25,7 +26,6 @@ DEFAULT_STATE = BASE / 'state' / 'seen.json'
 AGENT = 'KPSS-Ilan-Takip/2.0 (public announcements monitor; contact: repository owner)'
 CONNECT_TIMEOUT = 12
 MAX_CONTENT = 1_500_000
-MAX_PER_RUN = 8
 JOB_PHRASES = (
     'personel alimi', 'personel alim', 'personel istihdami', 'personel istihdam',
     'personel ilan', 'personel temini', 'personel basvur',
@@ -48,6 +48,8 @@ def normalize(text: str) -> str:
 def is_job_link(title: str, url: str) -> bool:
     title = normalize(title)
     path = normalize(urlsplit(url).path.replace('-', ' ').replace('_', ' '))
+    if title in ('personel alimi', 'personel alim ilanlari', 'kamu personeli alim ilanlari', 'memur alimi', 'duyurular', 'ilanlar'):
+        return False
     if not title or len(title) < 12:
         return False
     if any(x in title for x in ('sonuclari', 'sonuc duyurusu', 'iptal', 'basvurulari sona erdi', 'basvuru sona erdi', 'sinav sonucu')):
@@ -64,11 +66,6 @@ def is_job_link(title: str, url: str) -> bool:
         return True
     return False
 
-
-def canonical(url: str) -> str:
-    sp = urlsplit(url)
-    query = urlencode([(k, v) for k, v in parse_qsl(sp.query) if not k.lower().startswith(('utm_', 'fbclid', 'gclid'))])
-    return urlunsplit((sp.scheme.lower(), sp.netloc.lower(), sp.path.rstrip('/') or '/', query, ''))
 
 
 class LinkParser(HTMLParser):
@@ -106,15 +103,13 @@ class LinkParser(HTMLParser):
 
 
 def get_html(url: str) -> str:
-    req = Request(url, headers={'User-Agent': AGENT, 'Accept': 'text/html,application/xhtml+xml'})
-    with urlopen(req, timeout=CONNECT_TIMEOUT) as response:
-        mime = response.headers.get('Content-Type', '')
-        if 'html' not in mime.lower():
-            raise ValueError('HTML olmayan içerik')
-        content = response.read(MAX_CONTENT + 1)
-        if len(content) > MAX_CONTENT:
-            raise ValueError('Sayfa boyutu limitin üzerinde')
-        charset = response.headers.get_content_charset() or 'utf-8'
+    content, headers, _ = fetch_bytes(url, MAX_CONTENT)
+    mime = headers.get('Content-Type', '').lower()
+    if not any(kind in mime for kind in ('html', 'xml', 'rss', 'atom')):
+        raise ValueError('HTML/XML olmayan içerik')
+    if any(marker in content.lower() for marker in (b'cf-chl-', b'verify you are human', b'enable javascript and cookies to continue')):
+        raise PermissionError('Kaynak otomasyon doğrulaması istiyor; atlandı')
+    charset = headers.get_content_charset() or 'utf-8'
     try:
         return content.decode(charset, errors='replace')
     except LookupError:
@@ -122,42 +117,31 @@ def get_html(url: str) -> str:
 
 
 def scan_source(source: dict) -> list[dict]:
-    url = source['url']
-    body = get_html(url)
-    parser = LinkParser()
-    parser.feed(body)
-    base_host = (urlsplit(url).hostname or '').removeprefix('www.')
-    found: dict[str, dict] = {}
-    for href, label in parser.links:
-        link = urljoin(url, href)
-        parts = urlsplit(link)
-        if parts.scheme != 'https' or not parts.hostname:
-            continue
-        # Restrict monitor to the official site / its subdomains.
-        if not (parts.hostname == base_host or parts.hostname.endswith('.' + base_host)):
-            continue
-        if not is_job_link(label, link):
-            continue
-        link = canonical(link)
-        if link == canonical(url):
-            continue
-        found[link] = {'title': label[:220], 'url': link, 'source': source['name']}
-    return list(found.values())
+    return discover_source(source, get_html, is_job_link, normalize)
 
 
 def get_state(path: Path) -> dict:
     if not path.exists():
         return {'sent': {}}
     data = json.loads(path.read_text(encoding='utf-8'))
-    if not isinstance(data.get('sent'), dict):
+    if not isinstance(data, dict) or not isinstance(data.get('sent'), dict):
         raise ValueError('state/seen.json yanlış biçimde')
+    for name in ('notices', 'documents', 'aliases'):
+        if name in data and not isinstance(data[name], dict):
+            raise ValueError('Durum dosyası yanlış biçimde: ' + name)
+    for record in data['sent'].values():
+        if not isinstance(record, dict) or not isinstance(record.get('chats', []), list) or any(not isinstance(chat, str) for chat in record.get('chats', [])):
+            raise ValueError('Bildirim geçmişi bozuk; dosya değiştirilmedi')
     return data
 
 
 def save_state(path: Path, state: dict) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     temp = path.with_name(path.name + '.tmp')
-    temp.write_text(json.dumps(state, indent=2, ensure_ascii=False) + '\n', encoding='utf-8')
+    with temp.open('w', encoding='utf-8') as handle:
+        handle.write(json.dumps(state, indent=2, ensure_ascii=False) + '\n')
+        handle.flush()
+        os.fsync(handle.fileno())
     temp.replace(path)
 
 
@@ -171,8 +155,8 @@ def telegram_request(token: str, method: str, payload: dict) -> dict:
             data = json.loads(response.read(100_000).decode('utf-8'))
     except HTTPError as err:
         raise RuntimeError(f'Telegram HTTP {err.code}') from None
-    except URLError:
-        raise RuntimeError('Telegram sunucusuna bağlanılamadı') from None
+    except (OSError, ValueError):
+        raise RuntimeError('Telegram isteği tamamlanamadı; teslimat belirsiz olabilir') from None
     if not data.get('ok'):
         raise RuntimeError('Telegram API isteği başarısız (ayrıntı gizlendi)')
     return data
@@ -193,7 +177,7 @@ def chat_fingerprint(token: str, chat_id: str) -> str:
 def message_for(item: dict, config: dict) -> str:
     assessment = item.get('assessment', {})
     priority = config['search_settings']['priority_city']
-    city = f'📍 {priority} öncelikli\n' if normalize(priority) in normalize(item['title']) else ''
+    city = f'📍 {priority} öncelikli\n' if normalize(priority) in normalize(item['title'] + ' ' + item['source']) else ''
     heading = '⏰ SON BAŞVURU HATIRLATMASI' if item.get('reminder') else '📢 İNCELENECEK İLAN'
     lines = [heading, city + 'Kaynak: ' + item['source'], item['title'],
              f"Aday: {config['candidate']['kpss_score_type']} / {config['candidate']['kpss_score']}"]
@@ -201,9 +185,15 @@ def message_for(item: dict, config: dict) -> str:
         lines.append('Son başvuru: ' + assessment['deadline'])
     if item.get('detail_warning'):
         lines.append(item['detail_warning'])
+    for position in assessment.get('positions', [])[:8]:
+        row = position['assessment']
+        condition = '; '.join(row.get('reasons') or row.get('warnings', [])[:2])
+        lines.append(f"Kadro: {position['title']} — {condition}")
     lines.extend('• ' + warning for warning in assessment.get('warnings', []))
     lines.extend(['Şartların tamamı doğrulanmış değildir; resmî ilanı kontrol et.', item['url']])
-    return '\n'.join(lines)[:4050]
+    # Leave room for the official URL even when evidence is long.
+    body = '\n'.join(lines[:-1])
+    return body[:3500] + '\n' + item['url'][:500]
 
 
 def find_chats(token: str) -> int:
@@ -223,123 +213,159 @@ def find_chats(token: str) -> int:
     return 0
 
 
+def report(status, **fields):
+    record = {'status': status, **fields}
+    print('RUN_SUMMARY ' + json.dumps(record, ensure_ascii=False))
+    summary = os.getenv('GITHUB_STEP_SUMMARY') if os.getenv('KPSS_WRITE_SUMMARY') == '1' else None
+    if summary:
+        with open(summary, 'a', encoding='utf-8') as handle:
+            handle.write('```json\n' + json.dumps(record, ensure_ascii=False, indent=2) + '\n```\n')
+
+
 def scan(config: dict, sources: dict, state_path: Path, dry_run: bool) -> int:
     zone = ZoneInfo(config.get('schedule', {}).get('timezone', 'Europe/Istanbul'))
     now = datetime.now(zone)
-    start = int(config['schedule']['start_hour'])
-    end = int(config['schedule']['end_hour'])
-    if not dry_run and os.getenv('FORCE_RUN') != '1' and not (start <= now.hour <= end):
-        print(f'Saat {now:%H:%M}; saat aralığı dışı, tarama atlandı.')
+    start, end = int(config['schedule']['start_hour']), int(config['schedule']['end_hour'])
+    in_window = start <= now.hour <= end if start <= end else now.hour >= start or now.hour <= end
+    if not dry_run and os.getenv('FORCE_RUN') != '1' and not in_window:
+        report('skipped_time_window', local_time=now.isoformat(), timezone=str(zone))
+        return 0
+    if not dry_run and not config['notifications'].get('enabled', False):
+        report('skipped_notifications_disabled')
         return 0
     token = os.getenv('TELEGRAM_BOT_TOKEN', '').strip()
     try:
-        chat_ids = parse_chats(os.getenv('TELEGRAM_CHAT_IDS', ''))
-    except ValueError as exc:
-        print(exc)
+        chat_ids = [] if dry_run else parse_chats(os.getenv('TELEGRAM_CHAT_IDS', ''))
+    except ValueError:
+        report('configuration_error', reason='Alıcı kimliklerinin biçimi geçersiz')
         return 1
-    if not dry_run and not config['notifications'].get('enabled', False):
-        print('Bildirimler kapalı; işlem atlandı.')
-        return 0
     if not dry_run and (not token or not chat_ids):
-        print('Telegram ayarlanmadı: Bildirim gönderilmedi, kayıt değişmedi. Secrets kontrol et.')
+        report('configuration_error', reason='Telegram secrets eksik')
         return 1
-    all_items = {}
-    failures = 0
-    for source in sources['sources']:
-        try:
-            links = scan_source(source)
-            print(f'{source["name"]}: {len(links)} ilan adayı bağlantı')
-            for item in links:
-                all_items[item['url']] = item
-        except (OSError, ValueError, HTTPError, URLError) as exc:
-            failures += 1
-            # The error can include URLs: print only a safe class/HTTP status, not secrets.
-            error = f'HTTP {exc.code}' if isinstance(exc, HTTPError) else type(exc).__name__
-            print(f'{source["name"]}: erişim/parsing hatası ({error})')
-    if failures == len(sources['sources']):
-        print('HATA: Hiçbir kaynak taranamadı. Bu çalıştırma başarılı sayılmadı.')
-        return 1
+    # Validate state BEFORE external requests, and never replace corrupt history.
     state = get_state(state_path)
     notices = state.setdefault('notices', {})
     settings = config['notifications']
-    # A short cache avoids repeatedly downloading the same attachments every hour.
-    policy = hashlib.sha256(json.dumps(config, sort_keys=True).encode()).hexdigest()[:16]
-    p = normalize(config['search_settings']['priority_city'])
-    candidates = sorted(all_items.values(), key=lambda d: (p not in normalize(d['title']), d['url']))
-    refresh = []
-    for item in candidates:
-        cached = notices.get(item['url'])
-        if not cached or cached.get('checked_on') != now.date().isoformat() or cached.get('policy') != policy:
-            refresh.append(item)
-    limit = max(1, min(int(config.get('processing', {}).get('max_details_per_run', 12)), 30))
+    failures, all_items, source_stats = 0, {}, []
+    configured = [source for source in sources['sources'] if source.get('enabled', True)]
+    def read_source(source):
+        try:
+            return source, scan_source(source), None
+        except (OSError, ValueError) as exc:
+            return source, [], type(exc).__name__
     with ThreadPoolExecutor(max_workers=4) as pool:
-        for item in pool.map(enrich, refresh[:limit]):
-            assessment = assess(item.get('text', ''), config, now.date())
-            if item.get('detail_warning'):
-                # Incomplete attachment sets cannot safely exclude an entire announcement.
-                assessment['status'] = 'review'
-                assessment['reasons'] = []
-                assessment['deadline'] = None
+        for source, items, error in pool.map(read_source, configured):
+            stats = dict(source.get('_scan_stats', {}), name=source['name'], candidates=len(items))
+            if error:
+                failures += 1
+                stats['error'] = error
+            source_stats.append(stats)
+            print('SOURCE ' + json.dumps(stats, ensure_ascii=False))
+            for item in items:
+                item['url'] = canonical(item['url'])
+                all_items[item['url']] = item
+    if not configured or failures == len(configured):
+        report('source_error', sources=source_stats, messages_sent=0)
+        return 1
+    policy = hashlib.sha256(('audit-v2:' + json.dumps(config, sort_keys=True)).encode()).hexdigest()[:16]
+    priority = normalize(config['search_settings']['priority_city'])
+    refresh = []
+    for url, item in {**notices, **all_items}.items():
+        cached = notices.get(url)
+        # Prioritize unseen notices so a large daily refresh never starves new jobs.
+        due = not cached or cached.get('checked_on') != now.date().isoformat() or cached.get('policy') != policy
+        if due:
+            refresh.append((cached is not None, priority not in normalize(item['title'] + ' ' + item['source']), url, item))
+    refresh.sort(key=lambda item: item[:3])
+    limit = max(1, min(int(config.get('processing', {}).get('max_details_per_run', 12)), 30))
+    detail_failures = 0
+    with ThreadPoolExecutor(max_workers=4) as pool:
+        for item in pool.map(enrich, [entry[3] for entry in refresh[:limit]]):
+            incomplete = bool(item.get('detail_warning'))
+            detail_failures += int(incomplete)
+            assessment = assess_notice(item.get('text', ''), config, now.date(), rows=item.get('rows'), incomplete=incomplete)
             item.pop('text', None)
+            item.pop('rows', None)
             item.update(assessment=assessment, checked_on=now.date().isoformat(), policy=policy)
             notices[item['url']] = item
-    queued = []
-    for item in candidates:
-        cached = notices.get(item['url'])
-        if not cached or cached.get('policy') != policy:
-            continue  # Leave for a later run, never send unassessed backlog as matched.
-        assessment = cached['assessment']
+    documents, aliases = state.setdefault('documents', {}), state.setdefault('aliases', {})
+    for url, item in notices.items():
+        # Backward compatible: old URL receipts remain in sent, never deleted.
+        identity = item.get('document_key')
+        if identity:
+            aliases[url] = documents.setdefault(identity, aliases.get(url, url))
+    def anchor(url):
+        return aliases.get(url, url)
+    def receipts(key):
+        root, suffix = key.split('#reminder:', 1) if '#reminder:' in key else (key, None)
+        keys = {root, *(url for url in aliases if anchor(url) == root)}
+        if suffix is not None:
+            keys = {url + '#reminder:' + suffix for url in keys}
+        return set(chat for k in keys for chat in state['sent'].get(k, {}).get('chats', []))
+    queued, used = [], set()
+    for url, item in sorted(notices.items(), key=lambda pair: (priority not in normalize(pair[1]['title'] + ' ' + pair[1]['source']), pair[0])):
+        if item.get('policy') != policy:
+            continue
+        assessment = item['assessment']
         if assessment['status'] == 'excluded':
-            print('Elendi: ' + item['title'] + ': ' + '; '.join(assessment['reasons']))
             continue
-        if assessment.get('deadline') and assessment['deadline'] < now.date().isoformat() and config['search_settings'].get('only_active_applications', True):
+        deadline = assessment.get('deadline')
+        if deadline and deadline < now.date().isoformat() and config['search_settings'].get('only_active_applications', True):
             continue
-        if settings.get('notify_new_jobs', True):
-            queued.append((cached, canonical(item['url'])))
-    # Retain known notices so reminders survive disappearance from the homepage.
-    if settings.get('notify_deadline_approaching', True):
-        for url, item in notices.items():
-            assessment = item['assessment']
-            deadline = assessment.get('deadline')
-            if not deadline or assessment['status'] == 'excluded' or item.get('policy') != policy:
-                continue
+        root = anchor(url)
+        if root in used:
+            continue
+        used.add(root)
+        original = receipts(root)
+        # Reminders require a CURRENT detail refresh, including notices no longer listed.
+        if settings.get('notify_deadline_approaching', True) and deadline and item.get('checked_on') == now.date().isoformat() and not item.get('detail_warning'):
             days = (date.fromisoformat(deadline) - now.date()).days
-            if days in settings.get('deadline_reminder_days', [3, 1, 0]):
-                # Never remind before the recipient has received the original notice.
-                original = state['sent'].get(canonical(url), {})
-                if original:
-                    queued.append((dict(item, reminder=True, original_chats=original.get('chats', [])),
-                                   canonical(url) + '#reminder:' + deadline + ':' + str(days)))
-    count, errors = 0, 0
+            if days in settings.get('deadline_reminder_days', [3, 1, 0]) and original:
+                key = root + '#reminder:' + deadline + ':' + str(days)
+                queued.append((dict(item, reminder=True), key, original))
+        if settings.get('notify_new_jobs', True):
+            queued.append((item, root, None))
+    # Count ALL recipient attempts; successes can never exceed this cap.
     cap = max(1, min(int(settings.get('max_notifications_per_run', 20)), 100))
-    for item, key in queued:
-        completed = set(state['sent'].get(key, {}).get('chats', []))
+    attempts, sent, errors, pending = 0, 0, 0, 0
+    failed_chats = set()
+    cursor = int(state.get('delivery_cursor', 0)) % max(1, len(chat_ids))
+    ordered_chats = chat_ids[cursor:] + chat_ids[:cursor]
+    for item, key, allowed in queued:
+        completed = receipts(key)
         if dry_run:
-            if key not in state['sent']:
+            if not completed:
                 print('[ÖN İZLEME] ' + message_for(item, config))
             continue
-        recipients = [chat for chat in chat_ids if chat_fingerprint(token, chat) not in completed
-                      and (not item.get('reminder') or chat_fingerprint(token, chat) in item.get('original_chats', []))]
-        if not recipients:
-            continue
-        if count >= cap:
-            break
-        for chat_id in recipients:
+        for chat_id in ordered_chats:
+            receipt = chat_fingerprint(token, chat_id)
+            if receipt in completed or (allowed is not None and receipt not in allowed):
+                continue
+            if attempts >= cap or receipt in failed_chats:
+                pending += 1
+                continue
+            attempts += 1
             try:
                 telegram_request(token, 'sendMessage', {'chat_id': chat_id, 'text': message_for(item, config), 'disable_web_page_preview': True})
-            except RuntimeError as exc:
-                print(f'Bildirim başarısız: {exc}')
+            except RuntimeError:
                 errors += 1
-                continue  # One unavailable recipient must not block other recipients.
-            completed.add(chat_fingerprint(token, chat_id))
+                failed_chats.add(receipt)
+                continue
+            completed.add(receipt)
             state['sent'][key] = {'title': item['title'], 'chats': sorted(completed), 'at': now.isoformat()}
+            sent += 1
             save_state(state_path, state)
-        count += 1
     if not dry_run:
+        state['delivery_cursor'] = (cursor + attempts) % max(1, len(chat_ids))
         save_state(state_path, state)
-    print(f'Kaynak: {len(sources["sources"])} | Kaynak hatası: {failures} | Bildirim denemesi: {count} | Bekleyen ayrıntı: {max(0, len(refresh)-limit)}')
-    if failures:
-        print('::warning::Bazı kaynaklar okunamadı; tarama eksik. Actions günlüklerini kontrol et.')
+    partial = failures or detail_failures or any(s.get('pages_failed', 0) for s in source_stats)
+    status = 'telegram_error' if errors else 'partial_source_error' if partial else 'success'
+    report(('preview_' + status) if dry_run else status, local_time=now.isoformat(), timezone=str(zone),
+           sources=source_stats, details_failed=detail_failures, messages_attempted=attempts,
+           messages_sent=sent, pending_messages=pending, pending_details=max(0, len(refresh)-limit),
+           dry_run=dry_run)
+    if partial:
+        print('::warning::Bazı liste veya ilan belgeleri okunamadı; kapsam eksik.')
     return 1 if errors else 0
 
 
@@ -373,6 +399,7 @@ if __name__ == '__main__':
     try:
         sys.exit(main())
     except (ValueError, json.JSONDecodeError, FileNotFoundError, RuntimeError) as exc:
-        print(f'Program hatası: {exc}')
+        report('program_error', error_type=type(exc).__name__)
+        print('Program durduruldu; mevcut geçmiş korunuyor.')
         sys.exit(1)
 
