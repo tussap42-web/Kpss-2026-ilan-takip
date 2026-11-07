@@ -1,0 +1,52 @@
+name: KPSS Ilan Takip
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "scan / preview / find-chats / test-message"
+        type: choice
+        options:
+          - preview
+          - find-chats
+          - test-message
+          - scan
+        default: preview
+  schedule:
+    - cron: '7 9-23 * * *'
+      timezone: 'Europe/Istanbul'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: kpss-monitor
+  cancel-in-progress: false
+
+jobs:
+  monitor:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: KPSS kontrolü
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_IDS: ${{ secrets.TELEGRAM_CHAT_IDS }}
+          RUN_MODE: ${{ github.event.inputs.mode || 'scan' }}
+        run: python main.py --mode "$RUN_MODE"
+      - name: Son gönderilenleri kaydet
+        if: ${{ always() && (github.event_name == 'schedule' || github.event.inputs.mode == 'scan') }}
+        run: |
+          if git diff --quiet -- state/seen.json; then
+            echo "Durum dosyasında değişiklik yok."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add state/seen.json
+          git commit -m "chore: update sent KPSS notices"
+          git push
