@@ -37,7 +37,7 @@
   },
   "notifications": {
     "platform": "telegram",
-    "enabled": false,
+    "enabled": true,
     "recipients": [],
     "notify_new_jobs": true,
     "notify_deadline_approaching": true,
