@@ -220,3 +220,21 @@ class AuditTests(unittest.TestCase):
         rows=[['Kadro','KPSS','Sayı','Puan'],['Mühendis','P93','10','75'],['Başka','P93','20','60']]
         a=assess_notice('KPSS P93 en az 75 puan',CFG,TODAY,rows=rows)
         self.assertEqual(a['status'],'review')
+
+    def test_recruitment_menu_is_crawled_not_notified_and_pdfs_found(self):
+        pages={'https://example.org/':'<a href="/baglantilar/kurum-disi-kamu-isci-alimi-ilani">Kurumdışı Kamu İşçi Alım ...</a>',
+               'https://example.org/baglantilar/kurum-disi-kamu-isci-alimi-ilani':'<a href="/konya.pdf">Konya Belediyesi</a><a href="/form.pdf">Başvuru formu</a>'}
+        source={'url':'https://example.org/','name':'Test'}
+        items=scan_source(source,pages.__getitem__,main.is_job_link,main.normalize)
+        self.assertEqual([item['url'] for item in items],['https://example.org/konya.pdf'])
+
+    def test_html_robots_response_is_not_downloaded_as_huge_policy(self):
+        class Response(io.BytesIO):
+            headers=Message()
+            headers['Content-Type']='text/html'
+            def geturl(self):return 'https://htmlrobots.example/robots.txt'
+        response=Response(b'<!doctype html><html>'+b'x'*250000)
+        with patch('network.build_opener') as opener:
+            opener.return_value.open.return_value=response
+            data,_,_=network._raw('https://htmlrobots.example/robots.txt',200000)
+        self.assertEqual(data,b'')

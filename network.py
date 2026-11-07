@@ -25,7 +25,16 @@ def _raw(url, limit):
         def redirect_request(self, req, fp, code, msg, headers, newurl):
             return None
     with build_opener(NoRedirect).open(request, timeout=10) as response:
-        body = response.read(limit + 1)
+        mime = response.headers.get('Content-Type', '').lower()
+        # Some sites route a missing robots.txt to their very large HTML homepage.
+        # HTML is not a robots policy; read only a small prefix in that case.
+        if urlsplit(url).path == '/robots.txt' and 'html' in mime:
+            prefix = response.read(4096)
+            if b'<html' in prefix.lower() or b'<!doctype html' in prefix.lower():
+                return b'', response.headers, response.geturl()
+            body = prefix + response.read(max(0, limit + 1 - len(prefix)))
+        else:
+            body = response.read(limit + 1)
         if len(body) > limit:
             raise ValueError('Belge boyutu sınırı aşıldı')
         return body, response.headers, response.geturl()

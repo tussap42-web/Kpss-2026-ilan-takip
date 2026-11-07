@@ -85,11 +85,20 @@ def scan_source(source, get_html, is_job_link, normalize):
                 link = canonical(urljoin(url, href))
                 if not same_site(link, source['url']) or link == url:
                     continue
-                if is_job_link(label, link):
-                    found[link] = {'title': label[:220], 'url': link, 'source': source['name']}
+                name = normalize(label)
+                path = normalize(urlsplit(link).path)
+                recruitment_menu = any(term in path for term in ('kurum-disi-kamu-isci', 'kurumdisi-kamu-isci', 'kamu-memur-alim-ilanlari', 'kamu-isci-alim-ilanlari')) or name in ('personel ilanlari', 'personel alimi ilanlari', 'kamu memur alim ilanlari', 'is ilanlari')
+                if recruitment_menu:
+                    if link not in visited and link not in pending:
+                        pending.appendleft(link)
+                    continue
+                recruitment_listing = any(term in normalize(urlsplit(url).path) for term in ('kurum-disi-kamu-isci', 'kurumdisi-kamu-isci', 'kamu-memur-alim-ilanlari', 'kamu-isci-alim-ilanlari'))
+                listing_pdf = recruitment_listing and urlsplit(link).path.lower().endswith('.pdf') and len(name) > 2 and not any(term in name for term in ('form', 'ornek', 'kilavuz', 'kvkk'))
+                if is_job_link(label, link) or listing_pdf:
+                    found[link] = {'title': (' '.join(label.split()))[:220], 'url': link, 'source': source['name']}
                 # Follow observed navigation only; don't guess an API or page number.
                 name = normalize(label)
-                if (name in ('duyurular', 'ilanlar', 'personel alimi', 'tum duyurular', 'tumu', 'sonraki', 'sonraki sayfa', 'next', '›', '»')
+                if (name in ('duyurular', 'ilanlar', 'personel alimi', 'tum duyurular', 'tumu', 'sonraki', 'sonraki sayfa', 'next', '›', '»', 'personel duyurulari', 'personel ilanlari', 'tum ilanlar')
                         or 'next' in rel.split()):
                     if link not in visited and link not in pending:
                         pending.append(link)

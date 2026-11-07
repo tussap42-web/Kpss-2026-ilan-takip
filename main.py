@@ -25,7 +25,7 @@ BASE = Path(__file__).resolve().parent
 DEFAULT_STATE = BASE / 'state' / 'seen.json'
 AGENT = 'KPSS-Ilan-Takip/2.0 (public announcements monitor; contact: repository owner)'
 CONNECT_TIMEOUT = 12
-MAX_CONTENT = 1_500_000
+MAX_CONTENT = 8_000_000
 JOB_PHRASES = (
     'personel alimi', 'personel alim', 'personel istihdami', 'personel istihdam',
     'personel ilan', 'personel temini', 'personel basvur',

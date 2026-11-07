@@ -24,7 +24,7 @@ Birden fazla veya belirsiz tarih tek bir son tarih olarak seçilmez. Kadro satı
 
 HTML tabloları ve düzeni korunarak çıkarılabilen PDF tablolarında **unvan, KPSS puan türü ve taban puan başlıkları açık ve sütun sayıları uyumluysa** satırlar eşleştirilir; mezuniyet ve nitelik kodları o satırdan alınır. Açık tek satırlı metinler de ayrılır. Büro P93 75 / destek P93 60 örneğinde 70,60 puanlı adayın iki satırı ayrı gösterilir. Bir kadronun puanı diğerine taşınmaz.
 
-Karmaşık/birleşik hücreler, kaymış/satırlara bölünmüş tablolar veya eksik PDF'lerde tahmin yapılmaz. Görsel PDF'ler OCR gerektirir. PDF okuma ayrı bir işlemde 20 saniye duvar süresi, Linux'ta 512 MB bellek ve 15 saniye CPU sınırıyla yapılır. En fazla 4 MB belge, 40 sayfa, HTML başına 2 PDF okunur; kısıt/eksik ek varsa ilan kesin elenmez. Puan/bölüm bulguları **tam başvuru uygunluğu değildir**; yıl, yaş, sertifika ve tüm özel koşullar resmî belgeden doğrulanmalıdır.
+Karmaşık/birleşik hücreler, kaymış/satırlara bölünmüş tablolar veya eksik PDF'lerde tahmin yapılmaz. Görsel PDF'ler OCR gerektirir. PDF okuma ayrı bir işlemde 20 saniye duvar süresi, Linux'ta 512 MB bellek ve 15 saniye CPU sınırıyla yapılır. En fazla 8 MB liste sayfası, 4 MB ilan belgesi, 40 PDF sayfası, HTML başına 2 PDF okunur; kısıt/eksik ek varsa ilan kesin elenmez. Puan/bölüm bulguları **tam başvuru uygunluğu değildir**; yıl, yaş, sertifika ve tüm özel koşullar resmî belgeden doğrulanmalıdır.
 
 ## Bildirim ve durum güvenilirliği
 
