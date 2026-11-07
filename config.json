@@ -6,7 +6,7 @@
     "department": "Grafik Tasarim",
     "kpss_year": 2026,
     "kpss_score_type": "P93",
-    "kpss_score": 70.60,
+    "kpss_score": 70.6,
     "score_is_approximate": true,
     "birth_year": null,
     "certificates": [],
@@ -15,7 +15,9 @@
   "search_settings": {
     "priority_city": "Konya",
     "all_turkey": true,
-    "qualification_codes": ["3001"],
+    "qualification_codes": [
+      "3001"
+    ],
     "positions": [
       "memur",
       "sozlesmeli_personel_4b",
@@ -41,6 +43,15 @@
     "recipients": [],
     "notify_new_jobs": true,
     "notify_deadline_approaching": true,
-    "prevent_duplicates": true
+    "prevent_duplicates": true,
+    "deadline_reminder_days": [
+      3,
+      1,
+      0
+    ],
+    "max_notifications_per_run": 20
+  },
+  "processing": {
+    "max_details_per_run": 12
   }
 }
