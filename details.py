@@ -24,6 +24,9 @@ class TextParser(HTMLParser):
         self.incomplete = False
         self.article_parts = []
         self.in_article = 0
+        self.heading_tag = None
+        self.headings = []
+        self.heading_parts = []
 
     def append(self, text):
         self.parts.append(text)
@@ -38,6 +41,8 @@ class TextParser(HTMLParser):
             return
         if tag in ('main', 'article'):
             self.in_article += 1
+        if tag == 'h1':
+            self.heading_tag, self.heading_parts = tag, []
         if tag in ('p', 'div', 'br', 'tr', 'h1', 'h2', 'h3', 'li'):
             self.append('\n')
         if tag in ('td', 'th'):
@@ -53,6 +58,9 @@ class TextParser(HTMLParser):
             self.skip -= 1
         if self.skip:
             return
+        if tag == self.heading_tag:
+            self.headings.append(' '.join(self.heading_parts))
+            self.heading_tag = None
         if tag in ('p', 'div', 'tr', 'li'):
             self.append('\n')
         if tag in ('main', 'article') and self.in_article:
@@ -61,6 +69,8 @@ class TextParser(HTMLParser):
     def handle_data(self, data):
         if not self.skip:
             self.append(data)
+            if self.heading_tag:
+                self.heading_parts.append(data)
 
 
 def read_document(url):
@@ -89,7 +99,9 @@ def read_document(url):
     pdfs = list(dict.fromkeys(pdfs))
     # Prefer semantic article content; do not interpret navigation/sidebar job lists as this notice.
     text = ''.join(parser.article_parts or parser.parts)
-    return DocumentText(text[:180_000], parser.incomplete or len(text) > 180_000 or len(pdfs) > 2 or blocked > 0), pdfs[:2]
+    document = DocumentText(text[:180_000], parser.incomplete or len(text) > 180_000 or len(pdfs) > 2 or blocked > 0)
+    document.heading = ' '.join(parser.headings)[:1000]
+    return document, pdfs[:2]
 
 
 def enrich(item):
@@ -98,6 +110,8 @@ def enrich(item):
     try:
         text, pdfs = read_document(item['url'])
         texts.append(text)
+        if getattr(text, 'heading', ''):
+            result['document_title'] = text.heading
         if getattr(text, 'incomplete', False):
             warnings.append('Belge/eklerin tamamı güvenle okunamadı')
         if getattr(text, 'pdf_digest', None):

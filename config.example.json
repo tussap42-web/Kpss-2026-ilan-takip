@@ -1,0 +1,57 @@
+{
+  "project_name": "KPSS 2026 Ilan Takip Sistemi",
+  "candidate": {
+    "name": "Ornek Aday",
+    "education_level": "on_lisans",
+    "department": "Bilgisayar Programciligi",
+    "kpss_year": 2026,
+    "kpss_score_type": "P93",
+    "kpss_score": 70.0,
+    "score_is_approximate": true,
+    "birth_year": null,
+    "certificates": [],
+    "additional_qualifications": []
+  },
+  "search_settings": {
+    "priority_city": "Konya",
+    "all_turkey": true,
+    "qualification_codes": [
+      "3001"
+    ],
+    "positions": [
+      "memur",
+      "sozlesmeli_personel_4b",
+      "destek_personeli",
+      "temizlik_gorevlisi",
+      "hizmetli",
+      "buro_personeli",
+      "kamu_iscisi"
+    ],
+    "include_jobs_without_kpss": true,
+    "only_active_applications": true,
+    "check_special_conditions": true
+  },
+  "schedule": {
+    "timezone": "Europe/Istanbul",
+    "start_hour": 9,
+    "end_hour": 23,
+    "interval_minutes": 60
+  },
+  "notifications": {
+    "platform": "telegram",
+    "enabled": true,
+    "recipients": [],
+    "notify_new_jobs": true,
+    "notify_deadline_approaching": true,
+    "prevent_duplicates": true,
+    "deadline_reminder_days": [
+      3,
+      1,
+      0
+    ],
+    "max_notifications_per_run": 20
+  },
+  "processing": {
+    "max_details_per_run": 12
+  }
+}

@@ -1,0 +1,6 @@
+__pycache__/
+*.py[cod]
+config.local.json
+.env
+.venv/
+preview.log
