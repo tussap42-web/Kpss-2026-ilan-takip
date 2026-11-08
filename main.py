@@ -329,6 +329,7 @@ def scan(config: dict, sources: dict, state_path: Path, dry_run: bool) -> int:
             item.update(assessment=assessment, checked_on=now.date().isoformat(), policy=policy,
                         notice_kind=kind, detail_status='incomplete' if incomplete else 'checked',
                         first_seen=notices[item['url']].get('first_seen', now.isoformat()),
+                        requires_detail_verification=incomplete and urlsplit(item['url']).path.lower().endswith('.pdf'),
                         requires_date_verification=needs_date_verification(item['url'], assessment))
             notices[item['url']] = item
     documents, aliases = state.setdefault('documents', {}), state.setdefault('aliases', {})
@@ -350,7 +351,7 @@ def scan(config: dict, sources: dict, state_path: Path, dry_run: bool) -> int:
         if item.get('policy') != policy:
             continue
         assessment = item['assessment']
-        if item.get('notice_kind') in NON_RECRUITMENT or item.get('requires_date_verification'):
+        if item.get('notice_kind') in NON_RECRUITMENT or item.get('requires_date_verification') or item.get('requires_detail_verification'):
             continue
         if assessment.get('application_status') in ('not_started', 'closed') and config['search_settings'].get('only_active_applications', True):
             continue
@@ -417,6 +418,7 @@ def scan(config: dict, sources: dict, state_path: Path, dry_run: bool) -> int:
            messages_sent=sent, pending_messages=pending, pending_details=max(0, len(refresh)-limit),
            dry_run=dry_run, source_health=health,
            quarantined_news=sum(bool(i.get('requires_date_verification')) for i in notices.values()),
+           quarantined_documents=sum(bool(i.get('requires_detail_verification')) for i in notices.values()),
            non_recruitment_notices=sum(i.get('notice_kind') in NON_RECRUITMENT for i in notices.values()))
     if partial:
         print('::warning::Bazı liste veya ilan belgeleri okunamadı; kapsam eksik.')

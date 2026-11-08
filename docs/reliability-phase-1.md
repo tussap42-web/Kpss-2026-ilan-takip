@@ -24,7 +24,7 @@ Konya PDF’sinin kadroları iki sürümde de tam ayrıştırılamadı: **0 → 
 ## Testler
 
 - Önceki 54 testin tamamı değişmeden geçti.
-- 29 yeni regresyon testi eklendi; toplam 83 test geçti.
+- 30 yeni regresyon testi eklendi; toplam 84 test geçti.
 - `python -m unittest discover -s tests -v`.
 - Yeni testler `tests/test_reliability.py` içinde: yanlış tür/puan, karışık ve kısmi kadrolar, tarihler ve saat, keşif kuyruğu/kesinti, kaynak sağlık geçmişi, özel ayar dosyası, preview gizliliği ve eski alındı uyumu.
 - Gerçek resmî HTML/PDF baytlarıyla yerel karşılaştırma yapıldı; bu belgelerin tam kopyaları ve kullanıcı profili depoya eklenmedi. SBB tarihi kısa belge cümlesiyle sınandı; tam PDF yerel işleme başarısı iddia edilmiyor.
@@ -34,6 +34,8 @@ Konya PDF’sinin kadroları iki sürümde de tam ayrıştırılamadı: **0 → 
 Eksik belgeyle bütün ilan kesin elenmez. Tam okunmuş bir belgede açık başvuru aralığı, kadro tablosunun belirsizliğinden ayrı tutulur. Birden çok kadroya ait çelişkili tarihler birleştirilmez. Yıl içermeyen haber tarihine yayımlanma yılını ekleyerek uygunluk kararı verilmez.
 
 İlan adayı filtreleme hâlâ kurallara dayanır; bütün kurumları ve bütün başlık biçimlerini kapsamaz. Sonuç/iptal/düzeltmeleri eski bir ilana bağlayıp güncelleme bildirimi üretmek sonraki aşamadır. `/haber/` dışındaki tarihi bilinmeyen kayıtlar, açık olduğu garanti edilmeden incelemeye gönderilebilir.
+
+Doğrudan PDF bağlantısı okunamıyorsa veya eksik okunmuşsa yalnız başlığına dayanarak bildirim gönderilmez; belge doğrulama kuyruğunda tutulur. Canlı kontrolde Konya itfaiye PDF'si erişim/politika nedeniyle okunamadı. Bu kaynakta kapanış tarihi doğrulanmış gibi gösterilmedi.
 
 Tek ortak aday, 20 toplam deneme bütçesi, cron, production secrets ve eski teslimat parmak izleri korunur. Çok kullanıcılı profil, /stop-/sil, token değişiminden bağımsız kimlik, Telegram 429 kuyruğu, özel veritabanı, git push kaybına dayanıklılık, kapsam genişletme ve WhatsApp bu paketle tamamlanmadı.
 

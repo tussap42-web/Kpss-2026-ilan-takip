@@ -192,6 +192,14 @@ class ReliabilityTests(unittest.TestCase):
         self.assertEqual(count,0)
         self.assertTrue(state['notices'][news['url']]['requires_date_verification'])
 
+    def test_unreadable_direct_pdf_is_quarantined_instead_of_title_only_notification(self):
+        pdf=dict(ITEM,url='https://example.org/job.pdf')
+        with tempfile.TemporaryDirectory() as d:
+            _,count,state,_=self.run_scan(Path(d)/'s.json',items=[pdf],
+                enrich_fn=lambda i:dict(i,text='',detail_warning='İlan ayrıntıları okunamadı (PermissionError)'))
+        self.assertEqual(count,0)
+        self.assertTrue(state['notices'][pdf['url']]['requires_detail_verification'])
+
     def test_discoveries_survive_detail_budget_and_disappearing_listing(self):
         cfg=copy.deepcopy(CFG);cfg['processing']['max_details_per_run']=1
         second=dict(ITEM,url='https://example.org/b')
