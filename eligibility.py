@@ -1,28 +1,45 @@
 """Conservative evidence extraction; ambiguous notices always require human review."""
 import re
-from datetime import date
-from dates_tr import deadlines
+from datetime import date, datetime
+from zoneinfo import ZoneInfo
+from dates_tr import deadlines, application_period
 
 
 def norm(text):
     return re.sub(r'\s+', ' ', text.translate(str.maketrans('İıŞşĞğÜüÖöÇç', 'IiSsGgUuOoCc')).lower()).strip()
 
 
-def assess(text, config, today=None):
+def assess(text, config, today=None, now=None):
     today = today or date.today()
     text = norm(text)
     candidate = config['candidate']
     settings = config['search_settings']
     reasons, warnings = [], []
     result = {'status': 'review', 'reasons': reasons, 'warnings': warnings,
-              'deadline': None, 'minimum_score': None}
+              'deadline': None, 'minimum_score': None,
+              'opens_on': None, 'deadline_time': None, 'application_status': 'unverified'}
     # Multiple dates are ambiguous: never use the first date of a multi-posting page.
-    dates = deadlines(text)
+    period = application_period(text)
+    dates = period['dates']
     if len(dates) == 1:
         deadline = dates.pop()
         result['deadline'] = deadline.isoformat()
-        if deadline < today and settings.get('only_active_applications', True):
-            reasons.append('Son başvuru tarihi geçmiş')
+        result['deadline_time'] = period['deadline_time']
+        result['opens_on'] = period['opens_on'].isoformat() if period['opens_on'] else None
+        result['application_status'] = 'open'
+        if deadline < today:
+            result['application_status'] = 'closed'
+            if settings.get('only_active_applications', True):
+                reasons.append('Son başvuru tarihi geçmiş')
+        elif period['opens_on'] and period['opens_on'] > today:
+            result['application_status'] = 'not_started'
+        if now and period['deadline_time']:
+            zone = ZoneInfo(config.get('schedule', {}).get('timezone', 'Europe/Istanbul'))
+            closes = datetime.fromisoformat(deadline.isoformat() + 'T' + period['deadline_time']).replace(tzinfo=zone)
+            if now >= closes:
+                result['application_status'] = 'closed'
+                if settings.get('only_active_applications', True) and 'Son başvuru tarihi geçmiş' not in reasons:
+                    reasons.append('Son başvuru saati geçmiş')
     else:
         warnings.append('Son başvuru tarihi belirlenemedi veya birden fazla tarih var')
     # Only explicit score type + explicit minimum wording count as score evidence.
@@ -79,7 +96,7 @@ def assess(text, config, today=None):
     return result
 
 
-ROLE = r'(?:buro personeli|destek personeli|temizlik gorevlisi|guvenlik gorevlisi|hizmetli|tekniker|teknisyen|grafiker|memur|sofor|zabita memuru|itfaiye eri)'
+ROLE = r'(?:buro personeli|destek personeli|temizlik gorevlisi|guvenlik gorevlisi|hizmetli|tekniker|teknisyen|grafiker|zabita memuru|itfaiye eri|memur|sofor)'
 
 
 def table_positions(rows):
@@ -98,8 +115,10 @@ def table_positions(rows):
         role = cell('kadro|unvan|pozisyon')
         kind = cell(r'puan tur|kpss tur')
         score = cell(r'taban puan|asgari puan|en az puan|minimum puan')
-        if not role or not re.fullmatch(r'(?:kpss\s*)?p\s*(?:3|93|94)', kind) or not re.fullmatch(r'\d{2,3}(?:[,.]\d+)?', score):
+        match = re.fullmatch(r'(?:en az |asgari |minimum )?(\d{2,3}(?:[,.]\d+)?)(?: puan)?', score)
+        if not role or not re.fullmatch(r'(?:kpss\s*)?p\s*(?:3|93|94)', kind) or not match:
             continue
+        score = match[1]
         if not 0 <= float(score.replace(',', '.')) <= 100:
             continue
         degree = cell('ogrenim|mezuniyet|bolum|nitelik')
@@ -129,8 +148,29 @@ def line_positions(text):
     return positions
 
 
-def assess_notice(text, config, today=None, rows=None, incomplete=False):
-    result = assess(text, config, today)
+def complete_positions(text, rows, positions, incomplete):
+    """Whole-notice rejection needs proof that no unread position was omitted."""
+    if incomplete or not positions or re.search(r'\bdiger\b|\bekte\b|\bekindeki\b|\bdevami\b', norm(text)):
+        return False
+    # Extra score-bearing content is evidence that the parsed table is partial.
+    if len(re.findall(r'\bp\s*(?:3|93|94)\b', norm(text))) > len(positions):
+        return False
+    if rows:
+        # Strict flat tables only: every nonempty row after one header must parse.
+        nonempty = [r for r in rows if any(str(c).strip() for c in r)]
+        return (len(nonempty) == len(positions) + 1
+                and len(table_positions(nonempty)) == len(positions)
+                and all(len(r) == len(nonempty[0]) for r in nonempty))
+    lines = [norm(line) for line in text.splitlines() if line.strip()]
+    lines = [line for line in lines if not re.match(r'^(?:son basvuru|basvuru bitis)', line)]
+    return len(lines) == len(positions) and all(';' not in line and len(line_positions(line)) == 1 for line in lines)
+
+
+def assess_notice(text, config, today=None, rows=None, incomplete=False, now=None):
+    document_incomplete = incomplete
+    result = assess(text, config, today, now=now)
+    global_reasons = list(result['reasons'])
+    global_warnings = list(result['warnings'])
     parsed_table = table_positions(rows or [])
     table_like = sum(len(row) >= 3 for row in (rows or [])) >= 2
     if table_like and not parsed_table:
@@ -138,31 +178,48 @@ def assess_notice(text, config, today=None, rows=None, incomplete=False):
     positions = parsed_table or line_positions(text)
     evidence = []
     for position in positions:
-        assessment = assess(position['text'], config, today)
+        assessment = assess(position['text'], config, today, now=now)
         # Never inherit a deadline from a different position.
         position = dict(position, assessment=assessment)
         evidence.append(position)
     result['positions'] = evidence
+    result['positions_complete'] = complete_positions(text, rows, positions, incomplete)
     if evidence:
         # A single failed position may never exclude an entire mixed announcement.
         result['status'] = 'review'
         result['reasons'] = []
         result['minimum_score'] = None
-        result['warnings'] = ['Kadro koşulları ayrı değerlendirildi; genel/özel şartlar ayrıca kontrol edilmeli']
+        result['warnings'] = list(dict.fromkeys(['Kadro koşulları ayrı değerlendirildi; genel/özel şartlar ayrıca kontrol edilmeli'] + global_warnings))
         dates = deadlines(norm(text))
         result['deadline'] = next(iter(dates)).isoformat() if len(dates) == 1 else None
         # A global date is only safe when each row has no local date or all match it.
         row_dates = [deadlines(norm(p['text'])) for p in evidence]
         if len(evidence) > 1 and any(row_dates):
             result['deadline'] = None
-        if result['deadline'] and date.fromisoformat(result['deadline']) < (today or date.today()) and config['search_settings'].get('only_active_applications', True):
+            result['deadline_time'] = None
+            result['opens_on'] = None
+            result['application_status'] = 'unverified'
+        if result['positions_complete'] and all(p['assessment']['status'] == 'excluded' for p in evidence):
             result['status'] = 'excluded'
-            result['reasons'] = ['Son başvuru tarihi geçmiş']
+            result['reasons'] = ['Ayrıştırılan kadroların tamamı için açık bir koşul karşılanmıyor']
+        if result['deadline'] and any('Son başvuru' in reason for reason in global_reasons):
+            result['status'] = 'excluded'
+            result['reasons'] = [r for r in global_reasons if 'Son başvuru' in r]
     # Flat/partial tables are insufficient for whole-announcement rejection.
     roles = re.findall(ROLE, norm(text))
     if (len(set(roles)) > 1 and not evidence) or incomplete:
         result['status'] = 'review'
         result['reasons'] = []
-        result['deadline'] = None
-        result['warnings'].append('Belge/kadro kapsamı belirsiz; kesin eleme yapılmadı')
+        result['observed_deadline'] = result['deadline']
+        # A fully read, explicit application period is independent of an
+        # ambiguous qualifications table. Partial attachments remain uncertain.
+        if document_incomplete or not application_period(text)['explicit_application_range']:
+            result['deadline'] = None
+            result['deadline_time'] = None
+            result['opens_on'] = None
+            result['application_status'] = 'unverified'
+        elif result['application_status'] == 'closed' and config['search_settings'].get('only_active_applications', True):
+            result['status'] = 'excluded'
+            result['reasons'] = ['Doğrulanan başvuru süresi geçmiş; kadro şartları ayrıca belirsiz']
+        result['warnings'].append('Belge/kadro kapsamı belirsiz; kadro şartlarından kesin eleme yapılmadı')
     return result

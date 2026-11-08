@@ -3,6 +3,7 @@ from collections import deque
 from html.parser import HTMLParser
 from urllib.parse import urljoin, urlsplit, urlunsplit, parse_qsl, urlencode
 import xml.etree.ElementTree as ET
+from network import safe_error
 
 
 def canonical(url):
@@ -103,7 +104,7 @@ def scan_source(source, get_html, is_job_link, normalize):
                     if link not in visited and link not in pending:
                         pending.append(link)
         except (OSError, ValueError, ET.ParseError) as exc:
-            errors.append(type(exc).__name__)
+            errors.append(safe_error(exc))
     source['_scan_stats'] = {'pages_ok': ok, 'pages_failed': len(errors), 'errors': errors,
                              'pages_attempted': len(visited), 'navigation_pending': len(pending)}
     if not ok:

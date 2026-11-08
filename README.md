@@ -1,6 +1,6 @@
 # KPSS 2026 İlan Takip
 
-Emre: ön lisans / Grafik Tasarım / P93 / yaklaşık 70,60. Konya öncelikli; diğer şehirler dışlanmaz. Mevcut Telegram secrets ve bildirim geçmişi kullanılır.
+Tek aday profiliyle çalışan, Konya öncelikli Telegram ilan takip sistemi. Diğer şehirler dışlanmaz; mevcut Telegram secrets ve bildirim geçmişi korunur. Bu sürüm çok kullanıcılı kişisel abonelik hizmeti değildir.
 
 ## İlan keşfi ve gerçek kapsam
 
@@ -38,7 +38,7 @@ Karmaşık/birleşik hücreler, kaymış/satırlara bölünmüş tablolar veya e
 
 Cron **`7 6-20 * * *` UTC**, Türkiye **09:07–23:07**. GitHub gecikme/atlama yapabilir. 7 Kasım 2026 22:39 UTC'deki eski schedule çalışması Türkiye'de 8 Kasım 01:39'a denk geldiği için eski saat kontrolünden atlanmıştır; bu bir Telegram arızası değildir. Güncel elle başlatılan workflow `FORCE_RUN=1` kullanır; otomatik çalışma yerel saat aralığını denetler.
 
-`RUN_SUMMARY` ve Actions adım özetinde şu durumlar ayrılır: `success`, `skipped_time_window`, `skipped_notifications_disabled`, `partial_source_error`, `source_error`, `telegram_error`, `configuration_error`, `program_error`. Ön izlemede durumun önüne `preview_` eklenir. Tam kaynak/Telegram hatası başarısız çıkış; kısmi kaynak hatası açık uyarı ve sayımla raporlanır.
+`RUN_SUMMARY` ve Actions adım özetinde şu durumlar ayrılır: `success`, `skipped_time_window`, `skipped_notifications_disabled`, `partial_source_error`, `source_error`, `telegram_error`, `configuration_error`, `program_error`. Ön izlemede durumun önüne `preview_` eklenir. Kaynak/ayrıntı hatası kısmi olsa da başarısız çıkış verir; okunabilen kaynakların bildirimi ve geçmişin kaydı sürer. Yeşil sonuç eksik taramayı saklamaz.
 
 Mevcut `TELEGRAM_BOT_TOKEN` / virgülle ayrılmış sayısal `TELEGRAM_CHAT_IDS` secrets değerlerini değiştirmeyin. Alıcılar bota `/start` göndermiş olmalıdır. `find-chats` herkese açık Actions günlüklerine chat ID yazar; yalnız gerektiğinde çalıştırın. Tokenları dosyaya yazmayın. `state/seen.json` varsa koruyun; yoksa ilk gerçek taramada oluşturulur ve commit edilir.
 
@@ -48,6 +48,30 @@ python -m unittest discover -s tests -v
 python main.py --mode preview
 ```
 
-PR CI, gerçek kaynaklarda **Telegram secrets olmadan** preview çalıştırır ve `preview-log` çıktısını saklar. Preview mesaj göndermez ve state yazmaz. Gerçek gönderim modu `scan`dır. Her taramada en çok 12 ayrıntı incelenir. `config.json` aday profili, bildirim bütçesi ve hatırlatma günlerini yönetir; çalışma saatini değiştirirken workflow cron'u da düzenlenmelidir. `positions` kapsamlı kadro filtresi, `qualification_codes` ise doğrulanmış satır eşleşmesi olmadan kesin uygunluk filtresi değildir. `prevent_duplicates` güvenilir teslimat için daima uygulanır.
+PR CI, gerçek kaynaklarda **Telegram secrets olmadan**, sentetik `config.example.json` profiliyle preview çalıştırır ve `preview-log` çıktısını saklar. Preview aday puanı/uygunluk gerekçesi basmaz, mesaj göndermez ve state yazmaz. Dış kaynak hatası bu tanı adımında görünür; birim testleri dış sitelerin erişimine bağlı değildir. Gerçek gönderim modu `scan`dır. Her taramada en çok 12 ayrıntı incelenir. `config.json` aday profili, bildirim bütçesi ve hatırlatma günlerini yönetir; çalışma saatini değiştirirken workflow cron'u da düzenlenmelidir. `positions` kapsamlı kadro filtresi, `qualification_codes` ise doğrulanmış satır eşleşmesi olmadan kesin uygunluk filtresi değildir. `prevent_duplicates` güvenilir teslimat için daima uygulanır.
 
 Kaynak belgeleri: [ÖSYM duyuruları](https://www.osym.gov.tr/Duyurular/Index), [Yerel Yönetimler](https://yerelyonetimler.csb.gov.tr/duyurular), [Konya İK](https://www.konya.bel.tr/birim/insan-kaynaklari-ve-egitim-dairesi-baskanligi/duyurular), [PDF metin çıkarma sınırları](https://pypdf.readthedocs.io/en/stable/user/extract-text.html), [GitHub zamanlaması](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows#schedule).
+
+
+## Güvenilirlik paketi A
+
+Ölçülmüş [önce / sonra sonuçları ve kalan işler](docs/reliability-phase-1.md).
+
+- Genelge, sonuç, yedek aday, sınav yeri, iptal/düzeltme ve başvuru bilgi sayfaları yeni alım akışından ayrılır. Ayrıntıdaki H1 başlığı da denetlenir; metnin herhangi bir yerinde sonuç sözcüğünün geçmesi tek başına ret nedeni değildir. İptal/düzeltmeyi eski ilana bağlama sonraki aşamadır.
+- Açık sayısal başvuru aralıkları, PDF içindeki aralıklı yazılmış tarihler ve bazı başlangıç/bitiş cümleleri desteklenir. Açık kapanış saati Türkiye saatinde değerlendirilir. Yılı eksik tarihler tamamlanmaz. Tam tarih bulunamayan `/haber/` kayıtları karantinada tutulur. Diğer belirsiz ilanlarda açık olduğu iddia edilmeden inceleme bildirimi sürebilir.
+- Kadroların tamamının ayrıştırıldığı doğrulanabilen basit metin/tablolarda tüm kadrolar eleniyorsa ilan gönderilmez. Eksik PDF veya okunmamış kadro ihtimalinde kesin eleme yapılmaz. Çok satırlı gerçek PDF tablolarının tamamı henüz çözümlenmez.
+- Her keşif ayrıntı okumadan önce kalıcı kuyruğa girer; bütçeye takılması ve listeden kaybolması keşfi silmez. Bu, GitHub runner veya git push kaybına karşı ayrı bir veritabanı garantisi değildir.
+- `source_health`, son liste erişimi ve ardışık hata sayısını saklar. Sayfanın erişilebilir olması bütün ilanların kapsandığı anlamına gelmez.
+
+### Özel profil dosyası
+
+Mevcut otomasyon için `config.json` geri dönüşü korunur. `config.example.json` sentetik örnektir; gerçek puanınızı buna yazmayın. Yerel veya güvenli kalıcı sunucuda örneği `.gitignore` ile dışlanan `config.local.json` adına kopyalayabilirsiniz. Öncelik: `--config` → `KPSS_CONFIG_FILE` → varsa `config.local.json` → eski `config.json`. Göreli yollar proje dizinine göredir.
+
+Bu değişiklik gerçek profili mevcut Actions ortamına otomatik taşımaz. `config.json` ve eski git geçmişindeki kişisel bilgilerin temizliği, alıcı/türev uygunluk geçmişinin özel saklanması ve KVKK akışı henüz tamamlanmış değildir. Yeni kullanıcı verisi public dosyalara eklenmemelidir. Token ve alıcı secrets değerleri değişmez.
+
+```sh
+python -m unittest discover -s tests -v
+python main.py --mode preview --config config.example.json
+```
+
+Kısmi taramada preview çıkış kodu 1 olabilir; özette kaynak hatasını okuyun. Gerçek `scan` ile test mesajı göndermeyin.

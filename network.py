@@ -11,6 +11,24 @@ _locks, _policies, _last = {}, {}, {}
 _guard = threading.Lock()
 
 
+def safe_error(exc):
+    """Stable, useful diagnostics without URLs, response bodies or credentials."""
+    if isinstance(exc, HTTPError):
+        return 'http_' + str(exc.code)
+    if isinstance(exc, PermissionError):
+        message = str(exc).lower()
+        if 'robots' in message:
+            return 'robots_denied_or_unavailable'
+        if 'doğrulama' in message:
+            return 'automation_challenge'
+        return 'access_denied'
+    if isinstance(exc, TimeoutError):
+        return 'timeout'
+    if isinstance(exc, ValueError):
+        return 'invalid_or_unsupported_content'
+    return type(exc).__name__
+
+
 def origin(url):
     p = urlsplit(url)
     if p.scheme != 'https' or not p.hostname or p.username or p.password:

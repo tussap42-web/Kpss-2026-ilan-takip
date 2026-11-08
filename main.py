@@ -14,8 +14,9 @@ from datetime import datetime, date
 from concurrent.futures import ThreadPoolExecutor
 from eligibility import assess_notice
 from discovery import scan_source as discover_source, canonical
-from network import fetch_bytes
+from network import fetch_bytes, safe_error
 from details import enrich
+from notice_types import notice_kind, NON_RECRUITMENT, needs_date_verification
 from urllib.error import HTTPError, URLError
 from urllib.parse import urljoin, urlsplit, urlunsplit, parse_qsl, urlencode
 from urllib.request import Request, urlopen
@@ -46,6 +47,8 @@ def normalize(text: str) -> str:
 
 
 def is_job_link(title: str, url: str) -> bool:
+    if notice_kind(title, url) in NON_RECRUITMENT:
+        return False
     title = normalize(title)
     path = normalize(urlsplit(url).path.replace('-', ' ').replace('_', ' '))
     if title in ('personel alimi', 'personel alim ilanlari', 'kamu personeli alim ilanlari', 'memur alimi', 'duyurular', 'ilanlar'):
@@ -57,6 +60,8 @@ def is_job_link(title: str, url: str) -> bool:
     if any(x in title for x in NOT_JOB):
         return False
     if any(x in title for x in JOB_PHRASES):
+        return True
+    if re.search(r'(?:itfaiye eri|zabita memuru|tekniker|teknisyen|grafiker|sofor)\s+alim', title):
         return True
     # Do not treat a menu item named "İlanlar" or "Duyurular" as a job posting.
     if any(x in title for x in ('alim', 'basvuru', 'yerlestirme', 'tercih')):
@@ -126,13 +131,26 @@ def get_state(path: Path) -> dict:
     data = json.loads(path.read_text(encoding='utf-8'))
     if not isinstance(data, dict) or not isinstance(data.get('sent'), dict):
         raise ValueError('state/seen.json yanlış biçimde')
-    for name in ('notices', 'documents', 'aliases'):
+    for name in ('notices', 'documents', 'aliases', 'source_health'):
         if name in data and not isinstance(data[name], dict):
             raise ValueError('Durum dosyası yanlış biçimde: ' + name)
     for record in data['sent'].values():
         if not isinstance(record, dict) or not isinstance(record.get('chats', []), list) or any(not isinstance(chat, str) for chat in record.get('chats', [])):
             raise ValueError('Bildirim geçmişi bozuk; dosya değiştirilmedi')
     return data
+
+
+def load_config(path=None):
+    """Optional private file; legacy config remains the fallback for existing scans."""
+    selected = path or os.getenv('KPSS_CONFIG_FILE')
+    if selected:
+        chosen = Path(selected)
+        if not chosen.is_absolute():
+            chosen = BASE / chosen
+    else:
+        private = BASE / 'config.local.json'
+        chosen = private if private.exists() else BASE / 'config.json'
+    return json.loads(chosen.read_text(encoding='utf-8'))
 
 
 def save_state(path: Path, state: dict) -> None:
@@ -182,7 +200,10 @@ def message_for(item: dict, config: dict) -> str:
     lines = [heading, city + 'Kaynak: ' + item['source'], item['title'],
              f"Aday: {config['candidate']['kpss_score_type']} / {config['candidate']['kpss_score']}"]
     if assessment.get('deadline'):
-        lines.append('Son başvuru: ' + assessment['deadline'])
+        clock = (' ' + assessment['deadline_time'] + ' (Türkiye saati)') if assessment.get('deadline_time') else ''
+        lines.append('Son başvuru: ' + assessment['deadline'] + clock)
+    else:
+        lines.append('Başvuru süresi doğrulanamadı; açık ilan olduğu garanti edilmez.')
     if item.get('detail_warning'):
         lines.append(item['detail_warning'])
     for position in assessment.get('positions', [])[:8]:
@@ -245,6 +266,7 @@ def scan(config: dict, sources: dict, state_path: Path, dry_run: bool) -> int:
     # Validate state BEFORE external requests, and never replace corrupt history.
     state = get_state(state_path)
     notices = state.setdefault('notices', {})
+    health = state.setdefault('source_health', {})
     settings = config['notifications']
     failures, all_items, source_stats = 0, {}, []
     configured = [source for source in sources['sources'] if source.get('enabled', True)]
@@ -252,7 +274,7 @@ def scan(config: dict, sources: dict, state_path: Path, dry_run: bool) -> int:
         try:
             return source, scan_source(source), None
         except (OSError, ValueError) as exc:
-            return source, [], type(exc).__name__
+            return source, [], safe_error(exc)
     with ThreadPoolExecutor(max_workers=4) as pool:
         for source, items, error in pool.map(read_source, configured):
             stats = dict(source.get('_scan_stats', {}), name=source['name'], candidates=len(items))
@@ -260,33 +282,54 @@ def scan(config: dict, sources: dict, state_path: Path, dry_run: bool) -> int:
                 failures += 1
                 stats['error'] = error
             source_stats.append(stats)
+            previous = health.get(source['name'], {})
+            healthy = not error and not stats.get('pages_failed', 0)
+            health[source['name']] = {
+                'last_attempt_at': now.isoformat(),
+                'last_list_success_at': now.isoformat() if healthy else previous.get('last_list_success_at'),
+                'consecutive_failures': 0 if healthy else previous.get('consecutive_failures', 0) + 1,
+                'list_access': 'readable' if healthy else 'partial' if stats.get('pages_ok', 0) else 'unavailable',
+                'content_coverage': 'unverified',
+                'errors': stats.get('errors', []) or ([error] if error else []),
+            }
             print('SOURCE ' + json.dumps(stats, ensure_ascii=False))
             for item in items:
                 item['url'] = canonical(item['url'])
                 all_items[item['url']] = item
+    # Persist discovery metadata BEFORE expensive detail I/O; preserve receipts.
+    for url, item in all_items.items():
+        notices.setdefault(url, dict(item, first_seen=now.isoformat(), detail_status='pending'))
+    if not dry_run:
+        save_state(state_path, state)
     if not configured or failures == len(configured):
-        report('source_error', sources=source_stats, messages_sent=0)
+        report('source_error', sources=source_stats, source_health=health, messages_sent=0)
         return 1
-    policy = hashlib.sha256(('audit-v2:' + json.dumps(config, sort_keys=True)).encode()).hexdigest()[:16]
+    policy = hashlib.sha256(('reliability-v3:' + json.dumps(config, sort_keys=True)).encode()).hexdigest()[:16]
     priority = normalize(config['search_settings']['priority_city'])
     refresh = []
-    for url, item in {**notices, **all_items}.items():
-        cached = notices.get(url)
+    for url, cached in notices.items():
+        item = dict(cached, **all_items.get(url, {}))
         # Prioritize unseen notices so a large daily refresh never starves new jobs.
-        due = not cached or cached.get('checked_on') != now.date().isoformat() or cached.get('policy') != policy
+        due = not cached.get('assessment') or cached.get('checked_on') != now.date().isoformat() or cached.get('policy') != policy
         if due:
-            refresh.append((cached is not None, priority not in normalize(item['title'] + ' ' + item['source']), url, item))
-    refresh.sort(key=lambda item: item[:3])
+            # Pending discoveries age in FIFO order, independently of listing survival.
+            refresh.append((bool(cached.get('assessment')), cached.get('first_seen', ''),
+                            priority not in normalize(item['title'] + ' ' + item['source']), url, item))
+    refresh.sort(key=lambda item: item[:4])
     limit = max(1, min(int(config.get('processing', {}).get('max_details_per_run', 12)), 30))
     detail_failures = 0
     with ThreadPoolExecutor(max_workers=4) as pool:
-        for item in pool.map(enrich, [entry[3] for entry in refresh[:limit]]):
+        for item in pool.map(enrich, [entry[4] for entry in refresh[:limit]]):
             incomplete = bool(item.get('detail_warning'))
             detail_failures += int(incomplete)
-            assessment = assess_notice(item.get('text', ''), config, now.date(), rows=item.get('rows'), incomplete=incomplete)
+            assessment = assess_notice(item.get('text', ''), config, now.date(), rows=item.get('rows'), incomplete=incomplete, now=now)
+            kind = notice_kind(item['title'], item['url'], item.get('document_title', ''))
             item.pop('text', None)
             item.pop('rows', None)
-            item.update(assessment=assessment, checked_on=now.date().isoformat(), policy=policy)
+            item.update(assessment=assessment, checked_on=now.date().isoformat(), policy=policy,
+                        notice_kind=kind, detail_status='incomplete' if incomplete else 'checked',
+                        first_seen=notices[item['url']].get('first_seen', now.isoformat()),
+                        requires_date_verification=needs_date_verification(item['url'], assessment))
             notices[item['url']] = item
     documents, aliases = state.setdefault('documents', {}), state.setdefault('aliases', {})
     for url, item in notices.items():
@@ -307,11 +350,19 @@ def scan(config: dict, sources: dict, state_path: Path, dry_run: bool) -> int:
         if item.get('policy') != policy:
             continue
         assessment = item['assessment']
+        if item.get('notice_kind') in NON_RECRUITMENT or item.get('requires_date_verification'):
+            continue
+        if assessment.get('application_status') in ('not_started', 'closed') and config['search_settings'].get('only_active_applications', True):
+            continue
         if assessment['status'] == 'excluded':
             continue
         deadline = assessment.get('deadline')
         if deadline and deadline < now.date().isoformat() and config['search_settings'].get('only_active_applications', True):
             continue
+        if deadline and assessment.get('deadline_time') and config['search_settings'].get('only_active_applications', True):
+            closes = datetime.fromisoformat(deadline + 'T' + assessment['deadline_time']).replace(tzinfo=zone)
+            if now >= closes:
+                continue
         root = anchor(url)
         if root in used:
             continue
@@ -335,7 +386,8 @@ def scan(config: dict, sources: dict, state_path: Path, dry_run: bool) -> int:
         completed = receipts(key)
         if dry_run:
             if not completed:
-                print('[ÖN İZLEME] ' + message_for(item, config))
+                # Public CI must not disclose a private candidate's score/reasons.
+                print('[ÖN İZLEME] ' + item['title'] + '\n' + item['url'])
             continue
         for chat_id in ordered_chats:
             receipt = chat_fingerprint(token, chat_id)
@@ -363,18 +415,21 @@ def scan(config: dict, sources: dict, state_path: Path, dry_run: bool) -> int:
     report(('preview_' + status) if dry_run else status, local_time=now.isoformat(), timezone=str(zone),
            sources=source_stats, details_failed=detail_failures, messages_attempted=attempts,
            messages_sent=sent, pending_messages=pending, pending_details=max(0, len(refresh)-limit),
-           dry_run=dry_run)
+           dry_run=dry_run, source_health=health,
+           quarantined_news=sum(bool(i.get('requires_date_verification')) for i in notices.values()),
+           non_recruitment_notices=sum(i.get('notice_kind') in NON_RECRUITMENT for i in notices.values()))
     if partial:
         print('::warning::Bazı liste veya ilan belgeleri okunamadı; kapsam eksik.')
-    return 1 if errors else 0
+    return 1 if errors or partial else 0
 
 
 def main() -> int:
     parser = argparse.ArgumentParser(description='KPSS ilan adayı takip aracı')
     parser.add_argument('--mode', choices=('scan', 'preview', 'find-chats', 'test-message'), default='scan')
     parser.add_argument('--state-file', type=Path, default=DEFAULT_STATE)
+    parser.add_argument('--config', type=Path, help='Özel profil/ayar dosyası; depoya eklemeyin')
     args = parser.parse_args()
-    config = json.loads((BASE / 'config.json').read_text(encoding='utf-8'))
+    config = load_config(args.config)
     sources = json.loads((BASE / 'sources.json').read_text(encoding='utf-8'))
     if args.mode == 'find-chats':
         token = os.getenv('TELEGRAM_BOT_TOKEN', '').strip()
