@@ -40,8 +40,13 @@ class ScoreMessageTests(unittest.TestCase):
 
     def test_ambiguous_scores_are_not_collapsed_to_lowest_threshold(self):
         message, _ = self.message('KPSS P93 en az 60 puan. KPSS P3 en az 75 puan.')
-        self.assertIn('Kadroya göre değişiyor', message)
+        self.assertIn('Kadro eşleştirmesi doğrulanamadı', message)
         self.assertNotIn('Başvuru eşiği: En az', message)
+
+    def test_one_position_threshold_is_not_assigned_to_unread_other_position(self):
+        message, _ = self.message('Büro personeli P93 en az 75 puan; destek personeli şartları ektedir.')
+        self.assertIn('Kadro eşleştirmesi doğrulanamadı', message)
+        self.assertNotIn('Başvuru eşiği: En az 75', message)
 
     def test_incomplete_document_does_not_present_score_as_verified(self):
         message, _ = self.message('KPSS P93 en az 60 puan', incomplete=True)

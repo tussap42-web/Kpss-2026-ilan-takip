@@ -179,6 +179,8 @@ def assess_notice(text, config, today=None, rows=None, incomplete=False):
             result['reasons'] = ['Son başvuru tarihi geçmiş']
     # Flat/partial tables are insufficient for whole-announcement rejection.
     roles = re.findall(ROLE, norm(text))
+    if len(set(roles)) > 1 and not evidence:
+        result['score_ambiguous'] = True
     if (len(set(roles)) > 1 and not evidence) or incomplete:
         result['status'] = 'review'
         result['reasons'] = []

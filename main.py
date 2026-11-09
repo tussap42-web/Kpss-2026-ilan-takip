@@ -180,7 +180,7 @@ def requirement_lines(assessment: dict, education: str = '') -> list[str]:
     if not assessment.get('evidence_complete', False):
         score = 'KPSS şartı: Belge eksik; puan şartı doğrulanamadı'
     elif assessment.get('score_ambiguous'):
-        score = f'KPSS: {kinds} | Başvuru eşiği: Kadroya göre değişiyor; eşleştirme doğrulanamadı'
+        score = f'KPSS: {kinds} | Başvuru eşiği: Kadro eşleştirmesi doğrulanamadı'
     elif assessment.get('kpss_exempt'):
         score = 'KPSS şartı: Aranmadığı belirtiliyor'
     elif len(conditions) == 1:
