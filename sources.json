@@ -85,6 +85,12 @@
       ],
       "category": "belediye_personel",
       "max_pages": 4
+    },
+    {
+      "name": "Memurlar.net",
+      "url": "https://ilan.memurlar.net/",
+      "category": "yardimci_ilan_kaynagi",
+      "max_pages": 4
     }
   ],
   "additional_categories": [

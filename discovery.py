@@ -1,5 +1,6 @@
 """Bounded announcement navigation, advertised feeds and explicit next-page links."""
 from collections import deque
+import re
 from html.parser import HTMLParser
 from urllib.parse import urljoin, urlsplit, urlunsplit, parse_qsl, urlencode
 import xml.etree.ElementTree as ET
@@ -94,7 +95,12 @@ def scan_source(source, get_html, is_job_link, normalize):
                     continue
                 recruitment_listing = any(term in normalize(urlsplit(url).path) for term in ('kurum-disi-kamu-isci', 'kurumdisi-kamu-isci', 'kamu-memur-alim-ilanlari', 'kamu-isci-alim-ilanlari'))
                 listing_pdf = recruitment_listing and urlsplit(link).path.lower().endswith('.pdf') and len(name) > 2 and not any(term in name for term in ('form', 'ornek', 'kilavuz', 'kvkk'))
-                if is_job_link(label, link) or listing_pdf:
+                memurlar_notice = ((urlsplit(source['url']).hostname or '') == 'ilan.memurlar.net'
+                                   and urlsplit(link).hostname == 'ilan.memurlar.net'
+                                   and re.fullmatch(r'/ilan/\d+/[^/]+\.html', urlsplit(link).path)
+                                   and 'alacak' in name
+                                   and not any(term in name for term in ('sonuclari', 'sonuc duyurusu', 'iptal', 'sona erdi')))
+                if is_job_link(label, link) or listing_pdf or memurlar_notice:
                     found[link] = {'title': (' '.join(label.split()))[:220], 'url': link, 'source': source['name']}
                 # Follow observed navigation only; don't guess an API or page number.
                 name = normalize(label)
