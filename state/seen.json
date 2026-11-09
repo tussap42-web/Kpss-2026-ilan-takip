@@ -399,6 +399,86 @@
         "e803fcfa58e5548b75cdee4a"
       ],
       "at": "2026-11-09T17:30:25.791295+03:00"
+    },
+    "https://ilan.memurlar.net/ilan/86899/tokat-tanoba-belediyesi-1-memur-alacak.html": {
+      "title": "Tokat Tanoba Belediyesi 1 memur alacak",
+      "chats": [
+        "bf1d163560e5f030ec16ebe2",
+        "e803fcfa58e5548b75cdee4a"
+      ],
+      "at": "2026-11-09T17:33:09.083201+03:00"
+    },
+    "https://ilan.memurlar.net/ilan/86900/antalya-gundogmus-belediyesi-4-memur-alacak.html": {
+      "title": "Antalya Gündoğmuş Belediyesi 4 memur alacak",
+      "chats": [
+        "bf1d163560e5f030ec16ebe2",
+        "e803fcfa58e5548b75cdee4a"
+      ],
+      "at": "2026-11-09T17:33:09.083201+03:00"
+    },
+    "https://ilan.memurlar.net/ilan/86902/sgk-100-denetmen-yardimcisi-alacak-basvuru-9-kasim-da-basliyor.html": {
+      "title": "SGK 100 denetmen yardımcısı alacak: Başvuru 9 Kasım'da başlıyor",
+      "chats": [
+        "bf1d163560e5f030ec16ebe2",
+        "e803fcfa58e5548b75cdee4a"
+      ],
+      "at": "2026-11-09T17:33:09.083201+03:00"
+    },
+    "https://ilan.memurlar.net/ilan/86907/marmara-universitesi-10-sozlesmeli-personel-alacak.html": {
+      "title": "Marmara Üniversitesi 10 sözleşmeli personel alacak",
+      "chats": [
+        "bf1d163560e5f030ec16ebe2",
+        "e803fcfa58e5548b75cdee4a"
+      ],
+      "at": "2026-11-09T17:33:09.083201+03:00"
+    },
+    "https://ilan.memurlar.net/ilan/86913/bozkoy-belediyesi-1-irfaiye-eri-alacak.html": {
+      "title": "Bozköy Belediyesi 1 İrfaiye Eri Alacak",
+      "chats": [
+        "bf1d163560e5f030ec16ebe2",
+        "e803fcfa58e5548b75cdee4a"
+      ],
+      "at": "2026-11-09T17:33:09.083201+03:00"
+    },
+    "https://ilan.memurlar.net/ilan/86914/antalya-akseki-belediyesi-1-memur-alacak.html": {
+      "title": "Antalya Akseki Belediyesi 1 Memur Alacak",
+      "chats": [
+        "bf1d163560e5f030ec16ebe2",
+        "e803fcfa58e5548b75cdee4a"
+      ],
+      "at": "2026-11-09T17:33:09.083201+03:00"
+    },
+    "https://ilan.memurlar.net/ilan/86915/milli-saraylar-idaresi-baskanligi-38-sozlesmeli-personel-alacak.html": {
+      "title": "Milli Saraylar İdaresi Başkanlığı 38 sözleşmeli personel alacak",
+      "chats": [
+        "bf1d163560e5f030ec16ebe2",
+        "e803fcfa58e5548b75cdee4a"
+      ],
+      "at": "2026-11-09T17:33:09.083201+03:00"
+    },
+    "https://ilan.memurlar.net/ilan/86916/izmir-demokrasi-universitesi-2-sozlesmeli-avukat-alacak.html": {
+      "title": "İzmir Demokrasi Üniversitesi 2 sözleşmeli avukat alacak",
+      "chats": [
+        "bf1d163560e5f030ec16ebe2",
+        "e803fcfa58e5548b75cdee4a"
+      ],
+      "at": "2026-11-09T17:33:09.083201+03:00"
+    },
+    "https://ilan.memurlar.net/ilan/86918/adana-saricam-sydv-gecici-1-isci-alacak.html": {
+      "title": "Adana Sarıçam SYDV Geçici 1 İşçi Alacak",
+      "chats": [
+        "bf1d163560e5f030ec16ebe2",
+        "e803fcfa58e5548b75cdee4a"
+      ],
+      "at": "2026-11-09T17:33:09.083201+03:00"
+    },
+    "https://ilan.memurlar.net/ilan/86919/adana-ceyhan-sydv-1-isci-alacak.html": {
+      "title": "Adana Ceyhan SYDV 1 İşçi Alacak",
+      "chats": [
+        "bf1d163560e5f030ec16ebe2",
+        "e803fcfa58e5548b75cdee4a"
+      ],
+      "at": "2026-11-09T17:33:09.083201+03:00"
     }
   },
   "notices": {
@@ -1725,6 +1805,264 @@
       },
       "checked_on": "2026-11-09",
       "policy": "d7986b01b15e54ff"
+    },
+    "https://ilan.memurlar.net/ilan/86907/marmara-universitesi-10-sozlesmeli-personel-alacak.html": {
+      "title": "Marmara Üniversitesi 10 sözleşmeli personel alacak",
+      "url": "https://ilan.memurlar.net/ilan/86907/marmara-universitesi-10-sozlesmeli-personel-alacak.html",
+      "source": "Memurlar.net",
+      "document_key": "text:09b3d28317fbd4d39c0c7b7388a1f4d40ae78b30fbad5032c90781ff2d806fbf",
+      "assessment": {
+        "status": "review",
+        "reasons": [],
+        "warnings": [
+          "Birden fazla kadro/puan koşulu var; satır bazında inceleme gerekli",
+          "Aday puanı yaklaşık; başvuruda kesin puan kullanılmalı",
+          "Mezuniyet/bölüm uygunluğu doğrulanamadı",
+          "Yaş, belge, deneyim ve diğer özel şartlar ayrıca kontrol edilmeli"
+        ],
+        "deadline": "2026-11-20",
+        "minimum_score": null,
+        "positions": []
+      },
+      "checked_on": "2026-11-09",
+      "policy": "d7986b01b15e54ff"
+    },
+    "https://ilan.memurlar.net/ilan/86913/bozkoy-belediyesi-1-irfaiye-eri-alacak.html": {
+      "title": "Bozköy Belediyesi 1 İrfaiye Eri Alacak",
+      "url": "https://ilan.memurlar.net/ilan/86913/bozkoy-belediyesi-1-irfaiye-eri-alacak.html",
+      "source": "Memurlar.net",
+      "document_key": "text:3a77065f49159846ee57bcb06f070b60ee7053abd51b67f71a1e2ec464d808aa",
+      "assessment": {
+        "status": "review",
+        "reasons": [],
+        "warnings": [
+          "KPSS taban puanı açık biçimde okunamadı",
+          "Aday puanı yaklaşık; başvuruda kesin puan kullanılmalı",
+          "Mezuniyet/bölüm uygunluğu doğrulanamadı",
+          "Yaş, belge, deneyim ve diğer özel şartlar ayrıca kontrol edilmeli",
+          "Belge/kadro kapsamı belirsiz; kesin eleme yapılmadı"
+        ],
+        "deadline": null,
+        "minimum_score": null,
+        "positions": []
+      },
+      "checked_on": "2026-11-09",
+      "policy": "d7986b01b15e54ff"
+    },
+    "https://ilan.memurlar.net/ilan/86914/antalya-akseki-belediyesi-1-memur-alacak.html": {
+      "title": "Antalya Akseki Belediyesi 1 Memur Alacak",
+      "url": "https://ilan.memurlar.net/ilan/86914/antalya-akseki-belediyesi-1-memur-alacak.html",
+      "source": "Memurlar.net",
+      "document_key": "text:3e72f453a302750aab4211d6045d6e6bdafb18d5d6fba46638566a6a25d2968e",
+      "assessment": {
+        "status": "review",
+        "reasons": [],
+        "warnings": [
+          "KPSS taban puanı açık biçimde okunamadı",
+          "Aday puanı yaklaşık; başvuruda kesin puan kullanılmalı",
+          "Mezuniyet/bölüm uygunluğu doğrulanamadı",
+          "Yaş, belge, deneyim ve diğer özel şartlar ayrıca kontrol edilmeli"
+        ],
+        "deadline": "2026-11-20",
+        "minimum_score": null,
+        "positions": []
+      },
+      "checked_on": "2026-11-09",
+      "policy": "d7986b01b15e54ff"
+    },
+    "https://ilan.memurlar.net/ilan/86915/milli-saraylar-idaresi-baskanligi-38-sozlesmeli-personel-alacak.html": {
+      "title": "Milli Saraylar İdaresi Başkanlığı 38 sözleşmeli personel alacak",
+      "url": "https://ilan.memurlar.net/ilan/86915/milli-saraylar-idaresi-baskanligi-38-sozlesmeli-personel-alacak.html",
+      "source": "Memurlar.net",
+      "document_key": "text:366dc1ace4a77d903235a140a2e448051675fbd2747c7b4f0dbfa4307a37544e",
+      "assessment": {
+        "status": "review",
+        "reasons": [],
+        "warnings": [
+          "Son başvuru tarihi belirlenemedi veya birden fazla tarih var",
+          "KPSS taban puanı açık biçimde okunamadı",
+          "Aday puanı yaklaşık; başvuruda kesin puan kullanılmalı",
+          "Mezuniyet/bölüm uygunluğu doğrulanamadı",
+          "Yaş, belge, deneyim ve diğer özel şartlar ayrıca kontrol edilmeli",
+          "Belge/kadro kapsamı belirsiz; kesin eleme yapılmadı"
+        ],
+        "deadline": null,
+        "minimum_score": null,
+        "positions": []
+      },
+      "checked_on": "2026-11-09",
+      "policy": "d7986b01b15e54ff"
+    },
+    "https://ilan.memurlar.net/ilan/86916/izmir-demokrasi-universitesi-2-sozlesmeli-avukat-alacak.html": {
+      "title": "İzmir Demokrasi Üniversitesi 2 sözleşmeli avukat alacak",
+      "url": "https://ilan.memurlar.net/ilan/86916/izmir-demokrasi-universitesi-2-sozlesmeli-avukat-alacak.html",
+      "source": "Memurlar.net",
+      "document_key": "text:feadfa7b5af2c90f08147d4d79c9b4aedde1fb3c73861771868f7c6478df70ad",
+      "assessment": {
+        "status": "review",
+        "reasons": [],
+        "warnings": [
+          "KPSS taban puanı açık biçimde okunamadı",
+          "Aday puanı yaklaşık; başvuruda kesin puan kullanılmalı",
+          "Mezuniyet/bölüm uygunluğu doğrulanamadı",
+          "Yaş, belge, deneyim ve diğer özel şartlar ayrıca kontrol edilmeli"
+        ],
+        "deadline": "2026-11-21",
+        "minimum_score": null,
+        "positions": []
+      },
+      "checked_on": "2026-11-09",
+      "policy": "d7986b01b15e54ff"
+    },
+    "https://ilan.memurlar.net/ilan/86918/adana-saricam-sydv-gecici-1-isci-alacak.html": {
+      "title": "Adana Sarıçam SYDV Geçici 1 İşçi Alacak",
+      "url": "https://ilan.memurlar.net/ilan/86918/adana-saricam-sydv-gecici-1-isci-alacak.html",
+      "source": "Memurlar.net",
+      "document_key": "text:62d187322eb073f799a5deb3fecce52f8b464991f9605f636b41dcf9b29973aa",
+      "assessment": {
+        "status": "review",
+        "reasons": [],
+        "warnings": [
+          "KPSS taban puanı açık biçimde okunamadı",
+          "Aday puanı yaklaşık; başvuruda kesin puan kullanılmalı",
+          "Mezuniyet/bölüm uygunluğu doğrulanamadı",
+          "Yaş, belge, deneyim ve diğer özel şartlar ayrıca kontrol edilmeli"
+        ],
+        "deadline": "2026-11-10",
+        "minimum_score": null,
+        "positions": []
+      },
+      "checked_on": "2026-11-09",
+      "policy": "d7986b01b15e54ff"
+    },
+    "https://ilan.memurlar.net/ilan/86919/adana-ceyhan-sydv-1-isci-alacak.html": {
+      "title": "Adana Ceyhan SYDV 1 İşçi Alacak",
+      "url": "https://ilan.memurlar.net/ilan/86919/adana-ceyhan-sydv-1-isci-alacak.html",
+      "source": "Memurlar.net",
+      "document_key": "text:fe81ce8093c9cd22498cef57c3995081b042da5a5effb1ffae05401509e3c689",
+      "assessment": {
+        "status": "review",
+        "reasons": [],
+        "warnings": [
+          "Son başvuru tarihi belirlenemedi veya birden fazla tarih var",
+          "KPSS taban puanı açık biçimde okunamadı",
+          "Aday puanı yaklaşık; başvuruda kesin puan kullanılmalı",
+          "Mezuniyet/bölüm uygunluğu doğrulanamadı",
+          "Yaş, belge, deneyim ve diğer özel şartlar ayrıca kontrol edilmeli"
+        ],
+        "deadline": null,
+        "minimum_score": null,
+        "positions": []
+      },
+      "checked_on": "2026-11-09",
+      "policy": "d7986b01b15e54ff"
+    },
+    "https://ilan.memurlar.net/ilan/86923/izmir-izenerji-12-isci-alacak.html": {
+      "title": "İzmir izenerji 12 İşçi Alacak",
+      "url": "https://ilan.memurlar.net/ilan/86923/izmir-izenerji-12-isci-alacak.html",
+      "source": "Memurlar.net",
+      "document_key": "text:212073e7c043ea151954721c705ec5d90f0b1a19056673f79cb44f2579e31051",
+      "assessment": {
+        "status": "review",
+        "reasons": [],
+        "warnings": [
+          "KPSS taban puanı açık biçimde okunamadı",
+          "Aday puanı yaklaşık; başvuruda kesin puan kullanılmalı",
+          "Mezuniyet/bölüm uygunluğu doğrulanamadı",
+          "Yaş, belge, deneyim ve diğer özel şartlar ayrıca kontrol edilmeli"
+        ],
+        "deadline": "2026-11-11",
+        "minimum_score": null,
+        "positions": []
+      },
+      "checked_on": "2026-11-09",
+      "policy": "d7986b01b15e54ff"
+    },
+    "https://ilan.memurlar.net/ilan/86927/sakarya-karasu-karsas-1-isci-alacak.html": {
+      "title": "Sakarya Karasu Karsaş 1 İşçi Alacak",
+      "url": "https://ilan.memurlar.net/ilan/86927/sakarya-karasu-karsas-1-isci-alacak.html",
+      "source": "Memurlar.net",
+      "document_key": "text:7082272b605b30b3f905f58d7673f1f17ad0b6bd2cdcdab77b3b9afa6417c3db",
+      "assessment": {
+        "status": "review",
+        "reasons": [],
+        "warnings": [
+          "KPSS taban puanı açık biçimde okunamadı",
+          "Aday puanı yaklaşık; başvuruda kesin puan kullanılmalı",
+          "Mezuniyet/bölüm uygunluğu doğrulanamadı",
+          "Yaş, belge, deneyim ve diğer özel şartlar ayrıca kontrol edilmeli"
+        ],
+        "deadline": "2026-11-11",
+        "minimum_score": null,
+        "positions": []
+      },
+      "checked_on": "2026-11-09",
+      "policy": "d7986b01b15e54ff"
+    },
+    "https://ilan.memurlar.net/ilan/86928/kdk-10-kamu-denetciligi-uzman-yardimcisi-alacak.html": {
+      "title": "KDK, 10 Kamu Denetçiliği Uzman Yardımcısı Alacak",
+      "url": "https://ilan.memurlar.net/ilan/86928/kdk-10-kamu-denetciligi-uzman-yardimcisi-alacak.html",
+      "source": "Memurlar.net",
+      "document_key": "text:284e135a441842327ca777bb6e37afe94fca203a26fbb0d18a74f3f8b63b7712",
+      "assessment": {
+        "status": "review",
+        "reasons": [],
+        "warnings": [
+          "KPSS taban puanı açık biçimde okunamadı",
+          "Aday puanı yaklaşık; başvuruda kesin puan kullanılmalı",
+          "Mezuniyet/bölüm uygunluğu doğrulanamadı",
+          "Yaş, belge, deneyim ve diğer özel şartlar ayrıca kontrol edilmeli"
+        ],
+        "deadline": "2026-11-22",
+        "minimum_score": null,
+        "positions": []
+      },
+      "checked_on": "2026-11-09",
+      "policy": "d7986b01b15e54ff"
+    },
+    "https://ilan.memurlar.net/kategori/daimi-isci-ilanlari?Expire=false": {
+      "title": "Daimi İşçi Alım İlanları",
+      "url": "https://ilan.memurlar.net/kategori/daimi-isci-ilanlari?Expire=false",
+      "source": "Memurlar.net",
+      "document_key": "text:290d678db26305197646909a69f19c015be719887d25a487f9a1e180801d7aa0",
+      "assessment": {
+        "status": "review",
+        "reasons": [],
+        "warnings": [
+          "Son başvuru tarihi belirlenemedi veya birden fazla tarih var",
+          "KPSS taban puanı açık biçimde okunamadı",
+          "Aday puanı yaklaşık; başvuruda kesin puan kullanılmalı",
+          "Mezuniyet/bölüm uygunluğu doğrulanamadı",
+          "Yaş, belge, deneyim ve diğer özel şartlar ayrıca kontrol edilmeli"
+        ],
+        "deadline": null,
+        "minimum_score": null,
+        "positions": []
+      },
+      "checked_on": "2026-11-09",
+      "policy": "d7986b01b15e54ff"
+    },
+    "https://ilan.memurlar.net/kategori/gecici-isci-ilanlari?Expire=false": {
+      "title": "Geçici İşçi İlanları",
+      "url": "https://ilan.memurlar.net/kategori/gecici-isci-ilanlari?Expire=false",
+      "source": "Memurlar.net",
+      "document_key": "text:3a867a75fab752fe63d99968d7d7475296a10c8f0e5b927ec5be470720e06f07",
+      "assessment": {
+        "status": "review",
+        "reasons": [],
+        "warnings": [
+          "Son başvuru tarihi belirlenemedi veya birden fazla tarih var",
+          "KPSS taban puanı açık biçimde okunamadı",
+          "Aday puanı yaklaşık; başvuruda kesin puan kullanılmalı",
+          "Mezuniyet/bölüm uygunluğu doğrulanamadı",
+          "Yaş, belge, deneyim ve diğer özel şartlar ayrıca kontrol edilmeli"
+        ],
+        "deadline": null,
+        "minimum_score": null,
+        "positions": []
+      },
+      "checked_on": "2026-11-09",
+      "policy": "d7986b01b15e54ff"
     }
   },
   "documents": {
@@ -1764,7 +2102,19 @@
     "text:2868bd5ebfadb6fcd821eda54c6b3e3b66ed7bc35a9ebf748f2a669ae95dbb6a": "https://ilan.memurlar.net/ilan/86898/ula-belediyesi-4-zabita-memuru-alacak.html",
     "text:2ffbf1cfcf5c387f5e13ef53f28ac7daf2b9c4d150fe879561be1e7f3e5cdeb2": "https://ilan.memurlar.net/ilan/86899/tokat-tanoba-belediyesi-1-memur-alacak.html",
     "text:4de4f595ac46904b02678dbf50f51b85c43fa87c7dee80efd8ac678b2aff43a5": "https://ilan.memurlar.net/ilan/86900/antalya-gundogmus-belediyesi-4-memur-alacak.html",
-    "text:1ee161d4e642804ace869b5f2e81c891ac3a25558ef0b7212a98114b9263af95": "https://ilan.memurlar.net/ilan/86902/sgk-100-denetmen-yardimcisi-alacak-basvuru-9-kasim-da-basliyor.html"
+    "text:1ee161d4e642804ace869b5f2e81c891ac3a25558ef0b7212a98114b9263af95": "https://ilan.memurlar.net/ilan/86902/sgk-100-denetmen-yardimcisi-alacak-basvuru-9-kasim-da-basliyor.html",
+    "text:09b3d28317fbd4d39c0c7b7388a1f4d40ae78b30fbad5032c90781ff2d806fbf": "https://ilan.memurlar.net/ilan/86907/marmara-universitesi-10-sozlesmeli-personel-alacak.html",
+    "text:3a77065f49159846ee57bcb06f070b60ee7053abd51b67f71a1e2ec464d808aa": "https://ilan.memurlar.net/ilan/86913/bozkoy-belediyesi-1-irfaiye-eri-alacak.html",
+    "text:3e72f453a302750aab4211d6045d6e6bdafb18d5d6fba46638566a6a25d2968e": "https://ilan.memurlar.net/ilan/86914/antalya-akseki-belediyesi-1-memur-alacak.html",
+    "text:366dc1ace4a77d903235a140a2e448051675fbd2747c7b4f0dbfa4307a37544e": "https://ilan.memurlar.net/ilan/86915/milli-saraylar-idaresi-baskanligi-38-sozlesmeli-personel-alacak.html",
+    "text:feadfa7b5af2c90f08147d4d79c9b4aedde1fb3c73861771868f7c6478df70ad": "https://ilan.memurlar.net/ilan/86916/izmir-demokrasi-universitesi-2-sozlesmeli-avukat-alacak.html",
+    "text:62d187322eb073f799a5deb3fecce52f8b464991f9605f636b41dcf9b29973aa": "https://ilan.memurlar.net/ilan/86918/adana-saricam-sydv-gecici-1-isci-alacak.html",
+    "text:fe81ce8093c9cd22498cef57c3995081b042da5a5effb1ffae05401509e3c689": "https://ilan.memurlar.net/ilan/86919/adana-ceyhan-sydv-1-isci-alacak.html",
+    "text:212073e7c043ea151954721c705ec5d90f0b1a19056673f79cb44f2579e31051": "https://ilan.memurlar.net/ilan/86923/izmir-izenerji-12-isci-alacak.html",
+    "text:7082272b605b30b3f905f58d7673f1f17ad0b6bd2cdcdab77b3b9afa6417c3db": "https://ilan.memurlar.net/ilan/86927/sakarya-karasu-karsas-1-isci-alacak.html",
+    "text:284e135a441842327ca777bb6e37afe94fca203a26fbb0d18a74f3f8b63b7712": "https://ilan.memurlar.net/ilan/86928/kdk-10-kamu-denetciligi-uzman-yardimcisi-alacak.html",
+    "text:290d678db26305197646909a69f19c015be719887d25a487f9a1e180801d7aa0": "https://ilan.memurlar.net/kategori/daimi-isci-ilanlari?Expire=false",
+    "text:3a867a75fab752fe63d99968d7d7475296a10c8f0e5b927ec5be470720e06f07": "https://ilan.memurlar.net/kategori/gecici-isci-ilanlari?Expire=false"
   },
   "aliases": {
     "https://www.konya.bel.tr/haber/konya-buyuksehirde-zabita-memuru-alimi-icin-basvurular-devam-ediyor": "https://www.konya.bel.tr/haber/konya-buyuksehirde-zabita-memuru-alimi-icin-basvurular-devam-ediyor",
@@ -1806,18 +2156,30 @@
     "https://ilan.memurlar.net/ilan/86898/ula-belediyesi-4-zabita-memuru-alacak.html": "https://ilan.memurlar.net/ilan/86898/ula-belediyesi-4-zabita-memuru-alacak.html",
     "https://ilan.memurlar.net/ilan/86899/tokat-tanoba-belediyesi-1-memur-alacak.html": "https://ilan.memurlar.net/ilan/86899/tokat-tanoba-belediyesi-1-memur-alacak.html",
     "https://ilan.memurlar.net/ilan/86900/antalya-gundogmus-belediyesi-4-memur-alacak.html": "https://ilan.memurlar.net/ilan/86900/antalya-gundogmus-belediyesi-4-memur-alacak.html",
-    "https://ilan.memurlar.net/ilan/86902/sgk-100-denetmen-yardimcisi-alacak-basvuru-9-kasim-da-basliyor.html": "https://ilan.memurlar.net/ilan/86902/sgk-100-denetmen-yardimcisi-alacak-basvuru-9-kasim-da-basliyor.html"
+    "https://ilan.memurlar.net/ilan/86902/sgk-100-denetmen-yardimcisi-alacak-basvuru-9-kasim-da-basliyor.html": "https://ilan.memurlar.net/ilan/86902/sgk-100-denetmen-yardimcisi-alacak-basvuru-9-kasim-da-basliyor.html",
+    "https://ilan.memurlar.net/ilan/86907/marmara-universitesi-10-sozlesmeli-personel-alacak.html": "https://ilan.memurlar.net/ilan/86907/marmara-universitesi-10-sozlesmeli-personel-alacak.html",
+    "https://ilan.memurlar.net/ilan/86913/bozkoy-belediyesi-1-irfaiye-eri-alacak.html": "https://ilan.memurlar.net/ilan/86913/bozkoy-belediyesi-1-irfaiye-eri-alacak.html",
+    "https://ilan.memurlar.net/ilan/86914/antalya-akseki-belediyesi-1-memur-alacak.html": "https://ilan.memurlar.net/ilan/86914/antalya-akseki-belediyesi-1-memur-alacak.html",
+    "https://ilan.memurlar.net/ilan/86915/milli-saraylar-idaresi-baskanligi-38-sozlesmeli-personel-alacak.html": "https://ilan.memurlar.net/ilan/86915/milli-saraylar-idaresi-baskanligi-38-sozlesmeli-personel-alacak.html",
+    "https://ilan.memurlar.net/ilan/86916/izmir-demokrasi-universitesi-2-sozlesmeli-avukat-alacak.html": "https://ilan.memurlar.net/ilan/86916/izmir-demokrasi-universitesi-2-sozlesmeli-avukat-alacak.html",
+    "https://ilan.memurlar.net/ilan/86918/adana-saricam-sydv-gecici-1-isci-alacak.html": "https://ilan.memurlar.net/ilan/86918/adana-saricam-sydv-gecici-1-isci-alacak.html",
+    "https://ilan.memurlar.net/ilan/86919/adana-ceyhan-sydv-1-isci-alacak.html": "https://ilan.memurlar.net/ilan/86919/adana-ceyhan-sydv-1-isci-alacak.html",
+    "https://ilan.memurlar.net/ilan/86923/izmir-izenerji-12-isci-alacak.html": "https://ilan.memurlar.net/ilan/86923/izmir-izenerji-12-isci-alacak.html",
+    "https://ilan.memurlar.net/ilan/86927/sakarya-karasu-karsas-1-isci-alacak.html": "https://ilan.memurlar.net/ilan/86927/sakarya-karasu-karsas-1-isci-alacak.html",
+    "https://ilan.memurlar.net/ilan/86928/kdk-10-kamu-denetciligi-uzman-yardimcisi-alacak.html": "https://ilan.memurlar.net/ilan/86928/kdk-10-kamu-denetciligi-uzman-yardimcisi-alacak.html",
+    "https://ilan.memurlar.net/kategori/daimi-isci-ilanlari?Expire=false": "https://ilan.memurlar.net/kategori/daimi-isci-ilanlari?Expire=false",
+    "https://ilan.memurlar.net/kategori/gecici-isci-ilanlari?Expire=false": "https://ilan.memurlar.net/kategori/gecici-isci-ilanlari?Expire=false"
   },
   "delivery_cursor": 0,
   "last_run": {
-    "at": "2026-11-09T17:30:25.791295+03:00",
+    "at": "2026-11-09T17:33:09.083201+03:00",
     "status": "partial_source_error",
     "messages_sent": 20,
     "delivery_deferred": false,
     "sources_ok": 10,
     "sources_total": 13,
     "details_failed": 0,
-    "pending_messages": 10,
-    "pending_details": 54
+    "pending_messages": 14,
+    "pending_details": 42
   }
 }
