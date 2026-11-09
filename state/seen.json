@@ -1470,10 +1470,18 @@
         ],
         "deadline": null,
         "minimum_score": null,
+        "score_conditions": [],
+        "score_types": [],
+        "score_ambiguous": false,
+        "kpss_exempt": false,
+        "education_levels": [
+          "Lisans"
+        ],
+        "evidence_complete": true,
         "positions": []
       },
       "checked_on": "2026-11-09",
-      "policy": "d7986b01b15e54ff"
+      "policy": "1292260b21ee0874"
     },
     "https://ilan.memurlar.net/ilan/48143/afyonkarahisar-ihsaniye-ihsan-oren-tasimacilik-gecici-5-isci-alacak.html": {
       "title": "Afyonkarahisar ihsaniye İhsan Ören Taşımacılık Geçici 5 İşçi Alacak",
@@ -1492,10 +1500,18 @@
         ],
         "deadline": null,
         "minimum_score": null,
+        "score_conditions": [],
+        "score_types": [],
+        "score_ambiguous": false,
+        "kpss_exempt": false,
+        "education_levels": [
+          "Lisans"
+        ],
+        "evidence_complete": true,
         "positions": []
       },
       "checked_on": "2026-11-09",
-      "policy": "d7986b01b15e54ff"
+      "policy": "1292260b21ee0874"
     },
     "https://ilan.memurlar.net/ilan/84194/nigde-bor-belediyesi-gecici-50-isci-alacak.html": {
       "title": "Niğde Bor Belediyesi Geçici 50 İşçi Alacak",
@@ -1513,10 +1529,18 @@
         ],
         "deadline": "2026-11-30",
         "minimum_score": null,
+        "score_conditions": [],
+        "score_types": [],
+        "score_ambiguous": false,
+        "kpss_exempt": false,
+        "education_levels": [
+          "Lisans"
+        ],
+        "evidence_complete": true,
         "positions": []
       },
       "checked_on": "2026-11-09",
-      "policy": "d7986b01b15e54ff"
+      "policy": "1292260b21ee0874"
     },
     "https://ilan.memurlar.net/ilan/86791/kultur-ve-turizm-bakanligi-162-sozlesmeli-personel-alacak.html": {
       "title": "Kültür ve Turizm Bakanlığı 162 sözleşmeli personel alacak Kültür ve Turizm Bakanlığı 162 sözleşmeli personel alacak. Son başvuru tarihi 16 Ekim 2026",
@@ -1536,10 +1560,20 @@
         ],
         "deadline": "2026-10-16",
         "minimum_score": null,
+        "score_conditions": [],
+        "score_types": [
+          "P3"
+        ],
+        "score_ambiguous": false,
+        "kpss_exempt": false,
+        "education_levels": [
+          "Lisans"
+        ],
+        "evidence_complete": true,
         "positions": []
       },
       "checked_on": "2026-11-09",
-      "policy": "d7986b01b15e54ff"
+      "policy": "1292260b21ee0874"
     },
     "https://ilan.memurlar.net/ilan/86823/milli-saraylar-idaresi-baskanligi-3-sozlesmeli-personel-alacak.html": {
       "title": "Milli Saraylar İdaresi Başkanlığı 3 sözleşmeli personel alacak Milli Saraylar İdaresi Başkanlığı 3 sözleşmeli personel alacak. Son başvuru tarihi 11 Kasım 2026",
@@ -1557,10 +1591,18 @@
         ],
         "deadline": "2026-11-11",
         "minimum_score": null,
+        "score_conditions": [],
+        "score_types": [],
+        "score_ambiguous": false,
+        "kpss_exempt": false,
+        "education_levels": [
+          "Lisans"
+        ],
+        "evidence_complete": true,
         "positions": []
       },
       "checked_on": "2026-11-09",
-      "policy": "d7986b01b15e54ff"
+      "policy": "1292260b21ee0874"
     },
     "https://ilan.memurlar.net/ilan/86827/elazig-il-ozel-idaresi-3-sozlesmeli-personel-alacak.html": {
       "title": "Elazığ İl Özel İdaresi 3 sözleşmeli personel alacak Elazığ İl Özel İdaresi 3 sözleşmeli personel alacak. Son başvuru tarihi 9 Aralık 2026",
@@ -1578,10 +1620,18 @@
         ],
         "deadline": "2026-12-09",
         "minimum_score": null,
+        "score_conditions": [],
+        "score_types": [],
+        "score_ambiguous": false,
+        "kpss_exempt": false,
+        "education_levels": [
+          "Lisans"
+        ],
+        "evidence_complete": true,
         "positions": []
       },
       "checked_on": "2026-11-09",
-      "policy": "d7986b01b15e54ff"
+      "policy": "1292260b21ee0874"
     },
     "https://ilan.memurlar.net/ilan/86828/adana-imamoglu-belediyesi-2-isci-alacak.html": {
       "title": "Adana İmamoğlu Belediyesi 2 İşçi Alacak",
@@ -1599,10 +1649,18 @@
         ],
         "deadline": "2026-11-11",
         "minimum_score": null,
+        "score_conditions": [],
+        "score_types": [],
+        "score_ambiguous": false,
+        "kpss_exempt": false,
+        "education_levels": [
+          "Lisans"
+        ],
+        "evidence_complete": true,
         "positions": []
       },
       "checked_on": "2026-11-09",
-      "policy": "d7986b01b15e54ff"
+      "policy": "1292260b21ee0874"
     },
     "https://ilan.memurlar.net/ilan/86837/gaziosmanpasa-belediyesi-36-zabita-memuru-alacak.html": {
       "title": "Gaziosmanpaşa Belediyesi 36 Zabıta Memuru Alacak Gaziosmanpaşa Belediyesi 36 Zabıta Memuru Alacak. Son başvuru tarihi 11 Aralık 2026",
@@ -1621,10 +1679,18 @@
         ],
         "deadline": null,
         "minimum_score": null,
+        "score_conditions": [],
+        "score_types": [],
+        "score_ambiguous": true,
+        "kpss_exempt": false,
+        "education_levels": [
+          "Lisans"
+        ],
+        "evidence_complete": true,
         "positions": []
       },
       "checked_on": "2026-11-09",
-      "policy": "d7986b01b15e54ff"
+      "policy": "1292260b21ee0874"
     },
     "https://ilan.memurlar.net/ilan/86839/kamu-ihale-kurumu-25-uzman-yardimcisi-alacak.html": {
       "title": "Kamu İhale Kurumu 25 Uzman Yardımcısı Alacak Kamu İhale Kurumu 25 Uzman Yardımcısı Alacak. Son başvuru tarihi 20 Kasım 2026",
@@ -1642,10 +1708,18 @@
         ],
         "deadline": "2026-11-20",
         "minimum_score": null,
+        "score_conditions": [],
+        "score_types": [],
+        "score_ambiguous": false,
+        "kpss_exempt": false,
+        "education_levels": [
+          "Lisans"
+        ],
+        "evidence_complete": true,
         "positions": []
       },
       "checked_on": "2026-11-09",
-      "policy": "d7986b01b15e54ff"
+      "policy": "1292260b21ee0874"
     },
     "https://ilan.memurlar.net/ilan/86840/nukleer-duzenleme-kurumu-8-sozlesmeli-personel-alacak.html": {
       "title": "Nükleer Düzenleme Kurumu 8 sözleşmeli personel alacak Nükleer Düzenleme Kurumu 8 sözleşmeli personel alacak. Son başvuru tarihi 23 Kasım 2026",
@@ -1663,10 +1737,20 @@
         ],
         "deadline": "2026-11-23",
         "minimum_score": null,
+        "score_conditions": [],
+        "score_types": [
+          "P3"
+        ],
+        "score_ambiguous": false,
+        "kpss_exempt": false,
+        "education_levels": [
+          "Lisans"
+        ],
+        "evidence_complete": true,
         "positions": []
       },
       "checked_on": "2026-11-09",
-      "policy": "d7986b01b15e54ff"
+      "policy": "1292260b21ee0874"
     },
     "https://ilan.memurlar.net/ilan/86849/yok-5-sozlesmeli-personel-alacak.html": {
       "title": "YÖK 5 Sözleşmeli Personel Alacak YÖK 5 Sözleşmeli Personel Alacak. Son başvuru tarihi 16 Kasım 2026",
@@ -1684,10 +1768,20 @@
         ],
         "deadline": "2026-11-16",
         "minimum_score": null,
+        "score_conditions": [],
+        "score_types": [
+          "P3"
+        ],
+        "score_ambiguous": false,
+        "kpss_exempt": false,
+        "education_levels": [
+          "Lisans"
+        ],
+        "evidence_complete": true,
         "positions": []
       },
       "checked_on": "2026-11-09",
-      "policy": "d7986b01b15e54ff"
+      "policy": "1292260b21ee0874"
     },
     "https://ilan.memurlar.net/ilan/86850/jandarma-ve-sahil-guvenlik-akademisi-baskanligi-30-memur-alacak.html": {
       "title": "Jandarma ve Sahil Güvenlik Akademisi Başkanlığı 30 Memur Alacak Jandarma Genel Komutanlığı, 19 ilde görev yapacak 30 memur alacak. KPSS P3'ten en az 60 puan şartı aranan alımda başvurular 16 Kasım 2026'da sona eriyor.",
@@ -1703,6 +1797,23 @@
         ],
         "deadline": null,
         "minimum_score": null,
+        "score_conditions": [
+          {
+            "score_type": "P3",
+            "minimum_score": 60.0
+          }
+        ],
+        "score_types": [
+          "P3"
+        ],
+        "score_ambiguous": false,
+        "kpss_exempt": false,
+        "education_levels": [
+          "Ortaöğretim / lise",
+          "Ön lisans",
+          "Lisans"
+        ],
+        "evidence_complete": false,
         "positions": [
           {
             "title": "memur",
@@ -1721,13 +1832,26 @@
                 "Yaş, belge, deneyim ve diğer özel şartlar ayrıca kontrol edilmeli"
               ],
               "deadline": null,
-              "minimum_score": null
+              "minimum_score": null,
+              "score_conditions": [
+                {
+                  "score_type": "P3",
+                  "minimum_score": 60.0
+                }
+              ],
+              "score_types": [
+                "P3"
+              ],
+              "score_ambiguous": false,
+              "kpss_exempt": false,
+              "education_levels": [],
+              "evidence_complete": false
             }
           }
         ]
       },
       "checked_on": "2026-11-09",
-      "policy": "d7986b01b15e54ff"
+      "policy": "1292260b21ee0874"
     },
     "https://ilan.memurlar.net/ilan/86852/dogu-karadeniz-kalkinma-ajansi-1-uzman-personel-alacak.html": {
       "title": "Doğu Karadeniz Kalkınma Ajansı 1 uzman personel alacak",
@@ -2930,14 +3054,14 @@
   },
   "delivery_cursor": 1,
   "last_run": {
-    "at": "2026-11-09T17:43:30.188066+03:00",
+    "at": "2026-11-09T17:45:43.927100+03:00",
     "status": "partial_source_error",
-    "messages_sent": 18,
+    "messages_sent": 0,
     "delivery_deferred": false,
     "sources_ok": 10,
     "sources_total": 13,
-    "details_failed": 7,
+    "details_failed": 0,
     "pending_messages": 0,
-    "pending_details": 66
+    "pending_details": 54
   }
 }
