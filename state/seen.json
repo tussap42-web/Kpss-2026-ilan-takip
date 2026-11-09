@@ -479,6 +479,66 @@
         "e803fcfa58e5548b75cdee4a"
       ],
       "at": "2026-11-09T17:33:09.083201+03:00"
+    },
+    "https://osym.gov.tr/kpss20261-bazi-kamu-kurum-ve-kuruluslarinin-kadro-ve-pozisyonlarina-yerlestirme-yapmak-icin-tercih-kilavuzu-ve-tablolar": {
+      "title": "3 Temmuz 2026 KPSS-2026/1: Bazı Kamu Kurum ve Kuruluşlarının Kadro ve Pozisyonlarına Yerleştirme Yapmak İçin Tercih Kılavuzu ve Tablolar",
+      "chats": [
+        "bf1d163560e5f030ec16ebe2",
+        "e803fcfa58e5548b75cdee4a"
+      ],
+      "at": "2026-11-09T17:40:44.521204+03:00"
+    },
+    "https://www.osym.gov.tr/2026-elektronik-ingilizce-yeterlik-sinavielectronic-test-of-english-proficiency-e-tep-20264-basvurularin-alinmasi": {
+      "title": "27 Ekim 2026 2026 Elektronik İngilizce Yeterlik Sınavı/Electronic-Test of English Proficiency (e-TEP 2026/4): Başvuruların Alınması",
+      "chats": [
+        "bf1d163560e5f030ec16ebe2",
+        "e803fcfa58e5548b75cdee4a"
+      ],
+      "at": "2026-11-09T17:40:44.521204+03:00"
+    },
+    "https://www.osym.gov.tr/2026-kpss-din-hizmetleri-alan-bilgisi-dhbt-kilavuzlar-ve-basvuru-bilgileri": {
+      "title": "22 Eylül 2026 2026-KPSS Din Hizmetleri Alan Bilgisi (DHBT): Kılavuzlar ve Başvuru Bilgileri",
+      "chats": [
+        "bf1d163560e5f030ec16ebe2",
+        "e803fcfa58e5548b75cdee4a"
+      ],
+      "at": "2026-11-09T17:40:44.521204+03:00"
+    },
+    "https://www.osym.gov.tr/2026-kpss-on-lisans-kilavuz-ve-basvuru-bilgileri": {
+      "title": "29 Temmuz 2026 2026-KPSS Ön Lisans: Kılavuz ve Başvuru Bilgileri",
+      "chats": [
+        "bf1d163560e5f030ec16ebe2",
+        "e803fcfa58e5548b75cdee4a"
+      ],
+      "at": "2026-11-09T17:40:44.521204+03:00"
+    },
+    "https://www.osym.gov.tr/2026-kpss-ortaogretim-kilavuz-ve-basvuru-bilgileri": {
+      "title": "27 Ağustos 2026 2026-KPSS Ortaöğretim: Kılavuz ve Başvuru Bilgileri",
+      "chats": [
+        "e803fcfa58e5548b75cdee4a"
+      ],
+      "at": "2026-11-09T17:40:44.521204+03:00"
+    },
+    "https://www.osym.gov.tr/2026ekpss-basvurularin-alinmasi": {
+      "title": "3 Şubat 2026 2026-EKPSS: Başvuruların Alınması",
+      "chats": [
+        "e803fcfa58e5548b75cdee4a"
+      ],
+      "at": "2026-11-09T17:40:44.521204+03:00"
+    },
+    "https://www.osym.gov.tr/2026ekpss-kilavuz-tablolar-ve-basvuru-bilgileri": {
+      "title": "3 Şubat 2026 2026-EKPSS: Kılavuz, Tablolar ve Başvuru Bilgileri",
+      "chats": [
+        "e803fcfa58e5548b75cdee4a"
+      ],
+      "at": "2026-11-09T17:40:44.521204+03:00"
+    },
+    "https://www.osym.gov.tr/2026ekpss-kura-icin-basvurularin-alinmasi": {
+      "title": "27 Nisan 2026 2026-EKPSS: Kura İçin Başvuruların Alınması",
+      "chats": [
+        "e803fcfa58e5548b75cdee4a"
+      ],
+      "at": "2026-11-09T17:40:44.521204+03:00"
     }
   },
   "notices": {
@@ -2063,6 +2123,375 @@
       },
       "checked_on": "2026-11-09",
       "policy": "d7986b01b15e54ff"
+    },
+    "https://osym.gov.tr/kpss20261-bazi-kamu-kurum-ve-kuruluslarinin-kadro-ve-pozisyonlarina-yerlestirme-yapmak-icin-tercih-kilavuzu-ve-tablolar": {
+      "title": "3 Temmuz 2026 KPSS-2026/1: Bazı Kamu Kurum ve Kuruluşlarının Kadro ve Pozisyonlarına Yerleştirme Yapmak İçin Tercih Kılavuzu ve Tablolar",
+      "url": "https://osym.gov.tr/kpss20261-bazi-kamu-kurum-ve-kuruluslarinin-kadro-ve-pozisyonlarina-yerlestirme-yapmak-icin-tercih-kilavuzu-ve-tablolar",
+      "source": "OSYM",
+      "detail_warning": "Belge/eklerin tamamı güvenle okunamadı",
+      "assessment": {
+        "status": "review",
+        "reasons": [],
+        "warnings": [
+          "Son başvuru tarihi belirlenemedi veya birden fazla tarih var",
+          "Birden fazla kadro/puan koşulu var; satır bazında inceleme gerekli",
+          "Aday puanı yaklaşık; başvuruda kesin puan kullanılmalı",
+          "3001 kodu bulundu; ilgili kadro satırı ve diğer şartlar kontrol edilmeli",
+          "İlanda farklı KPSS yılı var; yıl şartını kontrol et",
+          "Yaş, belge, deneyim ve diğer özel şartlar ayrıca kontrol edilmeli",
+          "Belge/kadro kapsamı belirsiz; kesin eleme yapılmadı"
+        ],
+        "deadline": null,
+        "minimum_score": null,
+        "score_conditions": [],
+        "score_types": [
+          "P3",
+          "P93",
+          "P94"
+        ],
+        "score_ambiguous": true,
+        "kpss_exempt": false,
+        "education_levels": [
+          "Ortaöğretim / lise",
+          "Ön lisans",
+          "Lisans"
+        ],
+        "evidence_complete": false,
+        "positions": []
+      },
+      "checked_on": "2026-11-09",
+      "policy": "1292260b21ee0874"
+    },
+    "https://www.osym.gov.tr/2026-elektronik-ingilizce-yeterlik-sinavielectronic-test-of-english-proficiency-e-tep-20264-basvurularin-alinmasi": {
+      "title": "27 Ekim 2026 2026 Elektronik İngilizce Yeterlik Sınavı/Electronic-Test of English Proficiency (e-TEP 2026/4): Başvuruların Alınması",
+      "url": "https://www.osym.gov.tr/2026-elektronik-ingilizce-yeterlik-sinavielectronic-test-of-english-proficiency-e-tep-20264-basvurularin-alinmasi",
+      "source": "OSYM",
+      "document_key": "text:f7eba1561cce86828145d783cef16cdb2f84ba166e4586c686ee0d3dc31210ad",
+      "assessment": {
+        "status": "review",
+        "reasons": [],
+        "warnings": [
+          "Son başvuru tarihi belirlenemedi veya birden fazla tarih var",
+          "KPSS taban puanı açık biçimde okunamadı",
+          "Aday puanı yaklaşık; başvuruda kesin puan kullanılmalı",
+          "Mezuniyet/bölüm uygunluğu doğrulanamadı",
+          "Yaş, belge, deneyim ve diğer özel şartlar ayrıca kontrol edilmeli"
+        ],
+        "deadline": null,
+        "minimum_score": null,
+        "score_conditions": [],
+        "score_types": [],
+        "score_ambiguous": false,
+        "kpss_exempt": false,
+        "education_levels": [],
+        "evidence_complete": true,
+        "positions": []
+      },
+      "checked_on": "2026-11-09",
+      "policy": "1292260b21ee0874"
+    },
+    "https://www.osym.gov.tr/2026-kamu-personel-secme-sinavi-kpss-lisans-basvurularin-alinmasi": {
+      "title": "29 Haziran 2026 2026 Kamu Personel Seçme Sınavı (KPSS) Lisans: Başvuruların Alınması",
+      "url": "https://www.osym.gov.tr/2026-kamu-personel-secme-sinavi-kpss-lisans-basvurularin-alinmasi",
+      "source": "OSYM",
+      "document_key": "text:23c6f4efda98b148674c3a69a17dcc906ed3c701039d8f295b9dd8b71154662b",
+      "assessment": {
+        "status": "review",
+        "reasons": [],
+        "warnings": [
+          "Son başvuru tarihi belirlenemedi veya birden fazla tarih var",
+          "KPSS taban puanı açık biçimde okunamadı",
+          "Aday puanı yaklaşık; başvuruda kesin puan kullanılmalı",
+          "Mezuniyet/bölüm uygunluğu doğrulanamadı",
+          "Yaş, belge, deneyim ve diğer özel şartlar ayrıca kontrol edilmeli"
+        ],
+        "deadline": null,
+        "minimum_score": null,
+        "score_conditions": [],
+        "score_types": [],
+        "score_ambiguous": false,
+        "kpss_exempt": false,
+        "education_levels": [
+          "Lisans"
+        ],
+        "evidence_complete": true,
+        "positions": []
+      },
+      "checked_on": "2026-11-09",
+      "policy": "1292260b21ee0874"
+    },
+    "https://www.osym.gov.tr/2026-kpss-din-hizmetleri-alan-bilgisi-dhbt-basvurularinin-alinmasi": {
+      "title": "22 Eylül 2026 2026-KPSS Din Hizmetleri Alan Bilgisi (DHBT): Başvurularının Alınması",
+      "url": "https://www.osym.gov.tr/2026-kpss-din-hizmetleri-alan-bilgisi-dhbt-basvurularinin-alinmasi",
+      "source": "OSYM",
+      "document_key": "text:9705b5357c30651f9907b60cea0f78575f40a3e82a4604da30538c32c6ef2d08",
+      "assessment": {
+        "status": "review",
+        "reasons": [],
+        "warnings": [
+          "Son başvuru tarihi belirlenemedi veya birden fazla tarih var",
+          "KPSS taban puanı açık biçimde okunamadı",
+          "Aday puanı yaklaşık; başvuruda kesin puan kullanılmalı",
+          "Mezuniyet/bölüm uygunluğu doğrulanamadı",
+          "Yaş, belge, deneyim ve diğer özel şartlar ayrıca kontrol edilmeli"
+        ],
+        "deadline": null,
+        "minimum_score": null,
+        "score_conditions": [],
+        "score_types": [],
+        "score_ambiguous": false,
+        "kpss_exempt": false,
+        "education_levels": [],
+        "evidence_complete": true,
+        "positions": []
+      },
+      "checked_on": "2026-11-09",
+      "policy": "1292260b21ee0874"
+    },
+    "https://www.osym.gov.tr/2026-kpss-din-hizmetleri-alan-bilgisi-dhbt-kilavuzlar-ve-basvuru-bilgileri": {
+      "title": "22 Eylül 2026 2026-KPSS Din Hizmetleri Alan Bilgisi (DHBT): Kılavuzlar ve Başvuru Bilgileri",
+      "url": "https://www.osym.gov.tr/2026-kpss-din-hizmetleri-alan-bilgisi-dhbt-kilavuzlar-ve-basvuru-bilgileri",
+      "source": "OSYM",
+      "detail_warning": "Belge/eklerin tamamı güvenle okunamadı; PDF okunamadı (ValueError)",
+      "assessment": {
+        "status": "review",
+        "reasons": [],
+        "warnings": [
+          "Son başvuru tarihi belirlenemedi veya birden fazla tarih var",
+          "KPSS taban puanı açık biçimde okunamadı",
+          "Aday puanı yaklaşık; başvuruda kesin puan kullanılmalı",
+          "Mezuniyet/bölüm uygunluğu doğrulanamadı",
+          "Yaş, belge, deneyim ve diğer özel şartlar ayrıca kontrol edilmeli",
+          "Belge/kadro kapsamı belirsiz; kesin eleme yapılmadı"
+        ],
+        "deadline": null,
+        "minimum_score": null,
+        "score_conditions": [],
+        "score_types": [],
+        "score_ambiguous": false,
+        "kpss_exempt": false,
+        "education_levels": [
+          "Ortaöğretim / lise",
+          "Ön lisans",
+          "Lisans"
+        ],
+        "evidence_complete": false,
+        "positions": []
+      },
+      "checked_on": "2026-11-09",
+      "policy": "1292260b21ee0874"
+    },
+    "https://www.osym.gov.tr/2026-kpss-on-lisans-basvurularin-alinmasi-20260728141324252": {
+      "title": "29 Temmuz 2026 2026-KPSS Ön Lisans: Başvuruların Alınması",
+      "url": "https://www.osym.gov.tr/2026-kpss-on-lisans-basvurularin-alinmasi-20260728141324252",
+      "source": "OSYM",
+      "document_key": "text:1cbc500e3bed1d0c242598b7b3dc38b5b3a9b348032498c52fb89d00e1d29b01",
+      "assessment": {
+        "status": "review",
+        "reasons": [],
+        "warnings": [
+          "Son başvuru tarihi belirlenemedi veya birden fazla tarih var",
+          "KPSS taban puanı açık biçimde okunamadı",
+          "Aday puanı yaklaşık; başvuruda kesin puan kullanılmalı",
+          "Mezuniyet/bölüm uygunluğu doğrulanamadı",
+          "Yaş, belge, deneyim ve diğer özel şartlar ayrıca kontrol edilmeli"
+        ],
+        "deadline": null,
+        "minimum_score": null,
+        "score_conditions": [],
+        "score_types": [],
+        "score_ambiguous": false,
+        "kpss_exempt": false,
+        "education_levels": [
+          "Ön lisans"
+        ],
+        "evidence_complete": true,
+        "positions": []
+      },
+      "checked_on": "2026-11-09",
+      "policy": "1292260b21ee0874"
+    },
+    "https://www.osym.gov.tr/2026-kpss-on-lisans-kilavuz-ve-basvuru-bilgileri": {
+      "title": "29 Temmuz 2026 2026-KPSS Ön Lisans: Kılavuz ve Başvuru Bilgileri",
+      "url": "https://www.osym.gov.tr/2026-kpss-on-lisans-kilavuz-ve-basvuru-bilgileri",
+      "source": "OSYM",
+      "detail_warning": "Belge/eklerin tamamı güvenle okunamadı; PDF okunamadı (ValueError)",
+      "assessment": {
+        "status": "review",
+        "reasons": [],
+        "warnings": [
+          "Son başvuru tarihi belirlenemedi veya birden fazla tarih var",
+          "KPSS taban puanı açık biçimde okunamadı",
+          "Aday puanı yaklaşık; başvuruda kesin puan kullanılmalı",
+          "Mezuniyet/bölüm uygunluğu doğrulanamadı",
+          "Yaş, belge, deneyim ve diğer özel şartlar ayrıca kontrol edilmeli",
+          "Belge/kadro kapsamı belirsiz; kesin eleme yapılmadı"
+        ],
+        "deadline": null,
+        "minimum_score": null,
+        "score_conditions": [],
+        "score_types": [],
+        "score_ambiguous": false,
+        "kpss_exempt": false,
+        "education_levels": [
+          "Ön lisans",
+          "Lisans"
+        ],
+        "evidence_complete": false,
+        "positions": []
+      },
+      "checked_on": "2026-11-09",
+      "policy": "1292260b21ee0874"
+    },
+    "https://www.osym.gov.tr/2026-kpss-ortaogretim-basvurularin-alinmasi": {
+      "title": "27 Ağustos 2026 2026-KPSS Ortaöğretim: Başvuruların Alınması",
+      "url": "https://www.osym.gov.tr/2026-kpss-ortaogretim-basvurularin-alinmasi",
+      "source": "OSYM",
+      "document_key": "text:4fe77f759ff0c5b60baaf56fd70d8c74ac5951b5b429930da4758833033c1dac",
+      "assessment": {
+        "status": "review",
+        "reasons": [],
+        "warnings": [
+          "Son başvuru tarihi belirlenemedi veya birden fazla tarih var",
+          "KPSS taban puanı açık biçimde okunamadı",
+          "Aday puanı yaklaşık; başvuruda kesin puan kullanılmalı",
+          "Mezuniyet/bölüm uygunluğu doğrulanamadı",
+          "Yaş, belge, deneyim ve diğer özel şartlar ayrıca kontrol edilmeli"
+        ],
+        "deadline": null,
+        "minimum_score": null,
+        "score_conditions": [],
+        "score_types": [],
+        "score_ambiguous": false,
+        "kpss_exempt": false,
+        "education_levels": [
+          "Ortaöğretim / lise"
+        ],
+        "evidence_complete": true,
+        "positions": []
+      },
+      "checked_on": "2026-11-09",
+      "policy": "1292260b21ee0874"
+    },
+    "https://www.osym.gov.tr/2026-kpss-ortaogretim-kilavuz-ve-basvuru-bilgileri": {
+      "title": "27 Ağustos 2026 2026-KPSS Ortaöğretim: Kılavuz ve Başvuru Bilgileri",
+      "url": "https://www.osym.gov.tr/2026-kpss-ortaogretim-kilavuz-ve-basvuru-bilgileri",
+      "source": "OSYM",
+      "detail_warning": "Belge/eklerin tamamı güvenle okunamadı; PDF okunamadı (ValueError)",
+      "assessment": {
+        "status": "review",
+        "reasons": [],
+        "warnings": [
+          "Son başvuru tarihi belirlenemedi veya birden fazla tarih var",
+          "KPSS taban puanı açık biçimde okunamadı",
+          "Aday puanı yaklaşık; başvuruda kesin puan kullanılmalı",
+          "Mezuniyet/bölüm uygunluğu doğrulanamadı",
+          "Yaş, belge, deneyim ve diğer özel şartlar ayrıca kontrol edilmeli",
+          "Belge/kadro kapsamı belirsiz; kesin eleme yapılmadı"
+        ],
+        "deadline": null,
+        "minimum_score": null,
+        "score_conditions": [],
+        "score_types": [],
+        "score_ambiguous": false,
+        "kpss_exempt": false,
+        "education_levels": [
+          "Ortaöğretim / lise"
+        ],
+        "evidence_complete": false,
+        "positions": []
+      },
+      "checked_on": "2026-11-09",
+      "policy": "1292260b21ee0874"
+    },
+    "https://www.osym.gov.tr/2026ekpss-basvurularin-alinmasi": {
+      "title": "3 Şubat 2026 2026-EKPSS: Başvuruların Alınması",
+      "url": "https://www.osym.gov.tr/2026ekpss-basvurularin-alinmasi",
+      "source": "OSYM",
+      "document_key": "text:5dab2b734294c449173508067a9d15e06c1fddcbcbbad6d7ebb417b139484fc8",
+      "assessment": {
+        "status": "review",
+        "reasons": [],
+        "warnings": [
+          "Son başvuru tarihi belirlenemedi veya birden fazla tarih var",
+          "KPSS taban puanı açık biçimde okunamadı",
+          "Aday puanı yaklaşık; başvuruda kesin puan kullanılmalı",
+          "Mezuniyet/bölüm uygunluğu doğrulanamadı",
+          "Yaş, belge, deneyim ve diğer özel şartlar ayrıca kontrol edilmeli"
+        ],
+        "deadline": null,
+        "minimum_score": null,
+        "score_conditions": [],
+        "score_types": [],
+        "score_ambiguous": false,
+        "kpss_exempt": false,
+        "education_levels": [],
+        "evidence_complete": true,
+        "positions": []
+      },
+      "checked_on": "2026-11-09",
+      "policy": "1292260b21ee0874"
+    },
+    "https://www.osym.gov.tr/2026ekpss-kilavuz-tablolar-ve-basvuru-bilgileri": {
+      "title": "3 Şubat 2026 2026-EKPSS: Kılavuz, Tablolar ve Başvuru Bilgileri",
+      "url": "https://www.osym.gov.tr/2026ekpss-kilavuz-tablolar-ve-basvuru-bilgileri",
+      "source": "OSYM",
+      "detail_warning": "Belge/eklerin tamamı güvenle okunamadı; PDF okunamadı (ValueError)",
+      "assessment": {
+        "status": "review",
+        "reasons": [],
+        "warnings": [
+          "Son başvuru tarihi belirlenemedi veya birden fazla tarih var",
+          "KPSS taban puanı açık biçimde okunamadı",
+          "Aday puanı yaklaşık; başvuruda kesin puan kullanılmalı",
+          "Mezuniyet/bölüm uygunluğu doğrulanamadı",
+          "Yaş, belge, deneyim ve diğer özel şartlar ayrıca kontrol edilmeli",
+          "Belge/kadro kapsamı belirsiz; kesin eleme yapılmadı"
+        ],
+        "deadline": null,
+        "minimum_score": null,
+        "score_conditions": [],
+        "score_types": [],
+        "score_ambiguous": false,
+        "kpss_exempt": false,
+        "education_levels": [
+          "Ortaöğretim / lise",
+          "Ön lisans",
+          "Lisans"
+        ],
+        "evidence_complete": false,
+        "positions": []
+      },
+      "checked_on": "2026-11-09",
+      "policy": "1292260b21ee0874"
+    },
+    "https://www.osym.gov.tr/2026ekpss-kura-icin-basvurularin-alinmasi": {
+      "title": "27 Nisan 2026 2026-EKPSS: Kura İçin Başvuruların Alınması",
+      "url": "https://www.osym.gov.tr/2026ekpss-kura-icin-basvurularin-alinmasi",
+      "source": "OSYM",
+      "document_key": "text:c7d87bda8d4faa645729fe41e2fef20e8f9b2a05370597bc59e2cc8caa2e5d2c",
+      "assessment": {
+        "status": "review",
+        "reasons": [],
+        "warnings": [
+          "Son başvuru tarihi belirlenemedi veya birden fazla tarih var",
+          "KPSS taban puanı açık biçimde okunamadı",
+          "Aday puanı yaklaşık; başvuruda kesin puan kullanılmalı",
+          "Mezuniyet/bölüm uygunluğu doğrulanamadı",
+          "Yaş, belge, deneyim ve diğer özel şartlar ayrıca kontrol edilmeli"
+        ],
+        "deadline": null,
+        "minimum_score": null,
+        "score_conditions": [],
+        "score_types": [],
+        "score_ambiguous": false,
+        "kpss_exempt": false,
+        "education_levels": [],
+        "evidence_complete": true,
+        "positions": []
+      },
+      "checked_on": "2026-11-09",
+      "policy": "1292260b21ee0874"
     }
   },
   "documents": {
@@ -2114,7 +2543,10 @@
     "text:7082272b605b30b3f905f58d7673f1f17ad0b6bd2cdcdab77b3b9afa6417c3db": "https://ilan.memurlar.net/ilan/86927/sakarya-karasu-karsas-1-isci-alacak.html",
     "text:284e135a441842327ca777bb6e37afe94fca203a26fbb0d18a74f3f8b63b7712": "https://ilan.memurlar.net/ilan/86928/kdk-10-kamu-denetciligi-uzman-yardimcisi-alacak.html",
     "text:290d678db26305197646909a69f19c015be719887d25a487f9a1e180801d7aa0": "https://ilan.memurlar.net/kategori/daimi-isci-ilanlari?Expire=false",
-    "text:3a867a75fab752fe63d99968d7d7475296a10c8f0e5b927ec5be470720e06f07": "https://ilan.memurlar.net/kategori/gecici-isci-ilanlari?Expire=false"
+    "text:3a867a75fab752fe63d99968d7d7475296a10c8f0e5b927ec5be470720e06f07": "https://ilan.memurlar.net/kategori/gecici-isci-ilanlari?Expire=false",
+    "text:f7eba1561cce86828145d783cef16cdb2f84ba166e4586c686ee0d3dc31210ad": "https://www.osym.gov.tr/2026-elektronik-ingilizce-yeterlik-sinavielectronic-test-of-english-proficiency-e-tep-20264-basvurularin-alinmasi",
+    "text:5dab2b734294c449173508067a9d15e06c1fddcbcbbad6d7ebb417b139484fc8": "https://www.osym.gov.tr/2026ekpss-basvurularin-alinmasi",
+    "text:c7d87bda8d4faa645729fe41e2fef20e8f9b2a05370597bc59e2cc8caa2e5d2c": "https://www.osym.gov.tr/2026ekpss-kura-icin-basvurularin-alinmasi"
   },
   "aliases": {
     "https://www.konya.bel.tr/haber/konya-buyuksehirde-zabita-memuru-alimi-icin-basvurular-devam-ediyor": "https://www.konya.bel.tr/haber/konya-buyuksehirde-zabita-memuru-alimi-icin-basvurular-devam-ediyor",
@@ -2168,18 +2600,25 @@
     "https://ilan.memurlar.net/ilan/86927/sakarya-karasu-karsas-1-isci-alacak.html": "https://ilan.memurlar.net/ilan/86927/sakarya-karasu-karsas-1-isci-alacak.html",
     "https://ilan.memurlar.net/ilan/86928/kdk-10-kamu-denetciligi-uzman-yardimcisi-alacak.html": "https://ilan.memurlar.net/ilan/86928/kdk-10-kamu-denetciligi-uzman-yardimcisi-alacak.html",
     "https://ilan.memurlar.net/kategori/daimi-isci-ilanlari?Expire=false": "https://ilan.memurlar.net/kategori/daimi-isci-ilanlari?Expire=false",
-    "https://ilan.memurlar.net/kategori/gecici-isci-ilanlari?Expire=false": "https://ilan.memurlar.net/kategori/gecici-isci-ilanlari?Expire=false"
+    "https://ilan.memurlar.net/kategori/gecici-isci-ilanlari?Expire=false": "https://ilan.memurlar.net/kategori/gecici-isci-ilanlari?Expire=false",
+    "https://www.osym.gov.tr/2026-elektronik-ingilizce-yeterlik-sinavielectronic-test-of-english-proficiency-e-tep-20264-basvurularin-alinmasi": "https://www.osym.gov.tr/2026-elektronik-ingilizce-yeterlik-sinavielectronic-test-of-english-proficiency-e-tep-20264-basvurularin-alinmasi",
+    "https://www.osym.gov.tr/2026-kamu-personel-secme-sinavi-kpss-lisans-basvurularin-alinmasi": "https://osym.gov.tr/2026-kamu-personel-secme-sinavi-kpss-lisans-basvurularin-alinmasi",
+    "https://www.osym.gov.tr/2026-kpss-din-hizmetleri-alan-bilgisi-dhbt-basvurularinin-alinmasi": "https://osym.gov.tr/2026-kpss-din-hizmetleri-alan-bilgisi-dhbt-basvurularinin-alinmasi",
+    "https://www.osym.gov.tr/2026-kpss-on-lisans-basvurularin-alinmasi-20260728141324252": "https://osym.gov.tr/2026-kpss-on-lisans-basvurularin-alinmasi-20260728141324252",
+    "https://www.osym.gov.tr/2026-kpss-ortaogretim-basvurularin-alinmasi": "https://osym.gov.tr/2026-kpss-ortaogretim-basvurularin-alinmasi",
+    "https://www.osym.gov.tr/2026ekpss-basvurularin-alinmasi": "https://www.osym.gov.tr/2026ekpss-basvurularin-alinmasi",
+    "https://www.osym.gov.tr/2026ekpss-kura-icin-basvurularin-alinmasi": "https://www.osym.gov.tr/2026ekpss-kura-icin-basvurularin-alinmasi"
   },
-  "delivery_cursor": 0,
+  "delivery_cursor": 1,
   "last_run": {
-    "at": "2026-11-09T17:33:09.083201+03:00",
-    "status": "partial_source_error",
-    "messages_sent": 20,
+    "at": "2026-11-09T17:40:44.521204+03:00",
+    "status": "telegram_error",
+    "messages_sent": 12,
     "delivery_deferred": false,
     "sources_ok": 10,
     "sources_total": 13,
-    "details_failed": 0,
-    "pending_messages": 14,
-    "pending_details": 42
+    "details_failed": 5,
+    "pending_messages": 3,
+    "pending_details": 78
   }
 }
