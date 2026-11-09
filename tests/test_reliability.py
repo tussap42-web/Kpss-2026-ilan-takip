@@ -115,3 +115,16 @@ class ReliabilityTests(unittest.TestCase):
         details = source['_scan_stats']['error_details']
         self.assertEqual(details[0]['http_status'], 503)
         self.assertNotIn('hidden', json.dumps(details))
+
+    def test_robots_request_accepts_plain_text(self):
+        class Response(io.BytesIO):
+            headers = Message()
+            headers['Content-Type'] = 'text/plain'
+            def geturl(self):
+                return 'https://example.org/robots.txt'
+        with patch('network.build_opener') as opener:
+            opener.return_value.open.return_value = Response(b'User-agent: *\nDisallow: /private')
+            body, _, _ = network._raw('https://example.org/robots.txt', 512000)
+            self.assertIn(b'Disallow: /private', body)
+            request = opener.return_value.open.call_args.args[0]
+            self.assertIn('text/plain', request.get_header('Accept'))

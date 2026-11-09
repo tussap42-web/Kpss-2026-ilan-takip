@@ -43,7 +43,11 @@ def origin(url):
 
 
 def _raw(url, limit, robots=False):
-    request = Request(url, headers={'User-Agent': AGENT, 'Accept': 'text/html,application/pdf,application/rss+xml,application/atom+xml'})
+    policy_request = robots or urlsplit(url).path == '/robots.txt'
+    # robots.txt is plain text; asking only for HTML/PDF caused real HTTP 406
+    # responses at MEB and Memurlar.net despite a publicly readable policy.
+    accept = 'text/plain,*/*;q=0.1' if policy_request else 'text/html,application/pdf,application/rss+xml,application/atom+xml,application/xml,text/xml,*/*;q=0.1'
+    request = Request(url, headers={'User-Agent': AGENT, 'Accept': accept})
     # Redirects re-enter fetch_bytes, so target robots and rate limits also apply.
     class NoRedirect(HTTPRedirectHandler):
         def redirect_request(self, req, fp, code, msg, headers, newurl):
@@ -52,7 +56,7 @@ def _raw(url, limit, robots=False):
         mime = response.headers.get('Content-Type', '').lower()
         # Some sites route a missing robots.txt to their very large HTML homepage.
         # HTML is not a robots policy; read only a small prefix in that case.
-        if (robots or urlsplit(url).path == '/robots.txt') and 'html' in mime:
+        if policy_request and 'html' in mime:
             prefix = response.read(4096)
             if b'<html' in prefix.lower() or b'<!doctype html' in prefix.lower():
                 return b'', response.headers, response.geturl()
