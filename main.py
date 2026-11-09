@@ -14,7 +14,7 @@ from datetime import datetime, date
 from concurrent.futures import ThreadPoolExecutor
 from eligibility import assess_notice
 from discovery import scan_source as discover_source, canonical
-from network import fetch_bytes
+from network import fetch_bytes, SourceAccessError, SourceContentError
 from details import enrich
 from urllib.error import HTTPError, URLError
 from urllib.parse import urljoin, urlsplit, urlunsplit, parse_qsl, urlencode
@@ -106,9 +106,9 @@ def get_html(url: str) -> str:
     content, headers, _ = fetch_bytes(url, MAX_CONTENT)
     mime = headers.get('Content-Type', '').lower()
     if not any(kind in mime for kind in ('html', 'xml', 'rss', 'atom')):
-        raise ValueError('HTML/XML olmayan içerik')
+        raise SourceContentError('unsupported_listing_content_type')
     if any(marker in content.lower() for marker in (b'cf-chl-', b'verify you are human', b'enable javascript and cookies to continue')):
-        raise PermissionError('Kaynak otomasyon doğrulaması istiyor; atlandı')
+        raise SourceAccessError('human_verification_required')
     charset = headers.get_content_charset() or 'utf-8'
     try:
         return content.decode(charset, errors='replace')
@@ -227,7 +227,12 @@ def scan(config: dict, sources: dict, state_path: Path, dry_run: bool) -> int:
     now = datetime.now(zone)
     start, end = int(config['schedule']['start_hour']), int(config['schedule']['end_hour'])
     in_window = start <= now.hour <= end if start <= end else now.hour >= start or now.hour <= end
-    if not dry_run and os.getenv('FORCE_RUN') != '1' and not in_window:
+    forced = os.getenv('FORCE_RUN') == '1'
+    scheduled = os.getenv('KPSS_TRIGGER') == 'schedule'
+    # Delayed scheduled runs still discover and persist notices. Quiet hours
+    # defer delivery to the next daytime scan instead of losing the whole run.
+    delivery_deferred = not dry_run and not forced and not in_window
+    if delivery_deferred and not scheduled:
         report('skipped_time_window', local_time=now.isoformat(), timezone=str(zone))
         return 0
     if not dry_run and not config['notifications'].get('enabled', False):
@@ -341,7 +346,7 @@ def scan(config: dict, sources: dict, state_path: Path, dry_run: bool) -> int:
             receipt = chat_fingerprint(token, chat_id)
             if receipt in completed or (allowed is not None and receipt not in allowed):
                 continue
-            if attempts >= cap or receipt in failed_chats:
+            if delivery_deferred or attempts >= cap or receipt in failed_chats:
                 pending += 1
                 continue
             attempts += 1
@@ -355,18 +360,21 @@ def scan(config: dict, sources: dict, state_path: Path, dry_run: bool) -> int:
             state['sent'][key] = {'title': item['title'], 'chats': sorted(completed), 'at': now.isoformat()}
             sent += 1
             save_state(state_path, state)
+    partial = failures or detail_failures or any(s.get('pages_failed', 0) for s in source_stats)
+    status = 'telegram_error' if errors else 'partial_source_error' if partial else 'delivery_deferred' if delivery_deferred else 'success'
     if not dry_run:
         state['delivery_cursor'] = (cursor + attempts) % max(1, len(chat_ids))
+        state['last_run'] = {'at': now.isoformat(), 'status': status,
+                             'messages_sent': sent, 'delivery_deferred': delivery_deferred}
         save_state(state_path, state)
-    partial = failures or detail_failures or any(s.get('pages_failed', 0) for s in source_stats)
-    status = 'telegram_error' if errors else 'partial_source_error' if partial else 'success'
     report(('preview_' + status) if dry_run else status, local_time=now.isoformat(), timezone=str(zone),
            sources=source_stats, details_failed=detail_failures, messages_attempted=attempts,
            messages_sent=sent, pending_messages=pending, pending_details=max(0, len(refresh)-limit),
-           dry_run=dry_run)
+           dry_run=dry_run, delivery_deferred=delivery_deferred,
+           recipients_configured=len(chat_ids))
     if partial:
         print('::warning::Bazı liste veya ilan belgeleri okunamadı; kapsam eksik.')
-    return 1 if errors else 0
+    return 1 if errors else 2 if partial and os.getenv('KPSS_STRICT_SOURCES') == '1' else 0
 
 
 def main() -> int:
@@ -402,4 +410,3 @@ if __name__ == '__main__':
         report('program_error', error_type=type(exc).__name__)
         print('Program durduruldu; mevcut geçmiş korunuyor.')
         sys.exit(1)
-

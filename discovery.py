@@ -4,6 +4,7 @@ import re
 from html.parser import HTMLParser
 from urllib.parse import urljoin, urlsplit, urlunsplit, parse_qsl, urlencode
 import xml.etree.ElementTree as ET
+from network import error_info
 
 
 def canonical(url):
@@ -51,7 +52,7 @@ class IndexParser(HTMLParser):
 def scan_source(source, get_html, is_job_link, normalize):
     seeds = source.get('entrypoints', []) + [source['url']]
     pending = deque(dict.fromkeys(seeds))
-    visited, found, errors = set(), {}, []
+    visited, found, errors, error_details = set(), {}, [], []
     limit = min(max(int(source.get('max_pages', 4)), 1), 6)
     ok = 0
     while pending and len(visited) < limit:
@@ -110,8 +111,11 @@ def scan_source(source, get_html, is_job_link, normalize):
                         pending.append(link)
         except (OSError, ValueError, ET.ParseError) as exc:
             errors.append(type(exc).__name__)
+            p = urlsplit(url)
+            error_details.append(dict(error_info(exc), url=urlunsplit((p.scheme, p.netloc, p.path, '', ''))))
     source['_scan_stats'] = {'pages_ok': ok, 'pages_failed': len(errors), 'errors': errors,
-                             'pages_attempted': len(visited), 'navigation_pending': len(pending)}
+                             'pages_attempted': len(visited), 'navigation_pending': len(pending),
+                             'error_details': error_details}
     if not ok:
         raise OSError('Hiçbir liste sayfası okunamadı')
     return list(found.values())

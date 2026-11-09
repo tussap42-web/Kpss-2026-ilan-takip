@@ -1,5 +1,8 @@
 name: KPSS Ilan Takip
 on:
+  push:
+    branches: [main]
+    paths: ['**.py', 'sources.json', 'config.json', 'requirements.txt', '.github/workflows/kpss.yml']
   workflow_dispatch:
     inputs:
       mode:
@@ -8,7 +11,7 @@ on:
         options: [preview, find-chats, test-message, scan]
         default: preview
   schedule:
-    - cron: '7 6-20 * * *' # Türkiye 09:07–23:07 (UTC+3)
+    - cron: '17,47 6-20 * * *' # Türkiye 09:17–23:47; ikinci tetik gecikmelere yedek
 permissions:
   contents: write
 concurrency:
@@ -27,15 +30,18 @@ jobs:
       - name: Testler
         run: python -m unittest discover -s tests -v
       - name: KPSS kontrolü
+        shell: bash
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_IDS: ${{ secrets.TELEGRAM_CHAT_IDS }}
           KPSS_WRITE_SUMMARY: '1'
+          KPSS_TRIGGER: ${{ github.event_name }}
+          KPSS_STRICT_SOURCES: '1'
           RUN_MODE: ${{ github.event.inputs.mode || 'scan' }}
-          FORCE_RUN: ${{ github.event_name == 'workflow_dispatch' && '1' || '0' }}
-        run: python main.py --mode "$RUN_MODE"
+          FORCE_RUN: ${{ (github.event_name == 'workflow_dispatch' || github.event_name == 'push') && '1' || '0' }}
+        run: python main.py --mode "$RUN_MODE" | tee scan.log
       - name: Bildirim geçmişini kaydet
-        if: ${{ always() && (github.event_name == 'schedule' || github.event.inputs.mode == 'scan') }}
+        if: ${{ always() && (github.event_name == 'schedule' || github.event_name == 'push' || github.event.inputs.mode == 'scan') }}
         run: |
           if [ ! -f state/seen.json ]; then exit 0; fi
           git add state/seen.json
@@ -43,4 +49,14 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git commit -m "chore: update KPSS notice state"
+          git pull --rebase origin main
           git push
+      - name: Tarama günlüğü ve teslimat geçmişi
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: kpss-scan-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            scan.log
+            state/seen.json
+          retention-days: 7
