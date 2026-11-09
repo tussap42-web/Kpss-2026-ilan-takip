@@ -622,7 +622,7 @@
         "minimum_score": null,
         "score_conditions": [],
         "score_types": [],
-        "score_ambiguous": false,
+        "score_ambiguous": true,
         "kpss_exempt": false,
         "education_levels": [
           "Ön lisans",
@@ -631,7 +631,7 @@
         "evidence_complete": true,
         "positions": []
       },
-      "checked_on": "2026-11-09",
+      "checked_on": "2026-11-10",
       "policy": "1292260b21ee0874"
     },
     "https://pgm.adalet.gov.tr/Home/SayfaDetay/bakanligimiz-merkez-teskilati-ve-personel-egitim-merkezi-mudurlukleri-ile-adli-destek-ve-m17072026044513": {
@@ -1159,7 +1159,7 @@
         "evidence_complete": false,
         "positions": []
       },
-      "checked_on": "2026-11-09",
+      "checked_on": "2026-11-10",
       "policy": "1292260b21ee0874"
     },
     "https://dokuman.osym.gov.tr/web//2026/9/2026-kpss-on-lisans-basvuru-kilavuzu-l21r5f-22101148.pdf": {
@@ -1188,7 +1188,7 @@
         "evidence_complete": false,
         "positions": []
       },
-      "checked_on": "2026-11-09",
+      "checked_on": "2026-11-10",
       "policy": "1292260b21ee0874"
     },
     "https://dokuman.osym.gov.tr/web//2026/9/2026-kpss-ortaogretim-basvuru-kilavuzu-0k8595-22101148.pdf": {
@@ -2929,6 +2929,275 @@
       },
       "checked_on": "2026-11-09",
       "policy": "1292260b21ee0874"
+    },
+    "https://ilan.memurlar.net/ilan/86940/sayistay-16-sozlesmeli-personel-alacak.html": {
+      "title": "Sayıştay 16 sözleşmeli personel alacak",
+      "url": "https://ilan.memurlar.net/ilan/86940/sayistay-16-sozlesmeli-personel-alacak.html",
+      "source": "Memurlar.net",
+      "document_key": "text:ed12fc79dcb81c01c7c38d1e14101bba3c92940d6a0c533e301c4c8c9b5fcff5",
+      "assessment": {
+        "status": "review",
+        "reasons": [],
+        "warnings": [
+          "Puan eşiği karşılanıyor: P93 en az 60",
+          "Aday puanı yaklaşık; başvuruda kesin puan kullanılmalı",
+          "Mezuniyet/bölüm uygunluğu doğrulanamadı",
+          "Yaş, belge, deneyim ve diğer özel şartlar ayrıca kontrol edilmeli"
+        ],
+        "deadline": "2026-11-25",
+        "minimum_score": 60.0,
+        "score_conditions": [
+          {
+            "score_type": "P93",
+            "minimum_score": 60.0
+          }
+        ],
+        "score_types": [
+          "P93"
+        ],
+        "score_ambiguous": false,
+        "kpss_exempt": false,
+        "education_levels": [
+          "Ön lisans",
+          "Lisans"
+        ],
+        "evidence_complete": true,
+        "positions": []
+      },
+      "checked_on": "2026-11-10",
+      "policy": "1292260b21ee0874"
+    },
+    "https://ilan.memurlar.net/ilan/86947/samsun-asarcik-imar-gecici-2-isci-alacak.html": {
+      "title": "Samsun Asarcık İmar Geçici 2 İşçi Alacak",
+      "url": "https://ilan.memurlar.net/ilan/86947/samsun-asarcik-imar-gecici-2-isci-alacak.html",
+      "source": "Memurlar.net",
+      "document_key": "text:26503f745b6c33a1bed3e7998fd07e09287828bbd36ef0e22e4922a855a0a5a6",
+      "assessment": {
+        "status": "review",
+        "reasons": [],
+        "warnings": [
+          "KPSS taban puanı açık biçimde okunamadı",
+          "Aday puanı yaklaşık; başvuruda kesin puan kullanılmalı",
+          "Mezuniyet/bölüm uygunluğu doğrulanamadı",
+          "Yaş, belge, deneyim ve diğer özel şartlar ayrıca kontrol edilmeli"
+        ],
+        "deadline": "2026-11-12",
+        "minimum_score": null,
+        "score_conditions": [],
+        "score_types": [],
+        "score_ambiguous": false,
+        "kpss_exempt": false,
+        "education_levels": [
+          "Lisans"
+        ],
+        "evidence_complete": true,
+        "positions": []
+      },
+      "checked_on": "2026-11-10",
+      "policy": "1292260b21ee0874"
+    },
+    "https://ilan.memurlar.net/ilan/86948/erzurum-askale-sydv-gecici-1-isci-alacak.html": {
+      "title": "Erzurum Aşkale SYDV Geçici 1 İşçi Alacak",
+      "url": "https://ilan.memurlar.net/ilan/86948/erzurum-askale-sydv-gecici-1-isci-alacak.html",
+      "source": "Memurlar.net",
+      "document_key": "text:123e4498c68325679d67f21c57f8a9a66ad1fd5eec1e0e4e0e249218fc4700b2",
+      "assessment": {
+        "status": "review",
+        "reasons": [],
+        "warnings": [
+          "KPSS taban puanı açık biçimde okunamadı",
+          "Aday puanı yaklaşık; başvuruda kesin puan kullanılmalı",
+          "Mezuniyet/bölüm uygunluğu doğrulanamadı",
+          "Yaş, belge, deneyim ve diğer özel şartlar ayrıca kontrol edilmeli"
+        ],
+        "deadline": "2026-11-16",
+        "minimum_score": null,
+        "score_conditions": [],
+        "score_types": [],
+        "score_ambiguous": false,
+        "kpss_exempt": false,
+        "education_levels": [
+          "Lisans"
+        ],
+        "evidence_complete": true,
+        "positions": []
+      },
+      "checked_on": "2026-11-10",
+      "policy": "1292260b21ee0874"
+    },
+    "https://ilan.memurlar.net/ilan/86952/izmir-byndr-turizm-1-isci-alacak.html": {
+      "title": "İzmir Byndr Turizm 1 İşçi Alacak",
+      "url": "https://ilan.memurlar.net/ilan/86952/izmir-byndr-turizm-1-isci-alacak.html",
+      "source": "Memurlar.net",
+      "document_key": "text:bade01745605bca902332a447e1ff55cd0ac5520431cf3030e7fb5be180cb8d9",
+      "assessment": {
+        "status": "review",
+        "reasons": [],
+        "warnings": [
+          "KPSS taban puanı açık biçimde okunamadı",
+          "Aday puanı yaklaşık; başvuruda kesin puan kullanılmalı",
+          "Mezuniyet/bölüm uygunluğu doğrulanamadı",
+          "Yaş, belge, deneyim ve diğer özel şartlar ayrıca kontrol edilmeli"
+        ],
+        "deadline": "2026-11-12",
+        "minimum_score": null,
+        "score_conditions": [],
+        "score_types": [],
+        "score_ambiguous": false,
+        "kpss_exempt": false,
+        "education_levels": [
+          "Lisans"
+        ],
+        "evidence_complete": true,
+        "positions": []
+      },
+      "checked_on": "2026-11-10",
+      "policy": "1292260b21ee0874"
+    },
+    "https://ilan.memurlar.net/ilan/86953/izmir-bornova-belediyesi-10-isci-alacak.html": {
+      "title": "02:02 İzmir Bornova Belediyesi 10 İşçi Alacak",
+      "url": "https://ilan.memurlar.net/ilan/86953/izmir-bornova-belediyesi-10-isci-alacak.html",
+      "source": "Memurlar.net",
+      "document_key": "text:8f446fe5d3a0cb955da849d8b5b14ec17253d6835ebcc38aefa69480c60bdec7",
+      "assessment": {
+        "status": "review",
+        "reasons": [],
+        "warnings": [
+          "KPSS taban puanı açık biçimde okunamadı",
+          "Aday puanı yaklaşık; başvuruda kesin puan kullanılmalı",
+          "Mezuniyet/bölüm uygunluğu doğrulanamadı",
+          "Yaş, belge, deneyim ve diğer özel şartlar ayrıca kontrol edilmeli"
+        ],
+        "deadline": "2026-11-13",
+        "minimum_score": null,
+        "score_conditions": [],
+        "score_types": [],
+        "score_ambiguous": false,
+        "kpss_exempt": false,
+        "education_levels": [
+          "Lisans"
+        ],
+        "evidence_complete": true,
+        "positions": []
+      },
+      "checked_on": "2026-11-10",
+      "policy": "1292260b21ee0874"
+    },
+    "https://ilan.memurlar.net/ilan/86954/kirbel-kent-hizmetleri-gecici-4-isci-alacak.html": {
+      "title": "02:05 Kırbel Kent Hizmetleri Geçici 4 İşçi Alacak",
+      "url": "https://ilan.memurlar.net/ilan/86954/kirbel-kent-hizmetleri-gecici-4-isci-alacak.html",
+      "source": "Memurlar.net",
+      "document_key": "text:47a16b585d68bb99b34e93420ac7727741804808880657db1ccb863a24484c1e",
+      "assessment": {
+        "status": "review",
+        "reasons": [],
+        "warnings": [
+          "KPSS taban puanı açık biçimde okunamadı",
+          "Aday puanı yaklaşık; başvuruda kesin puan kullanılmalı",
+          "Mezuniyet/bölüm uygunluğu doğrulanamadı",
+          "Yaş, belge, deneyim ve diğer özel şartlar ayrıca kontrol edilmeli"
+        ],
+        "deadline": "2026-11-13",
+        "minimum_score": null,
+        "score_conditions": [],
+        "score_types": [],
+        "score_ambiguous": false,
+        "kpss_exempt": false,
+        "education_levels": [
+          "Lisans"
+        ],
+        "evidence_complete": true,
+        "positions": []
+      },
+      "checked_on": "2026-11-10",
+      "policy": "1292260b21ee0874"
+    },
+    "https://ilan.memurlar.net/ilan/86955/antalya-mavi-nar-emlak-10-isci-alacak.html": {
+      "title": "02:08 Antalya Mavi Nar Emlak 10 İşçi Alacak",
+      "url": "https://ilan.memurlar.net/ilan/86955/antalya-mavi-nar-emlak-10-isci-alacak.html",
+      "source": "Memurlar.net",
+      "document_key": "text:cbc14e45fecc4359e708f17ce1a095b0259d2960bc5e98231e1b844f9402dc63",
+      "assessment": {
+        "status": "review",
+        "reasons": [],
+        "warnings": [
+          "KPSS taban puanı açık biçimde okunamadı",
+          "Aday puanı yaklaşık; başvuruda kesin puan kullanılmalı",
+          "Mezuniyet/bölüm uygunluğu doğrulanamadı",
+          "Yaş, belge, deneyim ve diğer özel şartlar ayrıca kontrol edilmeli"
+        ],
+        "deadline": "2026-11-11",
+        "minimum_score": null,
+        "score_conditions": [],
+        "score_types": [],
+        "score_ambiguous": false,
+        "kpss_exempt": false,
+        "education_levels": [
+          "Lisans"
+        ],
+        "evidence_complete": true,
+        "positions": []
+      },
+      "checked_on": "2026-11-10",
+      "policy": "1292260b21ee0874"
+    },
+    "https://ilan.memurlar.net/ilan/86956/safranbolu-sydv-gecici-1-isci-alacak.html": {
+      "title": "02:12 Safranbolu SYDV Geçici 1 İşçi Alacak",
+      "url": "https://ilan.memurlar.net/ilan/86956/safranbolu-sydv-gecici-1-isci-alacak.html",
+      "source": "Memurlar.net",
+      "document_key": "text:55df3ee96133fe3da7929b669f6fcb09c75ff1382be87a91fb785296f3f6d6de",
+      "assessment": {
+        "status": "review",
+        "reasons": [],
+        "warnings": [
+          "KPSS taban puanı açık biçimde okunamadı",
+          "Aday puanı yaklaşık; başvuruda kesin puan kullanılmalı",
+          "Mezuniyet/bölüm uygunluğu doğrulanamadı",
+          "Yaş, belge, deneyim ve diğer özel şartlar ayrıca kontrol edilmeli"
+        ],
+        "deadline": "2026-11-12",
+        "minimum_score": null,
+        "score_conditions": [],
+        "score_types": [],
+        "score_ambiguous": false,
+        "kpss_exempt": false,
+        "education_levels": [
+          "Lisans"
+        ],
+        "evidence_complete": true,
+        "positions": []
+      },
+      "checked_on": "2026-11-10",
+      "policy": "1292260b21ee0874"
+    },
+    "https://ilan.memurlar.net/ilan/86957/istanbul-sultangazi-belediyesi-2-isci-alacak.html": {
+      "title": "02:15 İstanbul Sultangazi Belediyesi 2 İşçi Alacak",
+      "url": "https://ilan.memurlar.net/ilan/86957/istanbul-sultangazi-belediyesi-2-isci-alacak.html",
+      "source": "Memurlar.net",
+      "document_key": "text:4f0b6771d0162dc2ad20bf4aaadae3af773fa72e616b3b77d1960c86ad595474",
+      "assessment": {
+        "status": "review",
+        "reasons": [],
+        "warnings": [
+          "KPSS taban puanı açık biçimde okunamadı",
+          "Aday puanı yaklaşık; başvuruda kesin puan kullanılmalı",
+          "Mezuniyet/bölüm uygunluğu doğrulanamadı",
+          "Yaş, belge, deneyim ve diğer özel şartlar ayrıca kontrol edilmeli"
+        ],
+        "deadline": "2026-11-13",
+        "minimum_score": null,
+        "score_conditions": [],
+        "score_types": [],
+        "score_ambiguous": false,
+        "kpss_exempt": false,
+        "education_levels": [
+          "Lisans"
+        ],
+        "evidence_complete": true,
+        "positions": []
+      },
+      "checked_on": "2026-11-10",
+      "policy": "1292260b21ee0874"
     }
   },
   "documents": {
@@ -2986,7 +3255,16 @@
     "text:c7d87bda8d4faa645729fe41e2fef20e8f9b2a05370597bc59e2cc8caa2e5d2c": "https://www.osym.gov.tr/2026ekpss-kura-icin-basvurularin-alinmasi",
     "text:009ebf1c5c3567ed2bf0fe95a23b4e60b03291bacae0b79eb4c690164f4ae96a": "https://www.konya.bel.tr/haber/konya-buyuksehirde-zabita-memuru-alimi-icin-basvurular-devam-ediyor",
     "text:6db64082d5e8f0f2a041af05b0b8386b0e631cae2cf0691c9917686e800dc100": "https://www.osym.gov.tr/2026ekpsskura-ile-engelli-kamu-personeli-yerlestirme-bazi-kamu-kurum-ve-kuruluslarinin-kadrolarina-yerlestirme-yapmak-icin-adaylardan-tercih-alinmasi",
-    "text:63453f67b4807b8065e2544da7ae92d3817982a8b0118cc76d90664989c8c399": "https://www.osym.gov.tr/2026ekpsskura-tercih-kilavuzundan-yerlestirme-icin-tercih-yapantercih-yapacak-adaylarin-dikkatine"
+    "text:63453f67b4807b8065e2544da7ae92d3817982a8b0118cc76d90664989c8c399": "https://www.osym.gov.tr/2026ekpsskura-tercih-kilavuzundan-yerlestirme-icin-tercih-yapantercih-yapacak-adaylarin-dikkatine",
+    "text:ed12fc79dcb81c01c7c38d1e14101bba3c92940d6a0c533e301c4c8c9b5fcff5": "https://ilan.memurlar.net/ilan/86940/sayistay-16-sozlesmeli-personel-alacak.html",
+    "text:26503f745b6c33a1bed3e7998fd07e09287828bbd36ef0e22e4922a855a0a5a6": "https://ilan.memurlar.net/ilan/86947/samsun-asarcik-imar-gecici-2-isci-alacak.html",
+    "text:123e4498c68325679d67f21c57f8a9a66ad1fd5eec1e0e4e0e249218fc4700b2": "https://ilan.memurlar.net/ilan/86948/erzurum-askale-sydv-gecici-1-isci-alacak.html",
+    "text:bade01745605bca902332a447e1ff55cd0ac5520431cf3030e7fb5be180cb8d9": "https://ilan.memurlar.net/ilan/86952/izmir-byndr-turizm-1-isci-alacak.html",
+    "text:8f446fe5d3a0cb955da849d8b5b14ec17253d6835ebcc38aefa69480c60bdec7": "https://ilan.memurlar.net/ilan/86953/izmir-bornova-belediyesi-10-isci-alacak.html",
+    "text:47a16b585d68bb99b34e93420ac7727741804808880657db1ccb863a24484c1e": "https://ilan.memurlar.net/ilan/86954/kirbel-kent-hizmetleri-gecici-4-isci-alacak.html",
+    "text:cbc14e45fecc4359e708f17ce1a095b0259d2960bc5e98231e1b844f9402dc63": "https://ilan.memurlar.net/ilan/86955/antalya-mavi-nar-emlak-10-isci-alacak.html",
+    "text:55df3ee96133fe3da7929b669f6fcb09c75ff1382be87a91fb785296f3f6d6de": "https://ilan.memurlar.net/ilan/86956/safranbolu-sydv-gecici-1-isci-alacak.html",
+    "text:4f0b6771d0162dc2ad20bf4aaadae3af773fa72e616b3b77d1960c86ad595474": "https://ilan.memurlar.net/ilan/86957/istanbul-sultangazi-belediyesi-2-isci-alacak.html"
   },
   "aliases": {
     "https://www.konya.bel.tr/haber/konya-buyuksehirde-zabita-memuru-alimi-icin-basvurular-devam-ediyor": "https://www.konya.bel.tr/haber/konya-buyuksehirde-zabita-memuru-alimi-icin-basvurular-devam-ediyor",
@@ -3050,18 +3328,27 @@
     "https://www.osym.gov.tr/2026ekpss-kura-icin-basvurularin-alinmasi": "https://www.osym.gov.tr/2026ekpss-kura-icin-basvurularin-alinmasi",
     "https://www.osym.gov.tr/2026ekpsskura-ile-engelli-kamu-personeli-yerlestirme-bazi-kamu-kurum-ve-kuruluslarinin-kadrolarina-yerlestirme-yapmak-icin-adaylardan-tercih-alinmasi": "https://www.osym.gov.tr/2026ekpsskura-ile-engelli-kamu-personeli-yerlestirme-bazi-kamu-kurum-ve-kuruluslarinin-kadrolarina-yerlestirme-yapmak-icin-adaylardan-tercih-alinmasi",
     "https://www.osym.gov.tr/2026ekpsskura-tercih-kilavuzundan-yerlestirme-icin-tercih-yapantercih-yapacak-adaylarin-dikkatine": "https://www.osym.gov.tr/2026ekpsskura-tercih-kilavuzundan-yerlestirme-icin-tercih-yapantercih-yapacak-adaylarin-dikkatine",
-    "https://www.osym.gov.tr/kpss20261-bazi-kamu-kurum-ve-kuruluslarinin-kadro-ve-pozisyonlarina-yerlestirme-yapmak-icin-adaylardan-tercih-alinmasi": "https://osym.gov.tr/kpss20261-bazi-kamu-kurum-ve-kuruluslarinin-kadro-ve-pozisyonlarina-yerlestirme-yapmak-icin-adaylardan-tercih-alinmasi"
+    "https://www.osym.gov.tr/kpss20261-bazi-kamu-kurum-ve-kuruluslarinin-kadro-ve-pozisyonlarina-yerlestirme-yapmak-icin-adaylardan-tercih-alinmasi": "https://osym.gov.tr/kpss20261-bazi-kamu-kurum-ve-kuruluslarinin-kadro-ve-pozisyonlarina-yerlestirme-yapmak-icin-adaylardan-tercih-alinmasi",
+    "https://ilan.memurlar.net/ilan/86940/sayistay-16-sozlesmeli-personel-alacak.html": "https://ilan.memurlar.net/ilan/86940/sayistay-16-sozlesmeli-personel-alacak.html",
+    "https://ilan.memurlar.net/ilan/86947/samsun-asarcik-imar-gecici-2-isci-alacak.html": "https://ilan.memurlar.net/ilan/86947/samsun-asarcik-imar-gecici-2-isci-alacak.html",
+    "https://ilan.memurlar.net/ilan/86948/erzurum-askale-sydv-gecici-1-isci-alacak.html": "https://ilan.memurlar.net/ilan/86948/erzurum-askale-sydv-gecici-1-isci-alacak.html",
+    "https://ilan.memurlar.net/ilan/86952/izmir-byndr-turizm-1-isci-alacak.html": "https://ilan.memurlar.net/ilan/86952/izmir-byndr-turizm-1-isci-alacak.html",
+    "https://ilan.memurlar.net/ilan/86953/izmir-bornova-belediyesi-10-isci-alacak.html": "https://ilan.memurlar.net/ilan/86953/izmir-bornova-belediyesi-10-isci-alacak.html",
+    "https://ilan.memurlar.net/ilan/86954/kirbel-kent-hizmetleri-gecici-4-isci-alacak.html": "https://ilan.memurlar.net/ilan/86954/kirbel-kent-hizmetleri-gecici-4-isci-alacak.html",
+    "https://ilan.memurlar.net/ilan/86955/antalya-mavi-nar-emlak-10-isci-alacak.html": "https://ilan.memurlar.net/ilan/86955/antalya-mavi-nar-emlak-10-isci-alacak.html",
+    "https://ilan.memurlar.net/ilan/86956/safranbolu-sydv-gecici-1-isci-alacak.html": "https://ilan.memurlar.net/ilan/86956/safranbolu-sydv-gecici-1-isci-alacak.html",
+    "https://ilan.memurlar.net/ilan/86957/istanbul-sultangazi-belediyesi-2-isci-alacak.html": "https://ilan.memurlar.net/ilan/86957/istanbul-sultangazi-belediyesi-2-isci-alacak.html"
   },
   "delivery_cursor": 1,
   "last_run": {
-    "at": "2026-11-09T17:45:43.927100+03:00",
+    "at": "2026-11-10T02:37:04.513405+03:00",
     "status": "partial_source_error",
     "messages_sent": 0,
-    "delivery_deferred": false,
+    "delivery_deferred": true,
     "sources_ok": 10,
     "sources_total": 13,
-    "details_failed": 0,
-    "pending_messages": 0,
-    "pending_details": 54
+    "details_failed": 2,
+    "pending_messages": 18,
+    "pending_details": 87
   }
 }
