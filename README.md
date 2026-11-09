@@ -28,6 +28,8 @@ Karmaşık/birleşik hücreler, kaymış/satırlara bölünmüş tablolar veya e
 
 ## Bildirim ve durum güvenilirliği
 
+Bildirim, **ilanın başvuru eşiğini** kayıtlı adayın puanından ayrı gösterir. Doğrulanmış kadro satırlarında KPSS puan türü, asgari başvuru puanı, mezuniyet/nitelik metni ve bulunan nitelik kodları ayrı yazılır. Birden fazla puan koşulu kadrolarla eşleştirilemiyorsa en düşük puan seçilmez; koşulların değiştiği belirtilir. Eksik belgede veya puan okunamadığında adayın puanı ilanın şartı gibi kullanılmaz. Başvuru eşiği bir yerleşme/kazanma tahmini değildir. `Takip profili` satırı kişisel filtreyi gösterir; ilan seçimi mevcut aday profiline göre yapılmaya devam eder. Yeni puan alanlarının önbelleğe girmesi için ilanlar mevcut ayrıntı bütçesi içinde yeniden değerlendirilir; teslimat alındıları korunur ve sırf biçim değişti diye eski mesajlar tekrar gönderilmez.
+
 - `max_notifications_per_run=20`, **tüm alıcılar için toplam mesaj denemesi** sınırıdır; alıcı başına veya ilan başına değildir. Hatalı denemeler de bütçeden sayılır. Dönen alıcı sırası, sınır 1 olduğunda bile ilk bozuk alıcının diğerini sürekli engellemesini önler.
 - Gönderilmeyen alıcılar/ilanlar sonraki çalışmaya kalır; ana sayfadan kaybolan önbellek ilanları da kuyrukta tutulur. Yeni ayrıntılar, eski günlük önbellek yenilemelerinden önce işlenir. Sınırlar nedeniyle gecikme mümkündür.
 - Son başvuruya 3, 1 ve 0 gün kala birer hatırlatma vardır. Önce orijinal bildirimin teslim edilmiş olması ve belgenin aynı gün hatasız yenilenmesi gerekir. Süresi geçmiş veya tarihleri belirsiz ilanlarda genel hatırlatma yoktur.

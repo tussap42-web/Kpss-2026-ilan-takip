@@ -174,23 +174,58 @@ def chat_fingerprint(token: str, chat_id: str) -> str:
     return hashlib.sha256(f'{token}:{chat_id}'.encode('utf-8')).hexdigest()[:24]
 
 
+def requirement_lines(assessment: dict, education: str = '') -> list[str]:
+    kinds = ', '.join(assessment.get('score_types', [])) or 'Doğrulanamadı'
+    conditions = assessment.get('score_conditions', [])
+    if not assessment.get('evidence_complete', False):
+        score = 'KPSS şartı: Belge eksik; puan şartı doğrulanamadı'
+    elif assessment.get('score_ambiguous'):
+        score = f'KPSS: {kinds} | Başvuru eşiği: Kadroya göre değişiyor; eşleştirme doğrulanamadı'
+    elif assessment.get('kpss_exempt'):
+        score = 'KPSS şartı: Aranmadığı belirtiliyor'
+    elif len(conditions) == 1:
+        condition = conditions[0]
+        value = f"{condition['minimum_score']:g}".replace('.', ',')
+        score = f"KPSS: {condition['score_type']} | Başvuru eşiği: En az {value} puan"
+    else:
+        score = f'KPSS: {kinds} | Başvuru eşiği: Doğrulanamadı'
+    degree = education or ', '.join(assessment.get('education_levels', []))
+    degree = degree[:200] if degree else 'Doğrulanamadı; bölüm şartını ilandan kontrol edin'
+    return [score, 'Mezuniyet / nitelik: ' + degree]
+
+
 def message_for(item: dict, config: dict) -> str:
     assessment = item.get('assessment', {})
     priority = config['search_settings']['priority_city']
     city = f'📍 {priority} öncelikli\n' if normalize(priority) in normalize(item['title'] + ' ' + item['source']) else ''
     heading = '⏰ SON BAŞVURU HATIRLATMASI' if item.get('reminder') else '📢 İNCELENECEK İLAN'
-    lines = [heading, city + 'Kaynak: ' + item['source'], item['title'],
-             f"Aday: {config['candidate']['kpss_score_type']} / {config['candidate']['kpss_score']}"]
+    lines = [heading, city + 'Kaynak: ' + item['source'], item['title']]
     if assessment.get('deadline'):
         lines.append('Son başvuru: ' + assessment['deadline'])
     if item.get('detail_warning'):
         lines.append(item['detail_warning'])
-    for position in assessment.get('positions', [])[:8]:
-        row = position['assessment']
-        condition = '; '.join(row.get('reasons') or row.get('warnings', [])[:2])
-        lines.append(f"Kadro: {position['title']} — {condition}")
-    lines.extend('• ' + warning for warning in assessment.get('warnings', []))
-    lines.extend(['Şartların tamamı doğrulanmış değildir; resmî ilanı kontrol et.', item['url']])
+    positions = assessment.get('positions', [])
+    if positions:
+        for position in positions[:8]:
+            lines.append('\nKadro: ' + position.get('display_title', position['title']))
+            lines.extend(requirement_lines(position['assessment'], position.get('display_education', position.get('education', ''))))
+            codes = position.get('qualification_codes', [])
+            if codes:
+                lines.append('Nitelik kodu: ' + ', '.join(codes))
+        if len(positions) > 8:
+            lines.append(f'Diğer {len(positions) - 8} kadro için ilanı inceleyin.')
+    else:
+        lines.extend(requirement_lines(assessment))
+    warnings = [w for w in assessment.get('warnings', [])
+                if not w.startswith(('Puan eşiği karşılanıyor:', 'Aday puanı yaklaşık;',
+                                     'KPSS taban puanı', 'Mezuniyet/bölüm uygunluğu'))]
+    lines.extend('• ' + warning for warning in warnings[:3])
+    candidate = config['candidate']
+    score = str(candidate['kpss_score']).replace('.', ',')
+    approximate = 'yaklaşık ' if candidate.get('score_is_approximate') else ''
+    lines.extend(['', f"Takip profili: {candidate['kpss_score_type']} / {approximate}{score} (kişisel filtre).",
+                  'Başvuru eşiği, yerleşme veya kazanma puanı değildir.',
+                  'Bölüm, yaş, belge ve diğer özel şartlar resmî ilandan kontrol edilmeli.', item['url']])
     # Leave room for the official URL even when evidence is long.
     body = '\n'.join(lines[:-1])
     return body[:3500] + '\n' + item['url'][:500]
@@ -282,7 +317,7 @@ def scan(config: dict, sources: dict, state_path: Path, dry_run: bool) -> int:
     if not configured or failures == len(configured):
         report('source_error', sources=source_stats, messages_sent=0)
         return 1
-    policy = hashlib.sha256(('audit-v2:' + json.dumps(config, sort_keys=True)).encode()).hexdigest()[:16]
+    policy = hashlib.sha256(('audit-v3-score-evidence:' + json.dumps(config, sort_keys=True)).encode()).hexdigest()[:16]
     priority = normalize(config['search_settings']['priority_city'])
     refresh = []
     for url, item in {**notices, **all_items}.items():

@@ -38,6 +38,21 @@ def assess(text, config, today=None):
     types = set(re.findall(r'p\s*(3|93|94)\b', text))
     relevant = [score for kind, score in scores if kind == candidate['kpss_score_type']]
     complex_notice = len(types) > 1 or len(set(scores)) > 1 or (no_kpss and bool(scores))
+    # Public notice requirements must stay separate from the saved candidate's
+    # score. Keep every explicit condition, including other score types.
+    education = []
+    if re.search(r'\b(?:ortaogretim|orta ogretim|lise)\b', text):
+        education.append('Ortaöğretim / lise')
+    if re.search(r'\bon lisans\b', text):
+        education.append('Ön lisans')
+    if re.search(r'\blisans\b', re.sub(r'\bon lisans\b', '', text)):
+        education.append('Lisans')
+    result.update(score_conditions=[{'score_type': kind, 'minimum_score': score}
+                                    for kind, score in sorted(set(scores))],
+                  score_types=sorted('P' + kind for kind in types),
+                  score_ambiguous=complex_notice,
+                  kpss_exempt=no_kpss and not scores and not types,
+                  education_levels=education, evidence_complete=True)
     if complex_notice:
         warnings.append('Birden fazla kadro/puan koşulu var; satır bazında inceleme gerekli')
     elif relevant:
@@ -87,14 +102,16 @@ def table_positions(rows):
     positions = []
     columns = None
     for row in rows:
+        display_values = [' '.join(str(cell).split()) for cell in row]
         values = [norm(str(cell)) for cell in row]
         if any(re.search(r'kadro|unvan|pozisyon', v) for v in values) and any('puan' in v for v in values):
             columns = values
             continue
         if not columns or len(columns) != len(values):
             continue
-        def cell(pattern):
-            return next((values[i] for i, h in enumerate(columns) if re.search(pattern, h)), '')
+        def cell(pattern, display=False):
+            source = display_values if display else values
+            return next((source[i] for i, h in enumerate(columns) if re.search(pattern, h)), '')
         role = cell('kadro|unvan|pozisyon')
         kind = cell(r'puan tur|kpss tur')
         score = cell(r'taban puan|asgari puan|en az puan|minimum puan')
@@ -104,6 +121,8 @@ def table_positions(rows):
             continue
         degree = cell('ogrenim|mezuniyet|bolum|nitelik')
         positions.append({'title': role, 'text': f'{role}: {kind} en az {score} puan. {degree}',
+                          'display_title': cell('kadro|unvan|pozisyon', display=True),
+                          'display_education': cell('ogrenim|mezuniyet|bolum|nitelik', display=True),
                           'qualification_codes': re.findall(r'\b[345]\d{3}\b', degree), 'education': degree,
                           'evidence': 'explicit_table_columns'})
     return positions
@@ -165,4 +184,7 @@ def assess_notice(text, config, today=None, rows=None, incomplete=False):
         result['reasons'] = []
         result['deadline'] = None
         result['warnings'].append('Belge/kadro kapsamı belirsiz; kesin eleme yapılmadı')
+    result['evidence_complete'] = not incomplete
+    for position in evidence:
+        position['assessment']['evidence_complete'] = not incomplete
     return result
