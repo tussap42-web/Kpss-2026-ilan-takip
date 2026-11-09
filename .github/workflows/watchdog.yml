@@ -1,0 +1,33 @@
+name: KPSS Otomatik Toparlanma
+on:
+  schedule:
+    - cron: '3 7-20 * * *' # Türkiye 10:03–23:03; ana taramadan ayrı kontrol
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['watchdog.py', '.github/workflows/watchdog.yml']
+permissions:
+  contents: read
+  actions: write
+concurrency:
+  group: kpss-watchdog
+  cancel-in-progress: false
+jobs:
+  recover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Son taramayı kontrol et ve gerekirse yeniden başlat
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          VERIFY_RECOVERY: ${{ github.event_name == 'push' && '1' || '0' }}
+        run: |
+          if [ "$VERIFY_RECOVERY" = "1" ]; then
+            python watchdog.py --verify-recovery
+          else
+            python watchdog.py
+          fi

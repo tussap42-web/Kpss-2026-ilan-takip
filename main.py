@@ -219,6 +219,16 @@ def report(status, **fields):
     summary = os.getenv('GITHUB_STEP_SUMMARY') if os.getenv('KPSS_WRITE_SUMMARY') == '1' else None
     if summary:
         with open(summary, 'a', encoding='utf-8') as handle:
+            if 'sources' in fields:
+                sources = fields['sources']
+                readable = sum(s.get('pages_ok', 0) > 0 for s in sources)
+                handle.write(f'## KPSS tarama sonucu: {status}\n\n')
+                handle.write(f"- Okunabilen kaynak: **{readable}/{len(sources)}**\n")
+                handle.write(f"- Telegram gönderimi: **{fields.get('messages_sent', 0)}**\n")
+                handle.write(f"- Bekleyen gönderim: **{fields.get('pending_messages', 0)}**\n")
+                handle.write(f"- Bekleyen ilan ayrıntısı: **{fields.get('pending_details', 0)}**\n\n")
+                if status.endswith('partial_source_error'):
+                    handle.write('⚠️ Bazı kaynaklar okunamadı; erişilebilen kaynakların taraması ve teslimat devam etti. Ayrıntılar aşağıdadır.\n\n')
             handle.write('```json\n' + json.dumps(record, ensure_ascii=False, indent=2) + '\n```\n')
 
 
@@ -365,7 +375,10 @@ def scan(config: dict, sources: dict, state_path: Path, dry_run: bool) -> int:
     if not dry_run:
         state['delivery_cursor'] = (cursor + attempts) % max(1, len(chat_ids))
         state['last_run'] = {'at': now.isoformat(), 'status': status,
-                             'messages_sent': sent, 'delivery_deferred': delivery_deferred}
+                             'messages_sent': sent, 'delivery_deferred': delivery_deferred,
+                             'sources_ok': sum(s.get('pages_ok', 0) > 0 for s in source_stats),
+                             'sources_total': len(configured), 'details_failed': detail_failures,
+                             'pending_messages': pending, 'pending_details': max(0, len(refresh)-limit)}
         save_state(state_path, state)
     report(('preview_' + status) if dry_run else status, local_time=now.isoformat(), timezone=str(zone),
            sources=source_stats, details_failed=detail_failures, messages_attempted=attempts,

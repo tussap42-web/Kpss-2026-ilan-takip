@@ -2,7 +2,7 @@ name: KPSS Ilan Takip
 on:
   push:
     branches: [main]
-    paths: ['**.py', 'sources.json', 'config.json', 'requirements.txt', '.github/workflows/kpss.yml']
+    paths: ['main.py', 'network.py', 'discovery.py', 'details.py', 'eligibility.py', 'dates_tr.py', 'sources.json', 'config.json', 'requirements.txt', '.github/workflows/kpss.yml']
   workflow_dispatch:
     inputs:
       mode:
@@ -10,6 +10,10 @@ on:
         type: choice
         options: [preview, find-chats, test-message, scan]
         default: preview
+      automatic_recovery:
+        description: "Otomatik toparlanma: sessiz saatlere uy"
+        type: boolean
+        default: false
   schedule:
     - cron: '17,47 6-20 * * *' # Türkiye 09:17–23:47; ikinci tetik gecikmelere yedek
 permissions:
@@ -35,10 +39,10 @@ jobs:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_IDS: ${{ secrets.TELEGRAM_CHAT_IDS }}
           KPSS_WRITE_SUMMARY: '1'
-          KPSS_TRIGGER: ${{ github.event_name }}
-          KPSS_STRICT_SOURCES: '1'
+          KPSS_TRIGGER: ${{ github.event.inputs.automatic_recovery == 'true' && 'schedule' || github.event_name }}
+          KPSS_STRICT_SOURCES: '0'
           RUN_MODE: ${{ github.event.inputs.mode || 'scan' }}
-          FORCE_RUN: ${{ (github.event_name == 'workflow_dispatch' || github.event_name == 'push') && '1' || '0' }}
+          FORCE_RUN: ${{ ((github.event_name == 'workflow_dispatch' && github.event.inputs.automatic_recovery != 'true') || github.event_name == 'push') && '1' || '0' }}
         run: python main.py --mode "$RUN_MODE" | tee scan.log
       - name: Bildirim geçmişini kaydet
         if: ${{ always() && (github.event_name == 'schedule' || github.event_name == 'push' || github.event.inputs.mode == 'scan') }}
