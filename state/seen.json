@@ -599,6 +599,86 @@
         "e803fcfa58e5548b75cdee4a"
       ],
       "at": "2026-11-09T17:43:30.188066+03:00"
+    },
+    "https://ilan.memurlar.net/ilan/86823/milli-saraylar-idaresi-baskanligi-3-sozlesmeli-personel-alacak.html#reminder:2026-11-11:1": {
+      "title": "Milli Saraylar İdaresi Başkanlığı 3 sözleşmeli personel alacak Milli Saraylar İdaresi Başkanlığı 3 sözleşmeli personel alacak. Son başvuru tarihi 11 Kasım 2026",
+      "chats": [
+        "bf1d163560e5f030ec16ebe2",
+        "e803fcfa58e5548b75cdee4a"
+      ],
+      "at": "2026-11-10T17:58:01.633946+03:00"
+    },
+    "https://ilan.memurlar.net/ilan/86828/adana-imamoglu-belediyesi-2-isci-alacak.html#reminder:2026-11-11:1": {
+      "title": "Adana İmamoğlu Belediyesi 2 İşçi Alacak",
+      "chats": [
+        "bf1d163560e5f030ec16ebe2",
+        "e803fcfa58e5548b75cdee4a"
+      ],
+      "at": "2026-11-10T17:58:01.633946+03:00"
+    },
+    "https://ilan.memurlar.net/ilan/86940/sayistay-16-sozlesmeli-personel-alacak.html": {
+      "title": "Sayıştay 16 sözleşmeli personel alacak",
+      "chats": [
+        "bf1d163560e5f030ec16ebe2",
+        "e803fcfa58e5548b75cdee4a"
+      ],
+      "at": "2026-11-10T17:58:01.633946+03:00"
+    },
+    "https://ilan.memurlar.net/ilan/86947/samsun-asarcik-imar-gecici-2-isci-alacak.html": {
+      "title": "Samsun Asarcık İmar Geçici 2 İşçi Alacak",
+      "chats": [
+        "bf1d163560e5f030ec16ebe2",
+        "e803fcfa58e5548b75cdee4a"
+      ],
+      "at": "2026-11-10T17:58:01.633946+03:00"
+    },
+    "https://ilan.memurlar.net/ilan/86948/erzurum-askale-sydv-gecici-1-isci-alacak.html": {
+      "title": "Erzurum Aşkale SYDV Geçici 1 İşçi Alacak",
+      "chats": [
+        "bf1d163560e5f030ec16ebe2",
+        "e803fcfa58e5548b75cdee4a"
+      ],
+      "at": "2026-11-10T17:58:01.633946+03:00"
+    },
+    "https://ilan.memurlar.net/ilan/86952/izmir-byndr-turizm-1-isci-alacak.html": {
+      "title": "İzmir Byndr Turizm 1 İşçi Alacak",
+      "chats": [
+        "bf1d163560e5f030ec16ebe2",
+        "e803fcfa58e5548b75cdee4a"
+      ],
+      "at": "2026-11-10T17:58:01.633946+03:00"
+    },
+    "https://ilan.memurlar.net/ilan/86953/izmir-bornova-belediyesi-10-isci-alacak.html": {
+      "title": "02:02 İzmir Bornova Belediyesi 10 İşçi Alacak",
+      "chats": [
+        "bf1d163560e5f030ec16ebe2",
+        "e803fcfa58e5548b75cdee4a"
+      ],
+      "at": "2026-11-10T17:58:01.633946+03:00"
+    },
+    "https://ilan.memurlar.net/ilan/86954/kirbel-kent-hizmetleri-gecici-4-isci-alacak.html": {
+      "title": "02:05 Kırbel Kent Hizmetleri Geçici 4 İşçi Alacak",
+      "chats": [
+        "bf1d163560e5f030ec16ebe2",
+        "e803fcfa58e5548b75cdee4a"
+      ],
+      "at": "2026-11-10T17:58:01.633946+03:00"
+    },
+    "https://ilan.memurlar.net/ilan/86955/antalya-mavi-nar-emlak-10-isci-alacak.html": {
+      "title": "02:08 Antalya Mavi Nar Emlak 10 İşçi Alacak",
+      "chats": [
+        "bf1d163560e5f030ec16ebe2",
+        "e803fcfa58e5548b75cdee4a"
+      ],
+      "at": "2026-11-10T17:58:01.633946+03:00"
+    },
+    "https://ilan.memurlar.net/ilan/86956/safranbolu-sydv-gecici-1-isci-alacak.html": {
+      "title": "02:12 Safranbolu SYDV Geçici 1 İşçi Alacak",
+      "chats": [
+        "bf1d163560e5f030ec16ebe2",
+        "e803fcfa58e5548b75cdee4a"
+      ],
+      "at": "2026-11-10T17:58:01.633946+03:00"
     }
   },
   "notices": {
@@ -1217,7 +1297,7 @@
         "evidence_complete": false,
         "positions": []
       },
-      "checked_on": "2026-11-09",
+      "checked_on": "2026-11-10",
       "policy": "1292260b21ee0874"
     },
     "https://osym.gov.tr/2026-kamu-personel-secme-sinavi-kpss-lisans-basvurularin-alinmasi": {
@@ -1426,7 +1506,7 @@
       "title": "15:46 Osmaniye Yağlı Tohumlar Araş. İst. Geçici İşçi Alım İlanı",
       "url": "https://ilan.memurlar.net/ilan/29967/osmaniye-yagli-tohumlar-aras-ist-gecici-isci-alim-ilani.html",
       "source": "Memurlar.net",
-      "document_key": "text:33f7b4cef1a9e457e7da86fe2f82c9749c9b3a7724c71230533eea72126bf924",
+      "document_key": "text:1ed9a867ef26db00144781658ad8be81e0367c8513fe910b193f5790e402e21a",
       "assessment": {
         "status": "review",
         "reasons": [],
@@ -1450,14 +1530,14 @@
         "evidence_complete": false,
         "positions": []
       },
-      "checked_on": "2026-11-09",
+      "checked_on": "2026-11-10",
       "policy": "1292260b21ee0874"
     },
     "https://ilan.memurlar.net/ilan/46813/bursa-osmangazi-belediyesi-3-isci-alacak.html": {
       "title": "Bursa Osmangazi Belediyesi 3 İşçi Alacak",
       "url": "https://ilan.memurlar.net/ilan/46813/bursa-osmangazi-belediyesi-3-isci-alacak.html",
       "source": "Memurlar.net",
-      "document_key": "text:f64ec6d56e1fba1439b5025c4fd8b337a384b556f59f99abaf8adf771cbd5543",
+      "document_key": "text:9785146354cf18e16a2a3f5c775757c0e6594958b7879bae01a17d2c3717dfb6",
       "assessment": {
         "status": "review",
         "reasons": [],
@@ -1480,14 +1560,14 @@
         "evidence_complete": true,
         "positions": []
       },
-      "checked_on": "2026-11-09",
+      "checked_on": "2026-11-10",
       "policy": "1292260b21ee0874"
     },
     "https://ilan.memurlar.net/ilan/48143/afyonkarahisar-ihsaniye-ihsan-oren-tasimacilik-gecici-5-isci-alacak.html": {
       "title": "Afyonkarahisar ihsaniye İhsan Ören Taşımacılık Geçici 5 İşçi Alacak",
       "url": "https://ilan.memurlar.net/ilan/48143/afyonkarahisar-ihsaniye-ihsan-oren-tasimacilik-gecici-5-isci-alacak.html",
       "source": "Memurlar.net",
-      "document_key": "text:ea991aed6a9d4d5614d618181338176f4693695554b3fcc543e0c22fb5dcc207",
+      "document_key": "text:f757f106d76589f823577ab70d612c1cd0b6e70aa23c8479104281046dfc23d4",
       "assessment": {
         "status": "review",
         "reasons": [],
@@ -1510,14 +1590,14 @@
         "evidence_complete": true,
         "positions": []
       },
-      "checked_on": "2026-11-09",
+      "checked_on": "2026-11-10",
       "policy": "1292260b21ee0874"
     },
     "https://ilan.memurlar.net/ilan/84194/nigde-bor-belediyesi-gecici-50-isci-alacak.html": {
       "title": "Niğde Bor Belediyesi Geçici 50 İşçi Alacak",
       "url": "https://ilan.memurlar.net/ilan/84194/nigde-bor-belediyesi-gecici-50-isci-alacak.html",
       "source": "Memurlar.net",
-      "document_key": "text:5e5b2b1e6624ffdae7ae4ee280ad70036163b271028e626a6d0ea08acccb03c7",
+      "document_key": "text:783fbf4085bca9ec11ff2f02cf45010d3a355bd84fb82b430af40f20a40a0715",
       "assessment": {
         "status": "review",
         "reasons": [],
@@ -1539,14 +1619,14 @@
         "evidence_complete": true,
         "positions": []
       },
-      "checked_on": "2026-11-09",
+      "checked_on": "2026-11-10",
       "policy": "1292260b21ee0874"
     },
     "https://ilan.memurlar.net/ilan/86791/kultur-ve-turizm-bakanligi-162-sozlesmeli-personel-alacak.html": {
       "title": "Kültür ve Turizm Bakanlığı 162 sözleşmeli personel alacak Kültür ve Turizm Bakanlığı 162 sözleşmeli personel alacak. Son başvuru tarihi 16 Ekim 2026",
       "url": "https://ilan.memurlar.net/ilan/86791/kultur-ve-turizm-bakanligi-162-sozlesmeli-personel-alacak.html",
       "source": "Memurlar.net",
-      "document_key": "text:57064d67f3e5df902e222221f0f1c92c4999e0d4a78c9c1e2568280b7963a7d3",
+      "document_key": "text:8231c5317781d5520e607e9f188e101326f172fe2ce30b39d87ab92701eafb0e",
       "assessment": {
         "status": "excluded",
         "reasons": [
@@ -1572,14 +1652,14 @@
         "evidence_complete": true,
         "positions": []
       },
-      "checked_on": "2026-11-09",
+      "checked_on": "2026-11-10",
       "policy": "1292260b21ee0874"
     },
     "https://ilan.memurlar.net/ilan/86823/milli-saraylar-idaresi-baskanligi-3-sozlesmeli-personel-alacak.html": {
       "title": "Milli Saraylar İdaresi Başkanlığı 3 sözleşmeli personel alacak Milli Saraylar İdaresi Başkanlığı 3 sözleşmeli personel alacak. Son başvuru tarihi 11 Kasım 2026",
       "url": "https://ilan.memurlar.net/ilan/86823/milli-saraylar-idaresi-baskanligi-3-sozlesmeli-personel-alacak.html",
       "source": "Memurlar.net",
-      "document_key": "text:ea472f31a04cee8be3c37074d594c564e3cedecd4219659d4f44c808b35d32f1",
+      "document_key": "text:d68724206060c9de72bee2df206f1ca99de3b56f856c824044aad43a4e3202a7",
       "assessment": {
         "status": "review",
         "reasons": [],
@@ -1601,14 +1681,14 @@
         "evidence_complete": true,
         "positions": []
       },
-      "checked_on": "2026-11-09",
+      "checked_on": "2026-11-10",
       "policy": "1292260b21ee0874"
     },
     "https://ilan.memurlar.net/ilan/86827/elazig-il-ozel-idaresi-3-sozlesmeli-personel-alacak.html": {
       "title": "Elazığ İl Özel İdaresi 3 sözleşmeli personel alacak Elazığ İl Özel İdaresi 3 sözleşmeli personel alacak. Son başvuru tarihi 9 Aralık 2026",
       "url": "https://ilan.memurlar.net/ilan/86827/elazig-il-ozel-idaresi-3-sozlesmeli-personel-alacak.html",
       "source": "Memurlar.net",
-      "document_key": "text:d7b6b89985698afbf885b0456c3f85710efe67f018a9e9c04d199046fe1dcebd",
+      "document_key": "text:15e9b7e1c9b73a26f9ad23fc4f45aba97ce47124399ff6cafef0bb1e0b8e6d42",
       "assessment": {
         "status": "review",
         "reasons": [],
@@ -1630,14 +1710,14 @@
         "evidence_complete": true,
         "positions": []
       },
-      "checked_on": "2026-11-09",
+      "checked_on": "2026-11-10",
       "policy": "1292260b21ee0874"
     },
     "https://ilan.memurlar.net/ilan/86828/adana-imamoglu-belediyesi-2-isci-alacak.html": {
       "title": "Adana İmamoğlu Belediyesi 2 İşçi Alacak",
       "url": "https://ilan.memurlar.net/ilan/86828/adana-imamoglu-belediyesi-2-isci-alacak.html",
       "source": "Memurlar.net",
-      "document_key": "text:d24309dfa31b53b1efeabf895405a8365bc9dd31722eb87e57cf0073499bab2e",
+      "document_key": "text:bee3c4404b33bc24be34373d8fb3db2f354baf66b7ef141ac0bfc0687735c4db",
       "assessment": {
         "status": "review",
         "reasons": [],
@@ -1659,14 +1739,14 @@
         "evidence_complete": true,
         "positions": []
       },
-      "checked_on": "2026-11-09",
+      "checked_on": "2026-11-10",
       "policy": "1292260b21ee0874"
     },
     "https://ilan.memurlar.net/ilan/86837/gaziosmanpasa-belediyesi-36-zabita-memuru-alacak.html": {
       "title": "Gaziosmanpaşa Belediyesi 36 Zabıta Memuru Alacak Gaziosmanpaşa Belediyesi 36 Zabıta Memuru Alacak. Son başvuru tarihi 11 Aralık 2026",
       "url": "https://ilan.memurlar.net/ilan/86837/gaziosmanpasa-belediyesi-36-zabita-memuru-alacak.html",
       "source": "Memurlar.net",
-      "document_key": "text:0c01f594a456fc958e3a9d3d8f9bb1ecf98d82dceaa0298150f14860430ff3b9",
+      "document_key": "text:3ef0fa8bf127ecdeca50430907c98ef6dfafae6c6af7f3b2d9c87c610f90b2b8",
       "assessment": {
         "status": "review",
         "reasons": [],
@@ -1689,14 +1769,14 @@
         "evidence_complete": true,
         "positions": []
       },
-      "checked_on": "2026-11-09",
+      "checked_on": "2026-11-10",
       "policy": "1292260b21ee0874"
     },
     "https://ilan.memurlar.net/ilan/86839/kamu-ihale-kurumu-25-uzman-yardimcisi-alacak.html": {
       "title": "Kamu İhale Kurumu 25 Uzman Yardımcısı Alacak Kamu İhale Kurumu 25 Uzman Yardımcısı Alacak. Son başvuru tarihi 20 Kasım 2026",
       "url": "https://ilan.memurlar.net/ilan/86839/kamu-ihale-kurumu-25-uzman-yardimcisi-alacak.html",
       "source": "Memurlar.net",
-      "document_key": "text:bff6f438a8e531e475bdc68eb41b0c4b0172451e0637aff9f6b93083262a5fc7",
+      "document_key": "text:ac249a732d11731ac916f8379d52cb2887bdcae133515dcc67807e8a9c9f68b2",
       "assessment": {
         "status": "review",
         "reasons": [],
@@ -1718,14 +1798,14 @@
         "evidence_complete": true,
         "positions": []
       },
-      "checked_on": "2026-11-09",
+      "checked_on": "2026-11-10",
       "policy": "1292260b21ee0874"
     },
     "https://ilan.memurlar.net/ilan/86840/nukleer-duzenleme-kurumu-8-sozlesmeli-personel-alacak.html": {
       "title": "Nükleer Düzenleme Kurumu 8 sözleşmeli personel alacak Nükleer Düzenleme Kurumu 8 sözleşmeli personel alacak. Son başvuru tarihi 23 Kasım 2026",
       "url": "https://ilan.memurlar.net/ilan/86840/nukleer-duzenleme-kurumu-8-sozlesmeli-personel-alacak.html",
       "source": "Memurlar.net",
-      "document_key": "text:1155ef45ae0ea3a592f485ee17e3edf95643ed7c55ef369633e7735a41150586",
+      "document_key": "text:783507b46e8df32bd6117d2c09ab7b41a0fa35b9374e8fd238214b49b1b81053",
       "assessment": {
         "status": "review",
         "reasons": [],
@@ -1749,7 +1829,7 @@
         "evidence_complete": true,
         "positions": []
       },
-      "checked_on": "2026-11-09",
+      "checked_on": "2026-11-10",
       "policy": "1292260b21ee0874"
     },
     "https://ilan.memurlar.net/ilan/86849/yok-5-sozlesmeli-personel-alacak.html": {
@@ -3264,7 +3344,18 @@
     "text:47a16b585d68bb99b34e93420ac7727741804808880657db1ccb863a24484c1e": "https://ilan.memurlar.net/ilan/86954/kirbel-kent-hizmetleri-gecici-4-isci-alacak.html",
     "text:cbc14e45fecc4359e708f17ce1a095b0259d2960bc5e98231e1b844f9402dc63": "https://ilan.memurlar.net/ilan/86955/antalya-mavi-nar-emlak-10-isci-alacak.html",
     "text:55df3ee96133fe3da7929b669f6fcb09c75ff1382be87a91fb785296f3f6d6de": "https://ilan.memurlar.net/ilan/86956/safranbolu-sydv-gecici-1-isci-alacak.html",
-    "text:4f0b6771d0162dc2ad20bf4aaadae3af773fa72e616b3b77d1960c86ad595474": "https://ilan.memurlar.net/ilan/86957/istanbul-sultangazi-belediyesi-2-isci-alacak.html"
+    "text:4f0b6771d0162dc2ad20bf4aaadae3af773fa72e616b3b77d1960c86ad595474": "https://ilan.memurlar.net/ilan/86957/istanbul-sultangazi-belediyesi-2-isci-alacak.html",
+    "text:1ed9a867ef26db00144781658ad8be81e0367c8513fe910b193f5790e402e21a": "https://ilan.memurlar.net/ilan/29967/osmaniye-yagli-tohumlar-aras-ist-gecici-isci-alim-ilani.html",
+    "text:9785146354cf18e16a2a3f5c775757c0e6594958b7879bae01a17d2c3717dfb6": "https://ilan.memurlar.net/ilan/46813/bursa-osmangazi-belediyesi-3-isci-alacak.html",
+    "text:f757f106d76589f823577ab70d612c1cd0b6e70aa23c8479104281046dfc23d4": "https://ilan.memurlar.net/ilan/48143/afyonkarahisar-ihsaniye-ihsan-oren-tasimacilik-gecici-5-isci-alacak.html",
+    "text:783fbf4085bca9ec11ff2f02cf45010d3a355bd84fb82b430af40f20a40a0715": "https://ilan.memurlar.net/ilan/84194/nigde-bor-belediyesi-gecici-50-isci-alacak.html",
+    "text:8231c5317781d5520e607e9f188e101326f172fe2ce30b39d87ab92701eafb0e": "https://ilan.memurlar.net/ilan/86791/kultur-ve-turizm-bakanligi-162-sozlesmeli-personel-alacak.html",
+    "text:d68724206060c9de72bee2df206f1ca99de3b56f856c824044aad43a4e3202a7": "https://ilan.memurlar.net/ilan/86823/milli-saraylar-idaresi-baskanligi-3-sozlesmeli-personel-alacak.html",
+    "text:15e9b7e1c9b73a26f9ad23fc4f45aba97ce47124399ff6cafef0bb1e0b8e6d42": "https://ilan.memurlar.net/ilan/86827/elazig-il-ozel-idaresi-3-sozlesmeli-personel-alacak.html",
+    "text:bee3c4404b33bc24be34373d8fb3db2f354baf66b7ef141ac0bfc0687735c4db": "https://ilan.memurlar.net/ilan/86828/adana-imamoglu-belediyesi-2-isci-alacak.html",
+    "text:3ef0fa8bf127ecdeca50430907c98ef6dfafae6c6af7f3b2d9c87c610f90b2b8": "https://ilan.memurlar.net/ilan/86837/gaziosmanpasa-belediyesi-36-zabita-memuru-alacak.html",
+    "text:ac249a732d11731ac916f8379d52cb2887bdcae133515dcc67807e8a9c9f68b2": "https://ilan.memurlar.net/ilan/86839/kamu-ihale-kurumu-25-uzman-yardimcisi-alacak.html",
+    "text:783507b46e8df32bd6117d2c09ab7b41a0fa35b9374e8fd238214b49b1b81053": "https://ilan.memurlar.net/ilan/86840/nukleer-duzenleme-kurumu-8-sozlesmeli-personel-alacak.html"
   },
   "aliases": {
     "https://www.konya.bel.tr/haber/konya-buyuksehirde-zabita-memuru-alimi-icin-basvurular-devam-ediyor": "https://www.konya.bel.tr/haber/konya-buyuksehirde-zabita-memuru-alimi-icin-basvurular-devam-ediyor",
@@ -3341,14 +3432,14 @@
   },
   "delivery_cursor": 1,
   "last_run": {
-    "at": "2026-11-10T02:37:04.513405+03:00",
+    "at": "2026-11-10T17:58:01.633946+03:00",
     "status": "partial_source_error",
-    "messages_sent": 0,
-    "delivery_deferred": true,
+    "messages_sent": 20,
+    "delivery_deferred": false,
     "sources_ok": 10,
     "sources_total": 13,
-    "details_failed": 2,
-    "pending_messages": 18,
-    "pending_details": 87
+    "details_failed": 1,
+    "pending_messages": 2,
+    "pending_details": 75
   }
 }
