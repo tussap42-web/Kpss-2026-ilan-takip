@@ -887,6 +887,38 @@
         "e803fcfa58e5548b75cdee4a"
       ],
       "at": "2026-11-14T16:36:54.706527+03:00"
+    },
+    "https://ilan.memurlar.net/ilan/86990/edirne-kuplu-belediyesi-gecici-6-isci-alacak.html#reminder:2026-11-17:3": {
+      "title": "Edirne Küplü Belediyesi Geçici 6 İşçi Alacak",
+      "chats": [
+        "bf1d163560e5f030ec16ebe2",
+        "e803fcfa58e5548b75cdee4a"
+      ],
+      "at": "2026-11-14T21:52:49.837405+03:00"
+    },
+    "https://ilan.memurlar.net/ilan/86992/osmaniye-hasanbeyli-sydv-gecici-2-isci-alacak.html#reminder:2026-11-15:1": {
+      "title": "Osmaniye Hasanbeyli SYDV Geçici 2 İşçi Alacak",
+      "chats": [
+        "bf1d163560e5f030ec16ebe2",
+        "e803fcfa58e5548b75cdee4a"
+      ],
+      "at": "2026-11-14T21:52:49.837405+03:00"
+    },
+    "https://ilan.memurlar.net/ilan/86993/sivas-ozbelsan-1-isci-alacak.html#reminder:2026-11-15:1": {
+      "title": "01:30 Sivas Özbelsan 1 İşçi Alacak",
+      "chats": [
+        "bf1d163560e5f030ec16ebe2",
+        "e803fcfa58e5548b75cdee4a"
+      ],
+      "at": "2026-11-14T21:52:49.837405+03:00"
+    },
+    "https://www.resmigazete.gov.tr/eskiler/2026/11/20261114-13.pdf": {
+      "title": "–– Sözleşmeli Personel Çalıştırılmasına İlişkin Esaslarda Değişiklik Yapılmasına Dair Esaslar (Karar Sayısı: 11982)",
+      "chats": [
+        "bf1d163560e5f030ec16ebe2",
+        "e803fcfa58e5548b75cdee4a"
+      ],
+      "at": "2026-11-14T21:52:49.837405+03:00"
     }
   },
   "notices": {
@@ -1805,7 +1837,7 @@
       "title": "Niğde Bor Belediyesi Geçici 50 İşçi Alacak",
       "url": "https://ilan.memurlar.net/ilan/84194/nigde-bor-belediyesi-gecici-50-isci-alacak.html",
       "source": "Memurlar.net",
-      "document_key": "text:6969dfb5a207219ff6c665e662afcb135cbb6ec737184496b9886f94920440d3",
+      "document_key": "text:0facfdb7f80e10587d7a1596583e1b081a37e5d672b160df3aac657fd5df1156",
       "assessment": {
         "status": "review",
         "reasons": [],
@@ -1827,14 +1859,14 @@
         "evidence_complete": true,
         "positions": []
       },
-      "checked_on": "2026-11-13",
+      "checked_on": "2026-11-14",
       "policy": "1292260b21ee0874"
     },
     "https://ilan.memurlar.net/ilan/86791/kultur-ve-turizm-bakanligi-162-sozlesmeli-personel-alacak.html": {
       "title": "Kültür ve Turizm Bakanlığı 162 sözleşmeli personel alacak Kültür ve Turizm Bakanlığı 162 sözleşmeli personel alacak. Son başvuru tarihi 16 Ekim 2026",
       "url": "https://ilan.memurlar.net/ilan/86791/kultur-ve-turizm-bakanligi-162-sozlesmeli-personel-alacak.html",
       "source": "Memurlar.net",
-      "document_key": "text:c64bf6fabc1b9b1308eeda139a09bddd361bbb63707fb46fcc4deebb8ee785b0",
+      "document_key": "text:87f29a2dde065de448de9a8a581ae6b8ea2b99ca75b8c8d0dd699b9688fcc067",
       "assessment": {
         "status": "excluded",
         "reasons": [
@@ -1860,14 +1892,14 @@
         "evidence_complete": true,
         "positions": []
       },
-      "checked_on": "2026-11-13",
+      "checked_on": "2026-11-14",
       "policy": "1292260b21ee0874"
     },
     "https://ilan.memurlar.net/ilan/86823/milli-saraylar-idaresi-baskanligi-3-sozlesmeli-personel-alacak.html": {
       "title": "Milli Saraylar İdaresi Başkanlığı 3 sözleşmeli personel alacak Milli Saraylar İdaresi Başkanlığı 3 sözleşmeli personel alacak. Son başvuru tarihi 11 Kasım 2026",
       "url": "https://ilan.memurlar.net/ilan/86823/milli-saraylar-idaresi-baskanligi-3-sozlesmeli-personel-alacak.html",
       "source": "Memurlar.net",
-      "document_key": "text:fcdf329ddfc102a5fba91aeeee7a08121246529b48d2791b84eb7002ea102422",
+      "document_key": "text:66cc6c9ebb6eb33656fddb3aec8a2a78f9a416861d32735c66a514e76b480727",
       "assessment": {
         "status": "excluded",
         "reasons": [
@@ -1891,14 +1923,14 @@
         "evidence_complete": true,
         "positions": []
       },
-      "checked_on": "2026-11-13",
+      "checked_on": "2026-11-14",
       "policy": "1292260b21ee0874"
     },
     "https://ilan.memurlar.net/ilan/86827/elazig-il-ozel-idaresi-3-sozlesmeli-personel-alacak.html": {
       "title": "Elazığ İl Özel İdaresi 3 sözleşmeli personel alacak Elazığ İl Özel İdaresi 3 sözleşmeli personel alacak. Son başvuru tarihi 9 Aralık 2026",
       "url": "https://ilan.memurlar.net/ilan/86827/elazig-il-ozel-idaresi-3-sozlesmeli-personel-alacak.html",
       "source": "Memurlar.net",
-      "document_key": "text:848471d5963530b9c3d0b9f6b1de109b1862a87a288cddccfb993266b768a54b",
+      "document_key": "text:af8f5d27d5442dcc1abe73fa08429d0fd5fbd88a6555c497973077204243b2c3",
       "assessment": {
         "status": "review",
         "reasons": [],
@@ -1920,14 +1952,14 @@
         "evidence_complete": true,
         "positions": []
       },
-      "checked_on": "2026-11-13",
+      "checked_on": "2026-11-14",
       "policy": "1292260b21ee0874"
     },
     "https://ilan.memurlar.net/ilan/86828/adana-imamoglu-belediyesi-2-isci-alacak.html": {
       "title": "Adana İmamoğlu Belediyesi 2 İşçi Alacak",
       "url": "https://ilan.memurlar.net/ilan/86828/adana-imamoglu-belediyesi-2-isci-alacak.html",
       "source": "Memurlar.net",
-      "document_key": "text:195ea4f2261d3026c002ab8851b8fad37f5850d40581beb3985dd619fe4d46bc",
+      "document_key": "text:85c3d009e8c8c90f89ba484a0997a0e358f70a01725567137fa3d0d7e71d0104",
       "assessment": {
         "status": "excluded",
         "reasons": [
@@ -1951,14 +1983,14 @@
         "evidence_complete": true,
         "positions": []
       },
-      "checked_on": "2026-11-13",
+      "checked_on": "2026-11-14",
       "policy": "1292260b21ee0874"
     },
     "https://ilan.memurlar.net/ilan/86837/gaziosmanpasa-belediyesi-36-zabita-memuru-alacak.html": {
       "title": "Gaziosmanpaşa Belediyesi 36 Zabıta Memuru Alacak Gaziosmanpaşa Belediyesi 36 Zabıta Memuru Alacak. Son başvuru tarihi 11 Aralık 2026",
       "url": "https://ilan.memurlar.net/ilan/86837/gaziosmanpasa-belediyesi-36-zabita-memuru-alacak.html",
       "source": "Memurlar.net",
-      "document_key": "text:87d7475447e0616755f5d17cf90fd9573cc19a454767e55b97f6d3193fe1d056",
+      "document_key": "text:a149620a8abdc34e0576e88d88eae44ca515ac541e2957130b3b3f700f1b14be",
       "assessment": {
         "status": "review",
         "reasons": [],
@@ -1981,14 +2013,14 @@
         "evidence_complete": true,
         "positions": []
       },
-      "checked_on": "2026-11-13",
+      "checked_on": "2026-11-14",
       "policy": "1292260b21ee0874"
     },
     "https://ilan.memurlar.net/ilan/86839/kamu-ihale-kurumu-25-uzman-yardimcisi-alacak.html": {
       "title": "Kamu İhale Kurumu 25 Uzman Yardımcısı Alacak Kamu İhale Kurumu 25 Uzman Yardımcısı Alacak. Son başvuru tarihi 20 Kasım 2026",
       "url": "https://ilan.memurlar.net/ilan/86839/kamu-ihale-kurumu-25-uzman-yardimcisi-alacak.html",
       "source": "Memurlar.net",
-      "document_key": "text:ac3433e43051fea9e748ed2887622aa0f2215278eb89e339949182694930ab19",
+      "document_key": "text:6f635be38c34baf4fdbf6bf93e67881dd45163fdf7bdaf315f27d2e57743dbea",
       "assessment": {
         "status": "review",
         "reasons": [],
@@ -2010,14 +2042,14 @@
         "evidence_complete": true,
         "positions": []
       },
-      "checked_on": "2026-11-12",
+      "checked_on": "2026-11-14",
       "policy": "1292260b21ee0874"
     },
     "https://ilan.memurlar.net/ilan/86840/nukleer-duzenleme-kurumu-8-sozlesmeli-personel-alacak.html": {
       "title": "Nükleer Düzenleme Kurumu 8 sözleşmeli personel alacak Nükleer Düzenleme Kurumu 8 sözleşmeli personel alacak. Son başvuru tarihi 23 Kasım 2026",
       "url": "https://ilan.memurlar.net/ilan/86840/nukleer-duzenleme-kurumu-8-sozlesmeli-personel-alacak.html",
       "source": "Memurlar.net",
-      "document_key": "text:b1636193bc9a63b6866d24955a3c26a22691a4634747105c58529b6aba00579c",
+      "document_key": "text:63bd977c93a687a2b6e893f82924fd556d6709c44bb9bf677180de8416ad9d8d",
       "assessment": {
         "status": "review",
         "reasons": [],
@@ -2041,14 +2073,14 @@
         "evidence_complete": true,
         "positions": []
       },
-      "checked_on": "2026-11-12",
+      "checked_on": "2026-11-14",
       "policy": "1292260b21ee0874"
     },
     "https://ilan.memurlar.net/ilan/86849/yok-5-sozlesmeli-personel-alacak.html": {
       "title": "YÖK 5 Sözleşmeli Personel Alacak YÖK 5 Sözleşmeli Personel Alacak. Son başvuru tarihi 16 Kasım 2026",
       "url": "https://ilan.memurlar.net/ilan/86849/yok-5-sozlesmeli-personel-alacak.html",
       "source": "Memurlar.net",
-      "document_key": "text:be522bf572100e1737427ce764b5547aac5774a27137c13555ecb0e79002b32a",
+      "document_key": "text:808ae6cd95bb720081435b1be83ea1fb7c7a3cf7658b0796e79df19a5574719f",
       "assessment": {
         "status": "review",
         "reasons": [],
@@ -2072,7 +2104,7 @@
         "evidence_complete": true,
         "positions": []
       },
-      "checked_on": "2026-11-12",
+      "checked_on": "2026-11-14",
       "policy": "1292260b21ee0874"
     },
     "https://ilan.memurlar.net/ilan/86850/jandarma-ve-sahil-guvenlik-akademisi-baskanligi-30-memur-alacak.html": {
@@ -2142,14 +2174,14 @@
           }
         ]
       },
-      "checked_on": "2026-11-12",
+      "checked_on": "2026-11-14",
       "policy": "1292260b21ee0874"
     },
     "https://ilan.memurlar.net/ilan/86852/dogu-karadeniz-kalkinma-ajansi-1-uzman-personel-alacak.html": {
       "title": "Doğu Karadeniz Kalkınma Ajansı 1 uzman personel alacak",
       "url": "https://ilan.memurlar.net/ilan/86852/dogu-karadeniz-kalkinma-ajansi-1-uzman-personel-alacak.html",
       "source": "Memurlar.net",
-      "document_key": "text:c6aba24344da5c68b2abec64ef7c6106c3b201fd5363c1f1ad6fa32a2749a981",
+      "document_key": "text:196730c5cda94ecb09aee482f46b7cc00fd3f61bd23fe84f0b33347a98d310d7",
       "assessment": {
         "status": "review",
         "reasons": [],
@@ -2171,14 +2203,14 @@
         "evidence_complete": true,
         "positions": []
       },
-      "checked_on": "2026-11-12",
+      "checked_on": "2026-11-14",
       "policy": "1292260b21ee0874"
     },
     "https://ilan.memurlar.net/ilan/86858/turkiye-turizm-tanitim-ve-gelistirme-ajansi-13-personel-alacak.html": {
       "title": "Türkiye Turizm Tanıtım ve Geliştirme Ajansı 13 Personel Alacak Türkiye Turizm Tanıtım ve Geliştirme Ajansı 13 Personel Alacak. Son başvuru tarihi 4 Aralık 2026",
       "url": "https://ilan.memurlar.net/ilan/86858/turkiye-turizm-tanitim-ve-gelistirme-ajansi-13-personel-alacak.html",
       "source": "Memurlar.net",
-      "document_key": "text:f270acabe87f42c3398d9010ab8ea51cfd1f5248bd9c2a95428a60a47dbdd2dd",
+      "document_key": "text:f38e6da78d86cd9c8f691baeaff0449e69cee9971e9686f8ed66e44ae1780c3d",
       "assessment": {
         "status": "review",
         "reasons": [],
@@ -2200,7 +2232,7 @@
         "evidence_complete": true,
         "positions": []
       },
-      "checked_on": "2026-11-12",
+      "checked_on": "2026-11-14",
       "policy": "1292260b21ee0874"
     },
     "https://ilan.memurlar.net/ilan/86859/dokuz-eylul-universitesi-68-hemsire-alacak.html": {
@@ -4424,7 +4456,18 @@
     "text:fc39f9d7665484e654a6264623e75416bcf97f1c89b45495cb39dd63c1c88890": "https://ilan.memurlar.net/ilan/86994/sanliurfa-birecik-firat-hizmet-sanayi-gecici-3-isci-alacak.html",
     "text:d754cbedb68c793b5a18f515b366947e407c6ee595bfce204137d3bd3447b408": "https://ilan.memurlar.net/ilan/86995/gaziantep-sekabel-gida-gecici-2-isci-alacak.html",
     "text:2bb150779efb78a3de152e38125ab16fd9b921983846c3489d0950ce1e1cc689": "https://ilan.memurlar.net/ilan/86996/yalova-kaytazdere-belde-turizm-1-isci-alacak.html",
-    "text:58742aba388f36b375eef204a62cf50d7e020ee8c2662048f32accdb5ec4745f": "https://ilan.memurlar.net/ilan/86997/mersin-yenisehir-isletmecilik-1-isci-alacak.html"
+    "text:58742aba388f36b375eef204a62cf50d7e020ee8c2662048f32accdb5ec4745f": "https://ilan.memurlar.net/ilan/86997/mersin-yenisehir-isletmecilik-1-isci-alacak.html",
+    "text:0facfdb7f80e10587d7a1596583e1b081a37e5d672b160df3aac657fd5df1156": "https://ilan.memurlar.net/ilan/84194/nigde-bor-belediyesi-gecici-50-isci-alacak.html",
+    "text:87f29a2dde065de448de9a8a581ae6b8ea2b99ca75b8c8d0dd699b9688fcc067": "https://ilan.memurlar.net/ilan/86791/kultur-ve-turizm-bakanligi-162-sozlesmeli-personel-alacak.html",
+    "text:66cc6c9ebb6eb33656fddb3aec8a2a78f9a416861d32735c66a514e76b480727": "https://ilan.memurlar.net/ilan/86823/milli-saraylar-idaresi-baskanligi-3-sozlesmeli-personel-alacak.html",
+    "text:af8f5d27d5442dcc1abe73fa08429d0fd5fbd88a6555c497973077204243b2c3": "https://ilan.memurlar.net/ilan/86827/elazig-il-ozel-idaresi-3-sozlesmeli-personel-alacak.html",
+    "text:85c3d009e8c8c90f89ba484a0997a0e358f70a01725567137fa3d0d7e71d0104": "https://ilan.memurlar.net/ilan/86828/adana-imamoglu-belediyesi-2-isci-alacak.html",
+    "text:a149620a8abdc34e0576e88d88eae44ca515ac541e2957130b3b3f700f1b14be": "https://ilan.memurlar.net/ilan/86837/gaziosmanpasa-belediyesi-36-zabita-memuru-alacak.html",
+    "text:6f635be38c34baf4fdbf6bf93e67881dd45163fdf7bdaf315f27d2e57743dbea": "https://ilan.memurlar.net/ilan/86839/kamu-ihale-kurumu-25-uzman-yardimcisi-alacak.html",
+    "text:63bd977c93a687a2b6e893f82924fd556d6709c44bb9bf677180de8416ad9d8d": "https://ilan.memurlar.net/ilan/86840/nukleer-duzenleme-kurumu-8-sozlesmeli-personel-alacak.html",
+    "text:808ae6cd95bb720081435b1be83ea1fb7c7a3cf7658b0796e79df19a5574719f": "https://ilan.memurlar.net/ilan/86849/yok-5-sozlesmeli-personel-alacak.html",
+    "text:196730c5cda94ecb09aee482f46b7cc00fd3f61bd23fe84f0b33347a98d310d7": "https://ilan.memurlar.net/ilan/86852/dogu-karadeniz-kalkinma-ajansi-1-uzman-personel-alacak.html",
+    "text:f38e6da78d86cd9c8f691baeaff0449e69cee9971e9686f8ed66e44ae1780c3d": "https://ilan.memurlar.net/ilan/86858/turkiye-turizm-tanitim-ve-gelistirme-ajansi-13-personel-alacak.html"
   },
   "aliases": {
     "https://www.konya.bel.tr/haber/konya-buyuksehirde-zabita-memuru-alimi-icin-basvurular-devam-ediyor": "https://www.konya.bel.tr/haber/konya-buyuksehirde-zabita-memuru-alimi-icin-basvurular-devam-ediyor",
@@ -4525,14 +4568,14 @@
   },
   "delivery_cursor": 1,
   "last_run": {
-    "at": "2026-11-14T16:36:54.706527+03:00",
+    "at": "2026-11-14T21:52:49.837405+03:00",
     "status": "partial_source_error",
-    "messages_sent": 20,
+    "messages_sent": 8,
     "delivery_deferred": false,
     "sources_ok": 10,
     "sources_total": 13,
     "details_failed": 0,
-    "pending_messages": 2,
-    "pending_details": 100
+    "pending_messages": 0,
+    "pending_details": 88
   }
 }
