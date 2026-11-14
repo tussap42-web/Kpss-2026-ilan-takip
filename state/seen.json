@@ -807,6 +807,86 @@
         "e803fcfa58e5548b75cdee4a"
       ],
       "at": "2026-11-13T17:39:34.555703+03:00"
+    },
+    "https://ilan.memurlar.net/ilan/86978/mersin-akdeniz-sydv-gecici-1-isci-alacak.html": {
+      "title": "Mersin Akdeniz SYDV Geçici 1 İşçi Alacak",
+      "chats": [
+        "bf1d163560e5f030ec16ebe2",
+        "e803fcfa58e5548b75cdee4a"
+      ],
+      "at": "2026-11-14T16:36:54.706527+03:00"
+    },
+    "https://ilan.memurlar.net/ilan/86989/kirklareli-kiyikoy-belediyesi-gecici-1-isci-alacak.html": {
+      "title": "Kırklareli Kıyıköy Belediyesi Geçici 1 İşçi Alacak",
+      "chats": [
+        "bf1d163560e5f030ec16ebe2",
+        "e803fcfa58e5548b75cdee4a"
+      ],
+      "at": "2026-11-14T16:36:54.706527+03:00"
+    },
+    "https://ilan.memurlar.net/ilan/86990/edirne-kuplu-belediyesi-gecici-6-isci-alacak.html": {
+      "title": "Edirne Küplü Belediyesi Geçici 6 İşçi Alacak",
+      "chats": [
+        "bf1d163560e5f030ec16ebe2",
+        "e803fcfa58e5548b75cdee4a"
+      ],
+      "at": "2026-11-14T16:36:54.706527+03:00"
+    },
+    "https://ilan.memurlar.net/ilan/86991/mugla-milas-belediyesi-16-isci-alacak.html": {
+      "title": "Muğla Milas Belediyesi 16 İşçi Alacak",
+      "chats": [
+        "bf1d163560e5f030ec16ebe2",
+        "e803fcfa58e5548b75cdee4a"
+      ],
+      "at": "2026-11-14T16:36:54.706527+03:00"
+    },
+    "https://ilan.memurlar.net/ilan/86992/osmaniye-hasanbeyli-sydv-gecici-2-isci-alacak.html": {
+      "title": "Osmaniye Hasanbeyli SYDV Geçici 2 İşçi Alacak",
+      "chats": [
+        "bf1d163560e5f030ec16ebe2",
+        "e803fcfa58e5548b75cdee4a"
+      ],
+      "at": "2026-11-14T16:36:54.706527+03:00"
+    },
+    "https://ilan.memurlar.net/ilan/86993/sivas-ozbelsan-1-isci-alacak.html": {
+      "title": "01:30 Sivas Özbelsan 1 İşçi Alacak",
+      "chats": [
+        "bf1d163560e5f030ec16ebe2",
+        "e803fcfa58e5548b75cdee4a"
+      ],
+      "at": "2026-11-14T16:36:54.706527+03:00"
+    },
+    "https://ilan.memurlar.net/ilan/86994/sanliurfa-birecik-firat-hizmet-sanayi-gecici-3-isci-alacak.html": {
+      "title": "01:33 Şanlıurfa Birecik Fırat Hizmet Sanayi Geçici 3 İşçi Alacak",
+      "chats": [
+        "bf1d163560e5f030ec16ebe2",
+        "e803fcfa58e5548b75cdee4a"
+      ],
+      "at": "2026-11-14T16:36:54.706527+03:00"
+    },
+    "https://ilan.memurlar.net/ilan/86995/gaziantep-sekabel-gida-gecici-2-isci-alacak.html": {
+      "title": "01:36 Gaziantep Şekabel Gıda Geçici 2 İşçi Alacak",
+      "chats": [
+        "bf1d163560e5f030ec16ebe2",
+        "e803fcfa58e5548b75cdee4a"
+      ],
+      "at": "2026-11-14T16:36:54.706527+03:00"
+    },
+    "https://ilan.memurlar.net/ilan/86996/yalova-kaytazdere-belde-turizm-1-isci-alacak.html": {
+      "title": "01:39 Yalova Kaytazdere Belde Turizm 1 İşçi Alacak",
+      "chats": [
+        "bf1d163560e5f030ec16ebe2",
+        "e803fcfa58e5548b75cdee4a"
+      ],
+      "at": "2026-11-14T16:36:54.706527+03:00"
+    },
+    "https://ilan.memurlar.net/ilan/86997/mersin-yenisehir-isletmecilik-1-isci-alacak.html": {
+      "title": "01:42 Mersin Yenişehir İşletmecilik 1 İşçi Alacak",
+      "chats": [
+        "bf1d163560e5f030ec16ebe2",
+        "e803fcfa58e5548b75cdee4a"
+      ],
+      "at": "2026-11-14T16:36:54.706527+03:00"
     }
   },
   "notices": {
@@ -3790,7 +3870,7 @@
       "title": "İstanbul Personel Yönetim Aş. 79 İşçi Alacak",
       "url": "https://ilan.memurlar.net/ilan/63464/istanbul-personel-yonetim-as-79-isci-alacak.html",
       "source": "Memurlar.net",
-      "document_key": "text:b12324101b11e552c9d11404c94ab0581ca0ea270a505b9d0da14024a2423509",
+      "document_key": "text:b96bd6cebb62072ebd4b7fbe4ed66aeda3e064152ac3f28867037ccb0e671238",
       "assessment": {
         "status": "excluded",
         "reasons": [
@@ -3814,14 +3894,14 @@
         "evidence_complete": true,
         "positions": []
       },
-      "checked_on": "2026-11-13",
+      "checked_on": "2026-11-14",
       "policy": "1292260b21ee0874"
     },
     "https://ilan.memurlar.net/ilan/65311/istanbul-bilisim-ve-akilli-kent-teknolojileri-2-isci-alacak.html": {
       "title": "İstanbul Bilişim ve Akıllı Kent Teknolojileri 2 İşçi Alacak",
       "url": "https://ilan.memurlar.net/ilan/65311/istanbul-bilisim-ve-akilli-kent-teknolojileri-2-isci-alacak.html",
       "source": "Memurlar.net",
-      "document_key": "text:d1b918dc5f41931782d05737eb463f16e0d172cc411e28efab7fb8a5783cc3b0",
+      "document_key": "text:1709225b1a5cca0a82a24f59345940b235864383fdfb4c5e8c0db3dbee2487b8",
       "assessment": {
         "status": "excluded",
         "reasons": [
@@ -3845,7 +3925,7 @@
         "evidence_complete": true,
         "positions": []
       },
-      "checked_on": "2026-11-13",
+      "checked_on": "2026-11-14",
       "policy": "1292260b21ee0874"
     },
     "https://ilan.memurlar.net/ilan/86972/karamanoglu-mehmetbey-universitesi-ogretim-uyesi-alacak.html": {
@@ -3901,6 +3981,296 @@
         "kpss_exempt": false,
         "education_levels": [],
         "evidence_complete": false,
+        "positions": []
+      },
+      "checked_on": "2026-11-14",
+      "policy": "1292260b21ee0874"
+    },
+    "https://ilan.memurlar.net/ilan/86978/mersin-akdeniz-sydv-gecici-1-isci-alacak.html": {
+      "title": "Mersin Akdeniz SYDV Geçici 1 İşçi Alacak",
+      "url": "https://ilan.memurlar.net/ilan/86978/mersin-akdeniz-sydv-gecici-1-isci-alacak.html",
+      "source": "Memurlar.net",
+      "document_key": "text:99e254acdf14c6ac6a7012360f360e4ced9fe645ef79c8e798a6cd23a1b7dc92",
+      "assessment": {
+        "status": "review",
+        "reasons": [],
+        "warnings": [
+          "KPSS taban puanı açık biçimde okunamadı",
+          "Aday puanı yaklaşık; başvuruda kesin puan kullanılmalı",
+          "Mezuniyet/bölüm uygunluğu doğrulanamadı",
+          "Yaş, belge, deneyim ve diğer özel şartlar ayrıca kontrol edilmeli"
+        ],
+        "deadline": "2026-11-18",
+        "minimum_score": null,
+        "score_conditions": [],
+        "score_types": [],
+        "score_ambiguous": false,
+        "kpss_exempt": false,
+        "education_levels": [
+          "Lisans"
+        ],
+        "evidence_complete": true,
+        "positions": []
+      },
+      "checked_on": "2026-11-14",
+      "policy": "1292260b21ee0874"
+    },
+    "https://ilan.memurlar.net/ilan/86989/kirklareli-kiyikoy-belediyesi-gecici-1-isci-alacak.html": {
+      "title": "Kırklareli Kıyıköy Belediyesi Geçici 1 İşçi Alacak",
+      "url": "https://ilan.memurlar.net/ilan/86989/kirklareli-kiyikoy-belediyesi-gecici-1-isci-alacak.html",
+      "source": "Memurlar.net",
+      "document_key": "text:cdfe875490e7fbeb3b99887df396c3540716a59d5786d6c9763f4c55f7f30f77",
+      "assessment": {
+        "status": "review",
+        "reasons": [],
+        "warnings": [
+          "KPSS taban puanı açık biçimde okunamadı",
+          "Aday puanı yaklaşık; başvuruda kesin puan kullanılmalı",
+          "Mezuniyet/bölüm uygunluğu doğrulanamadı",
+          "Yaş, belge, deneyim ve diğer özel şartlar ayrıca kontrol edilmeli"
+        ],
+        "deadline": "2026-11-16",
+        "minimum_score": null,
+        "score_conditions": [],
+        "score_types": [],
+        "score_ambiguous": false,
+        "kpss_exempt": false,
+        "education_levels": [
+          "Lisans"
+        ],
+        "evidence_complete": true,
+        "positions": []
+      },
+      "checked_on": "2026-11-14",
+      "policy": "1292260b21ee0874"
+    },
+    "https://ilan.memurlar.net/ilan/86990/edirne-kuplu-belediyesi-gecici-6-isci-alacak.html": {
+      "title": "Edirne Küplü Belediyesi Geçici 6 İşçi Alacak",
+      "url": "https://ilan.memurlar.net/ilan/86990/edirne-kuplu-belediyesi-gecici-6-isci-alacak.html",
+      "source": "Memurlar.net",
+      "document_key": "text:874698ec7c386573d94a728a3dc241d74a23f9d2f77fb54181b0b8131718183b",
+      "assessment": {
+        "status": "review",
+        "reasons": [],
+        "warnings": [
+          "KPSS taban puanı açık biçimde okunamadı",
+          "Aday puanı yaklaşık; başvuruda kesin puan kullanılmalı",
+          "Mezuniyet/bölüm uygunluğu doğrulanamadı",
+          "Yaş, belge, deneyim ve diğer özel şartlar ayrıca kontrol edilmeli"
+        ],
+        "deadline": "2026-11-17",
+        "minimum_score": null,
+        "score_conditions": [],
+        "score_types": [],
+        "score_ambiguous": false,
+        "kpss_exempt": false,
+        "education_levels": [
+          "Lisans"
+        ],
+        "evidence_complete": true,
+        "positions": []
+      },
+      "checked_on": "2026-11-14",
+      "policy": "1292260b21ee0874"
+    },
+    "https://ilan.memurlar.net/ilan/86991/mugla-milas-belediyesi-16-isci-alacak.html": {
+      "title": "Muğla Milas Belediyesi 16 İşçi Alacak",
+      "url": "https://ilan.memurlar.net/ilan/86991/mugla-milas-belediyesi-16-isci-alacak.html",
+      "source": "Memurlar.net",
+      "document_key": "text:acf89cda64cd027d5d454619188f94ab676d16dee7b08cd813769d3b7a2cdc91",
+      "assessment": {
+        "status": "review",
+        "reasons": [],
+        "warnings": [
+          "KPSS taban puanı açık biçimde okunamadı",
+          "Aday puanı yaklaşık; başvuruda kesin puan kullanılmalı",
+          "Mezuniyet/bölüm uygunluğu doğrulanamadı",
+          "Yaş, belge, deneyim ve diğer özel şartlar ayrıca kontrol edilmeli"
+        ],
+        "deadline": "2026-11-18",
+        "minimum_score": null,
+        "score_conditions": [],
+        "score_types": [],
+        "score_ambiguous": false,
+        "kpss_exempt": false,
+        "education_levels": [
+          "Lisans"
+        ],
+        "evidence_complete": true,
+        "positions": []
+      },
+      "checked_on": "2026-11-14",
+      "policy": "1292260b21ee0874"
+    },
+    "https://ilan.memurlar.net/ilan/86992/osmaniye-hasanbeyli-sydv-gecici-2-isci-alacak.html": {
+      "title": "Osmaniye Hasanbeyli SYDV Geçici 2 İşçi Alacak",
+      "url": "https://ilan.memurlar.net/ilan/86992/osmaniye-hasanbeyli-sydv-gecici-2-isci-alacak.html",
+      "source": "Memurlar.net",
+      "document_key": "text:f8ee5e9770542b32e467680b5e68509a68f76d0283b1b96d55445df255abf759",
+      "assessment": {
+        "status": "review",
+        "reasons": [],
+        "warnings": [
+          "KPSS taban puanı açık biçimde okunamadı",
+          "Aday puanı yaklaşık; başvuruda kesin puan kullanılmalı",
+          "Mezuniyet/bölüm uygunluğu doğrulanamadı",
+          "Yaş, belge, deneyim ve diğer özel şartlar ayrıca kontrol edilmeli"
+        ],
+        "deadline": "2026-11-15",
+        "minimum_score": null,
+        "score_conditions": [],
+        "score_types": [],
+        "score_ambiguous": false,
+        "kpss_exempt": false,
+        "education_levels": [
+          "Lisans"
+        ],
+        "evidence_complete": true,
+        "positions": []
+      },
+      "checked_on": "2026-11-14",
+      "policy": "1292260b21ee0874"
+    },
+    "https://ilan.memurlar.net/ilan/86993/sivas-ozbelsan-1-isci-alacak.html": {
+      "title": "01:30 Sivas Özbelsan 1 İşçi Alacak",
+      "url": "https://ilan.memurlar.net/ilan/86993/sivas-ozbelsan-1-isci-alacak.html",
+      "source": "Memurlar.net",
+      "document_key": "text:c18de83ff50a180a9e2577939fa60b25e1120c829d227fc646664bad6c9e6f87",
+      "assessment": {
+        "status": "review",
+        "reasons": [],
+        "warnings": [
+          "KPSS taban puanı açık biçimde okunamadı",
+          "Aday puanı yaklaşık; başvuruda kesin puan kullanılmalı",
+          "Mezuniyet/bölüm uygunluğu doğrulanamadı",
+          "Yaş, belge, deneyim ve diğer özel şartlar ayrıca kontrol edilmeli"
+        ],
+        "deadline": "2026-11-15",
+        "minimum_score": null,
+        "score_conditions": [],
+        "score_types": [],
+        "score_ambiguous": false,
+        "kpss_exempt": false,
+        "education_levels": [
+          "Lisans"
+        ],
+        "evidence_complete": true,
+        "positions": []
+      },
+      "checked_on": "2026-11-14",
+      "policy": "1292260b21ee0874"
+    },
+    "https://ilan.memurlar.net/ilan/86994/sanliurfa-birecik-firat-hizmet-sanayi-gecici-3-isci-alacak.html": {
+      "title": "01:33 Şanlıurfa Birecik Fırat Hizmet Sanayi Geçici 3 İşçi Alacak",
+      "url": "https://ilan.memurlar.net/ilan/86994/sanliurfa-birecik-firat-hizmet-sanayi-gecici-3-isci-alacak.html",
+      "source": "Memurlar.net",
+      "document_key": "text:fc39f9d7665484e654a6264623e75416bcf97f1c89b45495cb39dd63c1c88890",
+      "assessment": {
+        "status": "review",
+        "reasons": [],
+        "warnings": [
+          "KPSS taban puanı açık biçimde okunamadı",
+          "Aday puanı yaklaşık; başvuruda kesin puan kullanılmalı",
+          "Mezuniyet/bölüm uygunluğu doğrulanamadı",
+          "Yaş, belge, deneyim ve diğer özel şartlar ayrıca kontrol edilmeli"
+        ],
+        "deadline": "2026-11-16",
+        "minimum_score": null,
+        "score_conditions": [],
+        "score_types": [],
+        "score_ambiguous": false,
+        "kpss_exempt": false,
+        "education_levels": [
+          "Lisans"
+        ],
+        "evidence_complete": true,
+        "positions": []
+      },
+      "checked_on": "2026-11-14",
+      "policy": "1292260b21ee0874"
+    },
+    "https://ilan.memurlar.net/ilan/86995/gaziantep-sekabel-gida-gecici-2-isci-alacak.html": {
+      "title": "01:36 Gaziantep Şekabel Gıda Geçici 2 İşçi Alacak",
+      "url": "https://ilan.memurlar.net/ilan/86995/gaziantep-sekabel-gida-gecici-2-isci-alacak.html",
+      "source": "Memurlar.net",
+      "document_key": "text:d754cbedb68c793b5a18f515b366947e407c6ee595bfce204137d3bd3447b408",
+      "assessment": {
+        "status": "review",
+        "reasons": [],
+        "warnings": [
+          "KPSS taban puanı açık biçimde okunamadı",
+          "Aday puanı yaklaşık; başvuruda kesin puan kullanılmalı",
+          "Mezuniyet/bölüm uygunluğu doğrulanamadı",
+          "Yaş, belge, deneyim ve diğer özel şartlar ayrıca kontrol edilmeli"
+        ],
+        "deadline": "2026-11-16",
+        "minimum_score": null,
+        "score_conditions": [],
+        "score_types": [],
+        "score_ambiguous": false,
+        "kpss_exempt": false,
+        "education_levels": [
+          "Lisans"
+        ],
+        "evidence_complete": true,
+        "positions": []
+      },
+      "checked_on": "2026-11-14",
+      "policy": "1292260b21ee0874"
+    },
+    "https://ilan.memurlar.net/ilan/86996/yalova-kaytazdere-belde-turizm-1-isci-alacak.html": {
+      "title": "01:39 Yalova Kaytazdere Belde Turizm 1 İşçi Alacak",
+      "url": "https://ilan.memurlar.net/ilan/86996/yalova-kaytazdere-belde-turizm-1-isci-alacak.html",
+      "source": "Memurlar.net",
+      "document_key": "text:2bb150779efb78a3de152e38125ab16fd9b921983846c3489d0950ce1e1cc689",
+      "assessment": {
+        "status": "review",
+        "reasons": [],
+        "warnings": [
+          "KPSS taban puanı açık biçimde okunamadı",
+          "Aday puanı yaklaşık; başvuruda kesin puan kullanılmalı",
+          "Mezuniyet/bölüm uygunluğu doğrulanamadı",
+          "Yaş, belge, deneyim ve diğer özel şartlar ayrıca kontrol edilmeli"
+        ],
+        "deadline": "2026-11-16",
+        "minimum_score": null,
+        "score_conditions": [],
+        "score_types": [],
+        "score_ambiguous": false,
+        "kpss_exempt": false,
+        "education_levels": [
+          "Lisans"
+        ],
+        "evidence_complete": true,
+        "positions": []
+      },
+      "checked_on": "2026-11-14",
+      "policy": "1292260b21ee0874"
+    },
+    "https://ilan.memurlar.net/ilan/86997/mersin-yenisehir-isletmecilik-1-isci-alacak.html": {
+      "title": "01:42 Mersin Yenişehir İşletmecilik 1 İşçi Alacak",
+      "url": "https://ilan.memurlar.net/ilan/86997/mersin-yenisehir-isletmecilik-1-isci-alacak.html",
+      "source": "Memurlar.net",
+      "document_key": "text:58742aba388f36b375eef204a62cf50d7e020ee8c2662048f32accdb5ec4745f",
+      "assessment": {
+        "status": "review",
+        "reasons": [],
+        "warnings": [
+          "KPSS taban puanı açık biçimde okunamadı",
+          "Aday puanı yaklaşık; başvuruda kesin puan kullanılmalı",
+          "Mezuniyet/bölüm uygunluğu doğrulanamadı",
+          "Yaş, belge, deneyim ve diğer özel şartlar ayrıca kontrol edilmeli"
+        ],
+        "deadline": "2026-11-18",
+        "minimum_score": null,
+        "score_conditions": [],
+        "score_types": [],
+        "score_ambiguous": false,
+        "kpss_exempt": false,
+        "education_levels": [
+          "Lisans"
+        ],
+        "evidence_complete": true,
         "positions": []
       },
       "checked_on": "2026-11-14",
@@ -4042,7 +4412,19 @@
     "text:57554b6f87a28917290f020dc0b8e82ec7158c133ef6ea120bf498feba3947d4": "https://ilan.memurlar.net/ilan/46813/bursa-osmangazi-belediyesi-3-isci-alacak.html",
     "text:a4f406704dec263916739b78708f62c229555afd3cd38a1d7fc79d5210f04790": "https://ilan.memurlar.net/ilan/48143/afyonkarahisar-ihsaniye-ihsan-oren-tasimacilik-gecici-5-isci-alacak.html",
     "text:1e4bb017f3f942abd335136c1c3e759d7d993435b43416b0f422f374595079ff": "https://ilan.memurlar.net/ilan/46209/antalya-kas-likya-turizm-gecici-76-isci-alacak.html",
-    "text:5f5fd8c197fc83dd1572e46cb97a50b5ebecae53446a34084cb688cc7da8c1fb": "https://ilan.memurlar.net/ilan/54862/aydin-kocarli-belediyesi-7-isci-alacak.html"
+    "text:5f5fd8c197fc83dd1572e46cb97a50b5ebecae53446a34084cb688cc7da8c1fb": "https://ilan.memurlar.net/ilan/54862/aydin-kocarli-belediyesi-7-isci-alacak.html",
+    "text:b96bd6cebb62072ebd4b7fbe4ed66aeda3e064152ac3f28867037ccb0e671238": "https://ilan.memurlar.net/ilan/63464/istanbul-personel-yonetim-as-79-isci-alacak.html",
+    "text:1709225b1a5cca0a82a24f59345940b235864383fdfb4c5e8c0db3dbee2487b8": "https://ilan.memurlar.net/ilan/65311/istanbul-bilisim-ve-akilli-kent-teknolojileri-2-isci-alacak.html",
+    "text:99e254acdf14c6ac6a7012360f360e4ced9fe645ef79c8e798a6cd23a1b7dc92": "https://ilan.memurlar.net/ilan/86978/mersin-akdeniz-sydv-gecici-1-isci-alacak.html",
+    "text:cdfe875490e7fbeb3b99887df396c3540716a59d5786d6c9763f4c55f7f30f77": "https://ilan.memurlar.net/ilan/86989/kirklareli-kiyikoy-belediyesi-gecici-1-isci-alacak.html",
+    "text:874698ec7c386573d94a728a3dc241d74a23f9d2f77fb54181b0b8131718183b": "https://ilan.memurlar.net/ilan/86990/edirne-kuplu-belediyesi-gecici-6-isci-alacak.html",
+    "text:acf89cda64cd027d5d454619188f94ab676d16dee7b08cd813769d3b7a2cdc91": "https://ilan.memurlar.net/ilan/86991/mugla-milas-belediyesi-16-isci-alacak.html",
+    "text:f8ee5e9770542b32e467680b5e68509a68f76d0283b1b96d55445df255abf759": "https://ilan.memurlar.net/ilan/86992/osmaniye-hasanbeyli-sydv-gecici-2-isci-alacak.html",
+    "text:c18de83ff50a180a9e2577939fa60b25e1120c829d227fc646664bad6c9e6f87": "https://ilan.memurlar.net/ilan/86993/sivas-ozbelsan-1-isci-alacak.html",
+    "text:fc39f9d7665484e654a6264623e75416bcf97f1c89b45495cb39dd63c1c88890": "https://ilan.memurlar.net/ilan/86994/sanliurfa-birecik-firat-hizmet-sanayi-gecici-3-isci-alacak.html",
+    "text:d754cbedb68c793b5a18f515b366947e407c6ee595bfce204137d3bd3447b408": "https://ilan.memurlar.net/ilan/86995/gaziantep-sekabel-gida-gecici-2-isci-alacak.html",
+    "text:2bb150779efb78a3de152e38125ab16fd9b921983846c3489d0950ce1e1cc689": "https://ilan.memurlar.net/ilan/86996/yalova-kaytazdere-belde-turizm-1-isci-alacak.html",
+    "text:58742aba388f36b375eef204a62cf50d7e020ee8c2662048f32accdb5ec4745f": "https://ilan.memurlar.net/ilan/86997/mersin-yenisehir-isletmecilik-1-isci-alacak.html"
   },
   "aliases": {
     "https://www.konya.bel.tr/haber/konya-buyuksehirde-zabita-memuru-alimi-icin-basvurular-devam-ediyor": "https://www.konya.bel.tr/haber/konya-buyuksehirde-zabita-memuru-alimi-icin-basvurular-devam-ediyor",
@@ -4129,18 +4511,28 @@
     "https://ilan.memurlar.net/ilan/55225/bursa-harmancik-belediyesi-3-isci-alacak.html": "https://ilan.memurlar.net/ilan/55225/bursa-harmancik-belediyesi-3-isci-alacak.html",
     "https://ilan.memurlar.net/ilan/63464/istanbul-personel-yonetim-as-79-isci-alacak.html": "https://ilan.memurlar.net/ilan/63464/istanbul-personel-yonetim-as-79-isci-alacak.html",
     "https://ilan.memurlar.net/ilan/65311/istanbul-bilisim-ve-akilli-kent-teknolojileri-2-isci-alacak.html": "https://ilan.memurlar.net/ilan/65311/istanbul-bilisim-ve-akilli-kent-teknolojileri-2-isci-alacak.html",
-    "https://ilan.memurlar.net/ilan/86972/karamanoglu-mehmetbey-universitesi-ogretim-uyesi-alacak.html": "https://ilan.memurlar.net/ilan/86972/karamanoglu-mehmetbey-universitesi-ogretim-uyesi-alacak.html"
+    "https://ilan.memurlar.net/ilan/86972/karamanoglu-mehmetbey-universitesi-ogretim-uyesi-alacak.html": "https://ilan.memurlar.net/ilan/86972/karamanoglu-mehmetbey-universitesi-ogretim-uyesi-alacak.html",
+    "https://ilan.memurlar.net/ilan/86978/mersin-akdeniz-sydv-gecici-1-isci-alacak.html": "https://ilan.memurlar.net/ilan/86978/mersin-akdeniz-sydv-gecici-1-isci-alacak.html",
+    "https://ilan.memurlar.net/ilan/86989/kirklareli-kiyikoy-belediyesi-gecici-1-isci-alacak.html": "https://ilan.memurlar.net/ilan/86989/kirklareli-kiyikoy-belediyesi-gecici-1-isci-alacak.html",
+    "https://ilan.memurlar.net/ilan/86990/edirne-kuplu-belediyesi-gecici-6-isci-alacak.html": "https://ilan.memurlar.net/ilan/86990/edirne-kuplu-belediyesi-gecici-6-isci-alacak.html",
+    "https://ilan.memurlar.net/ilan/86991/mugla-milas-belediyesi-16-isci-alacak.html": "https://ilan.memurlar.net/ilan/86991/mugla-milas-belediyesi-16-isci-alacak.html",
+    "https://ilan.memurlar.net/ilan/86992/osmaniye-hasanbeyli-sydv-gecici-2-isci-alacak.html": "https://ilan.memurlar.net/ilan/86992/osmaniye-hasanbeyli-sydv-gecici-2-isci-alacak.html",
+    "https://ilan.memurlar.net/ilan/86993/sivas-ozbelsan-1-isci-alacak.html": "https://ilan.memurlar.net/ilan/86993/sivas-ozbelsan-1-isci-alacak.html",
+    "https://ilan.memurlar.net/ilan/86994/sanliurfa-birecik-firat-hizmet-sanayi-gecici-3-isci-alacak.html": "https://ilan.memurlar.net/ilan/86994/sanliurfa-birecik-firat-hizmet-sanayi-gecici-3-isci-alacak.html",
+    "https://ilan.memurlar.net/ilan/86995/gaziantep-sekabel-gida-gecici-2-isci-alacak.html": "https://ilan.memurlar.net/ilan/86995/gaziantep-sekabel-gida-gecici-2-isci-alacak.html",
+    "https://ilan.memurlar.net/ilan/86996/yalova-kaytazdere-belde-turizm-1-isci-alacak.html": "https://ilan.memurlar.net/ilan/86996/yalova-kaytazdere-belde-turizm-1-isci-alacak.html",
+    "https://ilan.memurlar.net/ilan/86997/mersin-yenisehir-isletmecilik-1-isci-alacak.html": "https://ilan.memurlar.net/ilan/86997/mersin-yenisehir-isletmecilik-1-isci-alacak.html"
   },
   "delivery_cursor": 1,
   "last_run": {
-    "at": "2026-11-14T00:00:21.709227+03:00",
+    "at": "2026-11-14T16:36:54.706527+03:00",
     "status": "partial_source_error",
-    "messages_sent": 0,
-    "delivery_deferred": true,
+    "messages_sent": 20,
+    "delivery_deferred": false,
     "sources_ok": 10,
     "sources_total": 13,
-    "details_failed": 4,
+    "details_failed": 0,
     "pending_messages": 2,
-    "pending_details": 102
+    "pending_details": 100
   }
 }
