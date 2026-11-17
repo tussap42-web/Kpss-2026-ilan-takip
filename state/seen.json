@@ -1006,7 +1006,7 @@
       "title": "KONYA BÜYÜKŞEHİR’DE ZABITA MEMURU ALIMI İÇİN BAŞVURULAR DEVAM EDİYOR 03.06.2026 16:42",
       "url": "https://www.konya.bel.tr/haber/konya-buyuksehirde-zabita-memuru-alimi-icin-basvurular-devam-ediyor",
       "source": "Konya Buyuksehir Belediyesi",
-      "document_key": "text:5b537aeb7af10167d60f377fc9686263f8dd197564d1665cd7f0fc0eed775dbe",
+      "document_key": "text:b23faa2ba46bcb294e0d7d0f6b55e52d37356dfc0b67f25128a0eb8bae9fd605",
       "assessment": {
         "status": "review",
         "reasons": [],
@@ -1031,7 +1031,7 @@
         "evidence_complete": true,
         "positions": []
       },
-      "checked_on": "2026-11-17",
+      "checked_on": "2026-11-18",
       "policy": "1292260b21ee0874"
     },
     "https://pgm.adalet.gov.tr/Home/SayfaDetay/bakanligimiz-merkez-teskilati-ve-personel-egitim-merkezi-mudurlukleri-ile-adli-destek-ve-m17072026044513": {
@@ -1559,7 +1559,7 @@
         "evidence_complete": false,
         "positions": []
       },
-      "checked_on": "2026-11-17",
+      "checked_on": "2026-11-18",
       "policy": "1292260b21ee0874"
     },
     "https://dokuman.osym.gov.tr/web//2026/9/2026-kpss-on-lisans-basvuru-kilavuzu-l21r5f-22101148.pdf": {
@@ -3956,7 +3956,7 @@
       "title": "Konya Şehir Hizmetleri 194 İşçi Alacak",
       "url": "https://ilan.memurlar.net/ilan/66164/konya-sehir-hizmetleri-194-isci-alacak.html",
       "source": "Memurlar.net",
-      "document_key": "text:696425f7534efcd0f8e37c1b6d68201cf6047ea4a271da9abd823aaff02a9d31",
+      "document_key": "text:135aa7ac0ece6fe2f0d5ca4c99c30a9abc1801e0fc66ad169109659b0911b738",
       "assessment": {
         "status": "excluded",
         "reasons": [
@@ -3980,7 +3980,7 @@
         "evidence_complete": true,
         "positions": []
       },
-      "checked_on": "2026-11-17",
+      "checked_on": "2026-11-18",
       "policy": "1292260b21ee0874"
     },
     "https://ilan.memurlar.net/ilan/54862/aydin-kocarli-belediyesi-7-isci-alacak.html": {
@@ -4747,6 +4747,267 @@
       },
       "checked_on": "2026-11-17",
       "policy": "1292260b21ee0874"
+    },
+    "https://ilan.memurlar.net/ilan/87008/burdur-mehmet-akif-ersoy-ogretmenevi-gecici-2-isci-alacak.html": {
+      "title": "Burdur Mehmet Akif Ersoy Öğretmenevi Geçici 2 İşçi Alacak",
+      "url": "https://ilan.memurlar.net/ilan/87008/burdur-mehmet-akif-ersoy-ogretmenevi-gecici-2-isci-alacak.html",
+      "source": "Memurlar.net",
+      "document_key": "text:bc181c52eac80130ff3a3a9f556335e4e23b185922d2a078a2c84a7e66dc3f4f",
+      "assessment": {
+        "status": "review",
+        "reasons": [],
+        "warnings": [
+          "KPSS taban puanı açık biçimde okunamadı",
+          "Aday puanı yaklaşık; başvuruda kesin puan kullanılmalı",
+          "Mezuniyet/bölüm uygunluğu doğrulanamadı",
+          "Yaş, belge, deneyim ve diğer özel şartlar ayrıca kontrol edilmeli"
+        ],
+        "deadline": "2026-11-22",
+        "minimum_score": null,
+        "score_conditions": [],
+        "score_types": [],
+        "score_ambiguous": false,
+        "kpss_exempt": false,
+        "education_levels": [
+          "Lisans"
+        ],
+        "evidence_complete": true,
+        "positions": []
+      },
+      "checked_on": "2026-11-18",
+      "policy": "1292260b21ee0874"
+    },
+    "https://ilan.memurlar.net/ilan/87011/izmir-izenerji-gecici-15-isci-alacak.html": {
+      "title": "İzmir İzenerji Geçici 15 İşçi Alacak",
+      "url": "https://ilan.memurlar.net/ilan/87011/izmir-izenerji-gecici-15-isci-alacak.html",
+      "source": "Memurlar.net",
+      "document_key": "text:c6eeb49c819ec309bf7224f815eed549064edc53774236ad1c6d30f0755fda59",
+      "assessment": {
+        "status": "review",
+        "reasons": [],
+        "warnings": [
+          "KPSS taban puanı açık biçimde okunamadı",
+          "Aday puanı yaklaşık; başvuruda kesin puan kullanılmalı",
+          "Mezuniyet/bölüm uygunluğu doğrulanamadı",
+          "Yaş, belge, deneyim ve diğer özel şartlar ayrıca kontrol edilmeli"
+        ],
+        "deadline": "2026-11-22",
+        "minimum_score": null,
+        "score_conditions": [],
+        "score_types": [],
+        "score_ambiguous": false,
+        "kpss_exempt": false,
+        "education_levels": [
+          "Lisans"
+        ],
+        "evidence_complete": true,
+        "positions": []
+      },
+      "checked_on": "2026-11-18",
+      "policy": "1292260b21ee0874"
+    },
+    "https://ilan.memurlar.net/ilan/87013/kirklareli-cakilli-belediyesi-1-isci-alacak.html": {
+      "title": "Kırklareli Çakıllı Belediyesi 1 İşçi Alacak",
+      "url": "https://ilan.memurlar.net/ilan/87013/kirklareli-cakilli-belediyesi-1-isci-alacak.html",
+      "source": "Memurlar.net",
+      "document_key": "text:5799b6f4cc50336e028893edc3f7f75eb9f1aca37b75f463aaac5748a54db5e3",
+      "assessment": {
+        "status": "review",
+        "reasons": [],
+        "warnings": [
+          "KPSS taban puanı açık biçimde okunamadı",
+          "Aday puanı yaklaşık; başvuruda kesin puan kullanılmalı",
+          "Mezuniyet/bölüm uygunluğu doğrulanamadı",
+          "Yaş, belge, deneyim ve diğer özel şartlar ayrıca kontrol edilmeli"
+        ],
+        "deadline": "2026-11-20",
+        "minimum_score": null,
+        "score_conditions": [],
+        "score_types": [],
+        "score_ambiguous": false,
+        "kpss_exempt": false,
+        "education_levels": [
+          "Lisans"
+        ],
+        "evidence_complete": true,
+        "positions": []
+      },
+      "checked_on": "2026-11-18",
+      "policy": "1292260b21ee0874"
+    },
+    "https://ilan.memurlar.net/ilan/87014/kocaeli-belde-ozel-saglik-hizmetleri-1-isci-alacak.html": {
+      "title": "Kocaeli Belde Özel Sağlık Hizmetleri 1 İşçi Alacak",
+      "url": "https://ilan.memurlar.net/ilan/87014/kocaeli-belde-ozel-saglik-hizmetleri-1-isci-alacak.html",
+      "source": "Memurlar.net",
+      "document_key": "text:52e12bc07d23d6e1b63fda48b5dbb6863e31d37b5c43129572f175b653c40fb9",
+      "assessment": {
+        "status": "review",
+        "reasons": [],
+        "warnings": [
+          "KPSS taban puanı açık biçimde okunamadı",
+          "Aday puanı yaklaşık; başvuruda kesin puan kullanılmalı",
+          "Mezuniyet/bölüm uygunluğu doğrulanamadı",
+          "Yaş, belge, deneyim ve diğer özel şartlar ayrıca kontrol edilmeli"
+        ],
+        "deadline": "2026-11-18",
+        "minimum_score": null,
+        "score_conditions": [],
+        "score_types": [],
+        "score_ambiguous": false,
+        "kpss_exempt": false,
+        "education_levels": [
+          "Lisans"
+        ],
+        "evidence_complete": true,
+        "positions": []
+      },
+      "checked_on": "2026-11-18",
+      "policy": "1292260b21ee0874"
+    },
+    "https://ilan.memurlar.net/ilan/87015/canakkale-kucukkuyu-kent-hizmetleri-gecici-3-isci-alacak.html": {
+      "title": "Çanakkale Küçükkuyu Kent Hizmetleri Geçici 3 İşçi Alacak",
+      "url": "https://ilan.memurlar.net/ilan/87015/canakkale-kucukkuyu-kent-hizmetleri-gecici-3-isci-alacak.html",
+      "source": "Memurlar.net",
+      "document_key": "text:d4a83552e8a43208116173af9474c39fb0dd1807c0cde797ee4dff8255c5789c",
+      "assessment": {
+        "status": "review",
+        "reasons": [],
+        "warnings": [
+          "KPSS taban puanı açık biçimde okunamadı",
+          "Aday puanı yaklaşık; başvuruda kesin puan kullanılmalı",
+          "Mezuniyet/bölüm uygunluğu doğrulanamadı",
+          "Yaş, belge, deneyim ve diğer özel şartlar ayrıca kontrol edilmeli"
+        ],
+        "deadline": "2026-11-20",
+        "minimum_score": null,
+        "score_conditions": [],
+        "score_types": [],
+        "score_ambiguous": false,
+        "kpss_exempt": false,
+        "education_levels": [
+          "Lisans"
+        ],
+        "evidence_complete": true,
+        "positions": []
+      },
+      "checked_on": "2026-11-18",
+      "policy": "1292260b21ee0874"
+    },
+    "https://ilan.memurlar.net/ilan/87016/erzincan-mollakoy-personel-temizlik-1-isci-alacak.html": {
+      "title": "Erzincan Mollaköy Personel Temizlik 1 İşçi Alacak",
+      "url": "https://ilan.memurlar.net/ilan/87016/erzincan-mollakoy-personel-temizlik-1-isci-alacak.html",
+      "source": "Memurlar.net",
+      "document_key": "text:0cd1f3c51cffbd9c76b50f2697d6d18f56d077e5cad2a470fedd0a096b61ee3b",
+      "assessment": {
+        "status": "review",
+        "reasons": [],
+        "warnings": [
+          "KPSS taban puanı açık biçimde okunamadı",
+          "Aday puanı yaklaşık; başvuruda kesin puan kullanılmalı",
+          "Mezuniyet/bölüm uygunluğu doğrulanamadı",
+          "Yaş, belge, deneyim ve diğer özel şartlar ayrıca kontrol edilmeli"
+        ],
+        "deadline": "2026-11-20",
+        "minimum_score": null,
+        "score_conditions": [],
+        "score_types": [],
+        "score_ambiguous": false,
+        "kpss_exempt": false,
+        "education_levels": [
+          "Lisans"
+        ],
+        "evidence_complete": true,
+        "positions": []
+      },
+      "checked_on": "2026-11-18",
+      "policy": "1292260b21ee0874"
+    },
+    "https://ilan.memurlar.net/ilan/87017/manisa-sarbel-4-isci-alacak.html": {
+      "title": "Manisa Sarbel 4 İşçi Alacak",
+      "url": "https://ilan.memurlar.net/ilan/87017/manisa-sarbel-4-isci-alacak.html",
+      "source": "Memurlar.net",
+      "document_key": "text:e58574f8c90d6e6a232665e3166eca2840c67c1be246f3eda36fe2907497f18e",
+      "assessment": {
+        "status": "review",
+        "reasons": [],
+        "warnings": [
+          "KPSS taban puanı açık biçimde okunamadı",
+          "Aday puanı yaklaşık; başvuruda kesin puan kullanılmalı",
+          "Mezuniyet/bölüm uygunluğu doğrulanamadı",
+          "Yaş, belge, deneyim ve diğer özel şartlar ayrıca kontrol edilmeli"
+        ],
+        "deadline": "2026-11-20",
+        "minimum_score": null,
+        "score_conditions": [],
+        "score_types": [],
+        "score_ambiguous": false,
+        "kpss_exempt": false,
+        "education_levels": [
+          "Lisans"
+        ],
+        "evidence_complete": true,
+        "positions": []
+      },
+      "checked_on": "2026-11-18",
+      "policy": "1292260b21ee0874"
+    },
+    "https://ilan.memurlar.net/ilan/87018/tekirdag-su-ve-kanalizasyon-idaresi-16-isci-alacak.html": {
+      "title": "00:39 Tekirdağ Su ve Kanalizasyon İdaresi 16 İşçi Alacak",
+      "url": "https://ilan.memurlar.net/ilan/87018/tekirdag-su-ve-kanalizasyon-idaresi-16-isci-alacak.html",
+      "source": "Memurlar.net",
+      "document_key": "text:70b341005594ff584ed666ce45e31d0d4d27bbed85dbe82a774f88400823004b",
+      "assessment": {
+        "status": "review",
+        "reasons": [],
+        "warnings": [
+          "KPSS taban puanı açık biçimde okunamadı",
+          "Aday puanı yaklaşık; başvuruda kesin puan kullanılmalı",
+          "Mezuniyet/bölüm uygunluğu doğrulanamadı",
+          "Yaş, belge, deneyim ve diğer özel şartlar ayrıca kontrol edilmeli"
+        ],
+        "deadline": "2026-11-20",
+        "minimum_score": null,
+        "score_conditions": [],
+        "score_types": [],
+        "score_ambiguous": false,
+        "kpss_exempt": false,
+        "education_levels": [
+          "Lisans"
+        ],
+        "evidence_complete": true,
+        "positions": []
+      },
+      "checked_on": "2026-11-18",
+      "policy": "1292260b21ee0874"
+    },
+    "https://ilan.memurlar.net/ilan/87022/bolu-mudurnu-belediyesi-1-sozlesmeli-personel-alacak.html": {
+      "title": "01:10 Bolu Mudurnu Belediyesi 1 sözleşmeli personel alacak",
+      "url": "https://ilan.memurlar.net/ilan/87022/bolu-mudurnu-belediyesi-1-sozlesmeli-personel-alacak.html",
+      "source": "Memurlar.net",
+      "document_key": "text:9bd36de2f0ba62809b32fbbf1dba5e361853b16deaf723c2a3726335ad7edf60",
+      "assessment": {
+        "status": "review",
+        "reasons": [],
+        "warnings": [
+          "KPSS taban puanı açık biçimde okunamadı",
+          "Aday puanı yaklaşık; başvuruda kesin puan kullanılmalı",
+          "Mezuniyet/bölüm uygunluğu doğrulanamadı",
+          "Yaş, belge, deneyim ve diğer özel şartlar ayrıca kontrol edilmeli"
+        ],
+        "deadline": "2026-12-25",
+        "minimum_score": null,
+        "score_conditions": [],
+        "score_types": [],
+        "score_ambiguous": false,
+        "kpss_exempt": false,
+        "education_levels": [
+          "Lisans"
+        ],
+        "evidence_complete": true,
+        "positions": []
+      },
+      "checked_on": "2026-11-18",
+      "policy": "1292260b21ee0874"
     }
   },
   "documents": {
@@ -4965,7 +5226,18 @@
     "text:c3e09867bad77894b94fe5255bd0ab883e57bc07c7c407c73ff463901f1ce5e1": "https://ilan.memurlar.net/ilan/65311/istanbul-bilisim-ve-akilli-kent-teknolojileri-2-isci-alacak.html",
     "text:e48809e1f290b7121cd55893f1f658a01eac625c7ac1144739c8949e0d3fa80b": "https://ilan.memurlar.net/ilan/86799/izmir-buyuksehir-belediyesi-90-zabita-memuru-alacak.html",
     "text:f96b283c850f2e99a9aaccb819b71c5a7a2ee1cbd5d23594c9d4c176c9d9daef": "https://ilan.memurlar.net/ilan/86974/akdeniz-universitesi-3-isci-alacak.html",
-    "text:66e9d9dffc30503bd90d4815d93be01639f450804159ca6ebc20d494ff2a2789": "https://ilan.memurlar.net/ilan/86979/cankiri-bayramoren-belediyesi-2-isci-alacak.html"
+    "text:66e9d9dffc30503bd90d4815d93be01639f450804159ca6ebc20d494ff2a2789": "https://ilan.memurlar.net/ilan/86979/cankiri-bayramoren-belediyesi-2-isci-alacak.html",
+    "text:b23faa2ba46bcb294e0d7d0f6b55e52d37356dfc0b67f25128a0eb8bae9fd605": "https://www.konya.bel.tr/haber/konya-buyuksehirde-zabita-memuru-alimi-icin-basvurular-devam-ediyor",
+    "text:135aa7ac0ece6fe2f0d5ca4c99c30a9abc1801e0fc66ad169109659b0911b738": "https://ilan.memurlar.net/ilan/66164/konya-sehir-hizmetleri-194-isci-alacak.html",
+    "text:bc181c52eac80130ff3a3a9f556335e4e23b185922d2a078a2c84a7e66dc3f4f": "https://ilan.memurlar.net/ilan/87008/burdur-mehmet-akif-ersoy-ogretmenevi-gecici-2-isci-alacak.html",
+    "text:c6eeb49c819ec309bf7224f815eed549064edc53774236ad1c6d30f0755fda59": "https://ilan.memurlar.net/ilan/87011/izmir-izenerji-gecici-15-isci-alacak.html",
+    "text:5799b6f4cc50336e028893edc3f7f75eb9f1aca37b75f463aaac5748a54db5e3": "https://ilan.memurlar.net/ilan/87013/kirklareli-cakilli-belediyesi-1-isci-alacak.html",
+    "text:52e12bc07d23d6e1b63fda48b5dbb6863e31d37b5c43129572f175b653c40fb9": "https://ilan.memurlar.net/ilan/87014/kocaeli-belde-ozel-saglik-hizmetleri-1-isci-alacak.html",
+    "text:d4a83552e8a43208116173af9474c39fb0dd1807c0cde797ee4dff8255c5789c": "https://ilan.memurlar.net/ilan/87015/canakkale-kucukkuyu-kent-hizmetleri-gecici-3-isci-alacak.html",
+    "text:0cd1f3c51cffbd9c76b50f2697d6d18f56d077e5cad2a470fedd0a096b61ee3b": "https://ilan.memurlar.net/ilan/87016/erzincan-mollakoy-personel-temizlik-1-isci-alacak.html",
+    "text:e58574f8c90d6e6a232665e3166eca2840c67c1be246f3eda36fe2907497f18e": "https://ilan.memurlar.net/ilan/87017/manisa-sarbel-4-isci-alacak.html",
+    "text:70b341005594ff584ed666ce45e31d0d4d27bbed85dbe82a774f88400823004b": "https://ilan.memurlar.net/ilan/87018/tekirdag-su-ve-kanalizasyon-idaresi-16-isci-alacak.html",
+    "text:9bd36de2f0ba62809b32fbbf1dba5e361853b16deaf723c2a3726335ad7edf60": "https://ilan.memurlar.net/ilan/87022/bolu-mudurnu-belediyesi-1-sozlesmeli-personel-alacak.html"
   },
   "aliases": {
     "https://www.konya.bel.tr/haber/konya-buyuksehirde-zabita-memuru-alimi-icin-basvurular-devam-ediyor": "https://www.konya.bel.tr/haber/konya-buyuksehirde-zabita-memuru-alimi-icin-basvurular-devam-ediyor",
@@ -5070,18 +5342,27 @@
     "https://ilan.memurlar.net/ilan/86984/istanbul-personel-yonetim-as-75-isci-alacak.html": "https://ilan.memurlar.net/ilan/86984/istanbul-personel-yonetim-as-75-isci-alacak.html",
     "https://www.yok.gov.tr/tr/announcements/20-nisan-2026-tarihli-ve-33230-sayili-resmi-gazetede-yayimlanan-35-sozlesmeli-personel-alimi-yedek-aday-duyurusu-cn1oR": "https://www.yok.gov.tr/tr/announcements/20-nisan-2026-tarihli-ve-33230-sayili-resmi-gazetede-yayimlanan-35-sozlesmeli-personel-alimi-yedek-aday-duyurusu-XwHDF",
     "https://ilan.memurlar.net/ilan/86974/akdeniz-universitesi-3-isci-alacak.html": "https://ilan.memurlar.net/ilan/86974/akdeniz-universitesi-3-isci-alacak.html",
-    "https://ilan.memurlar.net/ilan/86979/cankiri-bayramoren-belediyesi-2-isci-alacak.html": "https://ilan.memurlar.net/ilan/86979/cankiri-bayramoren-belediyesi-2-isci-alacak.html"
+    "https://ilan.memurlar.net/ilan/86979/cankiri-bayramoren-belediyesi-2-isci-alacak.html": "https://ilan.memurlar.net/ilan/86979/cankiri-bayramoren-belediyesi-2-isci-alacak.html",
+    "https://ilan.memurlar.net/ilan/87008/burdur-mehmet-akif-ersoy-ogretmenevi-gecici-2-isci-alacak.html": "https://ilan.memurlar.net/ilan/87008/burdur-mehmet-akif-ersoy-ogretmenevi-gecici-2-isci-alacak.html",
+    "https://ilan.memurlar.net/ilan/87011/izmir-izenerji-gecici-15-isci-alacak.html": "https://ilan.memurlar.net/ilan/87011/izmir-izenerji-gecici-15-isci-alacak.html",
+    "https://ilan.memurlar.net/ilan/87013/kirklareli-cakilli-belediyesi-1-isci-alacak.html": "https://ilan.memurlar.net/ilan/87013/kirklareli-cakilli-belediyesi-1-isci-alacak.html",
+    "https://ilan.memurlar.net/ilan/87014/kocaeli-belde-ozel-saglik-hizmetleri-1-isci-alacak.html": "https://ilan.memurlar.net/ilan/87014/kocaeli-belde-ozel-saglik-hizmetleri-1-isci-alacak.html",
+    "https://ilan.memurlar.net/ilan/87015/canakkale-kucukkuyu-kent-hizmetleri-gecici-3-isci-alacak.html": "https://ilan.memurlar.net/ilan/87015/canakkale-kucukkuyu-kent-hizmetleri-gecici-3-isci-alacak.html",
+    "https://ilan.memurlar.net/ilan/87016/erzincan-mollakoy-personel-temizlik-1-isci-alacak.html": "https://ilan.memurlar.net/ilan/87016/erzincan-mollakoy-personel-temizlik-1-isci-alacak.html",
+    "https://ilan.memurlar.net/ilan/87017/manisa-sarbel-4-isci-alacak.html": "https://ilan.memurlar.net/ilan/87017/manisa-sarbel-4-isci-alacak.html",
+    "https://ilan.memurlar.net/ilan/87018/tekirdag-su-ve-kanalizasyon-idaresi-16-isci-alacak.html": "https://ilan.memurlar.net/ilan/87018/tekirdag-su-ve-kanalizasyon-idaresi-16-isci-alacak.html",
+    "https://ilan.memurlar.net/ilan/87022/bolu-mudurnu-belediyesi-1-sozlesmeli-personel-alacak.html": "https://ilan.memurlar.net/ilan/87022/bolu-mudurnu-belediyesi-1-sozlesmeli-personel-alacak.html"
   },
   "delivery_cursor": 1,
   "last_run": {
-    "at": "2026-11-17T19:07:09.921560+03:00",
+    "at": "2026-11-18T02:31:21.616341+03:00",
     "status": "partial_source_error",
-    "messages_sent": 8,
-    "delivery_deferred": false,
+    "messages_sent": 0,
+    "delivery_deferred": true,
     "sources_ok": 10,
     "sources_total": 13,
-    "details_failed": 2,
-    "pending_messages": 0,
-    "pending_details": 110
+    "details_failed": 1,
+    "pending_messages": 18,
+    "pending_details": 131
   }
 }
