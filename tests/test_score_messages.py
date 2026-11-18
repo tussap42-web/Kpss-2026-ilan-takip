@@ -4,63 +4,75 @@ import unittest
 
 import main
 from eligibility import assess_notice
+from notification_policy import notification_matches
 
 CFG = json.loads((main.BASE / 'config.json').read_text())
 TODAY = date(2026, 11, 9)
-ITEM = {'title': 'Örnek personel alımı', 'source': 'Test', 'url': 'https://example.org/job'}
+ITEM = {'title': 'Örnek personel alımı', 'source': 'Test',
+        'url': 'https://example.org/job'}
 
 
 class ScoreMessageTests(unittest.TestCase):
-    def message(self, text, **kwargs):
+    def item(self, text, **kwargs):
         assessment = assess_notice(text, CFG, TODAY, **kwargs)
-        return main.message_for(dict(ITEM, assessment=assessment), CFG), assessment
+        return dict(ITEM, assessment=assessment)
 
-    def test_notice_threshold_is_separate_from_candidate_score(self):
-        message, _ = self.message('KPSS P93 en az 60 puan. Ön lisans mezunları.')
-        self.assertIn('Başvuru eşiği: En az 60 puan', message)
-        self.assertIn('Mezuniyet / nitelik: Ön lisans', message)
-        self.assertIn('Takip profili: P93 / yaklaşık 70,6', message)
-        self.assertNotIn('Aday:', message)
-
-    def test_each_position_keeps_own_score_type_threshold_and_education(self):
-        rows = [['Unvan', 'KPSS Puan Türü', 'Taban Puan', 'Mezuniyet / Nitelik'],
-                ['Büro personeli', 'P3', '75', 'Lisans 4001'],
-                ['Destek personeli', 'P93', '60', 'Ön lisans 3001']]
-        message, _ = self.message('İlan metni', rows=rows)
-        office, support = message.split('Kadro: Destek personeli')
-        self.assertIn('KPSS: P3 | Başvuru eşiği: En az 75 puan', office)
-        self.assertIn('Lisans 4001', office)
-        self.assertIn('KPSS: P93 | Başvuru eşiği: En az 60 puan', support)
-        self.assertIn('Ön lisans 3001', support)
-
-    def test_unknown_score_is_not_filled_with_candidate_score(self):
-        message, _ = self.message('Personel alımı şartları ektedir.')
-        self.assertIn('Başvuru eşiği: Doğrulanamadı', message)
-        self.assertNotIn('En az 70', message)
-
-    def test_ambiguous_scores_are_not_collapsed_to_lowest_threshold(self):
-        message, _ = self.message('KPSS P93 en az 60 puan. KPSS P3 en az 75 puan.')
-        self.assertIn('Kadro eşleştirmesi doğrulanamadı', message)
-        self.assertNotIn('Başvuru eşiği: En az', message)
-
-    def test_one_position_threshold_is_not_assigned_to_unread_other_position(self):
-        message, _ = self.message('Büro personeli P93 en az 75 puan; destek personeli şartları ektedir.')
-        self.assertIn('Kadro eşleştirmesi doğrulanamadı', message)
-        self.assertNotIn('Başvuru eşiği: En az 75', message)
-
-    def test_incomplete_document_does_not_present_score_as_verified(self):
-        message, _ = self.message('KPSS P93 en az 60 puan', incomplete=True)
-        self.assertIn('Belge eksik; puan şartı doğrulanamadı', message)
-        self.assertNotIn('Başvuru eşiği: En az 60', message)
-
-    def test_explicit_exemption_and_conflicting_condition_are_distinct(self):
-        message, _ = self.message('KPSS şartı aranmaz.')
-        self.assertIn('KPSS şartı: Aranmadığı belirtiliyor', message)
-        message, _ = self.message('KPSS şartı aranmaz. P93 en az 60 puan.')
-        self.assertNotIn('KPSS şartı: Aranmadığı belirtiliyor', message)
-
-    def test_decimal_threshold_and_link_are_preserved(self):
-        message, _ = self.message('KPSS P93 en az 70,50 puan')
-        self.assertIn('En az 70,5 puan', message)
+    def test_verified_70_sends_clear_message(self):
+        item = self.item('KPSS P93 en az 70 puan. Ön lisans 3001')
+        self.assertEqual(notification_matches(item, CFG), [])
+        message = main.message_for(item, CFG)
+        self.assertIn('KPSS P93 asgari başvuru puanı: 70', message)
+        self.assertIn('Ön lisans, 3001', message)
+        self.assertNotIn('doğrulanamadı', message.lower())
+        self.assertNotIn('Takip profili', message)
+        self.assertNotIn('kazanma puanı', message)
         self.assertTrue(message.endswith(ITEM['url']))
-        self.assertIn('yerleşme veya kazanma puanı değildir', message)
+
+    def test_below_70_is_eligible(self):
+        item = self.item('KPSS P93 en az 65 puan. 3001')
+        self.assertIsNotNone(notification_matches(item, CFG))
+
+    def test_only_70_and_below_not_70_6_or_71(self):
+        for threshold in ('70,01', '70,60', '71', '75'):
+            with self.subTest(threshold=threshold):
+                item = self.item(f'KPSS P93 en az {threshold} puan. 3001')
+                self.assertIsNone(notification_matches(item, CFG))
+                with self.assertRaises(ValueError):
+                    main.message_for(item, CFG)
+
+    def test_unknown_kpss_does_not_notify(self):
+        for text in ('Başvuru şartları ektedir.', 'P93 puan türü ile başvurulur.',
+                     'KPSS şartı aranmaz.', 'P3 en az 60 puan. 3001'):
+            with self.subTest(text=text):
+                self.assertIsNone(notification_matches(self.item(text), CFG))
+
+    def test_score_without_matching_education_does_not_notify(self):
+        self.assertIsNone(notification_matches(self.item('P93 en az 70 puan'), CFG))
+        self.assertIsNone(notification_matches(
+            self.item('P93 en az 70 puan. Lisans mezunu olmak'), CFG))
+
+    def test_position_filter_hides_higher_score_row(self):
+        rows = [['Unvan', 'KPSS Puan Türü', 'Taban Puan', 'Mezuniyet / Nitelik'],
+                ['Büro personeli', 'P93', '75', 'Ön lisans 3001'],
+                ['Destek personeli', 'P93', '70', 'Ön lisans 3001']]
+        item = self.item('İlan metni', rows=rows)
+        matched = notification_matches(item, CFG)
+        self.assertEqual(len(matched), 1)
+        self.assertEqual(matched[0]['title'], 'destek personeli')
+        message = main.message_for(item, CFG)
+        self.assertIn('Destek personeli', message)
+        self.assertNotIn('Büro personeli', message)
+        self.assertNotIn('75', message)
+
+    def test_partial_document_never_notifies(self):
+        item = self.item('P93 en az 70 puan. Ön lisans 3001', incomplete=True)
+        self.assertIsNone(notification_matches(item, CFG))
+
+    def test_reminder_has_same_gate(self):
+        item = self.item('P93 en az 70 puan. Ön lisans 3001')
+        item['reminder'] = True
+        self.assertIn('HATIRLATMASI', main.message_for(item, CFG))
+
+
+if __name__ == '__main__':
+    unittest.main()
