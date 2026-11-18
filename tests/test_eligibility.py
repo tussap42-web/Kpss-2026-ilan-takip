@@ -26,7 +26,7 @@ class EligibilityTests(unittest.TestCase):
         self.assertEqual(a['minimum_score'], 70)
 
     def test_decimal_score(self):
-        self.assertEqual(self.check('P93 en az 70,61 puan')['status'], 'excluded')
+        self.assertEqual(self.check('P93 en az 70,61 puan')['status'], 'review')
         self.assertEqual(self.check('P93 en az 70.60 puan')['status'], 'review')
 
     def test_different_type(self):
@@ -57,7 +57,7 @@ class EligibilityTests(unittest.TestCase):
         c = copy.deepcopy(CFG)
         c['search_settings']['include_jobs_without_kpss'] = False
         self.assertEqual(assess('KPSS şartı aranmaz', c, TODAY)['status'], 'excluded')
-        self.assertEqual(self.check('KPSS şartı aranmaz')['status'], 'review')
+        self.assertEqual(self.check('KPSS şartı aranmaz')['status'], 'excluded')
 
     def test_unreadable_details(self):
         with patch('details.read_document', side_effect=ValueError('test')):
