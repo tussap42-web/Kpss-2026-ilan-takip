@@ -13,6 +13,7 @@ import sys
 from datetime import datetime, date
 from concurrent.futures import ThreadPoolExecutor
 from eligibility import assess_notice
+from notification_policy import notification_matches
 from discovery import scan_source as discover_source, canonical
 from network import fetch_bytes, SourceAccessError, SourceContentError
 from details import enrich
@@ -195,40 +196,51 @@ def requirement_lines(assessment: dict, education: str = '') -> list[str]:
 
 
 def message_for(item: dict, config: dict) -> str:
-    assessment = item.get('assessment', {})
-    priority = config['search_settings']['priority_city']
-    city = f'📍 {priority} öncelikli\n' if normalize(priority) in normalize(item['title'] + ' ' + item['source']) else ''
-    heading = '⏰ SON BAŞVURU HATIRLATMASI' if item.get('reminder') else '📢 İNCELENECEK İLAN'
-    lines = [heading, city + 'Kaynak: ' + item['source'], item['title']]
+    """Format only a validated P93 / <=70 notice for Telegram delivery."""
+    selected = notification_matches(item, config)
+    if selected is None:
+        raise ValueError('Uygunluk doğrulanmadı; bildirim gönderilmedi')
+    assessment = item['assessment']
+    limit = float(config['search_settings'].get('notification_max_required_p93_score', 70))
+    heading = '⏰ KPSS P93 BAŞVURU HATIRLATMASI' if item.get('reminder') else '📢 KPSS P93 UYGUN PUANLI İLAN'
+    lines = [heading, 'Kaynak: ' + item['source'], item['title']]
+    if normalize(config['search_settings'].get('priority_city', 'Konya')) in normalize(item['title'] + ' ' + item['source']):
+        lines.append('Konya öncelikli')
     if assessment.get('deadline'):
         lines.append('Son başvuru: ' + assessment['deadline'])
-    if item.get('detail_warning'):
-        lines.append(item['detail_warning'])
-    positions = assessment.get('positions', [])
-    if positions:
-        for position in positions[:8]:
-            lines.append('\nKadro: ' + position.get('display_title', position['title']))
-            lines.extend(requirement_lines(position['assessment'], position.get('display_education', position.get('education', ''))))
+    # Display matching positions only. Do not include unrelated 75/80-point
+    # rows from the same institutional announcement.
+    if selected:
+        for position in selected[:8]:
+            row = position['assessment']
+            score = row['score_conditions'][0]['minimum_score']
+            lines.append('Kadro: ' + position.get('display_title', position['title']))
+            lines.append(f'KPSS P93 asgari başvuru puanı: {score:g}'.replace('.', ','))
+            degree = position.get('display_education') or position.get('education')
+            if degree:
+                lines.append('Mezuniyet / nitelik: ' + degree[:200])
             codes = position.get('qualification_codes', [])
             if codes:
-                lines.append('Nitelik kodu: ' + ', '.join(codes))
-        if len(positions) > 8:
-            lines.append(f'Diğer {len(positions) - 8} kadro için ilanı inceleyin.')
+                lines.append('Nitelik kodları: ' + ', '.join(codes))
+        if len(selected) > 8:
+            lines.append(f'Diğer {len(selected)-8} uygun puanlı kadro için ilanı inceleyin.')
     else:
-        lines.extend(requirement_lines(assessment))
-    warnings = [w for w in assessment.get('warnings', [])
-                if not w.startswith(('Puan eşiği karşılanıyor:', 'Aday puanı yaklaşık;',
-                                     'KPSS taban puanı', 'Mezuniyet/bölüm uygunluğu'))]
-    lines.extend('• ' + warning for warning in warnings[:3])
-    candidate = config['candidate']
-    score = str(candidate['kpss_score']).replace('.', ',')
-    approximate = 'yaklaşık ' if candidate.get('score_is_approximate') else ''
-    lines.extend(['', f"Takip profili: {candidate['kpss_score_type']} / {approximate}{score} (kişisel filtre).",
-                  'Başvuru eşiği, yerleşme veya kazanma puanı değildir.',
-                  'Bölüm, yaş, belge ve diğer özel şartlar resmî ilandan kontrol edilmeli.', item['url']])
-    # Leave room for the official URL even when evidence is long.
-    body = '\n'.join(lines[:-1])
+        condition = assessment['score_conditions'][0]
+        score = condition['minimum_score']
+        lines.append(f'KPSS P93 asgari başvuru puanı: {score:g}'.replace('.', ','))
+        if assessment.get('general_associate_code'):
+            lines.append('Mezuniyet / nitelik: Ön lisans, 3001')
+        elif assessment.get('department_mentioned'):
+            lines.append('Mezuniyet / nitelik: Grafik Tasarım')
+        else:
+            lines.append('Mezuniyet / nitelik: Ön lisans')
+    lines.extend([
+        f'Bildirim sınırı: P93 için en fazla {limit:g} puan'.replace('.', ','),
+        'Diğer özel başvuru koşullarını resmî ilandan kontrol edin.',
+    ])
+    body = '\n'.join(lines)
     return body[:3500] + '\n' + item['url'][:500]
+
 
 
 def find_chats(token: str) -> int:
@@ -357,7 +369,9 @@ def scan(config: dict, sources: dict, state_path: Path, dry_run: bool) -> int:
         if item.get('policy') != policy:
             continue
         assessment = item['assessment']
-        if assessment['status'] == 'excluded':
+        # Only explicit P93 minimums <= 70 are eligible for Telegram.
+        # Missing or ambiguous thresholds must never reach the queue.
+        if notification_matches(item, config) is None:
             continue
         deadline = assessment.get('deadline')
         if deadline and deadline < now.date().isoformat() and config['search_settings'].get('only_active_applications', True):
