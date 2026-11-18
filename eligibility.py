@@ -59,7 +59,13 @@ def assess(text, config, today=None):
         minimum = min(relevant)
         result['minimum_score'] = minimum
         if float(candidate['kpss_score']) < minimum:
-            reasons.append(f"Puan yetersiz: {candidate['kpss_score']} < {minimum:g}")
+            # The stored score is approximate (70.6), while the user reports
+            # "about 71". Borderline thresholds require the official result.
+            rounded = float(candidate.get('reported_rounded_score', candidate['kpss_score']))
+            if candidate.get('score_is_approximate') and minimum <= rounded:
+                warnings.append('Sınırdaki KPSS eşiği: kesin sonuç puanı doğrulanmalı')
+            else:
+                reasons.append(f"Puan yetersiz: {candidate['kpss_score']} < {minimum:g}")
         else:
             warnings.append(f"Puan eşiği karşılanıyor: {candidate['kpss_score_type']} en az {minimum:g}")
     elif scores:
@@ -87,6 +93,14 @@ def assess(text, config, today=None):
     years = set(re.findall(r'\b(20\d{2})\s*(?:yili\s*)?[- ]?\s*kpss\b', text))
     if years and str(candidate['kpss_year']) not in years:
         warnings.append('İlanda farklı KPSS yılı var; yıl şartını kontrol et')
+    # These are matching signals, never a declaration of full eligibility.
+    result['general_associate_code'] = bool(re.search(r'\b3001\b', text))
+    result['department_mentioned'] = bool(department and department in text)
+    result['exam_year_conflict'] = bool(years and str(candidate['kpss_year']) not in years)
+    result['special_conditions_detected'] = bool(re.search(
+        r'\b(?:yas|yasinda|dogum|ehliyet|surucu belgesi|sertifika|belgelendirme|'
+        r'deneyim|tecrube|guvenlik karti|boy sarti|saglik raporu|askerlik|'
+        r'vardiya|klavye sinavi|uygulama sinavi)\b', text))
     if settings.get('check_special_conditions', True):
         warnings.append('Yaş, belge, deneyim ve diğer özel şartlar ayrıca kontrol edilmeli')
     if reasons:
