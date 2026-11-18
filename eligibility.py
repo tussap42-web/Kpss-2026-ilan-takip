@@ -96,6 +96,11 @@ def assess(text, config, today=None):
     # These are matching signals, never a declaration of full eligibility.
     result['general_associate_code'] = bool(re.search(r'\b3001\b', text))
     result['department_mentioned'] = bool(department and department in text)
+    # Explicit general associate-degree wording; not a specialist diploma.
+    result['general_associate_requirement'] = bool(re.search(
+        r'(?:herhangi bir|tum|butun)\s+on\s*lisans|'
+        r'on\s*lisans\s+mezunu\s+olmak', text)) and not bool(re.search(
+        r'\b[345]\d{3}\b', text))
     result['exam_year_conflict'] = bool(years and str(candidate['kpss_year']) not in years)
     result['special_conditions_detected'] = bool(re.search(
         r'\b(?:yas|yasinda|dogum|ehliyet|surucu belgesi|sertifika|belgelendirme|'
