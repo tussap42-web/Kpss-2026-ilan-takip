@@ -23,6 +23,37 @@ class DeliveryTests(unittest.TestCase):
             result,count=self.run_scan(Path(d)/'state.json', text='P93 en az 75 puan')
             self.assertEqual((result,count),(0,0))
 
+    def test_unknown_threshold_never_sent_to_telegram(self):
+        with tempfile.TemporaryDirectory() as d:
+            result, count = self.run_scan(
+                Path(d) / 'state.json',
+                text='İlan başvuru koşulları ektedir. KPSS puanı doğrulanamadı.')
+            self.assertEqual((result, count), (0, 0))
+
+    def test_above_70_never_sent_even_if_candidate_rounded_to_71(self):
+        with tempfile.TemporaryDirectory() as d:
+            result, count = self.run_scan(
+                Path(d) / 'state.json', text='P93 en az 70,60 puan. 3001')
+            self.assertEqual((result, count), (0, 0))
+
+    def test_mixed_70_and_75_sends_only_70_row(self):
+        rows = [['Unvan', 'KPSS Puan Türü', 'Taban Puan', 'Mezuniyet / Nitelik'],
+                ['Büro personeli', 'P93', '75', 'Ön lisans 3001'],
+                ['Destek personeli', 'P93', '70', 'Ön lisans 3001']]
+        with tempfile.TemporaryDirectory() as d, patch.dict(
+                os.environ, TELEGRAM_BOT_TOKEN='fake', TELEGRAM_CHAT_IDS='1',
+                FORCE_RUN='1'), patch.object(main, 'scan_source',
+                return_value=[ITEM]), patch.object(main, 'enrich',
+                return_value=dict(ITEM, text='İlan metni', rows=rows)), patch.object(
+                main, 'telegram_request') as sender:
+            result = main.scan(CFG, SOURCES, Path(d) / 'state.json', False)
+            self.assertEqual(result, 0)
+            self.assertEqual(sender.call_count, 1)
+            message = sender.call_args.args[2]['text']
+            self.assertIn('Destek personeli', message)
+            self.assertNotIn('Büro personeli', message)
+            self.assertNotIn('75', message)
+
     def test_recipient_failure_does_not_block_others_and_retries(self):
         def send(token,method,payload):
             if payload['chat_id']=='1': raise RuntimeError('failure')
