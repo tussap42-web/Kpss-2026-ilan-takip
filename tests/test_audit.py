@@ -99,7 +99,7 @@ class AuditTests(unittest.TestCase):
     def test_url_normalization(self):
         self.assertEqual(canonical('https://example.org/job?b=2&a=1&utm_source=x#abc'),canonical('https://example.org/job?a=1&b=2'))
 
-    def scan(self,path,cfg=None,items=None,text='',document_key=None,send=None):
+    def scan(self,path,cfg=None,items=None,text='P93 en az 70 puan. Ön lisans 3001',document_key=None,send=None):
         def rich(item): return dict(item,text=text,**({'document_key':document_key} if document_key else {}))
         with patch.dict(os.environ,TELEGRAM_BOT_TOKEN='fake',TELEGRAM_CHAT_IDS='1,2',FORCE_RUN='1'), patch.object(main,'scan_source',return_value=items if items is not None else [ITEM]), patch.object(main,'enrich',side_effect=rich), patch.object(main,'telegram_request',side_effect=send) as sender:
             code=main.scan(cfg or CFG,SOURCES,path,False)

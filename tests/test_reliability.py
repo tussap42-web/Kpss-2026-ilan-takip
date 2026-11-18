@@ -24,7 +24,7 @@ class ReliabilityTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as d, patch.dict(os.environ, TELEGRAM_BOT_TOKEN='fake',
                 TELEGRAM_CHAT_IDS='1', FORCE_RUN='0', KPSS_TRIGGER='schedule', KPSS_STRICT_SOURCES='1'), \
                 patch.object(main, 'datetime') as clock, patch.object(main, 'scan_source') as reader, \
-                patch.object(main, 'enrich', side_effect=lambda i: dict(i, text='P93 en az 70 puan')), \
+                patch.object(main, 'enrich', side_effect=lambda i: dict(i, text='P93 en az 70 puan. Ön lisans 3001')), \
                 patch.object(main, 'telegram_request') as sender, patch.object(main, 'report') as report:
             path = Path(d) / 'state.json'
             reader.return_value = [copy.deepcopy(ITEM)]
@@ -52,7 +52,7 @@ class ReliabilityTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as d, patch.dict(os.environ, TELEGRAM_BOT_TOKEN='fake',
                 TELEGRAM_CHAT_IDS='1', FORCE_RUN='1', KPSS_STRICT_SOURCES='1'), \
                 patch.object(main, 'scan_source', side_effect=read), \
-                patch.object(main, 'enrich', side_effect=lambda i: dict(i, text='P93 en az 70 puan')), \
+                patch.object(main, 'enrich', side_effect=lambda i: dict(i, text='P93 en az 70 puan. Ön lisans 3001')), \
                 patch.object(main, 'telegram_request') as sender:
             path = Path(d) / 'state.json'
             self.assertEqual(main.scan(CFG, sources, path, False), 2)

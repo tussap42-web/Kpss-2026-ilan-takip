@@ -2,6 +2,21 @@
 
 Emre: ön lisans / Grafik Tasarım / P93 / yaklaşık 70,60. Konya öncelikli; diğer şehirler dışlanmaz. Mevcut Telegram secrets ve bildirim geçmişi kullanılır.
 
+## Telegram için sıkı 70 puan filtresi
+
+Telegram'a yalnızca açıkça **KPSS P93** puan türünde **en fazla 70,00**
+asgari başvuru puanı isteyen ve ön lisans / 3001 veya Grafik Tasarım
+mezuniyetiyle ilişkisi tespit edilen kadrolar gönderilir. Puanı 70'in
+üstündeki, KPSS şartı belirtilmeyen, puanı ve türü belirsiz olan, PDF'si
+okunamayan veya eğitim koşulları eşleştirilemeyen ilanlar **Telegram'a
+gönderilmez**. Karma duyurularda yalnızca eşleşen kadrolar mesajda gösterilir.
+
+Bu filtre, başvuru hakkının bütün özel koşullarını garanti etmez; adayın
+kesin puanı, geçerli KPSS yılı, mezuniyet kodları ve diğer özel koşullar
+resmî ilandan kontrol edilmelidir. Depodaki puan hâlen yaklaşık **70,60**;
+kullanıcının yaklaşık **71** bildirimi otomatik kesin puana dönüştürülmez.
+Bildirim geçmişi (state/seen.json) değiştirilmez veya sıfırlanmaz.
+
 ## İlan keşfi ve gerçek kapsam
 
 13 kaynak tanımı vardır. Memurlar.net'in `https://ilan.memurlar.net/` ilan sayfası yardımcı kaynak olarak eklenmiştir; resmî kurum kaynağı değildir. Bu sitedeki `/ilan/<sayısal kimlik>/<başlık>.html` bağlantılarında “alacak” başlıkları da tanınır; haber ve kategori bağlantıları bu ek kuralla ilan sayılmaz. Başvuru koşulları resmî kurum ilanından kontrol edilmelidir. Erişim ve robots.txt kuralları diğer kaynaklarla aynıdır. ÖSYM duyuruları ve KPSS alt sayfası, Yerel Yönetimler duyuruları ve Konya Büyükşehir İnsan Kaynakları duyuruları başlangıç noktalarına eklenmiştir. Diğer kurumlarda ana sayfada gerçekten bulunan ilan/duyuru menüleri, `rel=next` veya açık “Sonraki” bağlantıları ve ilan edilmiş RSS/Atom akışları izlenir. Her kaynak için **en çok 4 liste sayfası** okunur; API adresi/sayfa numarası tahmin edilmez. Araştırmada doğrulanmış açık bir ilan API sözleşmesi bulunmadığı için API entegrasyonu iddiası yoktur.
