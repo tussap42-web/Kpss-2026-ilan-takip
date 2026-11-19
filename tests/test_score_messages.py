@@ -32,8 +32,12 @@ class ScoreMessageTests(unittest.TestCase):
         item = self.item('KPSS P93 en az 65 puan. 3001')
         self.assertIsNotNone(notification_matches(item, CFG))
 
-    def test_only_70_and_below_not_70_6_or_71(self):
-        for threshold in ('70,01', '70,60', '71', '75'):
+    def test_p93_threshold_at_most_approximate_70_60(self):
+        for threshold in ('70,01', '70,60'):
+            with self.subTest(threshold=threshold):
+                item = self.item(f'KPSS P93 en az {threshold} puan. 3001')
+                self.assertIsNotNone(notification_matches(item, CFG))
+        for threshold in ('70,61', '71', '75'):
             with self.subTest(threshold=threshold):
                 item = self.item(f'KPSS P93 en az {threshold} puan. 3001')
                 self.assertIsNone(notification_matches(item, CFG))
@@ -45,6 +49,24 @@ class ScoreMessageTests(unittest.TestCase):
                      'KPSS şartı aranmaz.', 'P3 en az 60 puan. 3001'):
             with self.subTest(text=text):
                 self.assertIsNone(notification_matches(self.item(text), CFG))
+
+    def test_no_kpss_worker_review_alert_but_not_p94(self):
+        from notification_policy import no_kpss_worker_matches
+        item = self.item('KPSS şartı aranmaz. En az lise mezunu olmak gerekir.')
+        item['title'] = 'Sürekli işçi alımı'
+        self.assertTrue(no_kpss_worker_matches(item, CFG))
+        self.assertIn('İNCELE', main.message_for(item, CFG))
+        for phrase in ('P94 en az 60 puan. En az lise mezunu olmak gerekir.',
+                       'KPSS şartı aranmaz. Lise mezunu olmak gerekir.',
+                       'En az lise mezunu olmak gerekir.'):
+            with self.subTest(phrase=phrase):
+                item = self.item(phrase)
+                item['title'] = 'Sürekli işçi alımı'
+                self.assertFalse(no_kpss_worker_matches(item, CFG))
+
+    def test_sbb_source_is_configured(self):
+        sources = json.loads((main.BASE / 'sources.json').read_text())
+        self.assertIn('https://kamuilan.sbb.gov.tr/', [s['url'] for s in sources['sources']])
 
     def test_score_without_matching_education_does_not_notify(self):
         self.assertIsNone(notification_matches(self.item('P93 en az 70 puan'), CFG))
