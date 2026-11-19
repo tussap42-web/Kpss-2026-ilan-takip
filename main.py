@@ -431,7 +431,7 @@ def scan(config: dict, sources: dict, state_path: Path, dry_run: bool) -> int:
         if deadline and deadline < today:
             continue
         root = anchor(url)
-        is_open = bool(deadline and not assessment.get('application_start_ambiguous') and (not starts or starts <= today))
+        is_open = bool(deadline and assessment.get('evidence_complete') and not assessment.get('application_start_ambiguous') and (not starts or starts <= today))
         if is_open:
             active.add(root)
         matches = notification_matches(item, config)

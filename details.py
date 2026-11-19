@@ -11,10 +11,11 @@ MAX_BYTES = 4_000_000
 
 
 class DocumentText(str):
-    def __new__(cls, value, incomplete=False, pdf_digest=None, official_url=None):
+    def __new__(cls, value, incomplete=False, pdf_digest=None, official_url=None, review_images=()):
         obj = str.__new__(cls, value)
         obj.incomplete, obj.pdf_digest = incomplete, pdf_digest
         obj.official_url = official_url
+        obj.review_images = review_images
         return obj
 
 
@@ -28,6 +29,7 @@ class TextParser(HTMLParser):
         self.in_article = 0
         self.anchor = None
         self.official_links = []
+        self.document_images = []
 
     def append(self, text):
         self.parts.append(text)
@@ -48,6 +50,11 @@ class TextParser(HTMLParser):
             self.append('\t')
             if attrs.get('rowspan', '1') != '1' or attrs.get('colspan', '1') != '1':
                 self.incomplete = True
+        if tag == 'img':
+            image = attrs.get('data-src') or attrs.get('src', '')
+            if re.search(r'/common/job/advert/documents/\d+/[^/]+\.(?:jpe?g|png)$',
+                         urlsplit(image).path, flags=re.I):
+                self.document_images.append(image)
         href = attrs.get('href', '')
         if tag == 'a':
             self.anchor = (href, [])
@@ -110,12 +117,23 @@ def read_document(url):
     official_url = next(iter(official)) if len(official) == 1 else None
     # Prefer semantic article content; do not interpret navigation/sidebar job lists as this notice.
     text = ''.join(parser.article_parts or parser.parts)
-    return DocumentText(text[:180_000], parser.incomplete or len(text) > 180_000 or len(pdfs) > 2 or blocked > 0, official_url=official_url), pdfs[:2]
+    images = []
+    if host == 'ilan.memurlar.net' and re.search(r'kpss.{0,30}(?:puan|taban)', text, re.I):
+        for href in dict.fromkeys(parser.document_images):
+            address = urljoin(final_url, href)
+            target = urlsplit(address)
+            if target.scheme == 'https' and target.hostname == host and not target.username:
+                images.append(address)
+    return DocumentText(text[:180_000],
+                        parser.incomplete or len(text) > 180_000 or len(pdfs) > 2 or blocked > 0,
+                        official_url=official_url, review_images=tuple(images[:2])), pdfs[:2]
+
 
 
 def enrich(item):
     result = {key: item[key] for key in ('title', 'url', 'source') if key in item}
     warnings, digests, texts = [], [], []
+    ocr_evidence = []
     try:
         text, pdfs = read_document(item['url'])
         texts.append(text)
@@ -125,6 +143,16 @@ def enrich(item):
             warnings.append('Belge/eklerin tamamı güvenle okunamadı')
         if getattr(text, 'pdf_digest', None):
             digests.append(text.pdf_digest)
+        for image in getattr(text, 'review_images', ()):
+            warnings.append('İlanda görsel tablo var; OCR metni insan kontrolü gerektiriyor')
+            try:
+                body, headers, _ = fetch_bytes(image, 1_500_000)
+                if headers.get('Content-Type', '').lower().split(';')[0] in ('image/jpeg', 'image/png'):
+                    recognized = ocr_image(body)
+                    if recognized:
+                        ocr_evidence.append(recognized)
+            except (OSError, ValueError):
+                warnings.append('İlan görseli okunamadı')
         for pdf in pdfs:
             try:
                 extra, _ = read_document(pdf)
@@ -148,6 +176,8 @@ def enrich(item):
     except Exception as exc:
         result['text'] = ''
         warnings.append(f'İlan ayrıntıları okunamadı ({type(exc).__name__})')
+    if ocr_evidence:
+        result['ocr_review_text'] = '\n'.join(ocr_evidence)[:2000]
     if warnings:
         result['detail_warning'] = '; '.join(dict.fromkeys(warnings))
     return result
@@ -159,10 +189,17 @@ def ocr_pdf_page(body, number):
         page = subprocess.run(
             ['pdftoppm', '-f', str(number), '-l', str(number), '-scale-to', '1800', '-singlefile', '-png', '-'],
             input=body, capture_output=True, timeout=3, check=True)
+        return ocr_image(page.stdout)
+    except (OSError, subprocess.SubprocessError):
+        return ''
+
+
+def ocr_image(body):
+    try:
         recognition = subprocess.run(
             ['tesseract', 'stdin', 'stdout', '-l', 'tur+eng', '--psm', '6'],
-            input=page.stdout, capture_output=True, timeout=4, check=True)
-        return recognition.stdout.decode('utf-8', errors='replace')
+            input=body, capture_output=True, timeout=4, check=True)
+        return recognition.stdout.decode('utf-8', errors='replace')[:40_000]
     except (OSError, subprocess.SubprocessError):
         return ''
 

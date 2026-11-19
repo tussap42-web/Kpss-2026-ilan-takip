@@ -23,6 +23,7 @@
     {
       "name": "Kariyer Kapisi",
       "url": "https://kariyerkapisi.gov.tr/",
+      "entrypoints": ["https://kariyerkapisi.gov.tr/isealim"],
       "category": "kamu_personel",
       "max_pages": 4
     },

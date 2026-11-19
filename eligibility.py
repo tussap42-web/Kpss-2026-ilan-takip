@@ -219,6 +219,7 @@ def assess_notice(text, config, today=None, rows=None, incomplete=False):
     if (len(set(roles)) > 1 and not evidence) or incomplete:
         result['status'] = 'review'
         result['reasons'] = []
+        result['unverified_deadline'] = result['deadline']
         result['deadline'] = None
         result['warnings'].append('Belge/kadro kapsamı belirsiz; kesin eleme yapılmadı')
     result['evidence_complete'] = not incomplete

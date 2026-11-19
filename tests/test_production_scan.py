@@ -23,7 +23,7 @@ class ProductionScanTests(unittest.TestCase):
         rows = [['Unvan', 'KPSS Puanı', 'Mezuniyet', 'Özel Şart'],
                 ['Memur', 'P93, en az 60 puan', 'Herhangi bir önlisans programı',
                  '(B) sınıfı sürücü belgesine sahip olmak']]
-        assessment = assess_notice('Başvurular 16/12/2026-18/12/2026 tarihleri arasında.',
+        assessment = assess_notice('Başvurular, 16/12/2026-18/12/2026 tarihleri arasında.',
                                    CFG, TODAY, rows=rows)
         self.assertEqual(assessment['application_start'], '2026-12-16')
         self.assertEqual(assessment['deadline'], '2026-12-18')
@@ -41,7 +41,7 @@ class ProductionScanTests(unittest.TestCase):
     def test_production_requires_open_application_and_official_link(self):
         score_text = 'P93 en az 65 puan. Herhangi bir önlisans programından mezun olmak.'
         cases = [
-            (' Başvurular 16/12/2026-18/12/2026 tarihleri arasında.', ITEM['url'], 0),
+            (' Başvurular, 16/12/2026-18/12/2026 tarihleri arasında.', ITEM['url'], 0),
             ('', ITEM['url'], 0),
             (' Son başvuru: 18.12.2026', 'https://example.org/job', 0),
             (' Son başvuru: 18.12.2026', ITEM['url'], 1),
@@ -69,3 +69,21 @@ class ProductionScanTests(unittest.TestCase):
         with patch.object(main, 'urlopen', side_effect=URLError(TimeoutError('secret'))):
             with self.assertRaisesRegex(main.TelegramError, '^transport_TimeoutError$'):
                 main.telegram_request('fake', 'sendMessage', {})
+
+    def test_image_table_is_review_evidence(self):
+        from email.message import Message
+        from details import enrich
+        url = 'https://ilan.memurlar.net/ilan/12/example.html'
+        image_url = 'https://ilan.memurlar.net/common/job/advert/documents/12/table.jpg'
+        html_headers, image_headers = Message(), Message()
+        html_headers['Content-Type'] = 'text/html'
+        image_headers['Content-Type'] = 'image/jpeg'
+        page = f'<article>KPSS puan türü<img src="{image_url}"></article>'.encode()
+        with patch('details.fetch_bytes', side_effect=[
+            (page, html_headers, url), (b'jpeg', image_headers, image_url)
+        ]), patch('details.ocr_image', return_value='P93 60') as ocr:
+            result = enrich(dict(ITEM, url=url))
+        ocr.assert_called_once_with(b'jpeg')
+        self.assertEqual(result['ocr_review_text'], 'P93 60')
+        self.assertIn('OCR', result['detail_warning'])
+        self.assertNotIn('P93 60', result['text'])
