@@ -2763,18 +2763,23 @@
       "title": "Antalya Gündoğmuş Belediyesi 4 memur alacak",
       "url": "https://ilan.memurlar.net/ilan/86900/antalya-gundogmus-belediyesi-4-memur-alacak.html",
       "source": "Memurlar.net",
-      "document_key": "text:96d4530481965b166b20ced553068de2a8cab63e89583b10159d920fa335507d",
+      "ocr_review_text": "No Unvanı Sınıfı Derecesi | Adedi 5 e\nTürü Puanı\n-Lisans düzeyinde\neğitim veren fakültelerin\ninşaat mühendisliği Kadın/ En az 60\n1 Mühendis TH 1 programından mezun Erkek P3 puan\nolmak.\n-En az (B) sınıfı sürücü\nbelgesine sahip olmak.\n-Lisans düzeyinde\neğitim veren fakültelerin E 60\n. mimarlık programından Kadın/ LZ,\n7 Mimar aH } mezun olmek Erkek Duan.\n-En az (B) sınıfi sürücü\nbelgesine sahip olmak.\n-Lisans düzeyinde\neğitim veren fakültelerin\nmaliye, işletme,\nmuhasebe ve finansal\n. yönetim, ekonomi ve Kadın/ En az 60\n3 Muhasebeci GİH 7 1 finans, muhasebe ve Erkek P3 puan\nfinans yönetimi\nprogramlarının birinden\nmezun olmak.\n-En az (B) sınıfı sürücü\nbelgesine sahip olmak\n-Lisans düzeyinde\neğitim veren fakültelerin\nkamu yönetimi, siyaset\nbilimi ve kamu\nyönetimi, yerel T dö\n‘ yönetimler, uluslararası Kadın/ naz\n4 Meru GE. 7 } ilişkiler, çalışma Erkek BS puan\nekonomisi ve endüstri\nilişkileri programlarının\nbirinden mezun olmak.\n-En az (B) sınıfı sürücü\nbelgesine sahip olmak\n",
+      "detail_warning": "İlanda görsel tablo var; OCR metni insan kontrolü gerektiriyor",
       "assessment": {
         "status": "review",
         "reasons": [],
         "warnings": [
+          "Son başvuru tarihi belirlenemedi veya birden fazla tarih var",
           "KPSS taban puanı açık biçimde okunamadı",
           "Aday puanı yaklaşık; başvuruda kesin puan kullanılmalı",
           "Mezuniyet/bölüm uygunluğu doğrulanamadı",
-          "Yaş, belge, deneyim ve diğer özel şartlar ayrıca kontrol edilmeli"
+          "Yaş, belge, deneyim ve diğer özel şartlar ayrıca kontrol edilmeli",
+          "Belge/kadro kapsamı belirsiz; kesin eleme yapılmadı"
         ],
-        "deadline": "2026-11-19",
+        "deadline": null,
         "minimum_score": null,
+        "application_start": "2026-12-21",
+        "application_start_ambiguous": false,
         "score_conditions": [],
         "score_types": [],
         "score_ambiguous": false,
@@ -2782,17 +2787,26 @@
         "education_levels": [
           "Lisans"
         ],
-        "evidence_complete": true,
-        "positions": []
+        "evidence_complete": false,
+        "general_associate_code": false,
+        "department_mentioned": false,
+        "general_associate_requirement": false,
+        "minimum_high_school_open": false,
+        "exam_year_conflict": false,
+        "driver_license_b": true,
+        "special_conditions_detected": true,
+        "positions": [],
+        "unverified_deadline": null
       },
-      "checked_on": "2026-11-15",
-      "policy": "1292260b21ee0874"
+      "checked_on": "2026-11-19",
+      "policy": "12155a82c1208a04"
     },
     "https://ilan.memurlar.net/ilan/86902/sgk-100-denetmen-yardimcisi-alacak-basvuru-9-kasim-da-basliyor.html": {
-      "title": "SGK 100 denetmen yardımcısı alacak: Başvuru 9 Kasım'da başlıyor",
+      "title": "SGK 100 denetmen yardımcısı alacak: Başvuru 9 Kasım'da başlıyor Sosyal Güvenlik Kurumu, taşra teşkilatına sözlü sınavla 100 denetmen yardımcısı alacak. KPSS'den en az 70 puan şartı aranan alımda son başvuru 22 Kasım 2026",
       "url": "https://ilan.memurlar.net/ilan/86902/sgk-100-denetmen-yardimcisi-alacak-basvuru-9-kasim-da-basliyor.html",
       "source": "Memurlar.net",
-      "document_key": "text:6868acefed5e89cda7f0392aa114cfcc33b1b5e984ae69b77d892470b5490c5d",
+      "ocr_review_text": "SOSYAL GÜVENLİK DENETMEN YARDIMCISI ALIMI Tablo-1\nSÖZLÜ\nSINAVA\nÖĞRENİM DALI (LİSANS) KPSS PUAN TÜRÜ İLANI ONS |CAGRILACAK\n‘ ADAY SAYISI\nN FAZLA)\nEn az dört yıllık eğitim veren\nyükseköğretim kurumlarının hukuk,\nSiyasal bilgiler, iktisadi ve idari\nbimer sa ölem a KPSSP39-KPSSP40-\nsosyal hizmetler bölümlerinden ya | KPSSPALKPSSPAZ. 7\nda bunlara denkliği Yükseköğretim | “PSSP43-KPSSP48\nKurulu tarafından onaylanmış yurt\niçi ve yurt dışındaki yükseköğretim\nkurumlarından mezun olmak.\n",
+      "detail_warning": "İlanda görsel tablo var; OCR metni insan kontrolü gerektiriyor",
       "assessment": {
         "status": "review",
         "reasons": [],
@@ -2800,10 +2814,13 @@
           "KPSS taban puanı açık biçimde okunamadı",
           "Aday puanı yaklaşık; başvuruda kesin puan kullanılmalı",
           "Mezuniyet/bölüm uygunluğu doğrulanamadı",
-          "Yaş, belge, deneyim ve diğer özel şartlar ayrıca kontrol edilmeli"
+          "Yaş, belge, deneyim ve diğer özel şartlar ayrıca kontrol edilmeli",
+          "Belge/kadro kapsamı belirsiz; kesin eleme yapılmadı"
         ],
-        "deadline": "2026-11-22",
+        "deadline": null,
         "minimum_score": null,
+        "application_start": null,
+        "application_start_ambiguous": false,
         "score_conditions": [],
         "score_types": [
           "P3"
@@ -2813,17 +2830,26 @@
         "education_levels": [
           "Lisans"
         ],
-        "evidence_complete": true,
-        "positions": []
+        "evidence_complete": false,
+        "general_associate_code": false,
+        "department_mentioned": false,
+        "general_associate_requirement": false,
+        "minimum_high_school_open": false,
+        "exam_year_conflict": false,
+        "driver_license_b": false,
+        "special_conditions_detected": true,
+        "positions": [],
+        "unverified_deadline": "2026-11-22"
       },
-      "checked_on": "2026-11-15",
-      "policy": "1292260b21ee0874"
+      "checked_on": "2026-11-19",
+      "policy": "12155a82c1208a04"
     },
     "https://ilan.memurlar.net/ilan/86907/marmara-universitesi-10-sozlesmeli-personel-alacak.html": {
       "title": "Marmara Üniversitesi 10 sözleşmeli personel alacak",
       "url": "https://ilan.memurlar.net/ilan/86907/marmara-universitesi-10-sozlesmeli-personel-alacak.html",
       "source": "Memurlar.net",
-      "document_key": "text:eebcbf87a3ee7a8cd172cba3403edc94ccc36116127ba907691715903345791e",
+      "ocr_review_text": "KOD | POZİSYON | ADET | ÖĞRENİM CİNSİYET ARANILAN NİTELİKLER\n1-İnşaat Mühendisliği lisans programından mezun\nolmak.\n\nMot Mühendis 1 LİSANS KADIN/ERKEK 2-Son başvuru tarihi itibariyle 30 yaşını\ndoldurmamış olmak.\n3-Yükseköğretim kurumlarında örgün (Lisans)\neğitim öğrencisi kaydı bulunmamak.\n1-Elektrik Mühendisliği, Elektrik ve Elektronik\nMühendisliği, Elektrik-Elektronik Mühendisliği\nlisans programlarının birinden mezun olmak.\n\nM02 Mühendis 2 LİSANS KADINERKEK |2-Son başvuru tarihi itibariyle 30 yaşını\ndoldurmamış olmak.\n3-Yükseköğretim kurumlarında örgün (Lisans)\neğitim öğrencisi kaydı bulunmamak.\n1-Elektrik veya Elektrik Teknolojisi önlisans\nprogramından mezun olmak.\n\nT01 | Tekniker 3 | ÖNLİSANS | KADIN/ERKEK (2-Son başvuru tarihi itibariyle 30 yaşını\ndoldurmamış olmak.\n3-Yükseköğretim kurumlarında örgün (Lisans)\neğitim öğrencisi kaydı bulunmamak.\n1-Bilgisayar Programcılığı, Bilgisayar\nProgramcılığı (İnternet), Bilgisayar\nProgramlama, Bilgisayar Teknolojisi ve\nProgramlama, Web Teknolojileri ve\nProgramlama, Bilgisayar Bilimleri, Arka-Yüz\n\nT02 Tekniker 4 ÖNLİSANS | KADIN/ERKEK |Yazılım Geliştirme, Ön-Yüz Yazılım Geliştirme\nönlisans programlarının birinden mezun olmak.\n2-Son başvuru tarihi itibariyle 30 yaşını\ndoldurmamış olmak.\n3-Yükseköğretim kurumlarında örgün (Lisans)\neğitim öğrencisi kaydı bulunmamak.\n",
+      "detail_warning": "İlanda görsel tablo var; OCR metni insan kontrolü gerektiriyor",
       "assessment": {
         "status": "review",
         "reasons": [],
@@ -2831,10 +2857,13 @@
           "Birden fazla kadro/puan koşulu var; satır bazında inceleme gerekli",
           "Aday puanı yaklaşık; başvuruda kesin puan kullanılmalı",
           "Mezuniyet/bölüm uygunluğu doğrulanamadı",
-          "Yaş, belge, deneyim ve diğer özel şartlar ayrıca kontrol edilmeli"
+          "Yaş, belge, deneyim ve diğer özel şartlar ayrıca kontrol edilmeli",
+          "Belge/kadro kapsamı belirsiz; kesin eleme yapılmadı"
         ],
-        "deadline": "2026-11-20",
+        "deadline": null,
         "minimum_score": null,
+        "application_start": null,
+        "application_start_ambiguous": false,
         "score_conditions": [],
         "score_types": [
           "P3",
@@ -2843,13 +2872,22 @@
         "score_ambiguous": true,
         "kpss_exempt": false,
         "education_levels": [
+          "Ön lisans",
           "Lisans"
         ],
-        "evidence_complete": true,
-        "positions": []
+        "evidence_complete": false,
+        "general_associate_code": false,
+        "department_mentioned": false,
+        "general_associate_requirement": false,
+        "minimum_high_school_open": false,
+        "exam_year_conflict": false,
+        "driver_license_b": false,
+        "special_conditions_detected": true,
+        "positions": [],
+        "unverified_deadline": "2026-11-20"
       },
-      "checked_on": "2026-11-15",
-      "policy": "1292260b21ee0874"
+      "checked_on": "2026-11-19",
+      "policy": "12155a82c1208a04"
     },
     "https://ilan.memurlar.net/ilan/86913/bozkoy-belediyesi-1-irfaiye-eri-alacak.html": {
       "title": "Bozköy Belediyesi 1 İrfaiye Eri Alacak",
@@ -2885,22 +2923,43 @@
       "title": "Antalya Akseki Belediyesi 1 Memur Alacak",
       "url": "https://ilan.memurlar.net/ilan/86914/antalya-akseki-belediyesi-1-memur-alacak.html",
       "source": "Memurlar.net",
-      "document_key": "text:3e72f453a302750aab4211d6045d6e6bdafb18d5d6fba46638566a6a25d2968e",
+      "ocr_review_text": "No | Unvanı | Sınıfı | Derecesi |Adedi . mm\nTürü | Puanı\n|-Lisans düzeyinde eğitim veren\nrumların Egzersiz ve Spor\nBilimleri, Spor Yöneticiliği, E\nı)itfyelom) jı | Antrenörlük Eğitimi Kadın/ |p, | 65\nEri programlarının birinden mezun Erkek\nolmak. puan\nEn az (C) sınıfı sürücü\nbelgesine sahip olmak.\n",
+      "detail_warning": "İlanda görsel tablo var; OCR metni insan kontrolü gerektiriyor",
       "assessment": {
         "status": "review",
         "reasons": [],
         "warnings": [
+          "Son başvuru tarihi belirlenemedi veya birden fazla tarih var",
           "KPSS taban puanı açık biçimde okunamadı",
           "Aday puanı yaklaşık; başvuruda kesin puan kullanılmalı",
           "Mezuniyet/bölüm uygunluğu doğrulanamadı",
-          "Yaş, belge, deneyim ve diğer özel şartlar ayrıca kontrol edilmeli"
+          "Yaş, belge, deneyim ve diğer özel şartlar ayrıca kontrol edilmeli",
+          "Belge/kadro kapsamı belirsiz; kesin eleme yapılmadı"
         ],
-        "deadline": "2026-11-20",
+        "deadline": null,
         "minimum_score": null,
-        "positions": []
+        "application_start": "2026-12-21",
+        "application_start_ambiguous": false,
+        "score_conditions": [],
+        "score_types": [],
+        "score_ambiguous": false,
+        "kpss_exempt": false,
+        "education_levels": [
+          "Lisans"
+        ],
+        "evidence_complete": false,
+        "general_associate_code": false,
+        "department_mentioned": false,
+        "general_associate_requirement": false,
+        "minimum_high_school_open": false,
+        "exam_year_conflict": false,
+        "driver_license_b": true,
+        "special_conditions_detected": true,
+        "positions": [],
+        "unverified_deadline": null
       },
-      "checked_on": "2026-11-09",
-      "policy": "d7986b01b15e54ff"
+      "checked_on": "2026-11-19",
+      "policy": "12155a82c1208a04"
     },
     "https://ilan.memurlar.net/ilan/86915/milli-saraylar-idaresi-baskanligi-38-sozlesmeli-personel-alacak.html": {
       "title": "Milli Saraylar İdaresi Başkanlığı 38 sözleşmeli personel alacak",
@@ -2929,7 +2988,7 @@
       "title": "İzmir Demokrasi Üniversitesi 2 sözleşmeli avukat alacak",
       "url": "https://ilan.memurlar.net/ilan/86916/izmir-demokrasi-universitesi-2-sozlesmeli-avukat-alacak.html",
       "source": "Memurlar.net",
-      "document_key": "text:feadfa7b5af2c90f08147d4d79c9b4aedde1fb3c73861771868f7c6478df70ad",
+      "document_key": "text:1618c1932f4b9b94da2b1069601bcabee639f4c827422e7eb1953823ae6394a1",
       "assessment": {
         "status": "review",
         "reasons": [],
@@ -2941,10 +3000,27 @@
         ],
         "deadline": "2026-11-21",
         "minimum_score": null,
+        "application_start": null,
+        "application_start_ambiguous": false,
+        "score_conditions": [],
+        "score_types": [],
+        "score_ambiguous": false,
+        "kpss_exempt": false,
+        "education_levels": [
+          "Lisans"
+        ],
+        "evidence_complete": true,
+        "general_associate_code": false,
+        "department_mentioned": false,
+        "general_associate_requirement": false,
+        "minimum_high_school_open": false,
+        "exam_year_conflict": false,
+        "driver_license_b": false,
+        "special_conditions_detected": false,
         "positions": []
       },
-      "checked_on": "2026-11-09",
-      "policy": "d7986b01b15e54ff"
+      "checked_on": "2026-11-19",
+      "policy": "12155a82c1208a04"
     },
     "https://ilan.memurlar.net/ilan/86918/adana-saricam-sydv-gecici-1-isci-alacak.html": {
       "title": "Adana Sarıçam SYDV Geçici 1 İşçi Alacak",
@@ -3032,10 +3108,11 @@
       "policy": "d7986b01b15e54ff"
     },
     "https://ilan.memurlar.net/ilan/86928/kdk-10-kamu-denetciligi-uzman-yardimcisi-alacak.html": {
-      "title": "KDK, 10 Kamu Denetçiliği Uzman Yardımcısı Alacak",
+      "title": "KDK, 10 Kamu Denetçiliği Uzman Yardımcısı Alacak Kamu Denetçiliği Kurumu, 10 Kamu Denetçiliği Uzman Yardımcısı Alacak. Son başvuru tarihi 22 Kasım 2026",
       "url": "https://ilan.memurlar.net/ilan/86928/kdk-10-kamu-denetciligi-uzman-yardimcisi-alacak.html",
       "source": "Memurlar.net",
-      "document_key": "text:284e135a441842327ca777bb6e37afe94fca203a26fbb0d18a74f3f8b63b7712",
+      "ocr_review_text": ", SÖZLÜ SINAVA | KPSS\nÖĞRENİM GRUBU KADRO ÇAĞRILACAK PUAN\nSAYISI ADAY SAYISI TÜRÜ\nSİYASAL BİLGİLER, İKTİSADİ VE İDARİ\nBİLİMLER FAKÜLTELERİ, İKTİSAT VE\nİŞLETME FAKÜLTELERİ VEYA BUNLARA p3\nDENKLİĞİ YÜKSEK ÖĞRETİM m veya\nKURULUNCA KABUL EDİLEN YURT 3 P38\nDISINDAKI FAKULTE VEYA\nYUKSEKOKULLARDAN BİRİNİ BİTİRMİŞ\nOLMAK (II. GRUP)\n",
+      "detail_warning": "İlanda görsel tablo var; OCR metni insan kontrolü gerektiriyor",
       "assessment": {
         "status": "review",
         "reasons": [],
@@ -3043,14 +3120,33 @@
           "KPSS taban puanı açık biçimde okunamadı",
           "Aday puanı yaklaşık; başvuruda kesin puan kullanılmalı",
           "Mezuniyet/bölüm uygunluğu doğrulanamadı",
-          "Yaş, belge, deneyim ve diğer özel şartlar ayrıca kontrol edilmeli"
+          "Yaş, belge, deneyim ve diğer özel şartlar ayrıca kontrol edilmeli",
+          "Belge/kadro kapsamı belirsiz; kesin eleme yapılmadı"
         ],
-        "deadline": "2026-11-22",
+        "deadline": null,
         "minimum_score": null,
-        "positions": []
+        "application_start": null,
+        "application_start_ambiguous": false,
+        "score_conditions": [],
+        "score_types": [],
+        "score_ambiguous": false,
+        "kpss_exempt": false,
+        "education_levels": [
+          "Lisans"
+        ],
+        "evidence_complete": false,
+        "general_associate_code": false,
+        "department_mentioned": false,
+        "general_associate_requirement": false,
+        "minimum_high_school_open": false,
+        "exam_year_conflict": false,
+        "driver_license_b": false,
+        "special_conditions_detected": false,
+        "positions": [],
+        "unverified_deadline": "2026-11-22"
       },
-      "checked_on": "2026-11-09",
-      "policy": "d7986b01b15e54ff"
+      "checked_on": "2026-11-19",
+      "policy": "12155a82c1208a04"
     },
     "https://ilan.memurlar.net/kategori/daimi-isci-ilanlari?Expire=false": {
       "title": "Daimi İşçi Alım İlanları",
@@ -3686,7 +3782,7 @@
       "title": "Sayıştay 16 sözleşmeli personel alacak",
       "url": "https://ilan.memurlar.net/ilan/86940/sayistay-16-sozlesmeli-personel-alacak.html",
       "source": "Memurlar.net",
-      "document_key": "text:ed12fc79dcb81c01c7c38d1e14101bba3c92940d6a0c533e301c4c8c9b5fcff5",
+      "document_key": "text:298d63081d87b0abbfaa9f7fb78d8b1d27215046ac9fe3f47fa1b3cddf8fce5a",
       "assessment": {
         "status": "review",
         "reasons": [],
@@ -3698,6 +3794,8 @@
         ],
         "deadline": "2026-11-25",
         "minimum_score": 60.0,
+        "application_start": "2026-11-11",
+        "application_start_ambiguous": false,
         "score_conditions": [
           {
             "score_type": "P93",
@@ -3714,10 +3812,17 @@
           "Lisans"
         ],
         "evidence_complete": true,
+        "general_associate_code": false,
+        "department_mentioned": false,
+        "general_associate_requirement": false,
+        "minimum_high_school_open": false,
+        "exam_year_conflict": false,
+        "driver_license_b": false,
+        "special_conditions_detected": true,
         "positions": []
       },
-      "checked_on": "2026-11-10",
-      "policy": "1292260b21ee0874"
+      "checked_on": "2026-11-19",
+      "policy": "12155a82c1208a04"
     },
     "https://ilan.memurlar.net/ilan/86947/samsun-asarcik-imar-gecici-2-isci-alacak.html": {
       "title": "Samsun Asarcık İmar Geçici 2 İşçi Alacak",
@@ -3981,10 +4086,10 @@
       "policy": "1292260b21ee0874"
     },
     "https://ilan.memurlar.net/ilan/86963/savunma-sanayii-baskanligi-26-sozlesmeli-personel-alacak.html": {
-      "title": "00:10 Savunma Sanayii Başkanlığı 26 sözleşmeli personel alacak",
+      "title": "Savunma Sanayii Başkanlığı 26 sözleşmeli personel alacak Savunma Sanayii Başkanlığı 26 sözleşmeli personel alacak. Son başvuru tarihi 21 Aralık 2026",
       "url": "https://ilan.memurlar.net/ilan/86963/savunma-sanayii-baskanligi-26-sozlesmeli-personel-alacak.html",
       "source": "Memurlar.net",
-      "document_key": "text:d637b0bf585751b11152e97be5109db155f0206d6077a39154ddd3594ebfbebc",
+      "document_key": "text:2a4842c3c3eb84479d72e59aac84a10560c187fc7c52a55664e476e1bc0f528b",
       "assessment": {
         "status": "review",
         "reasons": [],
@@ -3996,6 +4101,8 @@
         ],
         "deadline": "2026-12-21",
         "minimum_score": null,
+        "application_start": null,
+        "application_start_ambiguous": false,
         "score_conditions": [],
         "score_types": [],
         "score_ambiguous": false,
@@ -4004,10 +4111,17 @@
           "Lisans"
         ],
         "evidence_complete": true,
+        "general_associate_code": false,
+        "department_mentioned": false,
+        "general_associate_requirement": false,
+        "minimum_high_school_open": false,
+        "exam_year_conflict": false,
+        "driver_license_b": false,
+        "special_conditions_detected": true,
         "positions": []
       },
-      "checked_on": "2026-11-12",
-      "policy": "1292260b21ee0874"
+      "checked_on": "2026-11-19",
+      "policy": "12155a82c1208a04"
     },
     "https://ilan.memurlar.net/ilan/46209/antalya-kas-likya-turizm-gecici-76-isci-alacak.html": {
       "title": "Antalya Kaş Likya Turizm Geçici 76 İşçi Alacak",
@@ -4078,7 +4192,8 @@
       "title": "Bursa Teknik Üniversitesi 1 sözleşmeli personel alacak",
       "url": "https://ilan.memurlar.net/ilan/86964/bursa-teknik-universitesi-1-sozlesmeli-personel-alacak.html",
       "source": "Memurlar.net",
-      "document_key": "text:ceeeb186b7fefaaa392a2fb9788efd2fec45e36e996ed889c081d8324ab502b9",
+      "ocr_review_text": "BAŞVURU TAKVİMİ\nİLAN EDİLEN POZİSYONLARA AİT BİLGİLER\n- Psikoloji lisans programından mezun olmak,\n- Belgelendirmek şartıyla Sağlık Bakanlığı tarafından\nklinik psikolog olarak tescilli olmak,\n- 2026 yılı KPSS(P3)'ten en az 70 puan almış olmak,\n- Son başvuru tarihi itibariyle 35 yaşından gün\nalmamış olmak,\n- Askerliğini yapmış olmak veya askerlikten muaf\n. . olmak,\n\n2026/2-1} Psikolog 1 Lisans Erkek | Yükseköğretim kurumlarının oOörgün egitim\nprogramlarında aktif veya pasif öğrenci kaydı\nbulunan adaylar başvuru yapamaz (Açık öğretim ve\nuzaktan öğretim programlarında aktif veya pasif\nöğrenci kaydı bulunanlar başvuru yapabilir)\n\n- Görevini yerine getirmesine engel teşkil edecek\nherhangi bir sağlık engeli ile akıl hastalığı\nbulunmamak.\n",
+      "detail_warning": "İlanda görsel tablo var; OCR metni insan kontrolü gerektiriyor",
       "assessment": {
         "status": "review",
         "reasons": [],
@@ -4086,10 +4201,13 @@
           "KPSS taban puanı açık biçimde okunamadı",
           "Aday puanı yaklaşık; başvuruda kesin puan kullanılmalı",
           "Mezuniyet/bölüm uygunluğu doğrulanamadı",
-          "Yaş, belge, deneyim ve diğer özel şartlar ayrıca kontrol edilmeli"
+          "Yaş, belge, deneyim ve diğer özel şartlar ayrıca kontrol edilmeli",
+          "Belge/kadro kapsamı belirsiz; kesin eleme yapılmadı"
         ],
-        "deadline": "2026-11-27",
+        "deadline": null,
         "minimum_score": null,
+        "application_start": null,
+        "application_start_ambiguous": false,
         "score_conditions": [],
         "score_types": [],
         "score_ambiguous": false,
@@ -4097,17 +4215,25 @@
         "education_levels": [
           "Lisans"
         ],
-        "evidence_complete": true,
-        "positions": []
+        "evidence_complete": false,
+        "general_associate_code": false,
+        "department_mentioned": false,
+        "general_associate_requirement": false,
+        "minimum_high_school_open": false,
+        "exam_year_conflict": false,
+        "driver_license_b": false,
+        "special_conditions_detected": true,
+        "positions": [],
+        "unverified_deadline": "2026-11-27"
       },
-      "checked_on": "2026-11-13",
-      "policy": "1292260b21ee0874"
+      "checked_on": "2026-11-19",
+      "policy": "12155a82c1208a04"
     },
     "https://ilan.memurlar.net/ilan/86965/hazine-ve-maliye-bakanligi-10-stajyer-hazine-kontroloru-alacak.html": {
-      "title": "00:17 Hazine ve Maliye Bakanlığı 10 Stajyer Hazine Kontrolörü Alacak",
+      "title": "Hazine ve Maliye Bakanlığı 10 Stajyer Hazine Kontrolörü Alacak",
       "url": "https://ilan.memurlar.net/ilan/86965/hazine-ve-maliye-bakanligi-10-stajyer-hazine-kontroloru-alacak.html",
       "source": "Memurlar.net",
-      "document_key": "text:1259c83dd39246ffbea997d4f0572262bb66e3ca7555a1f3984c689c6dbc411b",
+      "document_key": "text:cd46f89a35aa462ffcb3070e3530f99be0943beed72c415e79580f148fe68e39",
       "assessment": {
         "status": "review",
         "reasons": [],
@@ -4119,6 +4245,8 @@
         ],
         "deadline": "2026-12-04",
         "minimum_score": null,
+        "application_start": "2026-11-23",
+        "application_start_ambiguous": false,
         "score_conditions": [],
         "score_types": [],
         "score_ambiguous": false,
@@ -4127,16 +4255,24 @@
           "Lisans"
         ],
         "evidence_complete": true,
+        "general_associate_code": false,
+        "department_mentioned": false,
+        "general_associate_requirement": false,
+        "minimum_high_school_open": false,
+        "exam_year_conflict": false,
+        "driver_license_b": false,
+        "special_conditions_detected": true,
         "positions": []
       },
-      "checked_on": "2026-11-13",
-      "policy": "1292260b21ee0874"
+      "checked_on": "2026-11-19",
+      "policy": "12155a82c1208a04"
     },
     "https://ilan.memurlar.net/ilan/86967/yuksekogretim-kalite-kurulu-baskanligi-5-uzman-yardimcisi-alacak.html": {
-      "title": "00:37 Yükseköğretim Kalite Kurulu Başkanlığı 5 Uzman Yardımcısı Alacak",
+      "title": "Yükseköğretim Kalite Kurulu Başkanlığı 5 Uzman Yardımcısı Alacak",
       "url": "https://ilan.memurlar.net/ilan/86967/yuksekogretim-kalite-kurulu-baskanligi-5-uzman-yardimcisi-alacak.html",
       "source": "Memurlar.net",
-      "document_key": "text:e5b536ae14ae5593227d84097088b87c8fb661d87c8a2201680c07818ba388aa",
+      "ocr_review_text": "Tablo I\nİLAN KPSS SÖZLÜ SINAVA\noj KADRO .\nALAN PUAN ARANAN NITELIKLER SAYISI ÇAĞIRILACAK\nKODU TÜRÜ ADAY SAYISI\nKPSS P14- ,\nYükseköğretim kurumlarının İktisat\nAt P15-P16-P17- 1 4\npag lisans programindan mezun olmak.\nYükseköğretim kurumlarının, Kamu\nKPSS P29-\nYönetimi ile Siyaset Bilimi ve Kamu\nA2 P30-P31-P32- , 1 4\npag Yönetimi lisans programlarının herhangi\nbirinden mezun olmak.\nYükseköğretim Kurumlarının\nKPSS P34- Uluslararası İlişkiler ile Siyaset Bilimi ve\nA3 P35-P36-P37- | Uluslararası İlişkiler lisans 2\nP38 programlarının herhangi birinden mezun\nolmak.\nYükseköğretim kurumlarının İletişim\nA4 KPSS P3 1 4\nFakültesinden mezun olmak.\n",
+      "detail_warning": "İlanda görsel tablo var; OCR metni insan kontrolü gerektiriyor",
       "assessment": {
         "status": "review",
         "reasons": [],
@@ -4144,10 +4280,13 @@
           "KPSS taban puanı açık biçimde okunamadı",
           "Aday puanı yaklaşık; başvuruda kesin puan kullanılmalı",
           "Mezuniyet/bölüm uygunluğu doğrulanamadı",
-          "Yaş, belge, deneyim ve diğer özel şartlar ayrıca kontrol edilmeli"
+          "Yaş, belge, deneyim ve diğer özel şartlar ayrıca kontrol edilmeli",
+          "Belge/kadro kapsamı belirsiz; kesin eleme yapılmadı"
         ],
-        "deadline": "2026-11-27",
+        "deadline": null,
         "minimum_score": null,
+        "application_start": null,
+        "application_start_ambiguous": false,
         "score_conditions": [],
         "score_types": [],
         "score_ambiguous": false,
@@ -4155,11 +4294,19 @@
         "education_levels": [
           "Lisans"
         ],
-        "evidence_complete": true,
-        "positions": []
+        "evidence_complete": false,
+        "general_associate_code": false,
+        "department_mentioned": false,
+        "general_associate_requirement": false,
+        "minimum_high_school_open": false,
+        "exam_year_conflict": false,
+        "driver_license_b": false,
+        "special_conditions_detected": false,
+        "positions": [],
+        "unverified_deadline": "2026-11-27"
       },
-      "checked_on": "2026-11-13",
-      "policy": "1292260b21ee0874"
+      "checked_on": "2026-11-19",
+      "policy": "12155a82c1208a04"
     },
     "https://ilan.memurlar.net/ilan/86969/sahil-guvenlik-komutanligi-10-memur-alacak.html": {
       "title": "Sahil Güvenlik Komutanlığı 10 Memur Alacak Sahil Güvenlik Komutanlığı 10 Memur Alacak. Son başvuru tarihi 27 Kasım 2026",
@@ -4380,7 +4527,7 @@
       "title": "01:17 Karamanoğlu Mehmetbey Üniversitesi Öğretim Üyesi Alacak",
       "url": "https://ilan.memurlar.net/ilan/86972/karamanoglu-mehmetbey-universitesi-ogretim-uyesi-alacak.html",
       "source": "Memurlar.net",
-      "document_key": "text:96af1df20fe87a37db82850d3fa7ee4bec1ffbffc55c1f3ced2b98788eaa300d",
+      "document_key": "text:56243a5cb2e81c66a85e39b2823f7c49b3083d4686461cd370d2acdb0465225a",
       "assessment": {
         "status": "review",
         "reasons": [],
@@ -4392,6 +4539,8 @@
         ],
         "deadline": "2026-11-27",
         "minimum_score": null,
+        "application_start": null,
+        "application_start_ambiguous": false,
         "score_conditions": [],
         "score_types": [],
         "score_ambiguous": false,
@@ -4400,10 +4549,17 @@
           "Lisans"
         ],
         "evidence_complete": true,
+        "general_associate_code": false,
+        "department_mentioned": false,
+        "general_associate_requirement": false,
+        "minimum_high_school_open": false,
+        "exam_year_conflict": false,
+        "driver_license_b": false,
+        "special_conditions_detected": false,
         "positions": []
       },
-      "checked_on": "2026-11-13",
-      "policy": "1292260b21ee0874"
+      "checked_on": "2026-11-19",
+      "policy": "12155a82c1208a04"
     },
     "https://www.resmigazete.gov.tr/eskiler/2026/11/20261114-13.pdf": {
       "title": "–– Sözleşmeli Personel Çalıştırılmasına İlişkin Esaslarda Değişiklik Yapılmasına Dair Esaslar (Karar Sayısı: 11982)",
@@ -4728,7 +4884,8 @@
       "title": "AFAD 20 uzman yardımcısı alacak",
       "url": "https://ilan.memurlar.net/ilan/86998/afad-20-uzman-yardimcisi-alacak.html",
       "source": "Memurlar.net",
-      "document_key": "text:dd363cd58b8642f645ba2d475812eeb93e20b8df68286e4c68dda3913585f0e4",
+      "ocr_review_text": "eee oe eee İİ e O a RO ae\nGrup mo, Kadro —_ Yabancı Dil\nÖğrenim Dalları Puan Türü\nNo Sayısı Sınav Puanı\nİktisat, İşletme, Kamu Yönetimi,\nSiyaset Bilimi ve Kamu Yönetimi,\n. Pee KPSSP8, KPSSP9, En az 70\nSiyaset Bilimi ve Uluslararası\n1 il li 10 KPSSP16,KPSSP21, Puan\nİlişkiler, Uluslararası İlişkiler, oo,\n. - KPSSP32, KPSSP43 | (C Seviyesi)\nMaliye, Çalışma Ekonomisi ve\nEndüstri İlişkileri\nEn az 70\n2 Hukuk 3 KPSSP4 Puan\n(C Seviyesi)\n\nGrup Öğrenim Dalları Kadro Puan Türü\nNo Sayısı\nIktisat, İşletme, Kamu Yönetimi, Siyaset Bilimi ve KPSSP13,\nKamu Yönetimi, Siyaset Bilimi ve Uluslararası\n1 yn 18 : 4 KPSSP33,\nİlişkiler, Uluslararası İlişkiler, Maliye, Çalışma KPSSP48\nEkonomisi ve Endüstri İlişkileri i\n> Bilbisayar Mühendisliği, Yaalim. viunenicialiet 3 KPSSP3\nEndüstri Mühendisliği, Matematik Mühendisliği\n",
+      "detail_warning": "İlanda görsel tablo var; OCR metni insan kontrolü gerektiriyor",
       "assessment": {
         "status": "review",
         "reasons": [],
@@ -4736,10 +4893,13 @@
           "KPSS taban puanı açık biçimde okunamadı",
           "Aday puanı yaklaşık; başvuruda kesin puan kullanılmalı",
           "Mezuniyet/bölüm uygunluğu doğrulanamadı",
-          "Yaş, belge, deneyim ve diğer özel şartlar ayrıca kontrol edilmeli"
+          "Yaş, belge, deneyim ve diğer özel şartlar ayrıca kontrol edilmeli",
+          "Belge/kadro kapsamı belirsiz; kesin eleme yapılmadı"
         ],
-        "deadline": "2026-11-30",
+        "deadline": null,
         "minimum_score": null,
+        "application_start": null,
+        "application_start_ambiguous": false,
         "score_conditions": [],
         "score_types": [
           "P3"
@@ -4749,17 +4909,26 @@
         "education_levels": [
           "Lisans"
         ],
-        "evidence_complete": true,
-        "positions": []
+        "evidence_complete": false,
+        "general_associate_code": false,
+        "department_mentioned": false,
+        "general_associate_requirement": false,
+        "minimum_high_school_open": false,
+        "exam_year_conflict": false,
+        "driver_license_b": false,
+        "special_conditions_detected": true,
+        "positions": [],
+        "unverified_deadline": "2026-11-30"
       },
-      "checked_on": "2026-11-16",
-      "policy": "1292260b21ee0874"
+      "checked_on": "2026-11-19",
+      "policy": "12155a82c1208a04"
     },
     "https://ilan.memurlar.net/ilan/86999/anadolu-universitesi-1-sozlesmeli-personel-alacak.html": {
       "title": "Anadolu Üniversitesi 1 Sözleşmeli Personel Alacak",
       "url": "https://ilan.memurlar.net/ilan/86999/anadolu-universitesi-1-sozlesmeli-personel-alacak.html",
       "source": "Memurlar.net",
-      "document_key": "text:fff4067a33e4d2ce27f6e1ca473e7d833543fd8c8bd00b8fdf5b0b0132c6284b",
+      "ocr_review_text": "KODU| SAYISI\n\n- 2026 yılı KPSS (B) KPSSP3 puan türünden en az 60 (altmış)\nalmış olmak.\n- Lisans programlarının Çevre Mühendisliği bölümünden mezun\nolmak.\n\nÇevre - İlan tarihi son günü itibarıyla 35 (otuz beş) yaşından gün\n\nMühendisi | (M01 1 almamış olmak.\n\n(Erkek) - Yapılacak görev gereği mesai saatleri dışında ve hafta sonları\nçalışmaya herhangi bir engeli olmamak.\n- Alanındaenaz 3 yıl mesleki tecrübeye sahip olmak ve bunu\ne-Devlet’ten alınacak barkodlu meslek kodunu gösterir “SGK\nHizmet Dökümü” ile belgelemek.\n",
+      "detail_warning": "İlanda görsel tablo var; OCR metni insan kontrolü gerektiriyor",
       "assessment": {
         "status": "review",
         "reasons": [],
@@ -4767,10 +4936,13 @@
           "KPSS taban puanı açık biçimde okunamadı",
           "Aday puanı yaklaşık; başvuruda kesin puan kullanılmalı",
           "Mezuniyet/bölüm uygunluğu doğrulanamadı",
-          "Yaş, belge, deneyim ve diğer özel şartlar ayrıca kontrol edilmeli"
+          "Yaş, belge, deneyim ve diğer özel şartlar ayrıca kontrol edilmeli",
+          "Belge/kadro kapsamı belirsiz; kesin eleme yapılmadı"
         ],
-        "deadline": "2026-11-30",
+        "deadline": null,
         "minimum_score": null,
+        "application_start": null,
+        "application_start_ambiguous": false,
         "score_conditions": [],
         "score_types": [
           "P3"
@@ -4780,11 +4952,19 @@
         "education_levels": [
           "Lisans"
         ],
-        "evidence_complete": true,
-        "positions": []
+        "evidence_complete": false,
+        "general_associate_code": false,
+        "department_mentioned": false,
+        "general_associate_requirement": false,
+        "minimum_high_school_open": false,
+        "exam_year_conflict": false,
+        "driver_license_b": false,
+        "special_conditions_detected": true,
+        "positions": [],
+        "unverified_deadline": "2026-11-30"
       },
-      "checked_on": "2026-11-16",
-      "policy": "1292260b21ee0874"
+      "checked_on": "2026-11-19",
+      "policy": "12155a82c1208a04"
     },
     "https://ilan.memurlar.net/ilan/86799/izmir-buyuksehir-belediyesi-90-zabita-memuru-alacak.html": {
       "title": "İzmir Büyükşehir Belediyesi 90 zabıta memuru alacak İzmir Büyükşehir Belediyesi 90 zabıta memuru alacak. Son başvuru tarihi 4 Aralık 2026",
@@ -4913,7 +5093,7 @@
       "title": "Akdeniz Üniversitesi 3 İşçi Alacak",
       "url": "https://ilan.memurlar.net/ilan/86974/akdeniz-universitesi-3-isci-alacak.html",
       "source": "Memurlar.net",
-      "document_key": "text:f96b283c850f2e99a9aaccb819b71c5a7a2ee1cbd5d23594c9d4c176c9d9daef",
+      "document_key": "text:d62a027d0194b00190af748bd70eafe798e895d9246f91cc74a38589ceb5918f",
       "assessment": {
         "status": "review",
         "reasons": [],
@@ -4925,6 +5105,8 @@
         ],
         "deadline": "2026-11-20",
         "minimum_score": null,
+        "application_start": null,
+        "application_start_ambiguous": false,
         "score_conditions": [],
         "score_types": [],
         "score_ambiguous": false,
@@ -4933,16 +5115,23 @@
           "Lisans"
         ],
         "evidence_complete": true,
+        "general_associate_code": false,
+        "department_mentioned": false,
+        "general_associate_requirement": false,
+        "minimum_high_school_open": false,
+        "exam_year_conflict": false,
+        "driver_license_b": false,
+        "special_conditions_detected": true,
         "positions": []
       },
-      "checked_on": "2026-11-17",
-      "policy": "1292260b21ee0874"
+      "checked_on": "2026-11-19",
+      "policy": "12155a82c1208a04"
     },
     "https://ilan.memurlar.net/ilan/86979/cankiri-bayramoren-belediyesi-2-isci-alacak.html": {
       "title": "Çankırı Bayramören Belediyesi 2 İşçi Alacak",
       "url": "https://ilan.memurlar.net/ilan/86979/cankiri-bayramoren-belediyesi-2-isci-alacak.html",
       "source": "Memurlar.net",
-      "document_key": "text:66e9d9dffc30503bd90d4815d93be01639f450804159ca6ebc20d494ff2a2789",
+      "document_key": "text:40bf2130b4bc36e76c98dbc11ee6de548505af6fd474db4ae59e9d79144b3490",
       "assessment": {
         "status": "review",
         "reasons": [],
@@ -4954,6 +5143,8 @@
         ],
         "deadline": "2026-11-20",
         "minimum_score": null,
+        "application_start": null,
+        "application_start_ambiguous": false,
         "score_conditions": [],
         "score_types": [],
         "score_ambiguous": false,
@@ -4962,10 +5153,17 @@
           "Lisans"
         ],
         "evidence_complete": true,
+        "general_associate_code": false,
+        "department_mentioned": false,
+        "general_associate_requirement": false,
+        "minimum_high_school_open": false,
+        "exam_year_conflict": false,
+        "driver_license_b": false,
+        "special_conditions_detected": false,
         "positions": []
       },
-      "checked_on": "2026-11-17",
-      "policy": "1292260b21ee0874"
+      "checked_on": "2026-11-19",
+      "policy": "12155a82c1208a04"
     },
     "https://www.saglik.gov.tr/TR-127037/2027-yili-yurt-disi-saglik-tesisleri-personel-gorevlendirme-basvurusu.html": {
       "title": "2027 Yılı Yurt Dışı Sağlık Tesisleri Personel Görevlendirme Başvurusu",
@@ -5058,7 +5256,7 @@
       "title": "İzmir İzenerji Geçici 15 İşçi Alacak",
       "url": "https://ilan.memurlar.net/ilan/87011/izmir-izenerji-gecici-15-isci-alacak.html",
       "source": "Memurlar.net",
-      "document_key": "text:c6eeb49c819ec309bf7224f815eed549064edc53774236ad1c6d30f0755fda59",
+      "document_key": "text:051beaa2c0c283d1483c68b7d6ae58fa5e85f10d3c493c7ce76f88026a036cf7",
       "assessment": {
         "status": "review",
         "reasons": [],
@@ -5070,6 +5268,8 @@
         ],
         "deadline": "2026-11-22",
         "minimum_score": null,
+        "application_start": null,
+        "application_start_ambiguous": false,
         "score_conditions": [],
         "score_types": [],
         "score_ambiguous": false,
@@ -5078,16 +5278,23 @@
           "Lisans"
         ],
         "evidence_complete": true,
+        "general_associate_code": false,
+        "department_mentioned": false,
+        "general_associate_requirement": false,
+        "minimum_high_school_open": false,
+        "exam_year_conflict": false,
+        "driver_license_b": false,
+        "special_conditions_detected": false,
         "positions": []
       },
-      "checked_on": "2026-11-18",
-      "policy": "1292260b21ee0874"
+      "checked_on": "2026-11-19",
+      "policy": "12155a82c1208a04"
     },
     "https://ilan.memurlar.net/ilan/87013/kirklareli-cakilli-belediyesi-1-isci-alacak.html": {
       "title": "Kırklareli Çakıllı Belediyesi 1 İşçi Alacak",
       "url": "https://ilan.memurlar.net/ilan/87013/kirklareli-cakilli-belediyesi-1-isci-alacak.html",
       "source": "Memurlar.net",
-      "document_key": "text:5799b6f4cc50336e028893edc3f7f75eb9f1aca37b75f463aaac5748a54db5e3",
+      "document_key": "text:4015a320c8bc1a1896ddb82dff98b7aa6c86e03a8382b5234a1228068c97ee18",
       "assessment": {
         "status": "review",
         "reasons": [],
@@ -5099,6 +5306,8 @@
         ],
         "deadline": "2026-11-20",
         "minimum_score": null,
+        "application_start": null,
+        "application_start_ambiguous": false,
         "score_conditions": [],
         "score_types": [],
         "score_ambiguous": false,
@@ -5107,10 +5316,17 @@
           "Lisans"
         ],
         "evidence_complete": true,
+        "general_associate_code": false,
+        "department_mentioned": false,
+        "general_associate_requirement": false,
+        "minimum_high_school_open": false,
+        "exam_year_conflict": false,
+        "driver_license_b": false,
+        "special_conditions_detected": false,
         "positions": []
       },
-      "checked_on": "2026-11-18",
-      "policy": "1292260b21ee0874"
+      "checked_on": "2026-11-19",
+      "policy": "12155a82c1208a04"
     },
     "https://ilan.memurlar.net/ilan/87014/kocaeli-belde-ozel-saglik-hizmetleri-1-isci-alacak.html": {
       "title": "Kocaeli Belde Özel Sağlık Hizmetleri 1 İşçi Alacak",
@@ -5145,7 +5361,7 @@
       "title": "Çanakkale Küçükkuyu Kent Hizmetleri Geçici 3 İşçi Alacak",
       "url": "https://ilan.memurlar.net/ilan/87015/canakkale-kucukkuyu-kent-hizmetleri-gecici-3-isci-alacak.html",
       "source": "Memurlar.net",
-      "document_key": "text:d4a83552e8a43208116173af9474c39fb0dd1807c0cde797ee4dff8255c5789c",
+      "document_key": "text:4611ae3d8afdae6adb0627c5cdfeb1bdd9fb75dbd054e2b1545494ac848bd458",
       "assessment": {
         "status": "review",
         "reasons": [],
@@ -5157,6 +5373,8 @@
         ],
         "deadline": "2026-11-20",
         "minimum_score": null,
+        "application_start": null,
+        "application_start_ambiguous": false,
         "score_conditions": [],
         "score_types": [],
         "score_ambiguous": false,
@@ -5165,16 +5383,23 @@
           "Lisans"
         ],
         "evidence_complete": true,
+        "general_associate_code": false,
+        "department_mentioned": false,
+        "general_associate_requirement": false,
+        "minimum_high_school_open": false,
+        "exam_year_conflict": false,
+        "driver_license_b": false,
+        "special_conditions_detected": false,
         "positions": []
       },
-      "checked_on": "2026-11-18",
-      "policy": "1292260b21ee0874"
+      "checked_on": "2026-11-19",
+      "policy": "12155a82c1208a04"
     },
     "https://ilan.memurlar.net/ilan/87016/erzincan-mollakoy-personel-temizlik-1-isci-alacak.html": {
       "title": "Erzincan Mollaköy Personel Temizlik 1 İşçi Alacak",
       "url": "https://ilan.memurlar.net/ilan/87016/erzincan-mollakoy-personel-temizlik-1-isci-alacak.html",
       "source": "Memurlar.net",
-      "document_key": "text:0cd1f3c51cffbd9c76b50f2697d6d18f56d077e5cad2a470fedd0a096b61ee3b",
+      "document_key": "text:a7ef39f6395ed160bc4e7d13f7925f6835a2bed83bd6c5bce8f6b19634641419",
       "assessment": {
         "status": "review",
         "reasons": [],
@@ -5186,6 +5411,8 @@
         ],
         "deadline": "2026-11-20",
         "minimum_score": null,
+        "application_start": null,
+        "application_start_ambiguous": false,
         "score_conditions": [],
         "score_types": [],
         "score_ambiguous": false,
@@ -5194,16 +5421,23 @@
           "Lisans"
         ],
         "evidence_complete": true,
+        "general_associate_code": false,
+        "department_mentioned": false,
+        "general_associate_requirement": false,
+        "minimum_high_school_open": false,
+        "exam_year_conflict": false,
+        "driver_license_b": false,
+        "special_conditions_detected": false,
         "positions": []
       },
-      "checked_on": "2026-11-18",
-      "policy": "1292260b21ee0874"
+      "checked_on": "2026-11-19",
+      "policy": "12155a82c1208a04"
     },
     "https://ilan.memurlar.net/ilan/87017/manisa-sarbel-4-isci-alacak.html": {
       "title": "Manisa Sarbel 4 İşçi Alacak",
       "url": "https://ilan.memurlar.net/ilan/87017/manisa-sarbel-4-isci-alacak.html",
       "source": "Memurlar.net",
-      "document_key": "text:e58574f8c90d6e6a232665e3166eca2840c67c1be246f3eda36fe2907497f18e",
+      "document_key": "text:0c5c89509766037208ca33714f76338d0032bb905c2eeeb77b1d76f84979500c",
       "assessment": {
         "status": "review",
         "reasons": [],
@@ -5215,6 +5449,8 @@
         ],
         "deadline": "2026-11-20",
         "minimum_score": null,
+        "application_start": null,
+        "application_start_ambiguous": false,
         "score_conditions": [],
         "score_types": [],
         "score_ambiguous": false,
@@ -5223,16 +5459,23 @@
           "Lisans"
         ],
         "evidence_complete": true,
+        "general_associate_code": false,
+        "department_mentioned": false,
+        "general_associate_requirement": false,
+        "minimum_high_school_open": false,
+        "exam_year_conflict": false,
+        "driver_license_b": false,
+        "special_conditions_detected": false,
         "positions": []
       },
-      "checked_on": "2026-11-18",
-      "policy": "1292260b21ee0874"
+      "checked_on": "2026-11-19",
+      "policy": "12155a82c1208a04"
     },
     "https://ilan.memurlar.net/ilan/87018/tekirdag-su-ve-kanalizasyon-idaresi-16-isci-alacak.html": {
-      "title": "00:39 Tekirdağ Su ve Kanalizasyon İdaresi 16 İşçi Alacak",
+      "title": "Tekirdağ Su ve Kanalizasyon İdaresi 16 İşçi Alacak",
       "url": "https://ilan.memurlar.net/ilan/87018/tekirdag-su-ve-kanalizasyon-idaresi-16-isci-alacak.html",
       "source": "Memurlar.net",
-      "document_key": "text:70b341005594ff584ed666ce45e31d0d4d27bbed85dbe82a774f88400823004b",
+      "document_key": "text:7189c6b1759a294efb45e9dd8266ec61a47f871c56edc8a00ad6d3d4b9047ee9",
       "assessment": {
         "status": "review",
         "reasons": [],
@@ -5244,6 +5487,8 @@
         ],
         "deadline": "2026-11-20",
         "minimum_score": null,
+        "application_start": null,
+        "application_start_ambiguous": false,
         "score_conditions": [],
         "score_types": [],
         "score_ambiguous": false,
@@ -5252,16 +5497,24 @@
           "Lisans"
         ],
         "evidence_complete": true,
+        "general_associate_code": false,
+        "department_mentioned": false,
+        "general_associate_requirement": false,
+        "minimum_high_school_open": false,
+        "exam_year_conflict": false,
+        "driver_license_b": false,
+        "special_conditions_detected": false,
         "positions": []
       },
-      "checked_on": "2026-11-18",
-      "policy": "1292260b21ee0874"
+      "checked_on": "2026-11-19",
+      "policy": "12155a82c1208a04"
     },
     "https://ilan.memurlar.net/ilan/87022/bolu-mudurnu-belediyesi-1-sozlesmeli-personel-alacak.html": {
-      "title": "01:10 Bolu Mudurnu Belediyesi 1 sözleşmeli personel alacak",
+      "title": "Bolu Mudurnu Belediyesi 1 sözleşmeli personel alacak",
       "url": "https://ilan.memurlar.net/ilan/87022/bolu-mudurnu-belediyesi-1-sozlesmeli-personel-alacak.html",
       "source": "Memurlar.net",
-      "document_key": "text:9bd36de2f0ba62809b32fbbf1dba5e361853b16deaf723c2a3726335ad7edf60",
+      "ocr_review_text": "Sıra Pozisyon Hizmet | Pozisyon Pozisyon nı Mı KESS KRSS\nNo Unvanı Sınıfı Derecesi Adedi Niteliği Ginsiyeli Fan Taban\nTürü Puanı\nLisans düzeyinde\neğitim veren\nfakültelerin harita\nmühendisliği, jeodezi Enaz\nve fotogrametri\n1 Mühendis TH 5 1 mühendisliği, geomatik a : P3 I\n\nmühendisliği puan\nprogramlarının\nbirinden mezun olmak.\n-En az (B) sınıfı sürücü\nbelgesine sahip olmak.\n",
+      "detail_warning": "İlanda görsel tablo var; OCR metni insan kontrolü gerektiriyor",
       "assessment": {
         "status": "review",
         "reasons": [],
@@ -5269,10 +5522,13 @@
           "KPSS taban puanı açık biçimde okunamadı",
           "Aday puanı yaklaşık; başvuruda kesin puan kullanılmalı",
           "Mezuniyet/bölüm uygunluğu doğrulanamadı",
-          "Yaş, belge, deneyim ve diğer özel şartlar ayrıca kontrol edilmeli"
+          "Yaş, belge, deneyim ve diğer özel şartlar ayrıca kontrol edilmeli",
+          "Belge/kadro kapsamı belirsiz; kesin eleme yapılmadı"
         ],
-        "deadline": "2026-12-25",
+        "deadline": null,
         "minimum_score": null,
+        "application_start": "2026-12-14",
+        "application_start_ambiguous": false,
         "score_conditions": [],
         "score_types": [],
         "score_ambiguous": false,
@@ -5280,17 +5536,25 @@
         "education_levels": [
           "Lisans"
         ],
-        "evidence_complete": true,
-        "positions": []
+        "evidence_complete": false,
+        "general_associate_code": false,
+        "department_mentioned": false,
+        "general_associate_requirement": false,
+        "minimum_high_school_open": false,
+        "exam_year_conflict": false,
+        "driver_license_b": true,
+        "special_conditions_detected": true,
+        "positions": [],
+        "unverified_deadline": "2026-12-25"
       },
-      "checked_on": "2026-11-18",
-      "policy": "1292260b21ee0874"
+      "checked_on": "2026-11-19",
+      "policy": "12155a82c1208a04"
     },
     "https://ilan.memurlar.net/ilan/87012/kahramanmaras-kazanbel-1-isci-alacak.html": {
       "title": "Kahramanmaraş Kazanbel 1 İşçi Alacak",
       "url": "https://ilan.memurlar.net/ilan/87012/kahramanmaras-kazanbel-1-isci-alacak.html",
       "source": "Memurlar.net",
-      "document_key": "text:878c481b2cccef9af37faf90f42a4e638a37b86c03a01992fe4464eaeb472262",
+      "document_key": "text:dc8b302d9569a002c567e1e6a0e33aefc2cc7c9ef0031cb63409e2ca43d5938d",
       "assessment": {
         "status": "review",
         "reasons": [],
@@ -5302,6 +5566,8 @@
         ],
         "deadline": "2026-11-20",
         "minimum_score": null,
+        "application_start": null,
+        "application_start_ambiguous": false,
         "score_conditions": [],
         "score_types": [],
         "score_ambiguous": false,
@@ -5310,10 +5576,17 @@
           "Lisans"
         ],
         "evidence_complete": true,
+        "general_associate_code": false,
+        "department_mentioned": false,
+        "general_associate_requirement": false,
+        "minimum_high_school_open": false,
+        "exam_year_conflict": false,
+        "driver_license_b": false,
+        "special_conditions_detected": false,
         "positions": []
       },
-      "checked_on": "2026-11-18",
-      "policy": "1292260b21ee0874"
+      "checked_on": "2026-11-19",
+      "policy": "12155a82c1208a04"
     },
     "https://ilan.memurlar.net/ilan/87027/icisleri-bakanligi-60-kaymakam-adayi-alacak.html": {
       "title": "İçişleri Bakanlığı 60 Kaymakam Adayı Alacak",
@@ -5700,7 +5973,21 @@
     "text:c94004a92a666a2709ab66d33f880d825e49c102b3084196a8a06038f70500e7": "https://ilan.memurlar.net/ilan/66164/konya-sehir-hizmetleri-194-isci-alacak.html",
     "text:bed7abeb94b6b537d3160345e316877f450640d859a430130953c5d792e0e8f1": "https://ilan.memurlar.net/ilan/54862/aydin-kocarli-belediyesi-7-isci-alacak.html",
     "text:f4618c78eb4a86d7f41012a34236111e4fccfd0bf398fe8bef426db8911887c4": "https://ilan.memurlar.net/ilan/55225/bursa-harmancik-belediyesi-3-isci-alacak.html",
-    "text:c6b714bd41a9d782fa5ebf90bccba202796e3e57f612e066d5dc39f84552135b": "https://ilan.memurlar.net/ilan/63464/istanbul-personel-yonetim-as-79-isci-alacak.html"
+    "text:c6b714bd41a9d782fa5ebf90bccba202796e3e57f612e066d5dc39f84552135b": "https://ilan.memurlar.net/ilan/63464/istanbul-personel-yonetim-as-79-isci-alacak.html",
+    "text:1618c1932f4b9b94da2b1069601bcabee639f4c827422e7eb1953823ae6394a1": "https://ilan.memurlar.net/ilan/86916/izmir-demokrasi-universitesi-2-sozlesmeli-avukat-alacak.html",
+    "text:298d63081d87b0abbfaa9f7fb78d8b1d27215046ac9fe3f47fa1b3cddf8fce5a": "https://ilan.memurlar.net/ilan/86940/sayistay-16-sozlesmeli-personel-alacak.html",
+    "text:2a4842c3c3eb84479d72e59aac84a10560c187fc7c52a55664e476e1bc0f528b": "https://ilan.memurlar.net/ilan/86963/savunma-sanayii-baskanligi-26-sozlesmeli-personel-alacak.html",
+    "text:cd46f89a35aa462ffcb3070e3530f99be0943beed72c415e79580f148fe68e39": "https://ilan.memurlar.net/ilan/86965/hazine-ve-maliye-bakanligi-10-stajyer-hazine-kontroloru-alacak.html",
+    "text:56243a5cb2e81c66a85e39b2823f7c49b3083d4686461cd370d2acdb0465225a": "https://ilan.memurlar.net/ilan/86972/karamanoglu-mehmetbey-universitesi-ogretim-uyesi-alacak.html",
+    "text:d62a027d0194b00190af748bd70eafe798e895d9246f91cc74a38589ceb5918f": "https://ilan.memurlar.net/ilan/86974/akdeniz-universitesi-3-isci-alacak.html",
+    "text:40bf2130b4bc36e76c98dbc11ee6de548505af6fd474db4ae59e9d79144b3490": "https://ilan.memurlar.net/ilan/86979/cankiri-bayramoren-belediyesi-2-isci-alacak.html",
+    "text:051beaa2c0c283d1483c68b7d6ae58fa5e85f10d3c493c7ce76f88026a036cf7": "https://ilan.memurlar.net/ilan/87011/izmir-izenerji-gecici-15-isci-alacak.html",
+    "text:4015a320c8bc1a1896ddb82dff98b7aa6c86e03a8382b5234a1228068c97ee18": "https://ilan.memurlar.net/ilan/87013/kirklareli-cakilli-belediyesi-1-isci-alacak.html",
+    "text:4611ae3d8afdae6adb0627c5cdfeb1bdd9fb75dbd054e2b1545494ac848bd458": "https://ilan.memurlar.net/ilan/87015/canakkale-kucukkuyu-kent-hizmetleri-gecici-3-isci-alacak.html",
+    "text:a7ef39f6395ed160bc4e7d13f7925f6835a2bed83bd6c5bce8f6b19634641419": "https://ilan.memurlar.net/ilan/87016/erzincan-mollakoy-personel-temizlik-1-isci-alacak.html",
+    "text:0c5c89509766037208ca33714f76338d0032bb905c2eeeb77b1d76f84979500c": "https://ilan.memurlar.net/ilan/87017/manisa-sarbel-4-isci-alacak.html",
+    "text:7189c6b1759a294efb45e9dd8266ec61a47f871c56edc8a00ad6d3d4b9047ee9": "https://ilan.memurlar.net/ilan/87018/tekirdag-su-ve-kanalizasyon-idaresi-16-isci-alacak.html",
+    "text:dc8b302d9569a002c567e1e6a0e33aefc2cc7c9ef0031cb63409e2ca43d5938d": "https://ilan.memurlar.net/ilan/87012/kahramanmaras-kazanbel-1-isci-alacak.html"
   },
   "aliases": {
     "https://www.konya.bel.tr/haber/konya-buyuksehirde-zabita-memuru-alimi-icin-basvurular-devam-ediyor": "https://www.konya.bel.tr/haber/konya-buyuksehirde-zabita-memuru-alimi-icin-basvurular-devam-ediyor",
@@ -5822,14 +6109,14 @@
   },
   "delivery_cursor": 1,
   "last_run": {
-    "at": "2026-11-19T22:59:33.304325+03:00",
+    "at": "2026-11-19T23:36:18.919855+03:00",
     "status": "partial_source_error",
     "messages_sent": 0,
     "delivery_deferred": false,
     "sources_ok": 10,
     "sources_total": 14,
-    "details_failed": 3,
+    "details_failed": 10,
     "pending_messages": 0,
-    "pending_details": 123
+    "pending_details": 79
   }
 }
