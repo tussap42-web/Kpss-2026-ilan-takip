@@ -36,7 +36,6 @@ JOB_PHRASES = (
     'hizmetli alimi', 'hizmetli alim', 'kamu personeli alimi',
     'istihdam edilecek', 'kadro ilan',
     'merkezi yerlestirme', 'merkezi atama',
-    'isci alacak', 'personel alacak', 'memur alacak',
 )
 NOT_JOB = ('iletisim', 'gizlilik', 'cerez', 'privacy', 'contact', 'kvkk', 'hakkimizda', 'anasayfa')
 
