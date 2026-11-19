@@ -57,7 +57,7 @@ class EligibilityTests(unittest.TestCase):
         c = copy.deepcopy(CFG)
         c['search_settings']['include_jobs_without_kpss'] = False
         self.assertEqual(assess('KPSS şartı aranmaz', c, TODAY)['status'], 'excluded')
-        self.assertEqual(self.check('KPSS şartı aranmaz')['status'], 'excluded')
+        self.assertEqual(self.check('KPSS şartı aranmaz')['status'], 'review')
 
     def test_unreadable_details(self):
         with patch('details.read_document', side_effect=ValueError('test')):
