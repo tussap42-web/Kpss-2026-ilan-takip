@@ -2315,10 +2315,12 @@
       "title": "YÖK 5 Sözleşmeli Personel Alacak YÖK 5 Sözleşmeli Personel Alacak. Son başvuru tarihi 16 Kasım 2026",
       "url": "https://ilan.memurlar.net/ilan/86849/yok-5-sozlesmeli-personel-alacak.html",
       "source": "Memurlar.net",
-      "document_key": "text:808ae6cd95bb720081435b1be83ea1fb7c7a3cf7658b0796e79df19a5574719f",
+      "document_key": "text:c89004959740d6013380117dc6d9a7caaa51029f79a2e2e85b87f38a0e39aa8a",
       "assessment": {
-        "status": "review",
-        "reasons": [],
+        "status": "excluded",
+        "reasons": [
+          "Son başvuru tarihi geçmiş"
+        ],
         "warnings": [
           "KPSS taban puanı açık biçimde okunamadı",
           "Aday puanı yaklaşık; başvuruda kesin puan kullanılmalı",
@@ -2337,10 +2339,15 @@
           "Lisans"
         ],
         "evidence_complete": true,
+        "general_associate_code": false,
+        "department_mentioned": false,
+        "general_associate_requirement": false,
+        "exam_year_conflict": false,
+        "special_conditions_detected": true,
         "positions": []
       },
-      "checked_on": "2026-11-15",
-      "policy": "1292260b21ee0874"
+      "checked_on": "2026-11-19",
+      "policy": "f561265c34b3f3a3"
     },
     "https://ilan.memurlar.net/ilan/86850/jandarma-ve-sahil-guvenlik-akademisi-baskanligi-30-memur-alacak.html": {
       "title": "Jandarma ve Sahil Güvenlik Akademisi Başkanlığı 30 Memur Alacak Jandarma Genel Komutanlığı, 19 ilde görev yapacak 30 memur alacak. KPSS P3'ten en az 60 puan şartı aranan alımda başvurular 16 Kasım 2026'da sona eriyor.",
@@ -2373,6 +2380,11 @@
           "Lisans"
         ],
         "evidence_complete": false,
+        "general_associate_code": false,
+        "department_mentioned": false,
+        "general_associate_requirement": false,
+        "exam_year_conflict": false,
+        "special_conditions_detected": true,
         "positions": [
           {
             "title": "memur",
@@ -2404,19 +2416,24 @@
               "score_ambiguous": false,
               "kpss_exempt": false,
               "education_levels": [],
-              "evidence_complete": false
+              "evidence_complete": false,
+              "general_associate_code": false,
+              "department_mentioned": false,
+              "general_associate_requirement": false,
+              "exam_year_conflict": false,
+              "special_conditions_detected": false
             }
           }
         ]
       },
-      "checked_on": "2026-11-15",
-      "policy": "1292260b21ee0874"
+      "checked_on": "2026-11-19",
+      "policy": "f561265c34b3f3a3"
     },
     "https://ilan.memurlar.net/ilan/86852/dogu-karadeniz-kalkinma-ajansi-1-uzman-personel-alacak.html": {
       "title": "Doğu Karadeniz Kalkınma Ajansı 1 uzman personel alacak",
       "url": "https://ilan.memurlar.net/ilan/86852/dogu-karadeniz-kalkinma-ajansi-1-uzman-personel-alacak.html",
       "source": "Memurlar.net",
-      "document_key": "text:196730c5cda94ecb09aee482f46b7cc00fd3f61bd23fe84f0b33347a98d310d7",
+      "document_key": "text:fba2230faf4d10cefed96430bba1f6c5d3622ee4d390b500bcf9d86378cd2d4a",
       "assessment": {
         "status": "review",
         "reasons": [],
@@ -2436,16 +2453,21 @@
           "Lisans"
         ],
         "evidence_complete": true,
+        "general_associate_code": false,
+        "department_mentioned": false,
+        "general_associate_requirement": false,
+        "exam_year_conflict": false,
+        "special_conditions_detected": true,
         "positions": []
       },
-      "checked_on": "2026-11-15",
-      "policy": "1292260b21ee0874"
+      "checked_on": "2026-11-19",
+      "policy": "f561265c34b3f3a3"
     },
     "https://ilan.memurlar.net/ilan/86858/turkiye-turizm-tanitim-ve-gelistirme-ajansi-13-personel-alacak.html": {
       "title": "Türkiye Turizm Tanıtım ve Geliştirme Ajansı 13 Personel Alacak Türkiye Turizm Tanıtım ve Geliştirme Ajansı 13 Personel Alacak. Son başvuru tarihi 4 Aralık 2026",
       "url": "https://ilan.memurlar.net/ilan/86858/turkiye-turizm-tanitim-ve-gelistirme-ajansi-13-personel-alacak.html",
       "source": "Memurlar.net",
-      "document_key": "text:f38e6da78d86cd9c8f691baeaff0449e69cee9971e9686f8ed66e44ae1780c3d",
+      "document_key": "text:24be689331bcc5c76411b338b1bba48df8b5bad377a4a24503ab623001376fcd",
       "assessment": {
         "status": "review",
         "reasons": [],
@@ -2465,16 +2487,21 @@
           "Lisans"
         ],
         "evidence_complete": true,
+        "general_associate_code": false,
+        "department_mentioned": false,
+        "general_associate_requirement": false,
+        "exam_year_conflict": false,
+        "special_conditions_detected": true,
         "positions": []
       },
-      "checked_on": "2026-11-15",
-      "policy": "1292260b21ee0874"
+      "checked_on": "2026-11-19",
+      "policy": "f561265c34b3f3a3"
     },
     "https://ilan.memurlar.net/ilan/86859/dokuz-eylul-universitesi-68-hemsire-alacak.html": {
       "title": "Dokuz Eylül Üniversitesi 68 hemşire alacak Dokuz Eylül Üniversitesi 68 sözleşmeli personel alacak. Son başvuru tarihi 19 Kasım 2026",
       "url": "https://ilan.memurlar.net/ilan/86859/dokuz-eylul-universitesi-68-hemsire-alacak.html",
       "source": "Memurlar.net",
-      "document_key": "text:6a683145a74a2ff8beb7b7c55e0a52abf329352944c648825ae83d6b70207e30",
+      "document_key": "text:fdcef3dc3cc8949a0f57b88fdabaee94fb5d6840d0f7c86ccbe63b92e0de586f",
       "assessment": {
         "status": "review",
         "reasons": [],
@@ -2494,16 +2521,21 @@
           "Lisans"
         ],
         "evidence_complete": true,
+        "general_associate_code": false,
+        "department_mentioned": false,
+        "general_associate_requirement": false,
+        "exam_year_conflict": false,
+        "special_conditions_detected": true,
         "positions": []
       },
-      "checked_on": "2026-11-15",
-      "policy": "1292260b21ee0874"
+      "checked_on": "2026-11-19",
+      "policy": "f561265c34b3f3a3"
     },
     "https://ilan.memurlar.net/ilan/86872/zafer-kalkinma-ajansi-2-uzman-personel-alacak.html": {
       "title": "Zafer Kalkınma Ajansı 2 uzman personel alacak Zafer Kalkınma Ajansı 2 uzman personel alacak. Son başvuru tarihi 18 Aralık 2026",
       "url": "https://ilan.memurlar.net/ilan/86872/zafer-kalkinma-ajansi-2-uzman-personel-alacak.html",
       "source": "Memurlar.net",
-      "document_key": "text:463357ee6a2aed01e5e411601c3fe9c6c1e60573c3efb366e067f785c09fc51f",
+      "document_key": "text:f653cbe7843aaa7318d05f9f3a6c236e7f883f2087d5ee12b18d630489b2aac1",
       "assessment": {
         "status": "review",
         "reasons": [],
@@ -2523,16 +2555,21 @@
           "Lisans"
         ],
         "evidence_complete": true,
+        "general_associate_code": false,
+        "department_mentioned": false,
+        "general_associate_requirement": false,
+        "exam_year_conflict": false,
+        "special_conditions_detected": true,
         "positions": []
       },
-      "checked_on": "2026-11-15",
-      "policy": "1292260b21ee0874"
+      "checked_on": "2026-11-19",
+      "policy": "f561265c34b3f3a3"
     },
     "https://ilan.memurlar.net/ilan/86880/adana-ceyhan-sydv-1-isci-alacak.html": {
       "title": "Adana Ceyhan SYDV 1 İşçi Alacak",
       "url": "https://ilan.memurlar.net/ilan/86880/adana-ceyhan-sydv-1-isci-alacak.html",
       "source": "Memurlar.net",
-      "document_key": "text:d9915947a210fa67389e2716c2b4ac16ed681fa8102b4d52e443cffec4838221",
+      "document_key": "text:a6c384db0af3b69024c757a294196189d3ddf689f4533b6c373af1c6892bc4b0",
       "assessment": {
         "status": "excluded",
         "reasons": [
@@ -2554,16 +2591,21 @@
           "Lisans"
         ],
         "evidence_complete": true,
+        "general_associate_code": false,
+        "department_mentioned": false,
+        "general_associate_requirement": false,
+        "exam_year_conflict": false,
+        "special_conditions_detected": false,
         "positions": []
       },
-      "checked_on": "2026-11-15",
-      "policy": "1292260b21ee0874"
+      "checked_on": "2026-11-19",
+      "policy": "f561265c34b3f3a3"
     },
     "https://ilan.memurlar.net/ilan/86889/mersin-buyuksehir-belediyesi-2-isci-alacak.html": {
       "title": "Mersin Büyükşehir Belediyesi 2 İşçi Alacak",
       "url": "https://ilan.memurlar.net/ilan/86889/mersin-buyuksehir-belediyesi-2-isci-alacak.html",
       "source": "Memurlar.net",
-      "document_key": "text:fc866bf1c163237c9f79609c9bf6cc7be35b51ad41edfeefae6dac5e56667c0c",
+      "document_key": "text:b7f1ec7f6b5598c0ee6f8ff2ffea73d159547ad0c4d4e85218a4bd8d7624303f",
       "assessment": {
         "status": "excluded",
         "reasons": [
@@ -2585,16 +2627,21 @@
           "Lisans"
         ],
         "evidence_complete": true,
+        "general_associate_code": false,
+        "department_mentioned": false,
+        "general_associate_requirement": false,
+        "exam_year_conflict": false,
+        "special_conditions_detected": false,
         "positions": []
       },
-      "checked_on": "2026-11-15",
-      "policy": "1292260b21ee0874"
+      "checked_on": "2026-11-19",
+      "policy": "f561265c34b3f3a3"
     },
     "https://ilan.memurlar.net/ilan/86894/turkiye-seker-fabrikalari-a-s-42-sozlesmeli-personel-alacak.html": {
       "title": "Türkiye Şeker Fabrikaları A.Ş 42 sözleşmeli personel alacak.",
       "url": "https://ilan.memurlar.net/ilan/86894/turkiye-seker-fabrikalari-a-s-42-sozlesmeli-personel-alacak.html",
       "source": "Memurlar.net",
-      "document_key": "text:497210ce8caed0632f40d9384c8af251f22a22c62736ee15fdeda3769725a1dc",
+      "document_key": "text:65cd146cef22b62d84b62b2c0051931be3cecb46983138161a12542a3c57c90d",
       "assessment": {
         "status": "review",
         "reasons": [],
@@ -2615,16 +2662,21 @@
           "Lisans"
         ],
         "evidence_complete": true,
+        "general_associate_code": false,
+        "department_mentioned": false,
+        "general_associate_requirement": false,
+        "exam_year_conflict": false,
+        "special_conditions_detected": true,
         "positions": []
       },
-      "checked_on": "2026-11-15",
-      "policy": "1292260b21ee0874"
+      "checked_on": "2026-11-19",
+      "policy": "f561265c34b3f3a3"
     },
     "https://ilan.memurlar.net/ilan/86898/ula-belediyesi-4-zabita-memuru-alacak.html": {
       "title": "Ula Belediyesi 4 zabıta memuru alacak",
       "url": "https://ilan.memurlar.net/ilan/86898/ula-belediyesi-4-zabita-memuru-alacak.html",
       "source": "Memurlar.net",
-      "document_key": "text:5590e320c1c024d5a254dbf965ac8a8c3ab390ce6f03d266e07108500cb526c7",
+      "document_key": "text:852a6e3f0593c01337c5ce6fd46eefbf9be603dedfb6d74ac674980829ac4d8a",
       "assessment": {
         "status": "review",
         "reasons": [],
@@ -2645,16 +2697,21 @@
           "Lisans"
         ],
         "evidence_complete": true,
+        "general_associate_code": false,
+        "department_mentioned": false,
+        "general_associate_requirement": false,
+        "exam_year_conflict": false,
+        "special_conditions_detected": true,
         "positions": []
       },
-      "checked_on": "2026-11-15",
-      "policy": "1292260b21ee0874"
+      "checked_on": "2026-11-19",
+      "policy": "f561265c34b3f3a3"
     },
     "https://ilan.memurlar.net/ilan/86899/tokat-tanoba-belediyesi-1-memur-alacak.html": {
       "title": "Tokat Tanoba Belediyesi 1 memur alacak",
       "url": "https://ilan.memurlar.net/ilan/86899/tokat-tanoba-belediyesi-1-memur-alacak.html",
       "source": "Memurlar.net",
-      "document_key": "text:b8382d7974547fdafeada9edaac4a80399d044c29d7f7ad5d1cbd55e51aa73f8",
+      "document_key": "text:53ec2b3df0a0fb99e12928ebfc64c307140ddcae28162bb849e0819a158c850a",
       "assessment": {
         "status": "review",
         "reasons": [],
@@ -2674,10 +2731,15 @@
           "Lisans"
         ],
         "evidence_complete": true,
+        "general_associate_code": false,
+        "department_mentioned": false,
+        "general_associate_requirement": false,
+        "exam_year_conflict": false,
+        "special_conditions_detected": true,
         "positions": []
       },
-      "checked_on": "2026-11-15",
-      "policy": "1292260b21ee0874"
+      "checked_on": "2026-11-19",
+      "policy": "f561265c34b3f3a3"
     },
     "https://ilan.memurlar.net/ilan/86900/antalya-gundogmus-belediyesi-4-memur-alacak.html": {
       "title": "Antalya Gündoğmuş Belediyesi 4 memur alacak",
@@ -5295,6 +5357,41 @@
       },
       "checked_on": "2026-11-19",
       "policy": "f561265c34b3f3a3"
+    },
+    "https://ilan.memurlar.net/ilan/86862/agri-eleskirt-belediyesi-1-memur-alacak.html": {
+      "title": "Ağrı Eleşkirt Belediyesi 1 Memur Alacak",
+      "url": "https://ilan.memurlar.net/ilan/86862/agri-eleskirt-belediyesi-1-memur-alacak.html",
+      "source": "Memurlar.net",
+      "document_key": "text:5d801516f93cc3438407fcd0439d7dc26c6e2d31af3d9374d3a45b4bb2dc50f0",
+      "assessment": {
+        "status": "review",
+        "reasons": [],
+        "warnings": [
+          "KPSS taban puanı açık biçimde okunamadı",
+          "Aday puanı yaklaşık; başvuruda kesin puan kullanılmalı",
+          "Mezuniyet/bölüm uygunluğu doğrulanamadı",
+          "Yaş, belge, deneyim ve diğer özel şartlar ayrıca kontrol edilmeli",
+          "Belge/kadro kapsamı belirsiz; kesin eleme yapılmadı"
+        ],
+        "deadline": null,
+        "minimum_score": null,
+        "score_conditions": [],
+        "score_types": [],
+        "score_ambiguous": true,
+        "kpss_exempt": false,
+        "education_levels": [
+          "Lisans"
+        ],
+        "evidence_complete": true,
+        "general_associate_code": false,
+        "department_mentioned": false,
+        "general_associate_requirement": false,
+        "exam_year_conflict": false,
+        "special_conditions_detected": true,
+        "positions": []
+      },
+      "checked_on": "2026-11-19",
+      "policy": "f561265c34b3f3a3"
     }
   },
   "documents": {
@@ -5555,7 +5652,18 @@
     "text:52a831733e29cda2e4745eb67f341e401655247c013fa8363c29d710d80d09be": "https://ilan.memurlar.net/ilan/63464/istanbul-personel-yonetim-as-79-isci-alacak.html",
     "text:cf3f45c2194bba636f8b7ad3a87473aa98f39cab1f4d94101abdc83ed51d06e1": "https://ilan.memurlar.net/ilan/65311/istanbul-bilisim-ve-akilli-kent-teknolojileri-2-isci-alacak.html",
     "text:902d5247eb088dbe2f1ec2491fbb6a03daceb60d6e6f98c30f633cd5d36c3503": "https://ilan.memurlar.net/ilan/86799/izmir-buyuksehir-belediyesi-90-zabita-memuru-alacak.html",
-    "text:d7edf151ba86d59d737efb9793a8ec67d3c51982151400c93d5ba9196ea2bd87": "https://ilan.memurlar.net/ilan/87026/sgk-50-mufettis-yardimcisi-alacak.html"
+    "text:d7edf151ba86d59d737efb9793a8ec67d3c51982151400c93d5ba9196ea2bd87": "https://ilan.memurlar.net/ilan/87026/sgk-50-mufettis-yardimcisi-alacak.html",
+    "text:c89004959740d6013380117dc6d9a7caaa51029f79a2e2e85b87f38a0e39aa8a": "https://ilan.memurlar.net/ilan/86849/yok-5-sozlesmeli-personel-alacak.html",
+    "text:fba2230faf4d10cefed96430bba1f6c5d3622ee4d390b500bcf9d86378cd2d4a": "https://ilan.memurlar.net/ilan/86852/dogu-karadeniz-kalkinma-ajansi-1-uzman-personel-alacak.html",
+    "text:24be689331bcc5c76411b338b1bba48df8b5bad377a4a24503ab623001376fcd": "https://ilan.memurlar.net/ilan/86858/turkiye-turizm-tanitim-ve-gelistirme-ajansi-13-personel-alacak.html",
+    "text:fdcef3dc3cc8949a0f57b88fdabaee94fb5d6840d0f7c86ccbe63b92e0de586f": "https://ilan.memurlar.net/ilan/86859/dokuz-eylul-universitesi-68-hemsire-alacak.html",
+    "text:f653cbe7843aaa7318d05f9f3a6c236e7f883f2087d5ee12b18d630489b2aac1": "https://ilan.memurlar.net/ilan/86872/zafer-kalkinma-ajansi-2-uzman-personel-alacak.html",
+    "text:a6c384db0af3b69024c757a294196189d3ddf689f4533b6c373af1c6892bc4b0": "https://ilan.memurlar.net/ilan/86880/adana-ceyhan-sydv-1-isci-alacak.html",
+    "text:b7f1ec7f6b5598c0ee6f8ff2ffea73d159547ad0c4d4e85218a4bd8d7624303f": "https://ilan.memurlar.net/ilan/86889/mersin-buyuksehir-belediyesi-2-isci-alacak.html",
+    "text:65cd146cef22b62d84b62b2c0051931be3cecb46983138161a12542a3c57c90d": "https://ilan.memurlar.net/ilan/86894/turkiye-seker-fabrikalari-a-s-42-sozlesmeli-personel-alacak.html",
+    "text:852a6e3f0593c01337c5ce6fd46eefbf9be603dedfb6d74ac674980829ac4d8a": "https://ilan.memurlar.net/ilan/86898/ula-belediyesi-4-zabita-memuru-alacak.html",
+    "text:53ec2b3df0a0fb99e12928ebfc64c307140ddcae28162bb849e0819a158c850a": "https://ilan.memurlar.net/ilan/86899/tokat-tanoba-belediyesi-1-memur-alacak.html",
+    "text:5d801516f93cc3438407fcd0439d7dc26c6e2d31af3d9374d3a45b4bb2dc50f0": "https://ilan.memurlar.net/ilan/86862/agri-eleskirt-belediyesi-1-memur-alacak.html"
   },
   "aliases": {
     "https://www.konya.bel.tr/haber/konya-buyuksehirde-zabita-memuru-alimi-icin-basvurular-devam-ediyor": "https://www.konya.bel.tr/haber/konya-buyuksehirde-zabita-memuru-alimi-icin-basvurular-devam-ediyor",
@@ -5672,18 +5780,19 @@
     "https://ilan.memurlar.net/ilan/87022/bolu-mudurnu-belediyesi-1-sozlesmeli-personel-alacak.html": "https://ilan.memurlar.net/ilan/87022/bolu-mudurnu-belediyesi-1-sozlesmeli-personel-alacak.html",
     "https://ilan.memurlar.net/ilan/87012/kahramanmaras-kazanbel-1-isci-alacak.html": "https://ilan.memurlar.net/ilan/87012/kahramanmaras-kazanbel-1-isci-alacak.html",
     "https://ilan.memurlar.net/ilan/87027/icisleri-bakanligi-60-kaymakam-adayi-alacak.html": "https://ilan.memurlar.net/ilan/87027/icisleri-bakanligi-60-kaymakam-adayi-alacak.html",
-    "https://ilan.memurlar.net/ilan/87026/sgk-50-mufettis-yardimcisi-alacak.html": "https://ilan.memurlar.net/ilan/87026/sgk-50-mufettis-yardimcisi-alacak.html"
+    "https://ilan.memurlar.net/ilan/87026/sgk-50-mufettis-yardimcisi-alacak.html": "https://ilan.memurlar.net/ilan/87026/sgk-50-mufettis-yardimcisi-alacak.html",
+    "https://ilan.memurlar.net/ilan/86862/agri-eleskirt-belediyesi-1-memur-alacak.html": "https://ilan.memurlar.net/ilan/86862/agri-eleskirt-belediyesi-1-memur-alacak.html"
   },
   "delivery_cursor": 1,
   "last_run": {
-    "at": "2026-11-19T01:43:10.371547+03:00",
+    "at": "2026-11-19T18:49:26.237787+03:00",
     "status": "partial_source_error",
     "messages_sent": 0,
-    "delivery_deferred": true,
+    "delivery_deferred": false,
     "sources_ok": 10,
     "sources_total": 13,
     "details_failed": 0,
     "pending_messages": 0,
-    "pending_details": 122
+    "pending_details": 111
   }
 }
