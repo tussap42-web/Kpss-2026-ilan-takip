@@ -15,6 +15,12 @@
       ]
     },
     {
+      "name": "Kamu Ilan (SBB)",
+      "url": "https://kamuilan.sbb.gov.tr/",
+      "category": "kamu_personel",
+      "max_pages": 4
+    },
+    {
       "name": "Kariyer Kapisi",
       "url": "https://kariyerkapisi.gov.tr/",
       "category": "kamu_personel",

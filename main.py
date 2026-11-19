@@ -13,7 +13,7 @@ import sys
 from datetime import datetime, date
 from concurrent.futures import ThreadPoolExecutor
 from eligibility import assess_notice
-from notification_policy import notification_matches
+from notification_policy import notification_matches, no_kpss_worker_matches
 from discovery import scan_source as discover_source, canonical
 from network import fetch_bytes, SourceAccessError, SourceContentError
 from details import enrich
@@ -198,9 +198,19 @@ def requirement_lines(assessment: dict, education: str = '') -> list[str]:
 def message_for(item: dict, config: dict) -> str:
     """Format only a validated P93 / <=70 notice for Telegram delivery."""
     selected = notification_matches(item, config)
-    if selected is None:
+    worker = no_kpss_worker_matches(item, config)
+    if selected is None and not worker:
         raise ValueError('Uygunluk doğrulanmadı; bildirim gönderilmedi')
     assessment = item['assessment']
+    if worker:
+        lines = ['📢 KPSS ŞARTI ARANMAYAN KAMU İŞÇİ İLANI — İNCELE',
+                 'Kaynak: ' + item['source'], item['title'],
+                 'KPSS: İlan metninde aranmadığı açıkça belirtiliyor',
+                 'Öğrenim: En az lise / lise ve üzeri ifadesi doğrulandı']
+        if assessment.get('deadline'):
+            lines.append('Son başvuru: ' + assessment['deadline'])
+        lines.append('Ön lisans mezunları diğer özel koşulları resmî ilandan kontrol etmelidir.')
+        return '\n'.join(lines)[:3500] + '\n' + item['url'][:500]
     limit = float(config['search_settings'].get('notification_max_required_p93_score', 70))
     heading = '⏰ KPSS P93 BAŞVURU HATIRLATMASI' if item.get('reminder') else '📢 KPSS P93 UYGUN PUANLI İLAN'
     lines = [heading, 'Kaynak: ' + item['source'], item['title']]
@@ -371,7 +381,7 @@ def scan(config: dict, sources: dict, state_path: Path, dry_run: bool) -> int:
         assessment = item['assessment']
         # Only explicit P93 minimums <= 70 are eligible for Telegram.
         # Missing or ambiguous thresholds must never reach the queue.
-        if notification_matches(item, config) is None:
+        if notification_matches(item, config) is None and not no_kpss_worker_matches(item, config):
             continue
         deadline = assessment.get('deadline')
         if deadline and deadline < now.date().isoformat() and config['search_settings'].get('only_active_applications', True):

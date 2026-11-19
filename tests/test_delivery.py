@@ -30,10 +30,10 @@ class DeliveryTests(unittest.TestCase):
                 text='İlan başvuru koşulları ektedir. KPSS puanı doğrulanamadı.')
             self.assertEqual((result, count), (0, 0))
 
-    def test_above_70_never_sent_even_if_candidate_rounded_to_71(self):
+    def test_above_candidate_score_never_sent_even_if_rounded_to_71(self):
         with tempfile.TemporaryDirectory() as d:
             result, count = self.run_scan(
-                Path(d) / 'state.json', text='P93 en az 70,60 puan. 3001')
+                Path(d) / 'state.json', text='P93 en az 70,61 puan. 3001')
             self.assertEqual((result, count), (0, 0))
 
     def test_mixed_70_and_75_sends_only_70_row(self):

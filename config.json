@@ -29,10 +29,10 @@
       "buro_personeli",
       "kamu_iscisi"
     ],
-    "include_jobs_without_kpss": false,
+    "include_jobs_without_kpss": true,
     "only_active_applications": true,
     "check_special_conditions": true,
-    "notification_max_required_p93_score": 70
+    "notification_max_required_p93_score": 70.6
   },
   "schedule": {
     "timezone": "Europe/Istanbul",
@@ -55,6 +55,6 @@
     "max_notifications_per_run": 20
   },
   "processing": {
-    "max_details_per_run": 12
+    "max_details_per_run": 24
   }
 }

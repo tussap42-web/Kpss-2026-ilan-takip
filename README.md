@@ -2,12 +2,12 @@
 
 Emre: ön lisans / Grafik Tasarım / P93 / yaklaşık 70,60. Konya öncelikli; diğer şehirler dışlanmaz. Mevcut Telegram secrets ve bildirim geçmişi kullanılır.
 
-## Telegram için sıkı 70 puan filtresi
+## Telegram için P93 ve açık KPSS'siz işçi ilanı filtreleri
 
-Telegram'a yalnızca açıkça **KPSS P93** puan türünde **en fazla 70,00**
+Telegram'a yalnızca açıkça **KPSS P93** puan türünde **en fazla 70,60**
 asgari başvuru puanı isteyen ve ön lisans / 3001 veya Grafik Tasarım
-mezuniyetiyle ilişkisi tespit edilen kadrolar gönderilir. Puanı 70'in
-üstündeki, KPSS şartı belirtilmeyen, puanı ve türü belirsiz olan, PDF'si
+mezuniyetiyle ilişkisi tespit edilen kadrolar gönderilir. Puanı 70,60'ın
+üstündeki, KPSS puan türü veya eşiği belirsiz olan, PDF'si
 okunamayan veya eğitim koşulları eşleştirilemeyen ilanlar **Telegram'a
 gönderilmez**. Karma duyurularda yalnızca eşleşen kadrolar mesajda gösterilir.
 
@@ -17,9 +17,11 @@ resmî ilandan kontrol edilmelidir. Depodaki puan hâlen yaklaşık **70,60**;
 kullanıcının yaklaşık **71** bildirimi otomatik kesin puana dönüştürülmez.
 Bildirim geçmişi (state/seen.json) değiştirilmez veya sıfırlanmaz.
 
+Ayrıca KPSS şartı açıkça aranmadığı belirtilen, işçi alımı başlığı taşıyan ve “en az lise mezunu” veya “lise ve üzeri” koşulunu açıkça içeren duyurular yalnızca **inceleme bildirimi** olarak gönderilir. P94 isteyen ilanlar bu kapsama girmez. “Lise mezunu” ifadesi tek başına yeterli değildir. Diğer özel şartlar resmî ilan üzerinden kontrol edilmelidir.
+
 ## İlan keşfi ve gerçek kapsam
 
-13 kaynak tanımı vardır. Memurlar.net'in `https://ilan.memurlar.net/` ilan sayfası yardımcı kaynak olarak eklenmiştir; resmî kurum kaynağı değildir. Bu sitedeki `/ilan/<sayısal kimlik>/<başlık>.html` bağlantılarında “alacak” başlıkları da tanınır; haber ve kategori bağlantıları bu ek kuralla ilan sayılmaz. Başvuru koşulları resmî kurum ilanından kontrol edilmelidir. Erişim ve robots.txt kuralları diğer kaynaklarla aynıdır. ÖSYM duyuruları ve KPSS alt sayfası, Yerel Yönetimler duyuruları ve Konya Büyükşehir İnsan Kaynakları duyuruları başlangıç noktalarına eklenmiştir. Diğer kurumlarda ana sayfada gerçekten bulunan ilan/duyuru menüleri, `rel=next` veya açık “Sonraki” bağlantıları ve ilan edilmiş RSS/Atom akışları izlenir. Her kaynak için **en çok 4 liste sayfası** okunur; API adresi/sayfa numarası tahmin edilmez. Araştırmada doğrulanmış açık bir ilan API sözleşmesi bulunmadığı için API entegrasyonu iddiası yoktur.
+14 kaynak tanımı vardır. SBB Kamu İlan portalı `https://kamuilan.sbb.gov.tr/` da kaynaklara eklendi; gerçek tarama erişimi ayrıca doğrulanmalıdır. Memurlar.net'in `https://ilan.memurlar.net/` ilan sayfası yardımcı kaynak olarak eklenmiştir; resmî kurum kaynağı değildir. Bu sitedeki `/ilan/<sayısal kimlik>/<başlık>.html` bağlantılarında “alacak” başlıkları da tanınır; haber ve kategori bağlantıları bu ek kuralla ilan sayılmaz. Başvuru koşulları resmî kurum ilanından kontrol edilmelidir. Erişim ve robots.txt kuralları diğer kaynaklarla aynıdır. ÖSYM duyuruları ve KPSS alt sayfası, Yerel Yönetimler duyuruları ve Konya Büyükşehir İnsan Kaynakları duyuruları başlangıç noktalarına eklenmiştir. Diğer kurumlarda ana sayfada gerçekten bulunan ilan/duyuru menüleri, `rel=next` veya açık “Sonraki” bağlantıları ve ilan edilmiş RSS/Atom akışları izlenir. Her kaynak için **en çok 4 liste sayfası** okunur; API adresi/sayfa numarası tahmin edilmez. Araştırmada doğrulanmış açık bir ilan API sözleşmesi bulunmadığı için API entegrasyonu iddiası yoktur.
 
 - robots.txt yasakları, crawl-delay ve request-rate dikkate alınır; aynı alan adına en az 1 saniye arayla istek yapılır. Erişim hatası/engel aşılmaz. Robots politikası okunamıyorsa kaynak ihtiyatla atlanır; 404/410 robots yok sayılır. Bu tercih bazı kaynaklarda kapsamı azaltabilir.
 - HTML/XML liste sayfaları ve aynı site/alt alanındaki metin PDF'leri desteklenir. JavaScript, giriş, CAPTCHA, OCR gerektiren portallar kapsam dışındadır.
@@ -71,6 +73,6 @@ python -m unittest discover -s tests -v
 python main.py --mode preview
 ```
 
-PR CI, gerçek kaynaklarda **Telegram secrets olmadan** preview çalıştırır ve `preview-log` çıktısını saklar. Preview mesaj göndermez ve state yazmaz. Gerçek gönderim modu `scan`dır. Her taramada en çok 12 ayrıntı incelenir. `config.json` aday profili, bildirim bütçesi ve hatırlatma günlerini yönetir; çalışma saatini değiştirirken workflow cron'u da düzenlenmelidir. `positions` kapsamlı kadro filtresi, `qualification_codes` ise doğrulanmış satır eşleşmesi olmadan kesin uygunluk filtresi değildir. `prevent_duplicates` güvenilir teslimat için daima uygulanır.
+PR CI, gerçek kaynaklarda **Telegram secrets olmadan** preview çalıştırır ve `preview-log` çıktısını saklar. Preview mesaj göndermez ve state yazmaz. Gerçek gönderim modu `scan`dır. Her taramada en çok 24 ayrıntı incelenir. `config.json` aday profili, bildirim bütçesi ve hatırlatma günlerini yönetir; çalışma saatini değiştirirken workflow cron'u da düzenlenmelidir. `positions` kapsamlı kadro filtresi, `qualification_codes` ise doğrulanmış satır eşleşmesi olmadan kesin uygunluk filtresi değildir. `prevent_duplicates` güvenilir teslimat için daima uygulanır.
 
 Kaynak belgeleri: [ÖSYM duyuruları](https://www.osym.gov.tr/Duyurular/Index), [Yerel Yönetimler](https://yerelyonetimler.csb.gov.tr/duyurular), [Konya İK](https://www.konya.bel.tr/birim/insan-kaynaklari-ve-egitim-dairesi-baskanligi/duyurular), [PDF metin çıkarma sınırları](https://pypdf.readthedocs.io/en/stable/user/extract-text.html), [GitHub zamanlaması](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows#schedule).
