@@ -5,6 +5,7 @@ limit and a recognizable general/graduate associate-degree requirement qualify.
 This is a notification filter, not a guarantee of employment eligibility.
 """
 from __future__ import annotations
+import re
 
 
 def _row_matches(assessment: dict, config: dict) -> bool:
@@ -53,3 +54,24 @@ def notification_tier(item: dict, config: dict) -> str:
 
 def matched_positions(item: dict, config: dict) -> list[dict]:
     return notification_matches(item, config) or []
+
+
+def no_kpss_worker_matches(item: dict, config: dict) -> bool:
+    """An explicitly KPSS-exempt public worker notice for human review only.
+
+    This never confirms that the candidate meets other job-specific requirements.
+    """
+    if not config["search_settings"].get("include_jobs_without_kpss", False):
+        return False
+    assessment = item.get("assessment") or {}
+    if item.get("detail_warning") or not assessment.get("evidence_complete", False):
+        return False
+    if assessment.get("status") == "excluded" or assessment.get("score_ambiguous"):
+        return False
+    if assessment.get("exam_year_conflict") or assessment.get("positions"):
+        return False
+    if not assessment.get("kpss_exempt") or assessment.get("score_conditions") or assessment.get("score_types"):
+        return False
+    if not assessment.get("minimum_high_school_open", False):
+        return False
+    return bool(re.search(r"işçi|isci|isçi", (item.get("title", "")).casefold()))
