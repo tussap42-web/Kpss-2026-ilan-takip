@@ -101,6 +101,10 @@ def assess(text, config, today=None):
         r'(?:herhangi bir|tum|butun)\s+on\s*lisans|'
         r'on\s*lisans\s+mezunu\s+olmak', text)) and not bool(re.search(
         r'\b[345]\d{3}\b', text))
+    # Explicit inclusive secondary-school requirements can include associate graduates.
+    result['minimum_high_school_open'] = bool(re.search(
+        r'\ben\s+az\s+(?:lise|orta\s*ogretim|ortaogretim)\s+mezunu\b|'
+        r'\b(?:lise|orta\s*ogretim|ortaogretim)\s+ve\s+(?:uzeri|ustu)\b', text))
     result['exam_year_conflict'] = bool(years and str(candidate['kpss_year']) not in years)
     result['special_conditions_detected'] = bool(re.search(
         r'\b(?:yas|yasinda|dogum|ehliyet|surucu belgesi|sertifika|belgelendirme|'
