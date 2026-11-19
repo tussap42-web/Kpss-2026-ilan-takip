@@ -28,7 +28,8 @@ def _row_matches(assessment: dict, config: dict) -> bool:
         return False
     return bool(assessment.get("general_associate_code")
                 or assessment.get("department_mentioned")
-                or assessment.get("general_associate_requirement"))
+                or assessment.get("general_associate_requirement")
+                or assessment.get("minimum_high_school_open"))
 
 
 def notification_matches(item: dict, config: dict) -> list[dict] | None:
@@ -72,6 +73,9 @@ def no_kpss_worker_matches(item: dict, config: dict) -> bool:
         return False
     if not assessment.get("kpss_exempt") or assessment.get("score_conditions") or assessment.get("score_types"):
         return False
-    if not assessment.get("minimum_high_school_open", False):
+    if not any(assessment.get(key) for key in (
+        "minimum_high_school_open", "general_associate_requirement",
+        "general_associate_code", "department_mentioned",
+    )):
         return False
     return bool(re.search(r"işçi|isci|isçi", (item.get("title", "")).casefold()))

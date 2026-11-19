@@ -28,3 +28,21 @@ def deadlines(text):
         except ValueError:
             pass
     return found
+
+
+def application_starts(text):
+    starts = set()
+    pattern = r'basvuru(?:lar|\s+baslangic(?:\s+tarihi)?)\s*[:\-]?\s*(\d{1,2})[./-](\d{1,2})[./-](20\d{2})'
+    # A plural label must introduce a range; other dates can describe a notice.
+    pattern = pattern.replace('lar|', r'lar(?=\s*\d{1,2}[./-]\d{1,2}[./-]20\d{2}\s*[-–])|')
+    for day, month, year in re.findall(pattern, text):
+        try:
+            starts.add(date(int(year), int(month), int(day)))
+        except ValueError:
+            pass
+    for match in re.finditer(rf'basvurular\s+(\d{{1,2}})\s*[-–]\s*\d{{1,2}}\s+({MONTH})\s+(20\d{{2}})\s+tarihleri\s+arasinda', text):
+        try:
+            starts.add(date(int(match[3]), MONTHS[match[2]], int(match[1])))
+        except ValueError:
+            pass
+    return starts

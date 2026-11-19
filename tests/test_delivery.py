@@ -8,6 +8,7 @@ from unittest.mock import patch
 import main
 
 CFG = json.loads((main.BASE/'config.json').read_text())
+CFG['search_settings']['require_verified_application_window'] = False
 SOURCES = {'sources':[{'name':'Test','url':'https://example.org'}]}
 ITEM = {'title':'Konya sözleşmeli personel alımı','source':'Test','url':'https://example.org/job'}
 

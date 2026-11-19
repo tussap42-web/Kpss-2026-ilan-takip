@@ -19,6 +19,7 @@ from eligibility import assess_notice, norm, table_positions
 from details import enrich, DocumentText
 
 CFG = json.loads((main.BASE/'config.json').read_text())
+CFG['search_settings']['require_verified_application_window'] = False
 TODAY = date(2026,11,8)
 ITEM = {'title':'Konya personel alımı ilanı','source':'Test','url':'https://example.org/job'}
 SOURCES = {'sources':[{'name':'Test','url':'https://example.org'}]}
