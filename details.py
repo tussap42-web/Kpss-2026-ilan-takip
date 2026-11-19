@@ -2,6 +2,7 @@
 import hashlib
 import io
 import re
+import subprocess
 from html.parser import HTMLParser
 from urllib.parse import urljoin, urlsplit
 from network import fetch_bytes
@@ -10,9 +11,11 @@ MAX_BYTES = 4_000_000
 
 
 class DocumentText(str):
-    def __new__(cls, value, incomplete=False, pdf_digest=None):
+    def __new__(cls, value, incomplete=False, pdf_digest=None, official_url=None, review_images=()):
         obj = str.__new__(cls, value)
         obj.incomplete, obj.pdf_digest = incomplete, pdf_digest
+        obj.official_url = official_url
+        obj.review_images = review_images
         return obj
 
 
@@ -24,6 +27,9 @@ class TextParser(HTMLParser):
         self.incomplete = False
         self.article_parts = []
         self.in_article = 0
+        self.anchor = None
+        self.official_links = []
+        self.document_images = []
 
     def append(self, text):
         self.parts.append(text)
@@ -44,7 +50,14 @@ class TextParser(HTMLParser):
             self.append('\t')
             if attrs.get('rowspan', '1') != '1' or attrs.get('colspan', '1') != '1':
                 self.incomplete = True
+        if tag == 'img':
+            image = attrs.get('data-src') or attrs.get('src', '')
+            if re.search(r'/common/job/advert/documents/\d+/[^/]+\.(?:jpe?g|png)$',
+                         urlsplit(image).path, flags=re.I):
+                self.document_images.append(image)
         href = attrs.get('href', '')
+        if tag == 'a':
+            self.anchor = (href, [])
         if tag == 'a' and urlsplit(href).path.lower().endswith('.pdf'):
             self.pdfs.append(href)
 
@@ -53,6 +66,12 @@ class TextParser(HTMLParser):
             self.skip -= 1
         if self.skip:
             return
+        if tag == 'a' and self.anchor:
+            href, parts = self.anchor
+            label = ' '.join(' '.join(parts).lower().split())
+            if re.search(r'resm[îi] ilan|ilan[ıi]n orijinali|resm[îi] duyuru', label):
+                self.official_links.append(href)
+            self.anchor = None
         if tag in ('p', 'div', 'tr', 'li'):
             self.append('\n')
         if tag in ('main', 'article') and self.in_article:
@@ -61,6 +80,8 @@ class TextParser(HTMLParser):
     def handle_data(self, data):
         if not self.skip:
             self.append(data)
+            if self.anchor:
+                self.anchor[1].append(data)
 
 
 def read_document(url):
@@ -87,21 +108,51 @@ def read_document(url):
         else:
             blocked += 1
     pdfs = list(dict.fromkeys(pdfs))
+    official = set()
+    for href in parser.official_links:
+        address = urljoin(final_url, href)
+        target = urlsplit(address)
+        if target.scheme == 'https' and not target.username and (target.hostname or '').endswith(('.gov.tr', '.bel.tr', '.edu.tr')) and target.path not in ('', '/'):
+            official.add(address)
+    official_url = next(iter(official)) if len(official) == 1 else None
     # Prefer semantic article content; do not interpret navigation/sidebar job lists as this notice.
     text = ''.join(parser.article_parts or parser.parts)
-    return DocumentText(text[:180_000], parser.incomplete or len(text) > 180_000 or len(pdfs) > 2 or blocked > 0), pdfs[:2]
+    images = []
+    if host == 'ilan.memurlar.net' and re.search(r'kpss.{0,30}(?:puan|taban)', text, re.I):
+        for href in dict.fromkeys(parser.document_images):
+            address = urljoin(final_url, href)
+            target = urlsplit(address)
+            if target.scheme == 'https' and target.hostname == host and not target.username:
+                images.append(address)
+    return DocumentText(text[:180_000],
+                        parser.incomplete or len(text) > 180_000 or len(pdfs) > 2 or blocked > 0,
+                        official_url=official_url, review_images=tuple(images[:2])), pdfs[:2]
+
 
 
 def enrich(item):
     result = {key: item[key] for key in ('title', 'url', 'source') if key in item}
     warnings, digests, texts = [], [], []
+    ocr_evidence = []
     try:
         text, pdfs = read_document(item['url'])
         texts.append(text)
+        if getattr(text, "official_url", None):
+            result["official_url"] = text.official_url
         if getattr(text, 'incomplete', False):
             warnings.append('Belge/eklerin tamamı güvenle okunamadı')
         if getattr(text, 'pdf_digest', None):
             digests.append(text.pdf_digest)
+        for image in getattr(text, 'review_images', ()):
+            warnings.append('İlanda görsel tablo var; OCR metni insan kontrolü gerektiriyor')
+            try:
+                body, headers, _ = fetch_bytes(image, 1_500_000)
+                if headers.get('Content-Type', '').lower().split(';')[0] in ('image/jpeg', 'image/png'):
+                    recognized = ocr_image(body)
+                    if recognized:
+                        ocr_evidence.append(recognized)
+            except (OSError, ValueError):
+                warnings.append('İlan görseli okunamadı')
         for pdf in pdfs:
             try:
                 extra, _ = read_document(pdf)
@@ -125,9 +176,32 @@ def enrich(item):
     except Exception as exc:
         result['text'] = ''
         warnings.append(f'İlan ayrıntıları okunamadı ({type(exc).__name__})')
+    if ocr_evidence:
+        result['ocr_review_text'] = '\n'.join(ocr_evidence)[:2000]
     if warnings:
         result['detail_warning'] = '; '.join(dict.fromkeys(warnings))
     return result
+
+
+def ocr_pdf_page(body, number):
+    """OCR text is review evidence. Keep the document marked incomplete."""
+    try:
+        page = subprocess.run(
+            ['pdftoppm', '-f', str(number), '-l', str(number), '-scale-to', '1800', '-singlefile', '-png', '-'],
+            input=body, capture_output=True, timeout=3, check=True)
+        return ocr_image(page.stdout)
+    except (OSError, subprocess.SubprocessError):
+        return ''
+
+
+def ocr_image(body):
+    try:
+        recognition = subprocess.run(
+            ['tesseract', 'stdin', 'stdout', '-l', 'tur+eng', '--psm', '6'],
+            input=body, capture_output=True, timeout=4, check=True)
+        return recognition.stdout.decode('utf-8', errors='replace')[:40_000]
+    except (OSError, subprocess.SubprocessError):
+        return ''
 
 
 def _pdf_worker(body, connection):
@@ -142,12 +216,17 @@ def _pdf_worker(body, connection):
         if len(reader.pages) > 40:
             raise ValueError('PDF sayfa sınırı aşıldı')
         parts, incomplete = [], False
-        for page in reader.pages:
+        ocr_attempts = 0
+        for number, page in enumerate(reader.pages, 1):
             stream = page.get_contents()
             if stream and len(stream.get_data()) > 8_000_000:
                 raise ValueError('PDF içerik sınırı aşıldı')
             text = page.extract_text(extraction_mode='layout') or ''
-            incomplete |= len(text.strip()) < 20
+            if len(text.strip()) < 40:
+                incomplete = True
+                if ocr_attempts < 2:
+                    ocr_attempts += 1
+                    text = ocr_pdf_page(body, number) or text
             parts.append(text)
         text = '\n'.join(parts)
         if len(text.strip()) < 40:

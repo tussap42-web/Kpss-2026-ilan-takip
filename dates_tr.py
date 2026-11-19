@@ -18,13 +18,31 @@ def deadlines(text):
         add(*m.groups())
     for m in re.finditer(LABEL + rf'(\d{{1,2}})\s+({MONTH})\s+(20\d{{2}})', text):
         add(m[1], MONTHS[m[2]], m[3])
-    for m in re.finditer(rf'basvurular\s+(\d{{1,2}})\s*[-–]\s*(\d{{1,2}})\s+({MONTH})\s+(20\d{{2}})\s+tarihleri\s+arasinda', text):
+    for m in re.finditer(rf'basvurular[,]?\s+(\d{{1,2}})\s*[-–]\s*(\d{{1,2}})\s+({MONTH})\s+(20\d{{2}})\s+tarihleri\s+arasinda', text):
         if int(m[1]) <= int(m[2]):
             add(m[2], MONTHS[m[3]], m[4])
-    for m in re.finditer(r'basvurular\s+(\d{1,2})[./](\d{1,2})[./](20\d{2})\s*[-–]\s*(\d{1,2})[./](\d{1,2})[./](20\d{2})\s+tarihleri\s+arasinda', text):
+    for m in re.finditer(r'basvurular[,]?\s+(\d{1,2})[./](\d{1,2})[./](20\d{2})\s*[-–]\s*(\d{1,2})[./](\d{1,2})[./](20\d{2})\s+tarihleri\s+arasinda', text):
         try:
             if date(int(m[3]), int(m[2]), int(m[1])) <= date(int(m[6]), int(m[5]), int(m[4])):
                 add(m[4], m[5], m[6])
         except ValueError:
             pass
     return found
+
+
+def application_starts(text):
+    starts = set()
+    pattern = r'basvuru(?:lar|\s+baslangic(?:\s+tarihi)?)\s*[:,\-]?\s*(\d{1,2})[./-](\d{1,2})[./-](20\d{2})'
+    # A plural label must introduce a range; other dates can describe a notice.
+    pattern = pattern.replace('lar|', r'lar(?=[,]?\s*\d{1,2}[./-]\d{1,2}[./-]20\d{2}\s*[-–])|')
+    for day, month, year in re.findall(pattern, text):
+        try:
+            starts.add(date(int(year), int(month), int(day)))
+        except ValueError:
+            pass
+    for match in re.finditer(rf'basvurular[,]?\s+(\d{{1,2}})\s*[-–]\s*\d{{1,2}}\s+({MONTH})\s+(20\d{{2}})\s+tarihleri\s+arasinda', text):
+        try:
+            starts.add(date(int(match[3]), MONTHS[match[2]], int(match[1])))
+        except ValueError:
+            pass
+    return starts

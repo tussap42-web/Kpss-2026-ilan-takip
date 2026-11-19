@@ -1,7 +1,7 @@
 """Conservative evidence extraction; ambiguous notices always require human review."""
 import re
 from datetime import date
-from dates_tr import deadlines
+from dates_tr import application_starts, deadlines
 
 
 def norm(text):
@@ -17,6 +17,9 @@ def assess(text, config, today=None):
     result = {'status': 'review', 'reasons': reasons, 'warnings': warnings,
               'deadline': None, 'minimum_score': None}
     # Multiple dates are ambiguous: never use the first date of a multi-posting page.
+    starts = application_starts(text)
+    result['application_start'] = next(iter(starts)).isoformat() if len(starts) == 1 else None
+    result['application_start_ambiguous'] = len(starts) > 1
     dates = deadlines(text)
     if len(dates) == 1:
         deadline = dates.pop()
@@ -43,9 +46,9 @@ def assess(text, config, today=None):
     education = []
     if re.search(r'\b(?:ortaogretim|orta ogretim|lise)\b', text):
         education.append('Ortaöğretim / lise')
-    if re.search(r'\bon lisans\b', text):
+    if re.search(r'\bon\s*lisans\b', text):
         education.append('Ön lisans')
-    if re.search(r'\blisans\b', re.sub(r'\bon lisans\b', '', text)):
+    if re.search(r'\blisans\b', re.sub(r'\bon\s*lisans\b', '', text)):
         education.append('Lisans')
     result.update(score_conditions=[{'score_type': kind, 'minimum_score': score}
                                     for kind, score in sorted(set(scores))],
@@ -106,8 +109,10 @@ def assess(text, config, today=None):
         r'\ben\s+az\s+(?:lise|orta\s*ogretim|ortaogretim)\s+mezunu\b|'
         r'\b(?:lise|orta\s*ogretim|ortaogretim)\s+ve\s+(?:uzeri|ustu)\b', text))
     result['exam_year_conflict'] = bool(years and str(candidate['kpss_year']) not in years)
+    result['driver_license_b'] = bool(re.search(
+        r'\(?b\)?\s+sinifi\s+(?:surucu belgesi|ehliyet)', text))
     result['special_conditions_detected'] = bool(re.search(
-        r'\b(?:yas|yasinda|dogum|ehliyet|surucu belgesi|sertifika|belgelendirme|'
+        r'\b(?:yas|yasinda|dogum|ehliyet\w*|surucu belgesi\w*|sertifika|belgelendirme|'
         r'deneyim|tecrube|guvenlik karti|boy sarti|saglik raporu|askerlik|'
         r'vardiya|klavye sinavi|uygulama sinavi)\b', text))
     if settings.get('check_special_conditions', True):
@@ -138,14 +143,21 @@ def table_positions(rows):
         role = cell('kadro|unvan|pozisyon')
         kind = cell(r'puan tur|kpss tur')
         score = cell(r'taban puan|asgari puan|en az puan|minimum puan')
+        if not kind and not score:
+            combined = cell(r'kpss.*puan|^kpss$')
+            match = re.fullmatch(r'(p\s*(?:3|93|94))\s*[,;/-]?\s*(?:en az|asgari|minimum)\s*(\d{2,3}(?:[,.]\d+)?)\s*(?:puan)?', combined)
+            if match:
+                kind, score = match.groups()
         if not role or not re.fullmatch(r'(?:kpss\s*)?p\s*(?:3|93|94)', kind) or not re.fullmatch(r'\d{2,3}(?:[,.]\d+)?', score):
             continue
         if not 0 <= float(score.replace(',', '.')) <= 100:
             continue
-        degree = cell('ogrenim|mezuniyet|bolum|nitelik')
+        education_columns = r'ogrenim|mezuniyet|bolum|nitelik|ozel sart|aranan sart'
+        degree = ' '.join(value for value, heading in zip(values, columns) if re.search(education_columns, heading))
+        display_degree = ' / '.join(value for value, heading in zip(display_values, columns) if value and re.search(education_columns, heading))
         positions.append({'title': role, 'text': f'{role}: {kind} en az {score} puan. {degree}',
                           'display_title': cell('kadro|unvan|pozisyon', display=True),
-                          'display_education': cell('ogrenim|mezuniyet|bolum|nitelik', display=True),
+                          'display_education': display_degree,
                           'qualification_codes': re.findall(r'\b[345]\d{3}\b', degree), 'education': degree,
                           'evidence': 'explicit_table_columns'})
     return positions
@@ -207,6 +219,7 @@ def assess_notice(text, config, today=None, rows=None, incomplete=False):
     if (len(set(roles)) > 1 and not evidence) or incomplete:
         result['status'] = 'review'
         result['reasons'] = []
+        result['unverified_deadline'] = result['deadline']
         result['deadline'] = None
         result['warnings'].append('Belge/kadro kapsamı belirsiz; kesin eleme yapılmadı')
     result['evidence_complete'] = not incomplete

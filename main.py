@@ -146,6 +146,10 @@ def save_state(path: Path, state: dict) -> None:
     temp.replace(path)
 
 
+class TelegramError(RuntimeError):
+    pass
+
+
 def telegram_request(token: str, method: str, payload: dict) -> dict:
     # Never print the URL or unfiltered HTTP exception: it contains the bot token.
     body = json.dumps(payload).encode('utf-8')
@@ -155,11 +159,17 @@ def telegram_request(token: str, method: str, payload: dict) -> dict:
         with urlopen(req, timeout=CONNECT_TIMEOUT) as response:
             data = json.loads(response.read(100_000).decode('utf-8'))
     except HTTPError as err:
-        raise RuntimeError(f'Telegram HTTP {err.code}') from None
-    except (OSError, ValueError):
-        raise RuntimeError('Telegram isteği tamamlanamadı; teslimat belirsiz olabilir') from None
-    if not data.get('ok'):
-        raise RuntimeError('Telegram API isteği başarısız (ayrıntı gizlendi)')
+        raise TelegramError(f'http_{err.code}') from None
+    except URLError as err:
+        raise TelegramError('transport_' + type(err.reason).__name__) from None
+    except (OSError, ValueError) as err:
+        raise TelegramError('response_' + type(err).__name__) from None
+    if not isinstance(data, dict) or data.get('ok') is not True:
+        raise TelegramError('api_rejected')
+    if method == 'sendMessage':
+        result = data.get('result')
+        if not isinstance(result, dict) or not isinstance(result.get('message_id'), int):
+            raise TelegramError('missing_message_receipt')
     return data
 
 
@@ -195,25 +205,48 @@ def requirement_lines(assessment: dict, education: str = '') -> list[str]:
     return [score, 'Mezuniyet / nitelik: ' + degree]
 
 
+def official_link(item):
+    url = item.get('official_url') or item['url']
+    host = urlsplit(url).hostname or ''
+    return url if host.endswith(('.gov.tr', '.bel.tr', '.edu.tr')) else None
+
+
+def needs_review(assessment, selected, config):
+    return assessment.get('special_conditions_detected') or any(
+        row.get('special_conditions_detected') or (
+            config['candidate'].get('score_is_approximate')
+            and any(score['minimum_score'] >= float(config['candidate']['kpss_score']) - 0.6
+                    for score in row['score_conditions'])
+        )
+        for row in ([position['assessment'] for position in selected] or [assessment])
+    )
+
+
 def message_for(item: dict, config: dict) -> str:
-    """Format only a validated P93 / <=70 notice for Telegram delivery."""
+    """Format a notice that passes the notification policy."""
     selected = notification_matches(item, config)
     worker = no_kpss_worker_matches(item, config)
     if selected is None and not worker:
         raise ValueError('Uygunluk doğrulanmadı; bildirim gönderilmedi')
     assessment = item['assessment']
     if worker:
-        lines = ['📢 KPSS ŞARTI ARANMAYAN KAMU İŞÇİ İLANI — İNCELE',
+        lines = ['📢 KPSS ŞARTI ARANMAYAN KAMU İŞÇİ İLANI — İNCELEME GEREKİYOR',
                  'Kaynak: ' + item['source'], item['title'],
                  'KPSS: İlan metninde aranmadığı açıkça belirtiliyor',
-                 'Öğrenim: En az lise / lise ve üzeri ifadesi doğrulandı']
+                 'Öğrenim: ' + ('En az lise / lise ve üzeri' if assessment.get('minimum_high_school_open') else 'Ön lisans')]
         if assessment.get('deadline'):
             lines.append('Son başvuru: ' + assessment['deadline'])
         lines.append('Ön lisans mezunları diğer özel koşulları resmî ilandan kontrol etmelidir.')
-        return '\n'.join(lines)[:3500] + '\n' + item['url'][:500]
+        return '\n'.join(lines)[:3500] + '\n' + (official_link(item) or item['url'])[:500]
     limit = float(config['search_settings'].get('notification_max_required_p93_score', 70))
     heading = '⏰ KPSS P93 BAŞVURU HATIRLATMASI' if item.get('reminder') else '📢 KPSS P93 UYGUN PUANLI İLAN'
+    if needs_review(assessment, selected, config):
+        heading += ' — İNCELEME GEREKİYOR'
     lines = [heading, 'Kaynak: ' + item['source'], item['title']]
+    if assessment.get('driver_license_b') or any(position['assessment'].get('driver_license_b') for position in selected):
+        lines.append('Özel şart: En az B sınıfı sürücü belgesi.')
+    if config['candidate'].get('score_is_approximate') and needs_review(assessment, selected, config):
+        lines.append('Aday puanı yaklaşık. Kesin puanı ve özel şartları kontrol edin.')
     if normalize(config['search_settings'].get('priority_city', 'Konya')) in normalize(item['title'] + ' ' + item['source']):
         lines.append('Konya öncelikli')
     if assessment.get('deadline'):
@@ -242,14 +275,16 @@ def message_for(item: dict, config: dict) -> str:
             lines.append('Mezuniyet / nitelik: Ön lisans, 3001')
         elif assessment.get('department_mentioned'):
             lines.append('Mezuniyet / nitelik: Grafik Tasarım')
-        else:
+        elif assessment.get('general_associate_requirement'):
             lines.append('Mezuniyet / nitelik: Ön lisans')
+        else:
+            lines.append('Mezuniyet / nitelik: En az lise / lise ve üzeri')
     lines.extend([
         f'Bildirim sınırı: P93 için en fazla {limit:g} puan'.replace('.', ','),
         'Diğer özel başvuru koşullarını resmî ilandan kontrol edin.',
     ])
     body = '\n'.join(lines)
-    return body[:3500] + '\n' + item['url'][:500]
+    return body[:3500] + '\n' + (official_link(item) or item['url'])[:500]
 
 
 
@@ -339,20 +374,32 @@ def scan(config: dict, sources: dict, state_path: Path, dry_run: bool) -> int:
     if not configured or failures == len(configured):
         report('source_error', sources=source_stats, messages_sent=0)
         return 1
-    policy = hashlib.sha256(('audit-v3-score-evidence:' + json.dumps(config, sort_keys=True)).encode()).hexdigest()[:16]
+    policy = hashlib.sha256(('audit-v4-score-evidence:' + json.dumps(config, sort_keys=True)).encode()).hexdigest()[:16]
     priority = normalize(config['search_settings']['priority_city'])
+    today = now.date().isoformat()
     refresh = []
-    for url, item in {**notices, **all_items}.items():
-        cached = notices.get(url)
-        # Prioritize unseen notices so a large daily refresh never starves new jobs.
-        due = not cached or cached.get('checked_on') != now.date().isoformat() or cached.get('policy') != policy
-        if due:
-            refresh.append((cached is not None, priority not in normalize(item['title'] + ' ' + item['source']), url, item))
-    refresh.sort(key=lambda item: item[:3])
+    for index, (url, item) in enumerate({**all_items, **{u: v for u, v in notices.items() if u not in all_items}}.items()):
+        cached = notices.get(url) or {}
+        assessment = cached.get('assessment', {})
+        deadline = assessment.get('deadline')
+        if deadline and deadline < today and not cached.get('detail_warning'):
+            continue
+        checked = cached.get('checked_on', '')
+        if checked == today and cached.get('policy') == policy:
+            continue
+        if url not in all_items and not deadline and checked:
+            try:
+                if (now.date() - date.fromisoformat(checked)).days < 7:
+                    continue
+            except ValueError:
+                pass
+        group = 0 if not cached else 1 if deadline else 2 if url in all_items else 3
+        refresh.append((group, checked, priority not in normalize(item['title'] + ' ' + item['source']), index, all_items.get(url, item)))
+    refresh.sort(key=lambda entry: entry[:4])
     limit = max(1, min(int(config.get('processing', {}).get('max_details_per_run', 12)), 30))
     detail_failures = 0
     with ThreadPoolExecutor(max_workers=4) as pool:
-        for item in pool.map(enrich, [entry[3] for entry in refresh[:limit]]):
+        for item in pool.map(enrich, [entry[4] for entry in refresh[:limit]]):
             incomplete = bool(item.get('detail_warning'))
             detail_failures += int(incomplete)
             assessment = assess_notice(item.get('text', ''), config, now.date(), rows=item.get('rows'), incomplete=incomplete)
@@ -374,19 +421,31 @@ def scan(config: dict, sources: dict, state_path: Path, dry_run: bool) -> int:
         if suffix is not None:
             keys = {url + '#reminder:' + suffix for url in keys}
         return set(chat for k in keys for chat in state['sent'].get(k, {}).get('chats', []))
-    queued, used = [], set()
+    queued, used, active, review, eligible = [], set(), set(), set(), set()
     for url, item in sorted(notices.items(), key=lambda pair: (priority not in normalize(pair[1]['title'] + ' ' + pair[1]['source']), pair[0])):
         if item.get('policy') != policy:
             continue
         assessment = item['assessment']
-        # Only explicit P93 minimums <= 70 are eligible for Telegram.
-        # Missing or ambiguous thresholds must never reach the queue.
-        if notification_matches(item, config) is None and not no_kpss_worker_matches(item, config):
-            continue
         deadline = assessment.get('deadline')
-        if deadline and deadline < now.date().isoformat() and config['search_settings'].get('only_active_applications', True):
+        starts = assessment.get('application_start')
+        if deadline and deadline < today:
             continue
         root = anchor(url)
+        is_open = bool(deadline and assessment.get('evidence_complete') and not assessment.get('application_start_ambiguous') and (not starts or starts <= today))
+        if is_open:
+            active.add(root)
+        matches = notification_matches(item, config)
+        worker = no_kpss_worker_matches(item, config)
+        if assessment.get('status') != 'excluded' and (is_open or item.get('detail_warning') or starts and starts > today):
+            review.add(root)
+        if matches is None and not worker:
+            continue
+        if config['search_settings'].get('require_verified_application_window') and not is_open:
+            continue
+        if config['search_settings'].get('require_verified_application_window') and not official_link(item):
+            continue
+        if not worker and not needs_review(assessment, matches, config):
+            eligible.add(root)
         if root in used:
             continue
         used.add(root)
@@ -421,8 +480,10 @@ def scan(config: dict, sources: dict, state_path: Path, dry_run: bool) -> int:
             attempts += 1
             try:
                 telegram_request(token, 'sendMessage', {'chat_id': chat_id, 'text': message_for(item, config), 'disable_web_page_preview': True})
-            except RuntimeError:
+            except RuntimeError as exc:
+                print('TELEGRAM_DELIVERY_ERROR ' + (str(exc) if isinstance(exc, TelegramError) else 'unexpected_error'))
                 errors += 1
+                pending += 1
                 failed_chats.add(receipt)
                 continue
             completed.add(receipt)
@@ -440,7 +501,9 @@ def scan(config: dict, sources: dict, state_path: Path, dry_run: bool) -> int:
                              'pending_messages': pending, 'pending_details': max(0, len(refresh)-limit)}
         save_state(state_path, state)
     report(('preview_' + status) if dry_run else status, local_time=now.isoformat(), timezone=str(zone),
-           sources=source_stats, details_failed=detail_failures, messages_attempted=attempts,
+           sources=source_stats, links_discovered=len(all_items), active_notices=len(active),
+           eligible_notices=len(eligible), review_notices=len(review - eligible),
+           details_failed=detail_failures, messages_attempted=attempts,
            messages_sent=sent, pending_messages=pending, pending_details=max(0, len(refresh)-limit),
            dry_run=dry_run, delivery_deferred=delivery_deferred,
            recipients_configured=len(chat_ids))
@@ -468,10 +531,16 @@ def main() -> int:
         if not token or not chats:
             print('Test için TELEGRAM_BOT_TOKEN ve TELEGRAM_CHAT_IDS gerekli')
             return 1
+        sent, errors = 0, []
         for chat in chats:
-            telegram_request(token, 'sendMessage', {'chat_id': chat, 'text': '✅ KPSS İlan Takip bağlantı testi başarılı.'})
-        print(f'Test mesajı gönderilen sohbet: {len(chats)}')
-        return 0
+            try:
+                telegram_request(token, 'sendMessage', {'chat_id': chat, 'text': 'TEST — KPSS BOT BAĞLANTI KONTROLÜ'})
+                sent += 1
+            except TelegramError as exc:
+                errors.append(str(exc))
+        report('telegram_error' if errors else 'telegram_test_ok',
+               messages_attempted=len(chats), messages_sent=sent, delivery_errors=errors)
+        return int(bool(errors))
     return scan(config, sources, args.state_file, dry_run=args.mode == 'preview')
 
 

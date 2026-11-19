@@ -15,6 +15,7 @@ import network
 from discovery import scan_source
 
 CFG = json.loads((main.BASE / 'config.json').read_text())
+CFG['search_settings']['require_verified_application_window'] = False
 ITEM = {'title': 'Konya personel alımı ilanı', 'source': 'Test', 'url': 'https://example.org/job'}
 SOURCES = {'sources': [{'name': 'Test', 'url': 'https://example.org/'}]}
 

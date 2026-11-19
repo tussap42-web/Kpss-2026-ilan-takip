@@ -31,6 +31,7 @@
     ],
     "include_jobs_without_kpss": true,
     "only_active_applications": true,
+    "require_verified_application_window": true,
     "check_special_conditions": true,
     "notification_max_required_p93_score": 70.6
   },
