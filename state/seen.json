@@ -1124,7 +1124,7 @@
       "title": "Bakanlığımız Merkez Teşkilatı ve Personel Eğitim Merkezi Müdürlükleri ile Adli Destek ve Mağdur Hizmetleri Müdürlüklerinde Çalıştırılmak Üzere Sözleşmeli Personel Alımı -17/07/2026 Personel Genel Müdürlüğü",
       "url": "https://pgm.adalet.gov.tr/Home/SayfaDetay/bakanligimiz-merkez-teskilati-ve-personel-egitim-merkezi-mudurlukleri-ile-adli-destek-ve-m17072026044513",
       "source": "Adalet Bakanligi",
-      "document_key": "text:de3cdf98f9b632b2a7d8f3554cf26e9ae2d66eb75b38f8020bce8b4d95b2031d",
+      "document_key": "text:49bf8e07d090b7b82ad5982e659552be383f2f5c6d75303d2de0146d8e4a20a1",
       "assessment": {
         "status": "review",
         "reasons": [],
@@ -1138,16 +1138,32 @@
         ],
         "deadline": null,
         "minimum_score": null,
-        "positions": []
+        "application_start": null,
+        "application_start_ambiguous": false,
+        "score_conditions": [],
+        "score_types": [],
+        "score_ambiguous": true,
+        "kpss_exempt": false,
+        "education_levels": [],
+        "evidence_complete": true,
+        "general_associate_code": false,
+        "department_mentioned": false,
+        "general_associate_requirement": false,
+        "minimum_high_school_open": false,
+        "exam_year_conflict": false,
+        "driver_license_b": false,
+        "special_conditions_detected": true,
+        "positions": [],
+        "unverified_deadline": null
       },
-      "checked_on": "2026-11-08",
-      "policy": "d7986b01b15e54ff"
+      "checked_on": "2026-11-20",
+      "policy": "12155a82c1208a04"
     },
     "https://pgm.adalet.gov.tr/Home/SayfaDetay/bakanlik-merkez-teskilati-ve-ankara-personel-egitim-merkezi-mudurlugu-destek-personeli-so27072026053425": {
       "title": "Bakanlık Merkez Teşkilatı ve Ankara Bekir Bozdağ Personel Eğitim Merkezi Müdürlüğü Destek Personeli (Şoför) Uygulamalı Sınav Yeri ve Tarihlerine İlişkin Duyuru -28/07/2026 Personel Genel Müdürlüğü",
       "url": "https://pgm.adalet.gov.tr/Home/SayfaDetay/bakanlik-merkez-teskilati-ve-ankara-personel-egitim-merkezi-mudurlugu-destek-personeli-so27072026053425",
       "source": "Adalet Bakanligi",
-      "document_key": "text:410c2ac404ead385fcfaebf1d8e18d51ab24de46bb55eeba9a16fc00e6fb42c5",
+      "document_key": "text:3b943796ddd0420bc409252d78df59b03f012db8de1f6912b62cf1e26c4ef3c1",
       "assessment": {
         "status": "review",
         "reasons": [],
@@ -1161,10 +1177,26 @@
         ],
         "deadline": null,
         "minimum_score": null,
-        "positions": []
+        "application_start": null,
+        "application_start_ambiguous": false,
+        "score_conditions": [],
+        "score_types": [],
+        "score_ambiguous": true,
+        "kpss_exempt": false,
+        "education_levels": [],
+        "evidence_complete": true,
+        "general_associate_code": false,
+        "department_mentioned": false,
+        "general_associate_requirement": false,
+        "minimum_high_school_open": false,
+        "exam_year_conflict": false,
+        "driver_license_b": false,
+        "special_conditions_detected": true,
+        "positions": [],
+        "unverified_deadline": null
       },
-      "checked_on": "2026-11-08",
-      "policy": "d7986b01b15e54ff"
+      "checked_on": "2026-11-20",
+      "policy": "12155a82c1208a04"
     },
     "https://www.iskur.gov.tr/duyurular/kpss-2018-1-yerlestirmesi-sonucu-kurumumuza-yerlestirilen-adaylara-iliskin-duyuru": {
       "title": "KPSS-2018/1 yerleştirmesi...",
@@ -1491,7 +1523,7 @@
       "title": "4924 Sayılı Kanuna Göre Görev Yapan Sözleşmeli Personelin Hizmet Hedefleri ile Sözleşme Yenilenmesine ...",
       "url": "https://www.saglik.gov.tr/TR-103765/4924-sayili-kanuna-gore-gorev-yapan-sozlesmeli-personelin-hizmet-hedefleri-ile-sozlesme-yenilenmesine-iliskin-usul-ve-esaslar.html",
       "source": "Saglik Bakanligi",
-      "detail_warning": "İlan ayrıntıları okunamadı (PermissionError)",
+      "detail_warning": "İlan ayrıntıları okunamadı (SourceAccessError)",
       "assessment": {
         "status": "review",
         "reasons": [],
@@ -1505,16 +1537,32 @@
         ],
         "deadline": null,
         "minimum_score": null,
-        "positions": []
+        "application_start": null,
+        "application_start_ambiguous": false,
+        "score_conditions": [],
+        "score_types": [],
+        "score_ambiguous": false,
+        "kpss_exempt": false,
+        "education_levels": [],
+        "evidence_complete": false,
+        "general_associate_code": false,
+        "department_mentioned": false,
+        "general_associate_requirement": false,
+        "minimum_high_school_open": false,
+        "exam_year_conflict": false,
+        "driver_license_b": false,
+        "special_conditions_detected": false,
+        "positions": [],
+        "unverified_deadline": null
       },
-      "checked_on": "2026-11-08",
-      "policy": "d7986b01b15e54ff"
+      "checked_on": "2026-11-20",
+      "policy": "12155a82c1208a04"
     },
     "https://www.saglik.gov.tr/TR-103808/saglik-bakanligi-4b-sozlesmeli-personelininin-yeniden-hizmete-alinmasi-ve-kurum-ici-yer-degisikligine-dair-yonerge.html": {
       "title": "Sağlık Bakanlığı 4\\B Sözleşmeli Personelininin Yeniden Hizmete Alınması ve Kurum İçi Yer Değişikliğine ...",
       "url": "https://www.saglik.gov.tr/TR-103808/saglik-bakanligi-4b-sozlesmeli-personelininin-yeniden-hizmete-alinmasi-ve-kurum-ici-yer-degisikligine-dair-yonerge.html",
       "source": "Saglik Bakanligi",
-      "detail_warning": "İlan ayrıntıları okunamadı (PermissionError)",
+      "detail_warning": "İlan ayrıntıları okunamadı (SourceAccessError)",
       "assessment": {
         "status": "review",
         "reasons": [],
@@ -1528,16 +1576,32 @@
         ],
         "deadline": null,
         "minimum_score": null,
-        "positions": []
+        "application_start": null,
+        "application_start_ambiguous": false,
+        "score_conditions": [],
+        "score_types": [],
+        "score_ambiguous": false,
+        "kpss_exempt": false,
+        "education_levels": [],
+        "evidence_complete": false,
+        "general_associate_code": false,
+        "department_mentioned": false,
+        "general_associate_requirement": false,
+        "minimum_high_school_open": false,
+        "exam_year_conflict": false,
+        "driver_license_b": false,
+        "special_conditions_detected": false,
+        "positions": [],
+        "unverified_deadline": null
       },
-      "checked_on": "2026-11-08",
-      "policy": "d7986b01b15e54ff"
+      "checked_on": "2026-11-20",
+      "policy": "12155a82c1208a04"
     },
     "https://www.saglik.gov.tr/TR-103809/saglik-bakanligi-4b-sozlesmeli-personelinin-yeniden-hizmete-alinmasi-ve-kurum-ici-yer-degisikligine-dair-yonergede-degisiklik-yapilmasi.html": {
       "title": "Sağlık Bakanlığı 4\\B Sözleşmeli Personelinin Yeniden Hizmete Alınması ve Kurum İçi Yer Değişikliğine ...",
       "url": "https://www.saglik.gov.tr/TR-103809/saglik-bakanligi-4b-sozlesmeli-personelinin-yeniden-hizmete-alinmasi-ve-kurum-ici-yer-degisikligine-dair-yonergede-degisiklik-yapilmasi.html",
       "source": "Saglik Bakanligi",
-      "detail_warning": "İlan ayrıntıları okunamadı (PermissionError)",
+      "detail_warning": "İlan ayrıntıları okunamadı (SourceAccessError)",
       "assessment": {
         "status": "review",
         "reasons": [],
@@ -1551,10 +1615,26 @@
         ],
         "deadline": null,
         "minimum_score": null,
-        "positions": []
+        "application_start": null,
+        "application_start_ambiguous": false,
+        "score_conditions": [],
+        "score_types": [],
+        "score_ambiguous": false,
+        "kpss_exempt": false,
+        "education_levels": [],
+        "evidence_complete": false,
+        "general_associate_code": false,
+        "department_mentioned": false,
+        "general_associate_requirement": false,
+        "minimum_high_school_open": false,
+        "exam_year_conflict": false,
+        "driver_license_b": false,
+        "special_conditions_detected": false,
+        "positions": [],
+        "unverified_deadline": null
       },
-      "checked_on": "2026-11-08",
-      "policy": "d7986b01b15e54ff"
+      "checked_on": "2026-11-20",
+      "policy": "12155a82c1208a04"
     },
     "https://www.saglik.gov.tr/TR-10570/sozlesmeli-personeli-alimi-hakkinda-genelge.html": {
       "title": "Sözleşmeli Personeli Alımı Hakkında Genelge",
@@ -1608,10 +1688,25 @@
         ],
         "deadline": null,
         "minimum_score": null,
+        "application_start": null,
+        "application_start_ambiguous": false,
+        "score_conditions": [],
+        "score_types": [],
+        "score_ambiguous": false,
+        "kpss_exempt": false,
+        "education_levels": [],
+        "evidence_complete": true,
+        "general_associate_code": false,
+        "department_mentioned": false,
+        "general_associate_requirement": false,
+        "minimum_high_school_open": false,
+        "exam_year_conflict": false,
+        "driver_license_b": false,
+        "special_conditions_detected": false,
         "positions": []
       },
-      "checked_on": "2026-11-08",
-      "policy": "d7986b01b15e54ff"
+      "checked_on": "2026-11-20",
+      "policy": "12155a82c1208a04"
     },
     "https://www.saglik.gov.tr/TR-10730/hizmet-alimlarinda-calistirilacak-isci-sayisinin-tespiti-ve-ongorulecek-ucretler-2-hakkinda-200964-sira-nolu-genelge-ve-ekleri.html": {
       "title": "Hizmet Alımlarında Çalıştırılacak İşçi Sayısının Tespiti ve Öngörülecek Ücretler-2 Hakkında 2009/64 Sıra ...",
@@ -1668,10 +1763,25 @@
         ],
         "deadline": null,
         "minimum_score": null,
+        "application_start": null,
+        "application_start_ambiguous": false,
+        "score_conditions": [],
+        "score_types": [],
+        "score_ambiguous": false,
+        "kpss_exempt": false,
+        "education_levels": [],
+        "evidence_complete": true,
+        "general_associate_code": false,
+        "department_mentioned": false,
+        "general_associate_requirement": false,
+        "minimum_high_school_open": false,
+        "exam_year_conflict": false,
+        "driver_license_b": false,
+        "special_conditions_detected": false,
         "positions": []
       },
-      "checked_on": "2026-11-08",
-      "policy": "d7986b01b15e54ff"
+      "checked_on": "2026-11-20",
+      "policy": "12155a82c1208a04"
     },
     "https://www.yok.gov.tr/tr/announcements/20-nisan-2026-tarihli-ve-33230-sayili-resmi-gazetede-yayimlanan-35-sozlesmeli-personel-alimi-yedek-aday-duyurusu-XwHDF": {
       "title": "20 Nisan 2026 Tarihli ve 33230 Sayılı Resmi Gazete'de Yayımlanan 35 Sözleşmeli Personel Alımı Yedek Aday Duyurusu",
@@ -3530,16 +3640,25 @@
         ],
         "deadline": null,
         "minimum_score": null,
+        "application_start": null,
+        "application_start_ambiguous": false,
         "score_conditions": [],
         "score_types": [],
         "score_ambiguous": false,
         "kpss_exempt": false,
         "education_levels": [],
         "evidence_complete": true,
+        "general_associate_code": false,
+        "department_mentioned": false,
+        "general_associate_requirement": false,
+        "minimum_high_school_open": false,
+        "exam_year_conflict": false,
+        "driver_license_b": false,
+        "special_conditions_detected": false,
         "positions": []
       },
-      "checked_on": "2026-11-09",
-      "policy": "1292260b21ee0874"
+      "checked_on": "2026-11-20",
+      "policy": "12155a82c1208a04"
     },
     "https://www.osym.gov.tr/2026-kamu-personel-secme-sinavi-kpss-lisans-basvurularin-alinmasi": {
       "title": "29 Haziran 2026 2026 Kamu Personel Seçme Sınavı (KPSS) Lisans: Başvuruların Alınması",
@@ -3558,6 +3677,8 @@
         ],
         "deadline": null,
         "minimum_score": null,
+        "application_start": null,
+        "application_start_ambiguous": false,
         "score_conditions": [],
         "score_types": [],
         "score_ambiguous": false,
@@ -3566,10 +3687,17 @@
           "Lisans"
         ],
         "evidence_complete": true,
+        "general_associate_code": false,
+        "department_mentioned": false,
+        "general_associate_requirement": false,
+        "minimum_high_school_open": false,
+        "exam_year_conflict": false,
+        "driver_license_b": false,
+        "special_conditions_detected": false,
         "positions": []
       },
-      "checked_on": "2026-11-09",
-      "policy": "1292260b21ee0874"
+      "checked_on": "2026-11-20",
+      "policy": "12155a82c1208a04"
     },
     "https://www.osym.gov.tr/2026-kpss-din-hizmetleri-alan-bilgisi-dhbt-basvurularinin-alinmasi": {
       "title": "22 Eylül 2026 2026-KPSS Din Hizmetleri Alan Bilgisi (DHBT): Başvurularının Alınması",
@@ -3577,27 +3705,37 @@
       "source": "OSYM",
       "document_key": "text:9705b5357c30651f9907b60cea0f78575f40a3e82a4604da30538c32c6ef2d08",
       "assessment": {
-        "status": "review",
-        "reasons": [],
+        "status": "excluded",
+        "reasons": [
+          "Son başvuru tarihi geçmiş"
+        ],
         "warnings": [
-          "Son başvuru tarihi belirlenemedi veya birden fazla tarih var",
           "KPSS taban puanı açık biçimde okunamadı",
           "Aday puanı yaklaşık; başvuruda kesin puan kullanılmalı",
           "Mezuniyet/bölüm uygunluğu doğrulanamadı",
           "Yaş, belge, deneyim ve diğer özel şartlar ayrıca kontrol edilmeli"
         ],
-        "deadline": null,
+        "deadline": "2026-09-30",
         "minimum_score": null,
+        "application_start": "2026-09-22",
+        "application_start_ambiguous": false,
         "score_conditions": [],
         "score_types": [],
         "score_ambiguous": false,
         "kpss_exempt": false,
         "education_levels": [],
         "evidence_complete": true,
+        "general_associate_code": false,
+        "department_mentioned": false,
+        "general_associate_requirement": false,
+        "minimum_high_school_open": false,
+        "exam_year_conflict": false,
+        "driver_license_b": false,
+        "special_conditions_detected": false,
         "positions": []
       },
-      "checked_on": "2026-11-09",
-      "policy": "1292260b21ee0874"
+      "checked_on": "2026-11-20",
+      "policy": "12155a82c1208a04"
     },
     "https://www.osym.gov.tr/2026-kpss-din-hizmetleri-alan-bilgisi-dhbt-kilavuzlar-ve-basvuru-bilgileri": {
       "title": "22 Eylül 2026 2026-KPSS Din Hizmetleri Alan Bilgisi (DHBT): Kılavuzlar ve Başvuru Bilgileri",
@@ -3617,6 +3755,8 @@
         ],
         "deadline": null,
         "minimum_score": null,
+        "application_start": null,
+        "application_start_ambiguous": false,
         "score_conditions": [],
         "score_types": [],
         "score_ambiguous": false,
@@ -3627,10 +3767,18 @@
           "Lisans"
         ],
         "evidence_complete": false,
-        "positions": []
+        "general_associate_code": false,
+        "department_mentioned": false,
+        "general_associate_requirement": false,
+        "minimum_high_school_open": false,
+        "exam_year_conflict": false,
+        "driver_license_b": false,
+        "special_conditions_detected": false,
+        "positions": [],
+        "unverified_deadline": null
       },
-      "checked_on": "2026-11-09",
-      "policy": "1292260b21ee0874"
+      "checked_on": "2026-11-20",
+      "policy": "12155a82c1208a04"
     },
     "https://www.osym.gov.tr/2026-kpss-on-lisans-basvurularin-alinmasi-20260728141324252": {
       "title": "29 Temmuz 2026 2026-KPSS Ön Lisans: Başvuruların Alınması",
@@ -3649,6 +3797,8 @@
         ],
         "deadline": null,
         "minimum_score": null,
+        "application_start": null,
+        "application_start_ambiguous": false,
         "score_conditions": [],
         "score_types": [],
         "score_ambiguous": false,
@@ -3657,10 +3807,17 @@
           "Ön lisans"
         ],
         "evidence_complete": true,
+        "general_associate_code": false,
+        "department_mentioned": false,
+        "general_associate_requirement": false,
+        "minimum_high_school_open": false,
+        "exam_year_conflict": false,
+        "driver_license_b": false,
+        "special_conditions_detected": false,
         "positions": []
       },
-      "checked_on": "2026-11-09",
-      "policy": "1292260b21ee0874"
+      "checked_on": "2026-11-20",
+      "policy": "12155a82c1208a04"
     },
     "https://www.osym.gov.tr/2026-kpss-on-lisans-kilavuz-ve-basvuru-bilgileri": {
       "title": "29 Temmuz 2026 2026-KPSS Ön Lisans: Kılavuz ve Başvuru Bilgileri",
@@ -3680,6 +3837,8 @@
         ],
         "deadline": null,
         "minimum_score": null,
+        "application_start": null,
+        "application_start_ambiguous": false,
         "score_conditions": [],
         "score_types": [],
         "score_ambiguous": false,
@@ -3689,10 +3848,18 @@
           "Lisans"
         ],
         "evidence_complete": false,
-        "positions": []
+        "general_associate_code": false,
+        "department_mentioned": false,
+        "general_associate_requirement": false,
+        "minimum_high_school_open": false,
+        "exam_year_conflict": false,
+        "driver_license_b": false,
+        "special_conditions_detected": true,
+        "positions": [],
+        "unverified_deadline": null
       },
-      "checked_on": "2026-11-09",
-      "policy": "1292260b21ee0874"
+      "checked_on": "2026-11-20",
+      "policy": "12155a82c1208a04"
     },
     "https://www.osym.gov.tr/2026-kpss-ortaogretim-basvurularin-alinmasi": {
       "title": "27 Ağustos 2026 2026-KPSS Ortaöğretim: Başvuruların Alınması",
@@ -3711,6 +3878,8 @@
         ],
         "deadline": null,
         "minimum_score": null,
+        "application_start": null,
+        "application_start_ambiguous": false,
         "score_conditions": [],
         "score_types": [],
         "score_ambiguous": false,
@@ -3719,10 +3888,17 @@
           "Ortaöğretim / lise"
         ],
         "evidence_complete": true,
+        "general_associate_code": false,
+        "department_mentioned": false,
+        "general_associate_requirement": false,
+        "minimum_high_school_open": false,
+        "exam_year_conflict": false,
+        "driver_license_b": false,
+        "special_conditions_detected": false,
         "positions": []
       },
-      "checked_on": "2026-11-09",
-      "policy": "1292260b21ee0874"
+      "checked_on": "2026-11-20",
+      "policy": "12155a82c1208a04"
     },
     "https://www.osym.gov.tr/2026-kpss-ortaogretim-kilavuz-ve-basvuru-bilgileri": {
       "title": "27 Ağustos 2026 2026-KPSS Ortaöğretim: Kılavuz ve Başvuru Bilgileri",
@@ -3742,6 +3918,8 @@
         ],
         "deadline": null,
         "minimum_score": null,
+        "application_start": null,
+        "application_start_ambiguous": false,
         "score_conditions": [],
         "score_types": [],
         "score_ambiguous": false,
@@ -3750,10 +3928,18 @@
           "Ortaöğretim / lise"
         ],
         "evidence_complete": false,
-        "positions": []
+        "general_associate_code": false,
+        "department_mentioned": false,
+        "general_associate_requirement": false,
+        "minimum_high_school_open": false,
+        "exam_year_conflict": false,
+        "driver_license_b": false,
+        "special_conditions_detected": true,
+        "positions": [],
+        "unverified_deadline": null
       },
-      "checked_on": "2026-11-09",
-      "policy": "1292260b21ee0874"
+      "checked_on": "2026-11-20",
+      "policy": "12155a82c1208a04"
     },
     "https://www.osym.gov.tr/2026ekpss-basvurularin-alinmasi": {
       "title": "3 Şubat 2026 2026-EKPSS: Başvuruların Alınması",
@@ -3761,27 +3947,37 @@
       "source": "OSYM",
       "document_key": "text:5dab2b734294c449173508067a9d15e06c1fddcbcbbad6d7ebb417b139484fc8",
       "assessment": {
-        "status": "review",
-        "reasons": [],
+        "status": "excluded",
+        "reasons": [
+          "Son başvuru tarihi geçmiş"
+        ],
         "warnings": [
-          "Son başvuru tarihi belirlenemedi veya birden fazla tarih var",
           "KPSS taban puanı açık biçimde okunamadı",
           "Aday puanı yaklaşık; başvuruda kesin puan kullanılmalı",
           "Mezuniyet/bölüm uygunluğu doğrulanamadı",
           "Yaş, belge, deneyim ve diğer özel şartlar ayrıca kontrol edilmeli"
         ],
-        "deadline": null,
+        "deadline": "2026-02-24",
         "minimum_score": null,
+        "application_start": "2026-02-04",
+        "application_start_ambiguous": false,
         "score_conditions": [],
         "score_types": [],
         "score_ambiguous": false,
         "kpss_exempt": false,
         "education_levels": [],
         "evidence_complete": true,
+        "general_associate_code": false,
+        "department_mentioned": false,
+        "general_associate_requirement": false,
+        "minimum_high_school_open": false,
+        "exam_year_conflict": false,
+        "driver_license_b": false,
+        "special_conditions_detected": false,
         "positions": []
       },
-      "checked_on": "2026-11-09",
-      "policy": "1292260b21ee0874"
+      "checked_on": "2026-11-20",
+      "policy": "12155a82c1208a04"
     },
     "https://www.osym.gov.tr/2026ekpss-kilavuz-tablolar-ve-basvuru-bilgileri": {
       "title": "3 Şubat 2026 2026-EKPSS: Kılavuz, Tablolar ve Başvuru Bilgileri",
@@ -3801,9 +3997,11 @@
         ],
         "deadline": null,
         "minimum_score": null,
+        "application_start": null,
+        "application_start_ambiguous": false,
         "score_conditions": [],
         "score_types": [],
-        "score_ambiguous": false,
+        "score_ambiguous": true,
         "kpss_exempt": false,
         "education_levels": [
           "Ortaöğretim / lise",
@@ -3811,10 +4009,18 @@
           "Lisans"
         ],
         "evidence_complete": false,
-        "positions": []
+        "general_associate_code": false,
+        "department_mentioned": false,
+        "general_associate_requirement": false,
+        "minimum_high_school_open": false,
+        "exam_year_conflict": false,
+        "driver_license_b": false,
+        "special_conditions_detected": false,
+        "positions": [],
+        "unverified_deadline": null
       },
-      "checked_on": "2026-11-09",
-      "policy": "1292260b21ee0874"
+      "checked_on": "2026-11-20",
+      "policy": "12155a82c1208a04"
     },
     "https://www.osym.gov.tr/2026ekpss-kura-icin-basvurularin-alinmasi": {
       "title": "27 Nisan 2026 2026-EKPSS: Kura İçin Başvuruların Alınması",
@@ -3833,16 +4039,25 @@
         ],
         "deadline": null,
         "minimum_score": null,
+        "application_start": null,
+        "application_start_ambiguous": false,
         "score_conditions": [],
         "score_types": [],
         "score_ambiguous": false,
         "kpss_exempt": false,
         "education_levels": [],
         "evidence_complete": true,
+        "general_associate_code": false,
+        "department_mentioned": false,
+        "general_associate_requirement": false,
+        "minimum_high_school_open": false,
+        "exam_year_conflict": false,
+        "driver_license_b": false,
+        "special_conditions_detected": false,
         "positions": []
       },
-      "checked_on": "2026-11-09",
-      "policy": "1292260b21ee0874"
+      "checked_on": "2026-11-20",
+      "policy": "12155a82c1208a04"
     },
     "https://www.osym.gov.tr/2026ekpsskura-ile-engelli-kamu-personeli-yerlestirme-bazi-kamu-kurum-ve-kuruluslarinin-kadrolarina-yerlestirme-yapmak-icin-adaylardan-tercih-alinmasi": {
       "title": "7 Ocak 2026 2026-EKPSS/Kura ile Engelli Kamu Personeli Yerleştirme: Bazı Kamu Kurum ve Kuruluşlarının Kadrolarına Yerleştirme Yapmak İçin Adaylardan Tercih Alınması",
@@ -3924,16 +4139,25 @@
         ],
         "deadline": null,
         "minimum_score": null,
+        "application_start": null,
+        "application_start_ambiguous": false,
         "score_conditions": [],
         "score_types": [],
         "score_ambiguous": false,
         "kpss_exempt": false,
         "education_levels": [],
         "evidence_complete": true,
+        "general_associate_code": false,
+        "department_mentioned": false,
+        "general_associate_requirement": false,
+        "minimum_high_school_open": false,
+        "exam_year_conflict": false,
+        "driver_license_b": false,
+        "special_conditions_detected": false,
         "positions": []
       },
-      "checked_on": "2026-11-09",
-      "policy": "1292260b21ee0874"
+      "checked_on": "2026-11-20",
+      "policy": "12155a82c1208a04"
     },
     "https://www.osym.gov.tr/2026engelli-kamu-personeli-secme-sinavi-ekpss-kura-basvuru-kilavuzu-ve-basvuru-bilgileri": {
       "title": "28 Nisan 2026 2026-Engelli Kamu Personeli Seçme Sınavı (EKPSS) Kura Başvuru Kılavuzu ve Başvuru Bilgileri",
@@ -3953,16 +4177,26 @@
         ],
         "deadline": null,
         "minimum_score": null,
+        "application_start": null,
+        "application_start_ambiguous": false,
         "score_conditions": [],
         "score_types": [],
         "score_ambiguous": false,
         "kpss_exempt": false,
         "education_levels": [],
         "evidence_complete": false,
-        "positions": []
+        "general_associate_code": false,
+        "department_mentioned": false,
+        "general_associate_requirement": false,
+        "minimum_high_school_open": false,
+        "exam_year_conflict": false,
+        "driver_license_b": false,
+        "special_conditions_detected": true,
+        "positions": [],
+        "unverified_deadline": null
       },
-      "checked_on": "2026-11-09",
-      "policy": "1292260b21ee0874"
+      "checked_on": "2026-11-20",
+      "policy": "12155a82c1208a04"
     },
     "https://www.osym.gov.tr/2026kpss-lisans-kilavuz-ve-basvuru-bilgileri": {
       "title": "30 Haziran 2026 2026-KPSS Lisans: Kılavuz ve Başvuru Bilgileri",
@@ -3982,6 +4216,8 @@
         ],
         "deadline": null,
         "minimum_score": null,
+        "application_start": null,
+        "application_start_ambiguous": false,
         "score_conditions": [],
         "score_types": [],
         "score_ambiguous": false,
@@ -3990,10 +4226,18 @@
           "Lisans"
         ],
         "evidence_complete": false,
-        "positions": []
+        "general_associate_code": false,
+        "department_mentioned": false,
+        "general_associate_requirement": false,
+        "minimum_high_school_open": false,
+        "exam_year_conflict": false,
+        "driver_license_b": false,
+        "special_conditions_detected": true,
+        "positions": [],
+        "unverified_deadline": null
       },
-      "checked_on": "2026-11-09",
-      "policy": "1292260b21ee0874"
+      "checked_on": "2026-11-20",
+      "policy": "12155a82c1208a04"
     },
     "https://www.osym.gov.tr/kpss20261-bazi-kamu-kurum-ve-kuruluslarinin-kadro-ve-pozisyonlarina-yerlestirme-yapmak-icin-adaylardan-tercih-alinmasi": {
       "title": "2 Temmuz 2026 KPSS-2026/1: Bazı Kamu Kurum ve Kuruluşlarının Kadro ve Pozisyonlarına Yerleştirme Yapmak İçin Adaylardan Tercih Alınması",
@@ -4012,16 +4256,25 @@
         ],
         "deadline": null,
         "minimum_score": null,
+        "application_start": null,
+        "application_start_ambiguous": false,
         "score_conditions": [],
         "score_types": [],
         "score_ambiguous": false,
         "kpss_exempt": false,
         "education_levels": [],
         "evidence_complete": true,
+        "general_associate_code": false,
+        "department_mentioned": false,
+        "general_associate_requirement": false,
+        "minimum_high_school_open": false,
+        "exam_year_conflict": false,
+        "driver_license_b": false,
+        "special_conditions_detected": false,
         "positions": []
       },
-      "checked_on": "2026-11-09",
-      "policy": "1292260b21ee0874"
+      "checked_on": "2026-11-20",
+      "policy": "12155a82c1208a04"
     },
     "https://www.osym.gov.tr/kpss20261-bazi-kamu-kurum-ve-kuruluslarinin-kadro-ve-pozisyonlarina-yerlestirme-yapmak-icin-tercih-kilavuzu-ve-tablolar": {
       "title": "3 Temmuz 2026 KPSS-2026/1: Bazı Kamu Kurum ve Kuruluşlarının Kadro ve Pozisyonlarına Yerleştirme Yapmak İçin Tercih Kılavuzu ve Tablolar",
@@ -4042,6 +4295,8 @@
         ],
         "deadline": null,
         "minimum_score": null,
+        "application_start": null,
+        "application_start_ambiguous": false,
         "score_conditions": [],
         "score_types": [
           "P3",
@@ -4056,10 +4311,18 @@
           "Lisans"
         ],
         "evidence_complete": false,
-        "positions": []
+        "general_associate_code": true,
+        "department_mentioned": false,
+        "general_associate_requirement": false,
+        "minimum_high_school_open": false,
+        "exam_year_conflict": true,
+        "driver_license_b": true,
+        "special_conditions_detected": true,
+        "positions": [],
+        "unverified_deadline": null
       },
-      "checked_on": "2026-11-09",
-      "policy": "1292260b21ee0874"
+      "checked_on": "2026-11-20",
+      "policy": "12155a82c1208a04"
     },
     "https://ilan.memurlar.net/ilan/86940/sayistay-16-sozlesmeli-personel-alacak.html": {
       "title": "Sayıştay 16 sözleşmeli personel alacak",
@@ -6077,6 +6340,44 @@
       },
       "checked_on": "2026-11-20",
       "policy": "12155a82c1208a04"
+    },
+    "https://ilan.memurlar.net/ilan/86838/sanliurfa-eyyubiye-belediyesi-9-zabita-memuru-alacak.html": {
+      "title": "Şanlıurfa Eyyübiye Belediyesi 9 Zabıta Memuru Alacak",
+      "url": "https://ilan.memurlar.net/ilan/86838/sanliurfa-eyyubiye-belediyesi-9-zabita-memuru-alacak.html",
+      "source": "Memurlar.net",
+      "document_key": "text:791aed5a929aae2aaa2319a42f480d68bee5c48ab56d0ac654c45d36c74d6f55",
+      "assessment": {
+        "status": "review",
+        "reasons": [],
+        "warnings": [
+          "KPSS taban puanı açık biçimde okunamadı",
+          "Aday puanı yaklaşık; başvuruda kesin puan kullanılmalı",
+          "Mezuniyet/bölüm uygunluğu doğrulanamadı",
+          "Yaş, belge, deneyim ve diğer özel şartlar ayrıca kontrol edilmeli"
+        ],
+        "deadline": "2026-12-10",
+        "minimum_score": null,
+        "application_start": null,
+        "application_start_ambiguous": false,
+        "score_conditions": [],
+        "score_types": [],
+        "score_ambiguous": false,
+        "kpss_exempt": false,
+        "education_levels": [
+          "Lisans"
+        ],
+        "evidence_complete": true,
+        "general_associate_code": false,
+        "department_mentioned": false,
+        "general_associate_requirement": false,
+        "minimum_high_school_open": false,
+        "exam_year_conflict": false,
+        "driver_license_b": false,
+        "special_conditions_detected": false,
+        "positions": []
+      },
+      "checked_on": "2026-11-20",
+      "policy": "12155a82c1208a04"
     }
   },
   "documents": {
@@ -6398,7 +6699,10 @@
     "text:1f49f15398b5dcf298f87f8334b9ab5fa1e7b1d0cf03f01ee95f74fde0ed915b": "https://ilan.memurlar.net/ilan/87012/kahramanmaras-kazanbel-1-isci-alacak.html",
     "text:eae85b5ddcefae62433d272a488fbfaf39f3e4dcfa5dcf957c8d675e69859c6e": "https://ilan.memurlar.net/ilan/87027/icisleri-bakanligi-60-kaymakam-adayi-alacak.html",
     "text:9ebb8c66893b015d0ee82b842623ec90bd85d83590bdae3664df2c45be84d8be": "https://ilan.memurlar.net/ilan/87026/sgk-50-mufettis-yardimcisi-alacak.html",
-    "text:4007c16dd4c9e3a64043499c5289f4e5a510bddcdc984be43abe574b79fc21e8": "https://ilan.memurlar.net/ilan/87034/adli-tip-kurumu-baskanligi-181-sozlesmeli-personel-alacak.html"
+    "text:4007c16dd4c9e3a64043499c5289f4e5a510bddcdc984be43abe574b79fc21e8": "https://ilan.memurlar.net/ilan/87034/adli-tip-kurumu-baskanligi-181-sozlesmeli-personel-alacak.html",
+    "text:49bf8e07d090b7b82ad5982e659552be383f2f5c6d75303d2de0146d8e4a20a1": "https://pgm.adalet.gov.tr/Home/SayfaDetay/bakanligimiz-merkez-teskilati-ve-personel-egitim-merkezi-mudurlukleri-ile-adli-destek-ve-m17072026044513",
+    "text:3b943796ddd0420bc409252d78df59b03f012db8de1f6912b62cf1e26c4ef3c1": "https://pgm.adalet.gov.tr/Home/SayfaDetay/bakanlik-merkez-teskilati-ve-ankara-personel-egitim-merkezi-mudurlugu-destek-personeli-so27072026053425",
+    "text:791aed5a929aae2aaa2319a42f480d68bee5c48ab56d0ac654c45d36c74d6f55": "https://ilan.memurlar.net/ilan/86838/sanliurfa-eyyubiye-belediyesi-9-zabita-memuru-alacak.html"
   },
   "aliases": {
     "https://www.konya.bel.tr/haber/konya-buyuksehirde-zabita-memuru-alimi-icin-basvurular-devam-ediyor": "https://www.konya.bel.tr/haber/konya-buyuksehirde-zabita-memuru-alimi-icin-basvurular-devam-ediyor",
@@ -6517,18 +6821,19 @@
     "https://ilan.memurlar.net/ilan/87027/icisleri-bakanligi-60-kaymakam-adayi-alacak.html": "https://ilan.memurlar.net/ilan/87027/icisleri-bakanligi-60-kaymakam-adayi-alacak.html",
     "https://ilan.memurlar.net/ilan/87026/sgk-50-mufettis-yardimcisi-alacak.html": "https://ilan.memurlar.net/ilan/87026/sgk-50-mufettis-yardimcisi-alacak.html",
     "https://ilan.memurlar.net/ilan/86862/agri-eleskirt-belediyesi-1-memur-alacak.html": "https://ilan.memurlar.net/ilan/86862/agri-eleskirt-belediyesi-1-memur-alacak.html",
-    "https://ilan.memurlar.net/ilan/87034/adli-tip-kurumu-baskanligi-181-sozlesmeli-personel-alacak.html": "https://ilan.memurlar.net/ilan/87034/adli-tip-kurumu-baskanligi-181-sozlesmeli-personel-alacak.html"
+    "https://ilan.memurlar.net/ilan/87034/adli-tip-kurumu-baskanligi-181-sozlesmeli-personel-alacak.html": "https://ilan.memurlar.net/ilan/87034/adli-tip-kurumu-baskanligi-181-sozlesmeli-personel-alacak.html",
+    "https://ilan.memurlar.net/ilan/86838/sanliurfa-eyyubiye-belediyesi-9-zabita-memuru-alacak.html": "https://ilan.memurlar.net/ilan/86838/sanliurfa-eyyubiye-belediyesi-9-zabita-memuru-alacak.html"
   },
   "delivery_cursor": 1,
   "last_run": {
-    "at": "2026-11-20T02:05:01.250730+03:00",
+    "at": "2026-11-20T18:32:36.755420+03:00",
     "status": "partial_source_error",
     "messages_sent": 0,
-    "delivery_deferred": true,
+    "delivery_deferred": false,
     "sources_ok": 10,
     "sources_total": 14,
-    "details_failed": 2,
+    "details_failed": 10,
     "pending_messages": 0,
-    "pending_details": 75
+    "pending_details": 54
   }
 }
