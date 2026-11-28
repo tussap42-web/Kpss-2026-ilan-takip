@@ -1086,7 +1086,7 @@
       "title": "KONYA BÜYÜKŞEHİR’DE ZABITA MEMURU ALIMI İÇİN BAŞVURULAR DEVAM EDİYOR 03.06.2026 16:42",
       "url": "https://www.konya.bel.tr/haber/konya-buyuksehirde-zabita-memuru-alimi-icin-basvurular-devam-ediyor",
       "source": "Konya Buyuksehir Belediyesi",
-      "document_key": "text:b4da70fe6f0d739bcbe604fb4addb603dc245ef365ee8a6078e772c0e5252d6f",
+      "document_key": "text:1157798845e0ff97dd4b5342f03336c465819c68c9d084f8766f5afc5260d61a",
       "assessment": {
         "status": "review",
         "reasons": [],
@@ -1107,7 +1107,6 @@
         "score_ambiguous": true,
         "kpss_exempt": false,
         "education_levels": [
-          "Ortaöğretim / lise",
           "Ön lisans",
           "Lisans"
         ],
@@ -1122,7 +1121,7 @@
         "positions": [],
         "unverified_deadline": null
       },
-      "checked_on": "2026-11-25",
+      "checked_on": "2026-11-28",
       "policy": "12155a82c1208a04"
     },
     "https://pgm.adalet.gov.tr/Home/SayfaDetay/bakanligimiz-merkez-teskilati-ve-personel-egitim-merkezi-mudurlukleri-ile-adli-destek-ve-m17072026044513": {
@@ -2484,7 +2483,7 @@
       "title": "Bursa Osmangazi Belediyesi 3 İşçi Alacak",
       "url": "https://ilan.memurlar.net/ilan/46813/bursa-osmangazi-belediyesi-3-isci-alacak.html",
       "source": "Memurlar.net",
-      "document_key": "text:94aaf7818a55bbf4299cc946c1fe9635dd7085bb27e8ec6dae4f85455f9332b7",
+      "document_key": "text:e4a6e8bbdef7a932f75c6d84a13e008d7f4076239fc7c2525d20e72f87045306",
       "assessment": {
         "status": "review",
         "reasons": [],
@@ -2497,6 +2496,8 @@
         ],
         "deadline": null,
         "minimum_score": null,
+        "application_start": null,
+        "application_start_ambiguous": false,
         "score_conditions": [],
         "score_types": [],
         "score_ambiguous": false,
@@ -2510,17 +2511,18 @@
         "general_associate_requirement": false,
         "minimum_high_school_open": false,
         "exam_year_conflict": false,
+        "driver_license_b": false,
         "special_conditions_detected": false,
         "positions": []
       },
-      "checked_on": "2026-11-19",
-      "policy": "d465f635cc6c2f0b"
+      "checked_on": "2026-11-28",
+      "policy": "12155a82c1208a04"
     },
     "https://ilan.memurlar.net/ilan/48143/afyonkarahisar-ihsaniye-ihsan-oren-tasimacilik-gecici-5-isci-alacak.html": {
       "title": "Afyonkarahisar ihsaniye İhsan Ören Taşımacılık Geçici 5 İşçi Alacak",
       "url": "https://ilan.memurlar.net/ilan/48143/afyonkarahisar-ihsaniye-ihsan-oren-tasimacilik-gecici-5-isci-alacak.html",
       "source": "Memurlar.net",
-      "document_key": "text:61e99161949ac58516d2e52e0a3f01d79d7d8ad431d4b7f9c867d9d6b0a4e978",
+      "document_key": "text:97cf5b49dafa6cb39ec8d56c828a86c929839e9231ccbdff7df922877f229148",
       "assessment": {
         "status": "review",
         "reasons": [],
@@ -2533,6 +2535,8 @@
         ],
         "deadline": null,
         "minimum_score": null,
+        "application_start": null,
+        "application_start_ambiguous": false,
         "score_conditions": [],
         "score_types": [],
         "score_ambiguous": false,
@@ -2546,11 +2550,12 @@
         "general_associate_requirement": false,
         "minimum_high_school_open": false,
         "exam_year_conflict": false,
+        "driver_license_b": false,
         "special_conditions_detected": false,
         "positions": []
       },
-      "checked_on": "2026-11-19",
-      "policy": "d465f635cc6c2f0b"
+      "checked_on": "2026-11-28",
+      "policy": "12155a82c1208a04"
     },
     "https://ilan.memurlar.net/ilan/84194/nigde-bor-belediyesi-gecici-50-isci-alacak.html": {
       "title": "Niğde Bor Belediyesi Geçici 50 İşçi Alacak",
@@ -3328,7 +3333,7 @@
         "positions": [],
         "unverified_deadline": "2026-12-18"
       },
-      "checked_on": "2026-11-24",
+      "checked_on": "2026-11-28",
       "policy": "12155a82c1208a04"
     },
     "https://ilan.memurlar.net/ilan/86900/antalya-gundogmus-belediyesi-4-memur-alacak.html": {
@@ -3499,7 +3504,7 @@
         "positions": [],
         "unverified_deadline": "2026-12-23"
       },
-      "checked_on": "2026-11-24",
+      "checked_on": "2026-11-28",
       "policy": "12155a82c1208a04"
     },
     "https://ilan.memurlar.net/ilan/86914/antalya-akseki-belediyesi-1-memur-alacak.html": {
@@ -3735,7 +3740,7 @@
       "title": "Daimi İşçi Alım İlanları",
       "url": "https://ilan.memurlar.net/kategori/daimi-isci-ilanlari?Expire=false",
       "source": "Memurlar.net",
-      "document_key": "text:ca21d3b8ee67d2e5a43b9eac24a64c8e2ff2fe890e6516eabe7b810d6a1f6228",
+      "document_key": "text:8f83c08f37ab9933d436f209a4e746bbd566a9b54f5423de4e97cc2f85d11dae",
       "assessment": {
         "status": "review",
         "reasons": [],
@@ -3767,7 +3772,7 @@
         "special_conditions_detected": false,
         "positions": []
       },
-      "checked_on": "2026-11-24",
+      "checked_on": "2026-11-28",
       "policy": "12155a82c1208a04"
     },
     "https://ilan.memurlar.net/kategori/gecici-isci-ilanlari?Expire=false": {
@@ -3891,7 +3896,7 @@
         "special_conditions_detected": false,
         "positions": []
       },
-      "checked_on": "2026-11-25",
+      "checked_on": "2026-11-28",
       "policy": "12155a82c1208a04"
     },
     "https://www.osym.gov.tr/2026-kamu-personel-secme-sinavi-kpss-lisans-basvurularin-alinmasi": {
@@ -3930,7 +3935,7 @@
         "special_conditions_detected": false,
         "positions": []
       },
-      "checked_on": "2026-11-25",
+      "checked_on": "2026-11-28",
       "policy": "12155a82c1208a04"
     },
     "https://www.osym.gov.tr/2026-kpss-din-hizmetleri-alan-bilgisi-dhbt-basvurularinin-alinmasi": {
@@ -4011,7 +4016,7 @@
         "positions": [],
         "unverified_deadline": null
       },
-      "checked_on": "2026-11-25",
+      "checked_on": "2026-11-28",
       "policy": "12155a82c1208a04"
     },
     "https://www.osym.gov.tr/2026-kpss-on-lisans-basvurularin-alinmasi-20260728141324252": {
@@ -4050,7 +4055,7 @@
         "special_conditions_detected": false,
         "positions": []
       },
-      "checked_on": "2026-11-25",
+      "checked_on": "2026-11-28",
       "policy": "12155a82c1208a04"
     },
     "https://www.osym.gov.tr/2026-kpss-on-lisans-kilavuz-ve-basvuru-bilgileri": {
@@ -4092,7 +4097,7 @@
         "positions": [],
         "unverified_deadline": null
       },
-      "checked_on": "2026-11-25",
+      "checked_on": "2026-11-28",
       "policy": "12155a82c1208a04"
     },
     "https://www.osym.gov.tr/2026-kpss-ortaogretim-basvurularin-alinmasi": {
@@ -4131,7 +4136,7 @@
         "special_conditions_detected": false,
         "positions": []
       },
-      "checked_on": "2026-11-25",
+      "checked_on": "2026-11-28",
       "policy": "12155a82c1208a04"
     },
     "https://www.osym.gov.tr/2026-kpss-ortaogretim-kilavuz-ve-basvuru-bilgileri": {
@@ -4172,7 +4177,7 @@
         "positions": [],
         "unverified_deadline": null
       },
-      "checked_on": "2026-11-25",
+      "checked_on": "2026-11-28",
       "policy": "12155a82c1208a04"
     },
     "https://www.osym.gov.tr/2026ekpss-basvurularin-alinmasi": {
@@ -4253,7 +4258,7 @@
         "positions": [],
         "unverified_deadline": null
       },
-      "checked_on": "2026-11-25",
+      "checked_on": "2026-11-28",
       "policy": "12155a82c1208a04"
     },
     "https://www.osym.gov.tr/2026ekpss-kura-icin-basvurularin-alinmasi": {
@@ -4290,7 +4295,7 @@
         "special_conditions_detected": false,
         "positions": []
       },
-      "checked_on": "2026-11-25",
+      "checked_on": "2026-11-28",
       "policy": "12155a82c1208a04"
     },
     "https://www.osym.gov.tr/2026ekpsskura-ile-engelli-kamu-personeli-yerlestirme-bazi-kamu-kurum-ve-kuruluslarinin-kadrolarina-yerlestirme-yapmak-icin-adaylardan-tercih-alinmasi": {
@@ -4409,7 +4414,7 @@
         "special_conditions_detected": false,
         "positions": []
       },
-      "checked_on": "2026-11-25",
+      "checked_on": "2026-11-28",
       "policy": "12155a82c1208a04"
     },
     "https://www.osym.gov.tr/2026engelli-kamu-personeli-secme-sinavi-ekpss-kura-basvuru-kilavuzu-ve-basvuru-bilgileri": {
@@ -4448,7 +4453,7 @@
         "positions": [],
         "unverified_deadline": null
       },
-      "checked_on": "2026-11-25",
+      "checked_on": "2026-11-28",
       "policy": "12155a82c1208a04"
     },
     "https://www.osym.gov.tr/2026kpss-lisans-kilavuz-ve-basvuru-bilgileri": {
@@ -4489,7 +4494,7 @@
         "positions": [],
         "unverified_deadline": null
       },
-      "checked_on": "2026-11-25",
+      "checked_on": "2026-11-28",
       "policy": "12155a82c1208a04"
     },
     "https://www.osym.gov.tr/kpss20261-bazi-kamu-kurum-ve-kuruluslarinin-kadro-ve-pozisyonlarina-yerlestirme-yapmak-icin-adaylardan-tercih-alinmasi": {
@@ -4526,7 +4531,7 @@
         "special_conditions_detected": false,
         "positions": []
       },
-      "checked_on": "2026-11-25",
+      "checked_on": "2026-11-28",
       "policy": "12155a82c1208a04"
     },
     "https://www.osym.gov.tr/kpss20261-bazi-kamu-kurum-ve-kuruluslarinin-kadro-ve-pozisyonlarina-yerlestirme-yapmak-icin-tercih-kilavuzu-ve-tablolar": {
@@ -4574,7 +4579,7 @@
         "positions": [],
         "unverified_deadline": null
       },
-      "checked_on": "2026-11-25",
+      "checked_on": "2026-11-28",
       "policy": "12155a82c1208a04"
     },
     "https://ilan.memurlar.net/ilan/86940/sayistay-16-sozlesmeli-personel-alacak.html": {
@@ -5690,7 +5695,7 @@
       "policy": "1292260b21ee0874"
     },
     "https://ilan.memurlar.net/ilan/86998/afad-20-uzman-yardimcisi-alacak.html": {
-      "title": "AFAD 20 uzman yardımcısı alacak",
+      "title": "AFAD 20 uzman yardımcısı alacak AFAD 20 uzman yardımcısı alacak. Son başvuru tarihi 30 Kasım 2026",
       "url": "https://ilan.memurlar.net/ilan/86998/afad-20-uzman-yardimcisi-alacak.html",
       "source": "Memurlar.net",
       "ocr_review_text": "eee oe eee İİ e O a RO ae\nGrup mo, Kadro —_ Yabancı Dil\nÖğrenim Dalları Puan Türü\nNo Sayısı Sınav Puanı\nİktisat, İşletme, Kamu Yönetimi,\nSiyaset Bilimi ve Kamu Yönetimi,\n. Pee KPSSP8, KPSSP9, En az 70\nSiyaset Bilimi ve Uluslararası\n1 il li 10 KPSSP16,KPSSP21, Puan\nİlişkiler, Uluslararası İlişkiler, oo,\n. - KPSSP32, KPSSP43 | (C Seviyesi)\nMaliye, Çalışma Ekonomisi ve\nEndüstri İlişkileri\nEn az 70\n2 Hukuk 3 KPSSP4 Puan\n(C Seviyesi)\n\nGrup Öğrenim Dalları Kadro Puan Türü\nNo Sayısı\nIktisat, İşletme, Kamu Yönetimi, Siyaset Bilimi ve KPSSP13,\nKamu Yönetimi, Siyaset Bilimi ve Uluslararası\n1 yn 18 : 4 KPSSP33,\nİlişkiler, Uluslararası İlişkiler, Maliye, Çalışma KPSSP48\nEkonomisi ve Endüstri İlişkileri i\n> Bilbisayar Mühendisliği, Yaalim. viunenicialiet 3 KPSSP3\nEndüstri Mühendisliği, Matematik Mühendisliği\n",
@@ -5729,7 +5734,7 @@
         "positions": [],
         "unverified_deadline": "2026-11-30"
       },
-      "checked_on": "2026-11-24",
+      "checked_on": "2026-11-28",
       "policy": "12155a82c1208a04"
     },
     "https://ilan.memurlar.net/ilan/86999/anadolu-universitesi-1-sozlesmeli-personel-alacak.html": {
@@ -6400,7 +6405,7 @@
         "positions": [],
         "unverified_deadline": "2026-12-25"
       },
-      "checked_on": "2026-11-24",
+      "checked_on": "2026-11-28",
       "policy": "12155a82c1208a04"
     },
     "https://ilan.memurlar.net/ilan/87012/kahramanmaras-kazanbel-1-isci-alacak.html": {
@@ -6555,7 +6560,7 @@
         "positions": [],
         "unverified_deadline": "2026-12-11"
       },
-      "checked_on": "2026-11-24",
+      "checked_on": "2026-11-28",
       "policy": "12155a82c1208a04"
     },
     "https://ilan.memurlar.net/ilan/87034/adli-tip-kurumu-baskanligi-181-sozlesmeli-personel-alacak.html": {
@@ -7310,10 +7315,10 @@
       "policy": "12155a82c1208a04"
     },
     "https://ilan.memurlar.net/ilan/87062/ondokuz-mayis-universitesi-21-isci-alacak.html": {
-      "title": "01:30 Ondokuz Mayıs Üniversitesi 21 İşçi Alacak",
+      "title": "Ondokuz Mayıs Üniversitesi 21 İşçi Alacak",
       "url": "https://ilan.memurlar.net/ilan/87062/ondokuz-mayis-universitesi-21-isci-alacak.html",
       "source": "Memurlar.net",
-      "document_key": "text:69404fc7bdd651ddf42934cfb4ad4bf2a936eaf298c3d261e7a8e0e6049b9238",
+      "document_key": "text:df02169a73b2d29f718132383e42ca072554bb06eb5f1a3435c04776284cee99",
       "assessment": {
         "status": "review",
         "reasons": [],
@@ -7348,7 +7353,7 @@
         "positions": [],
         "unverified_deadline": null
       },
-      "checked_on": "2026-11-23",
+      "checked_on": "2026-11-28",
       "policy": "12155a82c1208a04"
     },
     "https://ilan.memurlar.net/ilan/87065/ankara-yildirim-beyazit-universitesi-1-sozlesmeli-personel-alacak.html": {
@@ -9076,7 +9081,12 @@
     "text:21927333d221f004776a55a1a243cdb933008e6ec4296ab83f1344dd051380fc": "https://ilan.memurlar.net/ilan/87093/istanbul-personel-yonetim-as-5-isci-alacak.html",
     "text:111fde1d57f594ee8a84a1abcc8a94a557c8601ed6bf12f02652c0f0fd86cfe7": "https://ilan.memurlar.net/ilan/87089/istanbul-beylikduzu-belediyesi-10-isci-alacak.html",
     "text:342acd442801fde77da734d3100c4976479cca582fc7be3f3897ee3979f4b295": "https://ilan.memurlar.net/ilan/87091/antalya-ebton-insaat-1-isci-alacak.html",
-    "text:8bc3fedceb5820b022eee517155b59336a84377231c523b41e66e5049c75f455": "https://ilan.memurlar.net/ilan/87088/izmir-bagkent-gecici-1-isci-alacak.html"
+    "text:8bc3fedceb5820b022eee517155b59336a84377231c523b41e66e5049c75f455": "https://ilan.memurlar.net/ilan/87088/izmir-bagkent-gecici-1-isci-alacak.html",
+    "text:1157798845e0ff97dd4b5342f03336c465819c68c9d084f8766f5afc5260d61a": "https://www.konya.bel.tr/haber/konya-buyuksehirde-zabita-memuru-alimi-icin-basvurular-devam-ediyor",
+    "text:e4a6e8bbdef7a932f75c6d84a13e008d7f4076239fc7c2525d20e72f87045306": "https://ilan.memurlar.net/ilan/46813/bursa-osmangazi-belediyesi-3-isci-alacak.html",
+    "text:97cf5b49dafa6cb39ec8d56c828a86c929839e9231ccbdff7df922877f229148": "https://ilan.memurlar.net/ilan/48143/afyonkarahisar-ihsaniye-ihsan-oren-tasimacilik-gecici-5-isci-alacak.html",
+    "text:8f83c08f37ab9933d436f209a4e746bbd566a9b54f5423de4e97cc2f85d11dae": "https://ilan.memurlar.net/kategori/daimi-isci-ilanlari?Expire=false",
+    "text:df02169a73b2d29f718132383e42ca072554bb06eb5f1a3435c04776284cee99": "https://ilan.memurlar.net/ilan/87062/ondokuz-mayis-universitesi-21-isci-alacak.html"
   },
   "aliases": {
     "https://www.konya.bel.tr/haber/konya-buyuksehirde-zabita-memuru-alimi-icin-basvurular-devam-ediyor": "https://www.konya.bel.tr/haber/konya-buyuksehirde-zabita-memuru-alimi-icin-basvurular-devam-ediyor",
@@ -9240,14 +9250,14 @@
   },
   "delivery_cursor": 1,
   "last_run": {
-    "at": "2026-11-28T03:16:36.825141+03:00",
+    "at": "2026-11-28T18:37:07.349375+03:00",
     "status": "partial_source_error",
     "messages_sent": 0,
-    "delivery_deferred": true,
+    "delivery_deferred": false,
     "sources_ok": 11,
     "sources_total": 14,
-    "details_failed": 2,
+    "details_failed": 12,
     "pending_messages": 0,
-    "pending_details": 82
+    "pending_details": 59
   }
 }
